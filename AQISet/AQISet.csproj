@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEE59B65-A812-4D1B-8260-CB3C90997620}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AQISet</RootNamespace>
+    <AssemblyName>AQISet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cfg\InstanceSettingHelper.cs" />
+    <Compile Include="Exception\DataUnHoldException.cs" />
+    <Compile Include="Exception\SettingException.cs" />
+    <Compile Include="Interface\IThrowMessage.cs" />
+    <Compile Include="Cfg\Language.cs" />
+    <Compile Include="Cfg\LINQToINI.cs" />
+    <Compile Include="AqiResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AqiResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Collection\NoteNode.cs" />
+    <Compile Include="Control\AqiRetryer.cs" />
+    <Compile Include="Control\AqiNoter.cs" />
+    <Compile Include="Collection\RunMessage.cs" />
+    <Compile Include="Exception\RetryException.cs" />
+    <Compile Include="Collection\RetryNode.cs" />
+    <Compile Include="Control\AqiRinger.cs" />
+    <Compile Include="Control\Saver\AqiFileSaver.cs" />
+    <Compile Include="Control\AqiManage.cs" />
+    <Compile Include="Control\AqiRunner.cs" />
+    <Compile Include="Collection\SrcUrlGroupTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface\IAqiSave.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQILibrary\AQILibrary.csproj">
+      <Project>{6CD4ACC4-A6C2-4EE5-9025-88FFEEF4065B}</Project>
+      <Name>AQILibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bjmemc\Plugin_bjmemc.csproj">
+      <Project>{3446990D-78B6-498D-AD4C-9AFBE6A1AD1B}</Project>
+      <Name>Plugin_bjmemc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AqiResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AqiResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JSON\cfg.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

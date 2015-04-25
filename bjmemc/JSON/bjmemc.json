@@ -1,0 +1,32 @@
+﻿{
+"GetWebPredict" :{
+	"Enabled" : "true",
+	"Params" : [{
+			"Enabled" : "true",
+			"Name" : "",
+			"Param" : "GetWebPredict",
+			"Refer" : ""
+		}],
+	"GetParams" : null
+},
+"GetWebData" :{
+	"Enabled" : "true",
+	"Params" : [{
+			"Enabled" : "true",
+			"Name" : "",
+			"Param" : "GetWebData",
+			"Refer" : ""
+		}],
+	"GetParams" : null
+},
+"GetWebAlert" :{
+	"Enabled" : "true",
+	"Params" : [{
+			"Enabled" : "true",
+			"Name" : "",
+			"Param" : "GetWebAlert",
+			"Refer" : ""
+		}],
+	"GetParams" : null
+}
+}

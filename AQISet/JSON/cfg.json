@@ -1,0 +1,24 @@
+﻿{
+"Setting" :{
+	"RunMode" : "SELF",
+	"Saver" : "AqiFileSaver",
+	"AqiFileSaver" : 
+	{
+		"Path" : "D:\\AQI\\"
+	},
+	"AqiRunner" : 
+	{
+		
+	},
+	"AqiNoter" : 
+	{
+		"MaxFailCount" : 5 
+	},
+	"AqiRetryer" : 
+	{
+		"MaxQueue" : 50,
+		"RetryCount" : 10,
+		"AlwayRetry" : false
+	}
+}
+}
