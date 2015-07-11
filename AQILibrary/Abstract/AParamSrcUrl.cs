@@ -174,14 +174,14 @@ namespace AQI.Abstract
             {
                 case AqiConstant.ParamType.GET:
                     string urlparam = makeUrl(dictParam);
-                    responsebody = HttpUtil.getRequest(urlparam);
+                    responsebody = HttpUtilV2.doGetRequest(urlparam);
                     break;
                 case AqiConstant.ParamType.POST:
                     byte[] requestbody = makeRequestBody(dictParam);
-                    responsebody = HttpUtil.postRequest(URL, requestbody);
+                    responsebody = HttpUtilV2.doPostRequest(URL, requestbody);
                     break;
                 default:
-                    responsebody = HttpUtil.getRequest(URL);
+                    responsebody = HttpUtilV2.doGetRequest(URL);
                     break;
             }
 

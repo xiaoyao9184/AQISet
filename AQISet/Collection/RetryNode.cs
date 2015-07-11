@@ -5,6 +5,7 @@ using System.Threading;
 using AQI;
 using AQI.Interface;
 using AQISet.Control;
+using System.Net;
 
 namespace AQISet.Collection
 {
@@ -13,6 +14,13 @@ namespace AQISet.Collection
     /// </summary>
     public class RetryNode
     {
+
+        #region 事件
+
+        public delegate void NodeEventHandler(RunMessage m);
+        public event NodeEventHandler NodeEvent;
+
+        #endregion
 
         #region 常量
 
@@ -25,6 +33,7 @@ namespace AQISet.Collection
 
         #region 字段
 
+        private string runnerName;
         private ISrcUrl isu;        //数据接口
         private AqiParam ap;        //参数
         private int count;          //重试次数
@@ -38,6 +47,13 @@ namespace AQISet.Collection
 
         #region 属性
 
+        public string RUNNERNAME
+        {
+            get
+            {
+                return this.runnerName;
+            }
+        }
         public ISrcUrl SRCURL
         {
             get
@@ -73,8 +89,9 @@ namespace AQISet.Collection
 
         #endregion
 
-        public RetryNode(ISrcUrl isrcurl, AqiParam aqiparam)
+        public RetryNode(string arName, ISrcUrl isrcurl, AqiParam aqiparam)
         {
+            this.runnerName = arName;
             this.ap = aqiparam;
             this.isu = isrcurl;
             this.starttime = DateTime.Now;
@@ -104,6 +121,37 @@ namespace AQISet.Collection
             {
                 thisLock.ExitWriteLock();
             }
+        }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public bool Update(Exception ex)
+        {
+            if (ex is WebException)
+            {
+                WebException exception = ex as WebException;
+                if (exception.Status == WebExceptionStatus.Timeout)
+                {
+                    this.AddNameCount(NAME_TIMEOUT);
+                }
+                else
+                {
+                    this.AddNameCount(NAME_WEB);
+                }
+            }
+            else
+            {
+                this.AddNameCount(NAME_OTHER);
+                if (this.NodeEvent != null)
+                {
+                    this.NodeEvent(new RunMessage(RunMessage.RunType.ERR, "不可忽略错误，数据源接口可能变更", null));
+                }
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -216,33 +264,30 @@ namespace AQISet.Collection
         /// <returns></returns>
         public bool IsCountOut()
         {
-            bool bResult = false;
-            thisLock.EnterReadLock();
+            bool flag = false;
+            this.thisLock.EnterReadLock();
             try
             {
-                //检测是否达到最大重试次数
-                if (count >= AqiManage.Setting.Get<int>("AqiRetryer.RetryCount"))
+                if (this.count >= AqiManage.Setting.Get<int>("AqiRetryer.RetryCount"))
                 {
-                    Console.WriteLine("重试次数太多，需要人工介入");
-                    bResult = true;
+                    AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.NAME });
+                    flag = true;
                 }
-
-                foreach (KeyValuePair<string, int> c in counts)
+                foreach (KeyValuePair<string, int> pair in this.counts)
                 {
-                    if (c.Value >= 10)
+                    if (pair.Value >= 10)
                     {
-                        Console.WriteLine(c.Key + "重试次数太多，需要人工介入");
-                        bResult = true;
-                        break;
+                        AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.NAME });
+                        return true;
                     }
                 }
+                return flag;
             }
             finally
             {
-                thisLock.ExitReadLock();
+                this.thisLock.ExitReadLock();
             }
-
-            return bResult;
+            return flag;
         }
 
         /// <summary>
@@ -253,7 +298,7 @@ namespace AQISet.Collection
         {
             TimeSpan tsEnd;
             TimeSpan tsNow;
-            thisLock.EnterReadLock();
+            this.thisLock.EnterReadLock();
             try
             {
                 tsEnd = new TimeSpan(endtime.Ticks);
@@ -261,18 +306,16 @@ namespace AQISet.Collection
             }
             finally
             {
-                thisLock.ExitReadLock();
+                this.thisLock.ExitReadLock();
             }
-
             TimeSpan ts = tsNow.Subtract(tsEnd).Duration();
             //检测是否达到时间超时
             //TEST 1小时
             if (ts.TotalHours > 1)
             {
-                Console.WriteLine("历史记录超时");
+                AqiManage.Remind.Log_Debug("历史记录超时", new string[] { this.runnerName, this.isu.NAME });
                 return true;
             }
-            
             return false;
         }
 

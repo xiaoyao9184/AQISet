@@ -1,14 +1,14 @@
 ﻿{
 "Setting" :{
-	"RunMode" : "SELF",
 	"Saver" : "AqiFileSaver",
 	"AqiFileSaver" : 
 	{
-		"Path" : "D:\\AQI\\"
+        "Path": "D:\\AQI-DATA\\",
+        "SaveEmptyData": true
 	},
 	"AqiRunner" : 
 	{
-		
+		"RunMode" : "SELF"
 	},
 	"AqiNoter" : 
 	{
@@ -18,6 +18,7 @@
 	{
 		"MaxQueue" : 50,
 		"RetryCount" : 10,
+        "RetryTime" : 1,
 		"AlwayRetry" : false
 	}
 }

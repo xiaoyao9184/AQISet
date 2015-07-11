@@ -8,7 +8,8 @@ namespace AQISet.Interface
     /// </summary>
     public interface IAqiSave
     {
-        
+        string Name { get; }
+
         string SaverType{ get; }
 
         /// <summary>

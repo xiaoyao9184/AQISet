@@ -16,11 +16,27 @@ namespace AQISet.Collection
         public readonly string Name;    //名称
         public readonly int DateSize;   //数据大小
 
+        private byte[] data;
         private bool saved;
 
         #endregion
 
         #region 属性
+
+        /// <summary>
+        /// 数据
+        /// </summary>
+        public byte[] Data
+        {
+            get
+            {
+                return this.data;
+            }
+            set
+            {
+                this.data = value;
+            }
+        }
 
         /// <summary>
         /// 是否保存成功

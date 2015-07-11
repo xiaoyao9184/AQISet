@@ -5,13 +5,14 @@ using System.Text;
 using AQI;
 using AQI.Interface;
 using AQISet.Collection;
+using AQISet.Interface;
 
 namespace AQISet.Control
 {
     /// <summary>
     /// 记录者
     /// </summary>
-    public sealed class AqiNoter
+    public sealed class AqiNoter : IStatus
     {
 
         #region 字段
@@ -24,7 +25,7 @@ namespace AQISet.Control
         private DateTime starttime; //开始时间
         private DateTime endtime;   //结束时间
 
-        private Dictionary<string, NoteNode> history;
+        private List<NoteNode> history;
 
         #endregion
 
@@ -33,7 +34,7 @@ namespace AQISet.Control
             name = "DefaultNoter";
             am = manage;
             starttime = DateTime.Now;
-            history = new Dictionary<string, NoteNode>();
+            history = new List<NoteNode>();
         }
 
         #region 方法
@@ -45,37 +46,56 @@ namespace AQISet.Control
         /// <param name="data"></param>
         public NoteNode AddNew(ISrcUrl isu, AqiParam ap, byte[] data)
         {
-            int nSize = data.Length;
-            string nName = null;
-            if(ap == null)
+            int size = 0;
+            if (data != null)
             {
-                nName = isu.TAG;
+                size = data.Length;
+            }
+            string name = null;
+            if (ap == null)
+            {
+                name = isu.TAG;
             }
             else
             {
-                nName = isu.TAG + ap.Name;
+                name = isu.TAG + ap.Name;
             }
-            NoteNode n = new NoteNode(nName, nSize);
-
-            lock(history)
+            NoteNode item = new NoteNode(name, size);
+            lock (this.history)
             {
-                history.Add(n.Name, n);
-
-                endtime = DateTime.Now;
-                size = size + n.DateSize;
-                count++;
+                this.history.Add(item);
+                this.endtime = DateTime.Now;
+                this.size += item.DateSize;
+                this.count += 1L;
             }
-
-            return n;
+            return item;
         }
 
-        /// <summary>
-        /// 生成日志
-        /// </summary>
-        /// <returns></returns>
-        public string ToLog()
+        #endregion
+
+        #region IStatus接口
+
+        public string Name
         {
-            return null;
+            get
+            {
+                return this.name;
+            }
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("记录者信息：" + this.name);
+            builder.Append("\n\t");
+            builder.Append("数据保存次数：" + this.count + "次");
+            builder.Append("\n\t");
+            builder.Append("已接收数据量：" + this.size + "字节");
+            builder.Append("\n\t");
+            builder.Append("开始时间：" + this.starttime);
+            builder.Append("\n\t");
+            builder.Append("结束时间：" + this.endtime);
+            return builder.ToString();
         }
 
         #endregion

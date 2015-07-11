@@ -7,10 +7,14 @@ namespace AQISet.Collection
     public class RunMessage
     {
 
+        #region 枚举
+
         public enum RunType
         {
             OK,TIP,ERR,WAIT
         }
+
+        #endregion
 
         #region 字段
 

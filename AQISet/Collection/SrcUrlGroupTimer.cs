@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Timers;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using AQI.Interface;
 using AQISet.Cfg;
 using AQISet.Control;
+using AQISet.Interface;
+using System.Text;
 
 namespace AQISet.Collection
 {
@@ -12,7 +14,7 @@ namespace AQISet.Collection
     /// 数据接口分组计时器
     ///     同UDI的数据接口为一组
     /// </summary>
-    public class SrcUrlGroupTimer : Timer
+    public class SrcUrlGroupTimer : System.Timers.Timer, IStatus
     {
 
         #region 字段
@@ -20,18 +22,21 @@ namespace AQISet.Collection
         private string name;                         //名称
         private double intervalseconds;              //时间间隔
         private Dictionary<string, ISrcUrl> isulist; //"数据接口"集合
-        private System.Threading.AutoResetEvent autoEvent;          //
-        private System.Threading.ReaderWriterLockSlim thisLock;     //读写锁
-
+        private Action<object, System.Timers.ElapsedEventArgs> method;
+        private Thread thr;
+        private CancellationTokenSource cts;
+        private AutoResetEvent autoEvent;          //
+        private ReaderWriterLockSlim thisLock;     //读写锁
+        
         #endregion
 
         #region 属性
 
-        public string Name
+        public bool IsCancellationRequested
         {
             get
             {
-                return name;
+                return this.cts.IsCancellationRequested;
             }
         }
 
@@ -77,7 +82,17 @@ namespace AQISet.Collection
             this.name = name;
             this.intervalseconds = -1;
             this.isulist = new Dictionary<string, ISrcUrl>();
-            this.thisLock = new System.Threading.ReaderWriterLockSlim(System.Threading.LockRecursionPolicy.SupportsRecursion);
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        }
+        public SrcUrlGroupTimer(string name, Action<object, System.Timers.ElapsedEventArgs> method)
+            : base(2147483647.0)
+        {
+            this.name = name;
+            this.intervalseconds = -1.0;
+            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+            this.method = method;
+            base.Enabled = false;
         }
 
         /// <summary>
@@ -93,34 +108,58 @@ namespace AQISet.Collection
             this.intervalseconds = interval;
             this.AutoReset = true;
             this.isulist = new Dictionary<string, ISrcUrl>();
-            this.thisLock = new System.Threading.ReaderWriterLockSlim(System.Threading.LockRecursionPolicy.SupportsRecursion);
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        }
+        public SrcUrlGroupTimer(string name, double interval, Action<object, System.Timers.ElapsedEventArgs> method)
+            : base(interval * 1000.0)
+        {
+            this.name = name;
+            this.intervalseconds = interval;
+            base.AutoReset = true;
+            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+            this.method = method;
+            base.Elapsed += new System.Timers.ElapsedEventHandler(method.Invoke);
         }
 
         #endregion
 
-        #region 方法
-
         #region 基本控制
 
         /// <summary>
-        /// 开始执行第一次，并定时执行
-        ///      Main控制线程调用
+        /// 开始
         /// </summary>
-        /// <param name="firstMethod"></param>
-        /// <returns></returns>
-        public void StartFirst(Action<object, ElapsedEventArgs> firstMethod)
+        public new void Start()
         {
-            if (intervalseconds > 0)
+            if (this.thr != null)
             {
-                this.Elapsed += new ElapsedEventHandler(firstMethod);
-                this.Enabled = true;
+                if (this.thr.ThreadState == ThreadState.Running)
+                {
+                    this.cts.Cancel();
+                }
+                this.thr.Join();
             }
-            //新线程
-            new System.Threading.Thread(
-                    delegate() { 
-                        firstMethod(this, null);
-                    }
-                ).Start();
+            if (base.Enabled)
+            {
+                base.Stop();
+            }
+            this.cts = new CancellationTokenSource();
+            base.Start();
+            this.thr = new Thread(() => this.method(this, null));
+            this.thr.Name = this.name + "_Timer(First)";
+            this.thr.Start();
+        }
+
+        /// <summary>
+        /// 结束
+        /// </summary>
+        public new void Stop()
+        {
+            if ((this.thr != null) && (this.thr.ThreadState == ThreadState.Running))
+            {
+                this.cts.Cancel();
+            }
+            base.Stop();
         }
 
         /// <summary>
@@ -236,23 +275,27 @@ namespace AQISet.Collection
 
         #endregion
 
+        #region 处理
+
         /// <summary>
         /// 处理
         ///     Timer处理线程调用
         /// </summary>
         /// <param name="runner"></param>
-        public void Handle(AqiRunner runner)
+        public bool Handle(AqiRunner runner)
         {
-            thisLock.EnterReadLock();
+            this.thisLock.EnterReadLock();
+            foreach (ISrcUrl url in this.isulist.Values)
             {
-                foreach (ISrcUrl isu in isulist.Values)
+                if (this.IsCancellationRequested)
                 {
-                    runner.routeProcess(isu, this);
+                    return false;
                 }
+                runner.routeProcess(url, this);
             }
-            thisLock.ExitReadLock();
+            this.thisLock.ExitReadLock();
+            return true;
         }
-
 
         #endregion
 
@@ -298,6 +341,71 @@ namespace AQISet.Collection
             }
 
             return sugTimerList.ToDictionary(sugt => sugt.Name, sugt => sugt);
+        }
+
+        public static Dictionary<string, SrcUrlGroupTimer> BuildList(List<ISrcUrl> srcUrls, Action<object, System.Timers.ElapsedEventArgs> firstMethod)
+        {
+            List<SrcUrlGroupTimer> source = new List<SrcUrlGroupTimer>();
+            using (List<ISrcUrl>.Enumerator enumerator = srcUrls.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Predicate<SrcUrlGroupTimer> match = null;
+                    ISrcUrl isu = enumerator.Current;
+                    if (match == null)
+                    {
+                        match = sugt => sugt.IntervalSeconds == isu.UDI;
+                    }
+                    SrcUrlGroupTimer item = source.Find(match);
+                    if (item != null)
+                    {
+                        item.isulist.Add(isu.TAG, isu);
+                    }
+                    else
+                    {
+                        string someTime = Language.GetSomeTime(isu.UDI);
+                        if (isu.UDI <= 0.0)
+                        {
+                            item = new SrcUrlGroupTimer(someTime, firstMethod);
+                        }
+                        else
+                        {
+                            item = new SrcUrlGroupTimer(someTime, isu.UDI, firstMethod);
+                        }
+                        item.isulist.Add(isu.TAG, isu);
+                        source.Add(item);
+                    }
+                }
+            }
+            return source.ToDictionary<SrcUrlGroupTimer, string, SrcUrlGroupTimer>(sugt => sugt.Name, sugt => sugt);
+        }
+
+        #endregion
+
+        #region IStatus接口
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("分组定时器信息：" + this.name);
+            builder.Append("\n\t");
+            builder.Append("数据接口：" + this.SrcUrl.Count + "个");
+            foreach (ISrcUrl url in this.SrcUrl.Values)
+            {
+                builder.Append("\n\t\t");
+                builder.Append(url.TAG);
+                builder.Append("\t");
+                builder.Append(url.NAME);
+            }
+            return builder.ToString();
         }
 
         #endregion

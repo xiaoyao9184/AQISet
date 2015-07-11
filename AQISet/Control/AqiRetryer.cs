@@ -12,31 +12,15 @@ using AQISet.Control;
 using AQISet.Exceptions;
 using AQISet.Cfg;
 using AQISet.Collection;
+using AQISet.Interface;
 
 namespace AQISet.Control
 {
     /// <summary>
     /// 重试者
     /// </summary>
-    public sealed class AqiRetryer
+    public sealed class AqiRetryer : IStatus
     {
-
-        //#region TEST
-
-        //private static bool set_AlwayRetry;
-        //private bool AlwayRetry
-        //{
-        //    get
-        //    {
-        //        return AqiRetryer.set_AlwayRetry;
-        //    }
-        //    set
-        //    {
-        //        AqiRetryer.set_AlwayRetry = value;
-        //    }
-        //}
-
-        //#endregion
 
         #region 字段
 
@@ -79,7 +63,7 @@ namespace AQISet.Control
             thr.Start();
         }
 
-        #region 主队列
+        #region 名称队列
 
         /// <summary>
         /// 往队列插入元素
@@ -120,26 +104,43 @@ namespace AQISet.Control
         #region 历史字典
 
         /// <summary>
+        /// 复位
+        /// </summary>
+        public void ResetHistory()
+        {
+            this.historyLock.EnterUpgradeableReadLock();
+            try
+            {
+                this.m_queue.Clear();
+                this.history.Clear();
+            }
+            finally
+            {
+                this.historyLock.ExitUpgradeableReadLock();
+            }
+        }
+
+        /// <summary>
         /// 得到历史
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
         public RetryNode GetHistory(string name)
         {
-            RetryNode nResult = null;
-            historyLock.EnterReadLock();
+            RetryNode node = null;
+            this.historyLock.EnterReadLock();
             try
             {
-                if (history.ContainsKey(name))
+                if (this.history.ContainsKey(name))
                 {
-                    nResult = history[name];
+                    node = this.history[name];
                 }
             }
             finally
             {
-                historyLock.ExitReadLock();
+                this.historyLock.ExitReadLock();
             }
-            return nResult;
+            return node;
         }
 
         /// <summary>
@@ -149,17 +150,17 @@ namespace AQISet.Control
         /// <returns></returns>
         public bool HasHistory(string name)
         {
-            bool bResult = false;
-            historyLock.EnterReadLock();
+            bool flag = false;
+            this.historyLock.EnterReadLock();
             try
             {
-                bResult = history.ContainsKey(name);
+                flag = this.history.ContainsKey(name);
             }
             finally
             {
-                historyLock.ExitReadLock();
+                this.historyLock.ExitReadLock();
             }
-            return bResult;
+            return flag;
         }
 
         /// <summary>
@@ -168,85 +169,76 @@ namespace AQISet.Control
         /// <param name="arn"></param>
         public RetryNode AddHistory(RetryNode arn)
         {
-            RetryNode n = null;
-            bool bHasHistory = false;
-            historyLock.EnterUpgradeableReadLock();
+            RetryNode node = null;
+            this.historyLock.EnterUpgradeableReadLock();
             try
             {
-                bHasHistory = history.ContainsKey(arn.NAME);
-            
-                if (bHasHistory)
+                if (this.history.ContainsKey(arn.NAME))
                 {
-                    n = history[arn.NAME];
-                    if (n.IsValid())
+                    node = this.history[arn.NAME];
+                    if (node.IsValid())
                     {
-                        Console.WriteLine("上次时区数据已经丢失,此时区又出现错误");
-                        //历史有效，合并数据
-                        n.Concat(arn);
+                        AqiManage.Remind.Log_Debug("上次时区数据已经丢失,此时区又出现错误", new string[] { this.name, arn.RUNNERNAME });
+                        node.Concat(arn);
                     }
                     else
                     {
-                        //历史无效，替换数据
-                        historyLock.EnterWriteLock();
+                        this.historyLock.EnterWriteLock();
                         try
                         {
-                            history[arn.NAME] = arn;
+                            this.history[arn.NAME] = arn;
                         }
                         finally
                         {
-                            historyLock.ExitWriteLock();
+                            this.historyLock.ExitWriteLock();
                         }
                     }
                 }
                 else
                 {
-                    historyLock.EnterWriteLock();
+                    this.historyLock.EnterWriteLock();
                     try
                     {
-                        history.Add(arn.NAME, arn);
+                        this.history.Add(arn.NAME, arn);
                     }
                     finally
                     {
-                        historyLock.ExitWriteLock();
+                        this.historyLock.ExitWriteLock();
                     }
                 }
-                n = history[arn.NAME];
+                node = this.history[arn.NAME];
             }
             finally
             {
-                //退出升级锁。
-                historyLock.ExitUpgradeableReadLock();
+                this.historyLock.ExitUpgradeableReadLock();
             }
-            return n;
+            return node;
         }
 
         #endregion
 
-        #region 入队列
+        #region 控制方法
 
         /// <summary>
         /// 入重试队列
         ///     定时器线程
         /// </summary>
+        /// <param name="arName"></param>
         /// <param name="isu"></param>
         /// <param name="ap"></param>
         /// <param name="ex"></param>
-        public void PutNew(ISrcUrl isu, AqiParam ap, Exception ex)
+        public void PutNew(string arName, ISrcUrl isu, AqiParam ap, Exception ex)
         {
             //封装为重试节点
-            RetryNode arn = new RetryNode(isu, ap);
-
+            RetryNode arn = new RetryNode(arName, isu, ap);
+            arn.NodeEvent += new RetryNode.NodeEventHandler(this.node_RunEvent);
             //更新计数
-            if (!updateNode(arn, ex))
-            {
-                return;
-            }
-
+            arn.Update(ex);
             //添加历史记录
-            arn = AddHistory(arn);
-            
+            arn = this.AddHistory(arn);
             //入队列
-            Push(arn.NAME);
+            this.Push(arn.NAME);
+            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RUNNERNAME, arn.NAME });
         }
 
         /// <summary>
@@ -258,72 +250,31 @@ namespace AQISet.Control
         public void PutAgain(RetryNode arn, Exception ex)
         {
             //更新计数
-            if (!updateNode(arn, ex))
-            {
-                return;
-            } 
+            arn.Update(ex);
             //检查有效性
-            if (!arn.IsValid()) 
+            if (!arn.IsValid())
             {
                 //读取配置
                 if (AqiManage.Setting.Get<bool>("AqiRetryer.AlwayRetry"))
                 {
                     //继续重试
-                    Console.WriteLine("重试已经无效，仍然尝试重试");
+                    AqiManage.Remind.Log_Debug("重试已经无效，仍然尝试重试", new string[] { this.name, arn.RUNNERNAME });
                 }
                 else
                 {
                     //停止重试
-                    Console.WriteLine("重试已经无效，暂停");
+                    AqiManage.Remind.Log_Error("重试已经无效，暂停", new string[] { this.name, arn.RUNNERNAME });
                     return;
                 }
             }
-
             //入队列：继续重试
-            Push(arn.NAME);
-            Console.WriteLine("再入重试队列");
-        }
-
-        /// <summary>
-        /// 更新计数
-        /// </summary>
-        /// <param name="arn"></param>
-        /// <param name="ex"></param>
-        /// <returns></returns>
-        private bool updateNode(RetryNode arn, Exception ex)
-        {
-            //初始化统计计数
-            if (ex is WebException)
-            {
-                //可忽略错误
-                WebException we = ex as WebException;
-
-                if (we.Status == WebExceptionStatus.Timeout)
-                {
-                    //统计超时次数
-                    arn.AddNameCount(RetryNode.NAME_TIMEOUT);
-                }
-                else
-                {
-                    //统计网络错误次数
-                    arn.AddNameCount(RetryNode.NAME_WEB);
-                }
-            }
-            else
-            {
-                //不可忽略错误
-                arn.AddNameCount(RetryNode.NAME_OTHER);
-                Console.WriteLine("不可忽略错误，数据源接口可能变更");
-                Console.WriteLine(ex.Message);
-                return false;
-            }
-
-            return true;
+            this.Push(arn.NAME);
+            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RUNNERNAME, arn.NAME });
         }
 
         #endregion
 
-        #region 出队列
+        #region 事件接收
 
         /// <summary>
         /// 循环线程
@@ -335,41 +286,37 @@ namespace AQISet.Control
                 //取队列（无数据会堵塞）
                 string name = Pop();
                 RetryNode arn = GetHistory(name);
-                retryProcess(arn);
+                this.am[arn.RUNNERNAME].retryProcess(arn);
                 Thread.Sleep(500);
             }
         }
 
-        /// <summary>
-        /// 重试处理
-        /// </summary>
-        /// <param name="arn"></param>
-        private bool retryProcess(RetryNode arn)
+        private void node_RunEvent(RunMessage m)
         {
-            ISrcUrl isu = arn.SRCURL;
-            AqiParam ap = arn.PARAM;
-            byte[] data = null;
-            try
+            AqiManage.Remind.Log_RunMessage(m);
+        }
+
+        #endregion
+
+        #region IStatus接口
+
+        public string Name
+        {
+            get
             {
-                if (ap != null)
-                {
-                    data = isu.getDate(ap);
-                }
-                else
-                {
-                    data = isu.getDate();
-                }
+                return this.name;
             }
-            catch (Exception ex)
-            {
-                //再 入重试队列
-                PutAgain(arn, ex);
-                return false;
-            }
-            am.AqiRun.saveProcess(isu, ap, data);
-            //重置
-            arn.Reset();
-            return true;
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("重试者信息：" + this.name);
+            builder.Append("\n\t");
+            builder.Append("历史：" + this.history.Count + "次");
+            builder.Append("\n\t");
+            builder.Append("当前队列数量：" + this.m_queue.Count + "个");
+            return builder.ToString();
         }
 
         #endregion

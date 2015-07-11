@@ -34,6 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-client\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -46,8 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cfg\InstanceSettingHelper.cs" />
+    <Compile Include="Control\AqiPlugin.cs" />
+    <Compile Include="Control\AqiRemind.cs" />
     <Compile Include="Exception\DataUnHoldException.cs" />
     <Compile Include="Exception\SettingException.cs" />
+    <Compile Include="Interface\IStatus.cs" />
+    <Compile Include="Interface\ISubObject.cs" />
     <Compile Include="Interface\IThrowMessage.cs" />
     <Compile Include="Cfg\Language.cs" />
     <Compile Include="Cfg\LINQToINI.cs" />
@@ -62,7 +73,6 @@
     <Compile Include="Collection\RunMessage.cs" />
     <Compile Include="Exception\RetryException.cs" />
     <Compile Include="Collection\RetryNode.cs" />
-    <Compile Include="Control\AqiRinger.cs" />
     <Compile Include="Control\Saver\AqiFileSaver.cs" />
     <Compile Include="Control\AqiManage.cs" />
     <Compile Include="Control\AqiRunner.cs" />
@@ -78,10 +88,6 @@
       <Project>{6CD4ACC4-A6C2-4EE5-9025-88FFEEF4065B}</Project>
       <Name>AQILibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\bjmemc\Plugin_bjmemc.csproj">
-      <Project>{3446990D-78B6-498D-AD4C-9AFBE6A1AD1B}</Project>
-      <Name>Plugin_bjmemc</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AqiResource.resx">
@@ -96,6 +102,7 @@
     <None Include="JSON\cfg.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

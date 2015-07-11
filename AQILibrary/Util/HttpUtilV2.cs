@@ -9,6 +9,8 @@ namespace Helper.Util.HTTP
     /// <summary>
     /// HTTP工具
     /// xiaoyao9184
+    /// 1.2 2015-07-11 fix thread bug
+    /// 1.1 2015-07-07 Fix createGetRequest lost set Method to GET
     /// 1.0 2015-01-27
     /// </summary>
     public class HttpUtilV2
@@ -87,7 +89,9 @@ namespace Helper.Util.HTTP
         /// <returns></returns>
         public static HttpWebRequest createGetRequest(string strUrl)
         {
-            return createRequest(strUrl, oftenRequestHeader);
+            Dictionary<string, string> dictHeader = new Dictionary<string, string>(oftenRequestHeader);
+            dictHeader["Method"] = "GET";
+            return createRequest(strUrl, dictHeader);
         }
 
         /// <summary>
@@ -97,8 +101,9 @@ namespace Helper.Util.HTTP
         /// <returns></returns>
         public static HttpWebRequest createPostRequest(string strUrl)
         {
-            oftenRequestHeader["Method"] = "POST";
-            return createRequest(strUrl, oftenRequestHeader);
+            Dictionary<string, string> dictHeader = new Dictionary<string, string>(oftenRequestHeader);
+            dictHeader["Method"] = "POST";
+            return createRequest(strUrl, dictHeader);
         }
 
         #endregion

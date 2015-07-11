@@ -12,6 +12,7 @@ using AQISet.Control.Saver;
 using AQISet.Cfg;
 using Helper.Setting;
 using System.Threading;
+using System.Text;
 
 
 namespace AQISet.Control
@@ -19,17 +20,8 @@ namespace AQISet.Control
     /// <summary>
     /// 管理者
     /// </summary>
-    public sealed class AqiManage : IThrowMessage
+    public sealed class AqiManage : IThrowMessage, ISubObject, IStatus
     {
-
-        #region 枚举
-
-        enum RunMode
-        {
-            NONE, SELF, JOINT
-        }
-
-        #endregion
 
         #region 事件
 
@@ -70,14 +62,10 @@ namespace AQISet.Control
         #region 字段
 
         private static string Tag = "AQIManage";
+        private Dictionary<string, AqiRunner> aqiRunner;    //运行者
         private IAqiSave aqiSaver;      //存储者
-        private AqiRunner aqiRunner;    //运行者
         private AqiNoter aqiNoter;      //记录者
         private AqiRetryer aqiRetryer;  //重试者
-        private List<Assembly> allDLLs;                 //所有程序集
-        private Dictionary<string, IAqiWeb> allAqiWebs; //所有数据源
-        private Dictionary<string, ISrcUrl> allSrcUrls; //所有数据接口
-        private Dictionary<string, AqiRunner> runnerlist;
 
         private ReaderWriterLockSlim thisLock;       //读写锁
 
@@ -85,11 +73,35 @@ namespace AQISet.Control
 
         #region 属性
 
-        public string Name
+        public static AqiPlugin Plugin
         {
             get
             {
-                return Tag;
+                return AqiPlugin.Instance;
+            }
+        }
+
+        public static AqiRemind Remind
+        {
+            get
+            {
+                return AqiRemind.Instance;
+            }
+        }
+
+        public static InstanceSettingHelper Setting
+        {
+            get
+            {
+                return InstanceSettingHelper.Instance;
+            }
+        }
+
+        public Dictionary<string, AqiRunner> AqiRun
+        {
+            get
+            {
+                return this.aqiRunner;
             }
         }
 
@@ -117,33 +129,6 @@ namespace AQISet.Control
             }
         }
 
-        public AqiRunner AqiRun
-        {
-            get
-            {
-                return aqiRunner;
-            }
-        }
-
-        public InstanceSettingHelper AqiSetting
-        {
-            get
-            {
-                return Setting;
-            }
-        }
-
-        /// <summary>
-        /// 设置
-        /// </summary>
-        public static InstanceSettingHelper Setting
-        {
-            get
-            {
-                return InstanceSettingHelper.Instance;
-            }
-        }
-
         /// <summary>
         /// 根据名称索引运行者
         /// </summary>
@@ -153,239 +138,52 @@ namespace AQISet.Control
         {
             get
             {
-                AqiRunner r = null;
-                thisLock.EnterReadLock();
+                AqiRunner runner = null;
+                this.thisLock.EnterReadLock();
+                string str = Setting["AqiRunner.RunMode"];
+                if (str == null)
                 {
-                    RunMode rm = (RunMode)Enum.Parse(typeof(RunMode), AqiManage.Setting["RunMode"]);
-                    switch (rm)
-                    {
-                        case RunMode.SELF:
-                            if (runnerlist.ContainsKey(name))
-                            {
-                                r = runnerlist[name];
-                            }
-                            break;
-                        case RunMode.JOINT:
-                        default:
-                            r = aqiRunner;
-                            break;
-                    }
+                    str = "JOINT";
                 }
-                thisLock.ExitReadLock();
-                return r;
+                switch (((AqiRunner.RunMode) Enum.Parse(typeof(AqiRunner.RunMode), str)))
+                {
+                    case AqiRunner.RunMode.SELF:
+                        if (this.aqiRunner.ContainsKey(name))
+                        {
+                            runner = this.aqiRunner[name];
+                        }
+                        break;
+
+                    default:
+                        runner = this.aqiRunner["default"];
+                        break;
+                }
+                this.thisLock.ExitReadLock();
+                return runner;
             }
         }
 
         #endregion
+
+        #region 构造/初始化
 
         public AqiManage()
         {
             thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
-            InitDll();
-
-            InitAqiWeb();
-            InitSrcUrl();
-
-            
-            
-
-            
-            initSaver();
-            //aqiSaver = new AqiFileSaver(this);
-            aqiNoter = new AqiNoter(this);
-
-            //目前默认为一个Retryer
-            aqiRetryer = new AqiRetryer(this);
-
-            initRunner();
-
-            //目前默认为一个Runner
-            //aqiRunner = new AqiRunner(this, allSrcUrls);
-            //aqiRunner.RunEvent += new AqiRunner.RunEventHandler(aqiRunner_RunEvent);
-        }
-
-        #region 基本控制
-
-        /// <summary>
-        /// 显示信息
-        /// </summary>
-        public void ShowInfo()
-        {
-
-        }
-
-        #endregion
-
-        #region 插件&扩展程序集
-
-        /// <summary>
-        /// 初始化DLL程序集
-        /// </summary>
-        private void InitDll()
-        {
-            allDLLs = new List<Assembly>();
-
-            //DLL路径
-            string ExePath = Assembly.GetExecutingAssembly().Location;
-            int p = ExePath.LastIndexOf('\\');
-            string DllPath = ExePath.Substring(0, p);
-            DirectoryInfo TheFolder = new DirectoryInfo(DllPath);
-            //遍历文件
-            foreach (FileInfo NextFile in TheFolder.GetFiles())
-            {
-                if (NextFile.Name.IndexOf("AQI") > 1)
-                {
-                    try
-                    {
-                        Assembly ass = Assembly.LoadFrom(NextFile.FullName);
-                        allDLLs.Add(ass);
-                        Console.WriteLine("加载程序集:" + ass.FullName);
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                }
-            }
+            this.init();
         }
 
         /// <summary>
-        /// 添加插件
+        /// 初始化
         /// </summary>
-        /// <param name="path">程序集路径</param>
-        public IAqiWeb LoadDll(string dllpath)
+        private void init()
         {
-            try
-            {
-                //1过滤DLL
-                IAqiWeb iaw = null;
-                Assembly ass = Assembly.LoadFrom(dllpath);
-                Type[] types = ass.GetTypes();
-                foreach (Type type in types)
-                {
-                    if (type.GetInterface("IAqiWeb") != null)
-                    {
-                        iaw = Activator.CreateInstance(type) as IAqiWeb;
-                    }
-                }
-
-                if(iaw == null)
-                {
-                    //无接口
-                    ThrowEvent(RunMessage.RunType.ERR, "程序集未实现IAqiWeb接口:" + ass.FullName);
-                    return null;
-                }
-
-                if (allDLLs.Exists(dll =>
-                {
-                    if (dll.FullName == ass.FullName)
-                    {
-                        return true; 
-                    }
-                    return false; 
-                }))
-                {
-                    //存在
-                    ThrowEvent(RunMessage.RunType.TIP, "程序集已经存在:" + ass.FullName);
-                    allDLLs.Remove(ass);
-                }
-                allDLLs.Add(ass);
-
-                //if (allAqiWebs.ContainsKey(iaw.TAG))
-                //{
-                //    //存在
-                //    ThrowEvent(RunMessage.RunType.TIP, "数据源已经存在:" + iaw.TAG);
-                //    allAqiWebs.Remove(iaw.TAG);
-                //}
-                //allAqiWebs.Add(iaw.TAG,iaw);
-
-                return iaw;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// 删除插件
-        ///     确保卸载之前已经从Runner移除
-        /// </summary>
-        /// <param name="name">IAW名称或程序集名称</param>
-        public void UnLoadDll(string name)
-        {
-            if (allAqiWebs.ContainsKey(name))
-            {
-                allDLLs.Remove(allAqiWebs[name].GetType().Assembly);
-                allAqiWebs.Remove(name);
-                ThrowEvent(RunMessage.RunType.ERR, "移除数据源插件成功:" + name);
-            }
-            else
-            {
-                ThrowEvent(RunMessage.RunType.ERR, "移除数据源插件失败:" + name);
-            }
-        }
-
-
-        #endregion
-
-        #region 接口控制
-
-        /// <summary>
-        /// 初始化IAqiWeb接口
-        /// </summary>
-        private void InitAqiWeb()
-        {
-            allAqiWebs = new Dictionary<string, IAqiWeb>();
-
-            foreach(Assembly ass in allDLLs)
-            {
-                Type[] types = ass.GetTypes();
-                foreach (Type type in types)
-                {
-                    if (type.GetInterface("IAqiWeb") != null)
-                    {
-                        IAqiWeb iaw = Activator.CreateInstance(type) as IAqiWeb;
-                        allAqiWebs.Add(iaw.TAG, iaw);
-                        Console.WriteLine("加载数据源:" + iaw.NAME);
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 初始化ISrcUrl接口
-        /// </summary>
-        private void InitSrcUrl()
-        {
-            allSrcUrls = new Dictionary<string, ISrcUrl>();
-
-            foreach (IAqiWeb iaw in allAqiWebs.Values)
-            {
-                Dictionary<string, ISrcUrl> temp = iaw.getAllSrcUrl();
-                allSrcUrls = allSrcUrls.Concat(temp).ToDictionary(x => x.Key, x => x.Value);
-                //TODO 对不同更新时间的数据接口加载到不同的集合里面
-                Console.WriteLine("整合数据源接口:" + iaw.NAME);
-            }
-        }
-
-        #endregion
-
-        #region 控制器
-
-        /// <summary>
-        /// 初始化存储者
-        /// </summary>
-        private void initSaver()
-        {
-            allAqiWebs = new Dictionary<string, IAqiWeb>();
-
-            //读取配置文件，使用不同Saver
-            string name = AqiManage.Setting["Saver"];
-            Type type = Type.GetType("AQISet.Saver." + name);
-            aqiSaver = Activator.CreateInstance(type,new object[]{ this }) as IAqiSave;
+            Remind.Log_Info(Plugin.GetInfo(), new string[] { Tag });
+            this.aqiNoter = new AqiNoter(this);
+            this.aqiRetryer = new AqiRetryer(this);
+            this.initSaver();
+            this.initRunner();
         }
 
         /// <summary>
@@ -393,25 +191,51 @@ namespace AQISet.Control
         /// </summary>
         private void initRunner()
         {
+            this.aqiRunner = new Dictionary<string, AqiRunner>();
+            AqiRunner runner = null;
             //读取配置文件，独立或合并
-            RunMode rm = (RunMode)Enum.Parse(typeof(RunMode), AqiManage.Setting["RunMode"]);
-            switch (rm)
+            switch (((AqiRunner.RunMode) Enum.Parse(typeof(AqiRunner.RunMode), Setting["AqiRunner.RunMode"])))
             {
-                case RunMode.SELF:
-                    runnerlist = new Dictionary<string, AqiRunner>();
-                    foreach(IAqiWeb iaw in allAqiWebs.Values)
+                case AqiRunner.RunMode.SELF:
+                {
+                    List<IAqiWeb> aqiWebList = AqiPlugin.Instance.GetAqiWebList(new string[0]);
+                    foreach (IAqiWeb web in aqiWebList)
                     {
-                        AqiRunner ar = new AqiRunner(this, iaw.getAllSrcUrl(), iaw.TAG + "_Runner");
-                        runnerlist.Add(ar.Name, ar);
+                        runner = new AqiRunner(this, web.getAllSrcUrl().Values.ToList(), web.TAG + "_Runner");
+                        runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
+                        this.aqiRunner.Add(runner.Name, runner);
+                        Remind.Log_Debug("初始化Runner:" + runner.Name, new string[] { Tag });
                     }
-                    break;
-                case RunMode.JOINT:
-                default:
-                    aqiRunner = new AqiRunner(this, allSrcUrls);
-                    aqiRunner.RunEvent += new AqiRunner.RunEventHandler(aqiRunner_RunEvent);
-                    break;
+                    return;
+                }
             }
+            runner = new AqiRunner(this, AqiPlugin.Instance.GetSrcUrlList());
+            runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
+            this.aqiRunner.Add("default", runner);
+            Remind.Log_Debug("初始化单一Runner:" + runner.Name, new string[] { Tag });
         }
+
+        /// <summary>
+        /// 初始化存储者
+        /// </summary>
+        private void initSaver()
+        {
+            Type type = Type.GetType("AQISet.Control.Saver." + Setting["Saver"]);
+            //读取配置文件，使用不同Saver
+            if (type == null)
+            {
+                this.aqiSaver = new AqiFileSaver(this);
+            }
+            else
+            {
+                this.aqiSaver = Activator.CreateInstance(type, new object[] { this }) as IAqiSave;
+            }
+            Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, new string[] { Tag });
+        }
+
+        #endregion
+
+        #region 基本控制
 
         /// <summary>
         /// 运行所有
@@ -419,16 +243,16 @@ namespace AQISet.Control
         /// <returns></returns>
         public bool RunAll()
         {
-            if (runnerlist ==null || runnerlist.Count <= 0)
-            { return false; }
-
-            ThrowEvent(RunMessage.RunType.TIP,"开始全部运行");
-
-            foreach (AqiRunner runner in runnerlist.Values)
+            if ((this.aqiRunner == null) || (this.aqiRunner.Count <= 0))
+            {
+                return false;
+            }
+            Remind.Log_Debug("开始运行全部Runner", new string[] { Tag });
+            foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.RunAll();
             }
-            
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部启用", new string[] { Tag });
             return true;
         }
 
@@ -438,14 +262,16 @@ namespace AQISet.Control
         /// <returns></returns>
         public bool EndAll()
         {
-            if (runnerlist == null || runnerlist.Count <= 0)
-            { return false; }
-
-            ThrowEvent(RunMessage.RunType.TIP, "结束全部运行");
-            foreach (AqiRunner runner in runnerlist.Values)
+            if ((this.aqiRunner == null) || (this.aqiRunner.Count <= 0))
+            {
+                return false;
+            }
+            Remind.Log_Debug("结束运行全部Runner", new string[] { Tag });
+            foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.EndAll();
             }
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部结束", new string[] { Tag });
             return true;
         }
 
@@ -456,27 +282,17 @@ namespace AQISet.Control
         /// <returns></returns>
         public bool Run(string name)
         {
-            if(String.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
             {
-                if(aqiRunner != null)
-                {
-                    ThrowEvent(RunMessage.RunType.TIP, "开始运行:" + aqiRunner.Name);
-                    aqiRunner.RunAll();
-                    return true;
-                }
+                name = "default";
             }
-            else
+            if (this.aqiRunner.ContainsKey(name))
             {
-                if (runnerlist.ContainsKey(name)) 
-                {
-                    ThrowEvent(RunMessage.RunType.TIP, "开始运行:" + name);
-                    runnerlist[name].RunAll();
-                    return true;
-                }
+                Remind.Log_Debug("开始运行Runner:" + name, new string[] { Tag });
+                this.aqiRunner[name].RunAll();
+                return true;
             }
-
-            //默认不存在
-            ThrowEvent(RunMessage.RunType.ERR, "不存在运行者:" + name);
+            Remind.Log_Error("不存在Runner:" + name, new string[] { Tag });
             return false;
         }
 
@@ -487,37 +303,85 @@ namespace AQISet.Control
         /// <returns></returns>
         public bool End(string name)
         {
-            if (String.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
             {
-                if (aqiRunner != null)
-                {
-                    ThrowEvent(RunMessage.RunType.TIP, "结束运行:" + aqiRunner.Name);
-                    aqiRunner.EndAll();
-                    return true;
-                }
+                name = "default";
             }
-            else
+            if (this.aqiRunner.ContainsKey(name))
             {
-                if (runnerlist.ContainsKey(name))
-                {
-                    ThrowEvent(RunMessage.RunType.TIP, "结束运行:" + name);
-                    runnerlist[name].EndAll();
-                    return true;
-                }
+                Remind.Log_Debug("结束运行Runner:" + name, new string[] { Tag });
+                this.aqiRunner[name].EndAll();
+                return true;
             }
-
-            //默认不存在
-            ThrowEvent(RunMessage.RunType.ERR, "不存在运行者:" + name);
+            Remind.Log_Error("不存在Runner:" + name, new string[] { Tag });
             return false;
         }
 
         #endregion
 
-        #region 事件
+        #region 事件接收
 
         private void aqiRunner_RunEvent(RunMessage m)
         {
-            TransferEvent(m);
+            this.TransferEvent(m);
+            Remind.Log_RunMessage(m);
+        }
+
+        #endregion
+
+        #region ISubObject接口
+
+        public object GetSubObject(string name)
+        {
+            Dictionary<string, object> first = new Dictionary<string, object>();
+            Dictionary<string, object> second = this.aqiRunner.ToDictionary<KeyValuePair<string, AqiRunner>, string, object>(old => old.Key, old => old.Value);
+            first = first.Concat<KeyValuePair<string, object>>(second).ToDictionary<KeyValuePair<string, object>, string, object>(x => x.Key, x => x.Value);
+            first.Add(this.aqiSaver.Name, this.aqiSaver);
+            first.Add(this.aqiNoter.Name, this.aqiNoter);
+            first.Add(this.aqiRetryer.Name, this.aqiRetryer);
+            if (first.ContainsKey(name))
+            {
+                return first[name];
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region IStatus接口
+
+        public string Name
+        {
+            get
+            {
+                return Tag;
+            }
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("AQI基本信息：");
+            builder.Append("\n\t");
+            builder.Append("运行者：" + this.aqiRunner.Count + "个");
+            foreach (AqiRunner runner in this.aqiRunner.Values)
+            {
+                builder.Append("\n\t\t");
+                builder.Append(runner.Name);
+            }
+            builder.Append("\n\t");
+            builder.Append("保存者：" + this.aqiSaver.Name);
+            builder.Append("\n\t");
+            builder.Append("重试者：" + this.aqiRetryer.Name);
+            builder.Append("\n\t");
+            builder.Append("记录者：" + this.aqiNoter.Name);
+            builder.Append("\n\t");
+            builder.Append("插件器：" + Plugin.GetType().Name);
+            builder.Append("\n\t");
+            builder.Append("提醒器：" + Remind.GetType().Name);
+            builder.Append("\n\t");
+            builder.Append("设置器：" + Setting.GetType().Name);
+            return builder.ToString();
         }
 
         #endregion

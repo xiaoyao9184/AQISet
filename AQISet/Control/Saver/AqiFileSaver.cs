@@ -16,17 +16,28 @@ namespace AQISet.Control.Saver
 
         #region 常量
 
+        private const string name = "AqiFileSaver";
         private const string st = "FS";
+        private const string defaultPath = @"C:\AQISet-Data\";
 
         #endregion
 
         #region 内部属性
 
         private string basePath;
-        
+        private bool saveEmpty;
+
         #endregion
 
         #region 属性
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
 
         public string SaverType
         {
@@ -40,21 +51,21 @@ namespace AQISet.Control.Saver
 
         public AqiFileSaver(AqiManage aqimanage)
         {
-            string path = aqimanage.AqiSetting["AqiFileSaver.Path"];
-
+            string path = AqiManage.Setting["AqiFileSaver.Path"];
+            this.saveEmpty = AqiManage.Setting.Get<bool>("AqiFileSaver.SaveEmptyData");
             if (!String.IsNullOrEmpty(path))
             {
                 basePath = path;
             }
             else
             {
-                basePath = "D:\\AQI\\";
+                basePath = defaultPath;
             }
 
             if(!Directory.Exists(basePath)) {
                 Directory.CreateDirectory(basePath); 
             }
-            Console.WriteLine("基本路径为：" + basePath);
+            AqiManage.Remind.Log_Info("基本路径为：" + this.basePath, new string[] { this.Name });
         }
 
         #region 内部方法
@@ -79,19 +90,35 @@ namespace AQISet.Control.Saver
 
         public bool Save(ISrcUrl isu, string grouptag, byte[] data)
         {
-            string fileName = fileName = getDate() + "_" + getTime() + "." + isu.IAW.DAT.ToString().ToLower();
-            string filePath = basePath + isu.IAW.TAG + "\\" + isu.TAG + "\\";
-            if (!String.IsNullOrEmpty(grouptag))
+            try
             {
-                filePath = filePath + grouptag + "\\";
+                string str;
+                if (data == null)
+                {
+                    data = new byte[0];
+                    if (!this.saveEmpty)
+                    {
+                        return false;
+                    }
+                }
+                str = str = this.getDate() + "_" + this.getTime() + "." + isu.IAW.DAT.ToString().ToLower();
+                string path = this.basePath + isu.IAW.TAG + @"\" + isu.TAG + @"\";
+                if (!string.IsNullOrEmpty(grouptag))
+                {
+                    path = path + grouptag + @"\";
+                }
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                AqiManage.Remind.Log_Debug("保存路径为" + path + str, new string[] { this.Name });
+                return FileReadSaveUtil.Save(data, path + str);
             }
-
-            if (!Directory.Exists(filePath))
+            catch (Exception exception)
             {
-                Directory.CreateDirectory(filePath);
+                AqiManage.Remind.Log_Error("保存失败", exception, new string[] { this.Name });
+                return false;
             }
-
-            return FileReadSaveUtil.Save(data, filePath + fileName);
         }
 
         #endregion

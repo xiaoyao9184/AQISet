@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQISet", "AQISet\AQISet.csproj", "{EEE59B65-A812-4D1B-8260-CB3C90997620}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQILibrary", "AQILibrary\AQILibrary.csproj", "{6CD4ACC4-A6C2-4EE5-9025-88FFEEF4065B}"

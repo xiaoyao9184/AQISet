@@ -7,14 +7,28 @@ using AQISet.Interface;
 using AQISet.Collection;
 using AQI;
 using AQISet.Control.Saver;
+using System.Threading;
+using System.Text;
 
 namespace AQISet.Control
 {
     /// <summary>
     /// 运行者
     /// </summary>
-    public class AqiRunner : IThrowMessage
+    public class AqiRunner : IThrowMessage, ISubObject, IStatus
     {
+
+        #region 枚举
+
+        /// <summary>
+        /// 运行方式
+        /// </summary>
+        public enum RunMode
+        {
+            NONE, SELF, JOINT
+        }
+
+        #endregion
 
         #region 事件
 
@@ -65,18 +79,6 @@ namespace AQISet.Control
         
         #endregion
 
-        #region 属性
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-        }
-
-        #endregion
-
         #region 构造
 
         /// <summary>
@@ -85,10 +87,10 @@ namespace AQISet.Control
         /// </summary>
         /// <param name="aqiManage"></param>
         /// <param name="srcUrls"></param>
-        public AqiRunner(AqiManage aqiManage, Dictionary<string, ISrcUrl> srcUrls)
+        public AqiRunner(AqiManage aqiManage, List<ISrcUrl> srcUrls)
         {
             name = "DefaultRunner";
-            sugtlist = SrcUrlGroupTimer.BuildList(srcUrls);
+            sugtlist = SrcUrlGroupTimer.BuildList(srcUrls, new Action<object, System.Timers.ElapsedEventArgs>(this.timer_RunEvent));
             ias = aqiManage.AqiSave;
             an = aqiManage.AqiNote;
             ar = aqiManage.AqiRetry;
@@ -101,10 +103,10 @@ namespace AQISet.Control
         /// <param name="aqiManage"></param>
         /// <param name="srcUrls"></param>
         /// <param name="strName">名称一般同 数据源TAG</param>
-        public AqiRunner(AqiManage aqiManage, Dictionary<string, ISrcUrl> srcUrls, string strName)
+        public AqiRunner(AqiManage aqiManage, List<ISrcUrl> srcUrls, string strName)
         {
             name = strName;
-            sugtlist = SrcUrlGroupTimer.BuildList(srcUrls);
+            sugtlist = SrcUrlGroupTimer.BuildList(srcUrls, new Action<object, ElapsedEventArgs>(this.timer_RunEvent));
             ias = aqiManage.AqiSave;
             an = aqiManage.AqiNote;
             ar = aqiManage.AqiRetry;
@@ -112,58 +114,70 @@ namespace AQISet.Control
 
         #endregion
 
-        #region 方法
-
         #region 基本控制
 
         /// <summary>
         /// 运行全部定时器
         /// </summary>
-        public void RunAll()
+        public bool RunAll()
         {
-            foreach(SrcUrlGroupTimer sug in sugtlist.Values)
+            if ((this.sugtlist == null) || (this.sugtlist.Count <= 0))
             {
-                sug.StartFirst(timerRun);
+                return false;
             }
-            ThrowEvent(RunMessage.RunType.TIP, sugtlist.Values.Count + "个数据源分组定时器，全部启用");
+            AqiManage.Remind.Log_Debug("开始运行全部Timer", new string[] { this.name });
+            foreach (SrcUrlGroupTimer timer in this.sugtlist.Values)
+            {
+                timer.Start();
+            }
+            AqiManage.Remind.Log_Info(this.sugtlist.Count + "个数据源分组定时器，全部启用", new string[] { this.name });
+            return true;
         }
 
         /// <summary>
         /// 结束全部定时器
         /// </summary>
-        public void EndAll()
+        public bool EndAll()
         {
-            foreach (SrcUrlGroupTimer sug in sugtlist.Values)
+            AqiManage.Remind.Log_Debug("开始结束全部Timer", new string[] { this.name });
+            foreach (SrcUrlGroupTimer timer in this.sugtlist.Values)
             {
-                sug.Enabled = false;
+                timer.Stop();
             }
-            ThrowEvent(RunMessage.RunType.TIP, sugtlist.Values.Count + "个数据源分组定时器，全部结束");
+            AqiManage.Remind.Log_Info(this.sugtlist.Count + "个数据源分组定时器，全部结束", new string[] { this.name });
+            return true;
         }
 
         /// <summary>
         /// 运行
         /// </summary>
         /// <param name="timername">定时器 名称</param>
-        public void Run(string timername)
+        public bool Run(string timername)
         {
-            if (sugtlist.ContainsKey(timername))
+            if (this.sugtlist.ContainsKey(timername))
             {
-                ThrowEvent(RunMessage.RunType.TIP, "开始运行定时器:" + timername);
-                sugtlist[timername].Start();
+                AqiManage.Remind.Log_Debug("开始运行分组定时器:" + timername, new string[] { this.name });
+                this.sugtlist[timername].Start();
+                return true;
             }
+            AqiManage.Remind.Log_Error("开始运行分组定时器:" + timername + "不存在!", new string[] { this.name });
+            return false;
         }
 
         /// <summary>
         /// 结束
         /// </summary>
         /// <param name="timername">定时器 名称</param>
-        public void End(string timername)
+        public bool End(string timername)
         {
-            if (sugtlist.ContainsKey(timername))
+            if (this.sugtlist.ContainsKey(timername))
             {
-                ThrowEvent(RunMessage.RunType.TIP, "结束运行定时器:" + timername);
-                sugtlist[timername].Stop();
+                AqiManage.Remind.Log_Debug("结束运行分组定时器:" + timername, new string[] { this.name });
+                this.sugtlist[timername].Stop();
+                return true;
             }
+            AqiManage.Remind.Log_Error("结束运行分组定时器:" + timername + "不存在!", new string[] { this.name });
+            return false;
         }
 
         #endregion
@@ -195,7 +209,8 @@ namespace AQISet.Control
             else
             {
                 sugtlist.Add(timer.Name, timer);
-                timer.StartFirst(timerRun);
+                timer.Elapsed += new ElapsedEventHandler(timer_RunEvent);
+                timer.Start();
             }
         }
 
@@ -238,28 +253,31 @@ namespace AQISet.Control
             }
         }
 
-
         #endregion
 
-        #region timer回调
+        #region 事件接收
 
         /// <summary>
         /// 运行处理
         /// </summary>
         /// <param name="source">定时器</param>
         /// <param name="e">定时器参数</param>
-        private void timerRun(object source, System.Timers.ElapsedEventArgs e)
+        private void timer_RunEvent(object source, System.Timers.ElapsedEventArgs e)
         {
-            SrcUrlGroupTimer sug = source as SrcUrlGroupTimer;
-            ThrowEvent(RunMessage.RunType.TIP, sug.Name + ":定时任务开始执行");
-
-            sug.Handle(this);
-            //foreach (ISrcUrl isu in sug.SrcUrl.Values)
-            //{
-            //    routeProcess(isu, sug);
-            //}
-
-            ThrowEvent(RunMessage.RunType.TIP, sug.Name + ":定时任务开始休眠");
+            SrcUrlGroupTimer timer = source as SrcUrlGroupTimer;
+            if (e != null)
+            {
+                Thread.CurrentThread.Name = timer.Name + "_Timer(Timer)";
+            }
+            AqiManage.Remind.Log_Debug("定时任务开始执行", new string[] { this.name, timer.Name });
+            if (timer.Handle(this))
+            {
+                AqiManage.Remind.Log_Debug("定时任务开始休眠", new string[] { this.name, timer.Name });
+            }
+            else
+            {
+                AqiManage.Remind.Log_Debug("定时器人为取消", new string[] { this.name, timer.Name });
+            }
         }
 
         #endregion
@@ -275,34 +293,32 @@ namespace AQISet.Control
         {
             if (isu.USEPARAM)
             {
-                IMakeParam ip = isu as IMakeParam;
-                List<AqiParam> paramList = ip.enumParams();
-
-                while (paramList == null || paramList.Count == 0)
+                List<AqiParam> list = (isu as IMakeParam).enumParams();
+                while ((list == null) || (list.Count == 0))
                 {
-                    bool bEvent = ThrowWaitEvent(isu.NAME + ":缺少参数，请输入以下参数", isu);
-                    if (bEvent)
+                    if (this.ThrowWaitEvent(isu.NAME + ":缺少参数，请输入以下参数", isu))
                     {
-                        //若接受事件
-                        //由用户生成参数
-                        //TEST等待用户输入参数
+                        AqiManage.Remind.Log_Debug("缺少参数，进入等待", new string[] { this.name, sug.Name, isu.NAME });
                         sug.Wait();
                     }
                     else
                     {
-                        //不接受事件则无法输入参数，忽略
-                        ThrowEvent(RunMessage.RunType.TIP, isu.NAME + ":缺少参数，而且无法获取忽略此数据接口");
+                        AqiManage.Remind.Log_Error("缺少参数，而且无法获取忽略此数据接口", new string[] { this.name, sug.Name, isu.NAME });
                         return;
                     }
                 }
-                foreach (AqiParam ap in paramList)
+                foreach (AqiParam param2 in list)
                 {
-                    getProcess(isu, ap);
+                    if (sug.IsCancellationRequested)
+                    {
+                        break;
+                    }
+                    this.getProcess(isu, param2, sug);
                 }
             }
             else
             {
-                getProcess(isu, null);
+                this.getProcess(isu, null, sug);
             }
         }
 
@@ -311,7 +327,8 @@ namespace AQISet.Control
         /// </summary>
         /// <param name="isu">数据接口</param>
         /// <param name="ap">参数，无null</param>
-        public void getProcess(ISrcUrl isu, AqiParam ap)
+        /// <param name="sug">定时器</param>
+        public void getProcess(ISrcUrl isu, AqiParam ap, SrcUrlGroupTimer sug)
         {
             byte[] data = null;
             try
@@ -325,14 +342,45 @@ namespace AQISet.Control
                     data = isu.getDate();
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                ThrowEvent(RunMessage.RunType.ERR, isu.NAME + ":数据获取失败，进入重试队列");
-                //入重试队列
-                ar.PutNew(isu, ap, ex);
+                AqiManage.Remind.Log_Error("数据获取失败，进入重试队列", new string[] { this.name, sug.Name, isu.NAME });
+                this.ar.PutNew(this.Name, isu, ap, exception);
                 return;
             }
-            saveProcess(isu, ap, data);
+            this.saveProcess(isu, ap, data);
+        }
+
+        /// <summary>
+        /// 重试处理
+        /// </summary>
+        /// <param name="arn">重试节点</param>
+        /// <returns></returns>
+        public bool retryProcess(RetryNode arn)
+        {
+            ISrcUrl sRCURL = arn.SRCURL;
+            AqiParam pARAM = arn.PARAM;
+            byte[] data = null;
+            try
+            {
+                if (pARAM != null)
+                {
+                    data = sRCURL.getDate(pARAM);
+                }
+                else
+                {
+                    data = sRCURL.getDate();
+                }
+            }
+            catch (Exception exception)
+            {
+                AqiManage.Remind.Log_Error("数据重试失败，再入重试队列", new string[] { this.name, arn.NAME, sRCURL.NAME });
+                this.ar.PutAgain(arn, exception);
+                return false;
+            }
+            this.saveProcess(sRCURL, pARAM, data);
+            arn.Reset();
+            return true;
         }
 
         /// <summary>
@@ -343,29 +391,73 @@ namespace AQISet.Control
         /// <param name="data">数据</param>
         public void saveProcess(ISrcUrl isu, AqiParam ap, byte[] data)
         {
-            //统计信息
-            NoteNode n = an.AddNew(isu, ap, data);
-            //保存
-            if(ap == null)
+            try
             {
-                n.Saved = ias.Save(isu, data);              
+                //统计信息
+                NoteNode node = this.an.AddNew(isu, ap, data);
+                //保存
+                if (ap == null)
+                {
+                    node.Saved = this.ias.Save(isu, data);
+                }
+                else
+                {
+                    node.Saved = this.ias.Save(isu, ap.Name, data);
+                }
+                if (node.Saved)
+                {
+                    AqiManage.Remind.Log_Info("数据保存成功", new string[] { this.name, isu.NAME });
+                }
+                else
+                {
+                    node.Data = data;
+                    AqiManage.Remind.Log_Error("数据保存失败", new string[] { this.name, isu.NAME });
+                }
             }
-            else
+            catch (Exception exception)
             {
-                n.Saved = ias.Save(isu, ap.Name, data);
-            }
-            
-            if (n.Saved)
-            {
-                ThrowEvent(RunMessage.RunType.OK, isu.IAW.NAME + ":" + isu.NAME + ":数据获取成功");
-            }
-            else
-            {
-                ThrowEvent(RunMessage.RunType.ERR, isu.NAME + ":数据获取失败");
+                AqiManage.Remind.Log_Error("数据保存失败", exception, new string[] { this.name, isu.NAME });
             }
         }
 
         #endregion
+
+        #region ISubObject接口
+
+        public object GetSubObject(string name)
+        {
+            if (this.sugtlist.ContainsKey(name))
+            {
+                return this.sugtlist[name];
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region IStatus接口
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("运行者信息：" + this.name);
+            builder.Append("\n\t");
+            builder.Append("分组定时器：" + this.sugtlist.Count + "个");
+            foreach (SrcUrlGroupTimer timer in this.sugtlist.Values)
+            {
+                builder.Append("\n\t\t");
+                builder.Append(timer.Name);
+            }
+            return builder.ToString();
+        }
 
         #endregion
 
