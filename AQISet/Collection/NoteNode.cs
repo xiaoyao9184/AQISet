@@ -13,8 +13,8 @@ namespace AQISet.Collection
 
         #region 字段
 
-        public readonly string Name;    //名称
-        public readonly int DateSize;   //数据大小
+        public readonly string name;    //名称
+        public readonly int dateSize;   //数据大小
 
         private byte[] data;
         private bool saved;
@@ -57,8 +57,8 @@ namespace AQISet.Collection
 
         public NoteNode(string name, int size)
         {
-            this.DateSize = size;
-            this.Name = name;
+            this.dateSize = size;
+            this.name = name;
         }
     
     }

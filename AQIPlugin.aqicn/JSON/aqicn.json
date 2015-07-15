@@ -1,0 +1,115 @@
+﻿{
+"MapStation" :{
+	"Enabled" : "true",
+	"Params" : [
+		{
+			"Enabled" : "true",
+			"Name" : "中国",
+			"Param" : {
+				"z" : "4",
+				"bounds" : "((11.23853930261432,%2051.56699531250001),%20(54.810691164507915,%20155.5416046875))",
+				"fst" : ""
+			},
+			"Refer" : ""
+		},
+		{
+			"Enabled" : "true",
+			"Name" : "美国",
+			"Param" : {
+				"z" : "4",
+				"bounds" : "((11.23853930261432,%2051.56699531250001),%20(54.810691164507915,%20155.5416046875))",
+				"fst" : ""
+			},
+			"Refer" : ""
+		},
+		{
+			"Enabled" : true,
+			"Name" : "美国",
+			"Param" : "111",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=2&jsoncallback=leafletmap.onMarkersLoaded&dyn&bounds=11.26461221250444,47.900390625,54.826007999094955,151.875"
+		}
+	],
+	"GetParams" : [
+		{
+			"Enabled" : false,
+			"Name" : "中国",
+			"Param" : "",
+			"Refer" : "http://static.aqicn.org/mapi/?z=4&jsoncallback=mapShowLevel2Makers&bounds=((11.23853930261432,%2051.56699531250001),%20(54.810691164507915,%20155.5416046875))&fst"
+		},
+		{
+			"Enabled" : false,
+			"Name" : "美国",
+			"Param" : "",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=2&jsoncallback=leafletmap.onMarkersLoaded&dyn&bounds=11.26461221250444,47.900390625,54.826007999094955,151.875"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "上海",
+			"Param" : "lurlv2&z=10&bounds=((31.028583660247094,%20121.23551390234377),%20(31.437223009251944,%20121.87821409765627))&fst&cityID=Shanghai",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=10&jsoncallback=mapShowLevel2Makers&bounds=((31.028583660247094,%20121.23551390234377),%20(31.437223009251944,%20121.87821409765627))&fst&cityID=Shanghai"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "北京",
+			"Param" : "lurlv2&z=9&bounds=((39.55500796030051,%20115.78079980468749),%20(40.288030182888036,%20117.06620019531249))&fst&cityID=Beijing",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=9&jsoncallback=mapShowLevel2Makers&bounds=((39.55500796030051,%20115.78079980468749),%20(40.288030182888036,%20117.06620019531249))&fst&cityID=Beijing"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "广州",
+			"Param" : "lurlv2&z=10&bounds=((22.830997133462414,%20112.94524990234368),%20(23.270743821798387,%20113.58795009765618))&fst&cityID=Guangzhou",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=10&jsoncallback=mapShowLevel2Makers&bounds=((22.830997133462414,%20112.94524990234368),%20(23.270743821798387,%20113.58795009765618))&fst&cityID=Guangzhou"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "成都",
+			"Param" : "lurlv2&z=11&bounds=((30.53895152051717,%20103.91332495117183),%20(30.74453923126007,%20104.23467504882808))&fst&cityID=Chengdu",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=11&jsoncallback=mapShowLevel2Makers&bounds=((30.53895152051717,%20103.91332495117183),%20(30.74453923126007,%20104.23467504882808))&fst&cityID=Chengdu"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "南京",
+			"Param" : "lurlv2&z=10&bounds=((31.853168305279063,%20118.4490745023437),%20(32.258207122824075,%20119.0917746976562))&fst&cityID=Nanjing",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=10&jsoncallback=mapShowLevel2Makers&bounds=((31.853168305279063,%20118.4490745023437),%20(32.258207122824075,%20119.0917746976562))&fst&cityID=Nanjing"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "苏州",
+			"Param" : "lurlv2&z=11&bounds=((31.206866883831967,%20120.44532495117187),%20(31.41102250375541,%20120.76667504882812))&fst&cityID=Suzhou",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=11&jsoncallback=mapShowLevel2Makers&bounds=((31.206866883831967,%20120.44532495117187),%20(31.41102250375541,%20120.76667504882812))&fst&cityID=Suzhou"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "石家庄",
+			"Param" : "lurlv2&z=10&bounds=((37.84415406843879,%20114.16864990234376),%20(38.22058078295266,%20114.81135009765626))&fst&cityID=Shijiazhuang",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=10&jsoncallback=mapShowLevel2Makers&bounds=((37.84415406843879,%20114.16864990234376),%20(38.22058078295266,%20114.81135009765626))&fst&cityID=Shijiazhuang"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "石家庄(大范围)",
+			"Param" : "lurlv2&z=10&bounds=((13.741633934679964,%2072.18027709960938),%20(59.79489049106491,%20154.44590209960938))&dyn&cityID=Shijiazhuang",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=3&jsoncallback=mapShowLevel2Makers&bounds=((13.741633934679964,%2072.18027709960938),%20(59.79489049106491,%20154.44590209960938))&dyn&cityID=Shijiazhuang"
+		},
+		{
+			"Enabled" : true,
+			"Name" : "石家庄(z7)",
+			"Param" : "lurlv2&z=10&bounds=((13.741633934679964,%2072.18027709960938),%20(59.79489049106491,%20154.44590209960938))&fst&cityID=Shijiazhuang",
+			"Refer" : "http://static.aqicn.org/mapi/?lurlv2&z=7&jsoncallback=mapShowLevel2Makers&bounds=((36.854005833687815,%20112.66489624023438),%20(39.851443966101186,%20117.80649780273438))&dyn&cityID=Shijiazhuang"
+		}
+	],
+	"boundsParams" : [
+		{ 
+			"Enabled" : true,
+			"Name" : "中华区域",
+			"lonStart" : 0,
+			"latStart" : 60,
+			"lonEnd" : 70,
+			"latEnd" : 140,
+            "increase": 2,
+            "lurlv2": "",
+            "z": "10",
+            "bounds": "-"
+		}
+	]
+}
+}

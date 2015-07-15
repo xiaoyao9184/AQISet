@@ -71,7 +71,12 @@ namespace AQISet.Control
         private void Push(string o)
         {
             if (m_iCurrentCount >= m_iMaxCount) //如果已经达到队列容量
+            {
+                //TODO
+                //会堵塞整个Timer线程
+                AqiManage.Remind.Log_Error("重试队列已满，无法添加重试节点，线程被堵塞");
                 m_eventWriteAsync.WaitOne(); //阻塞自己，等待别的线程唤醒
+            }
             lock (this)
             {
                 m_queue.Enqueue(o); //插入新元素
@@ -173,12 +178,12 @@ namespace AQISet.Control
             this.historyLock.EnterUpgradeableReadLock();
             try
             {
-                if (this.history.ContainsKey(arn.NAME))
+                if (this.history.ContainsKey(arn.Name))
                 {
-                    node = this.history[arn.NAME];
+                    node = this.history[arn.Name];
                     if (node.IsValid())
                     {
-                        AqiManage.Remind.Log_Debug("上次时区数据已经丢失,此时区又出现错误", new string[] { this.name, arn.RUNNERNAME });
+                        AqiManage.Remind.Log_Debug("上次时区数据已经丢失,此时区又出现错误", new string[] { this.name, arn.RunnerName });
                         node.Concat(arn);
                     }
                     else
@@ -186,7 +191,7 @@ namespace AQISet.Control
                         this.historyLock.EnterWriteLock();
                         try
                         {
-                            this.history[arn.NAME] = arn;
+                            this.history[arn.Name] = arn;
                         }
                         finally
                         {
@@ -199,14 +204,14 @@ namespace AQISet.Control
                     this.historyLock.EnterWriteLock();
                     try
                     {
-                        this.history.Add(arn.NAME, arn);
+                        this.history.Add(arn.Name, arn);
                     }
                     finally
                     {
                         this.historyLock.ExitWriteLock();
                     }
                 }
-                node = this.history[arn.NAME];
+                node = this.history[arn.Name];
             }
             finally
             {
@@ -237,8 +242,8 @@ namespace AQISet.Control
             //添加历史记录
             arn = this.AddHistory(arn);
             //入队列
-            this.Push(arn.NAME);
-            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RUNNERNAME, arn.NAME });
+            this.Push(arn.Name);
+            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RunnerName, arn.Name });
         }
 
         /// <summary>
@@ -258,18 +263,18 @@ namespace AQISet.Control
                 if (AqiManage.Setting.Get<bool>("AqiRetryer.AlwayRetry"))
                 {
                     //继续重试
-                    AqiManage.Remind.Log_Debug("重试已经无效，仍然尝试重试", new string[] { this.name, arn.RUNNERNAME });
+                    AqiManage.Remind.Log_Debug("重试已经无效，仍然尝试重试", new string[] { this.name, arn.RunnerName });
                 }
                 else
                 {
                     //停止重试
-                    AqiManage.Remind.Log_Error("重试已经无效，暂停", new string[] { this.name, arn.RUNNERNAME });
+                    AqiManage.Remind.Log_Error("重试已经无效，暂停", new string[] { this.name, arn.RunnerName });
                     return;
                 }
             }
             //入队列：继续重试
-            this.Push(arn.NAME);
-            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RUNNERNAME, arn.NAME });
+            this.Push(arn.Name);
+            AqiManage.Remind.Log_Info("已添加到重试队列", new string[] { this.name, arn.RunnerName, arn.Name });
         }
 
         #endregion
@@ -286,7 +291,7 @@ namespace AQISet.Control
                 //取队列（无数据会堵塞）
                 string name = Pop();
                 RetryNode arn = GetHistory(name);
-                this.am[arn.RUNNERNAME].retryProcess(arn);
+                this.am[arn.RunnerName].RetryProcess(arn);
                 Thread.Sleep(500);
             }
         }

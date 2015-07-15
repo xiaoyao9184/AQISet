@@ -47,53 +47,53 @@ namespace AQISet.Collection
 
         #region 属性
 
-        public string RUNNERNAME
+        public string RunnerName
         {
             get
             {
                 return this.runnerName;
             }
         }
-        public ISrcUrl SRCURL
+        public ISrcUrl SrcUrl
         {
             get
             {
                 return isu;
             }
         }
-        public AqiParam PARAM
+        public AqiParam Param
         {
             get
             {
                 return ap;
             }
         }
-        public int COUNT
+        public int Count
         {
             get
             {
                 return count;
             }
         }
-        public string NAME
+        public string Name
         {
             get
             {
                 if (ap==null)
                 {
-                    return isu.TAG;
+                    return isu.Tag;
                 }
-                return isu.TAG + ap.Name;
+                return isu.Tag + ap.Name;
             }
         }
 
         #endregion
 
-        public RetryNode(string arName, ISrcUrl isrcurl, AqiParam aqiparam)
+        public RetryNode(string arName, ISrcUrl iSrcUrl, AqiParam aqiParam)
         {
             this.runnerName = arName;
-            this.ap = aqiparam;
-            this.isu = isrcurl;
+            this.ap = aqiParam;
+            this.isu = iSrcUrl;
             this.starttime = DateTime.Now;
             this.endtime = DateTime.Now;
             this.count = 1;
@@ -270,18 +270,17 @@ namespace AQISet.Collection
             {
                 if (this.count >= AqiManage.Setting.Get<int>("AqiRetryer.RetryCount"))
                 {
-                    AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.NAME });
+                    AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.Name });
                     flag = true;
                 }
                 foreach (KeyValuePair<string, int> pair in this.counts)
                 {
                     if (pair.Value >= 10)
                     {
-                        AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.NAME });
+                        AqiManage.Remind.Log_Debug("重试次数太多，需要人工介入", new string[] { this.runnerName, this.isu.Name });
                         return true;
                     }
                 }
-                return flag;
             }
             finally
             {
@@ -313,7 +312,7 @@ namespace AQISet.Collection
             //TEST 1小时
             if (ts.TotalHours > 1)
             {
-                AqiManage.Remind.Log_Debug("历史记录超时", new string[] { this.runnerName, this.isu.NAME });
+                AqiManage.Remind.Log_Debug("历史记录超时", new string[] { this.runnerName, this.isu.Name });
                 return true;
             }
             return false;

@@ -54,7 +54,7 @@ namespace AQISet.Control
         private AqiRemind()
         {
             RollingFileAppender appender = new RollingFileAppender();
-            appender.File = this.GetLogFile();
+            appender.File = this.getLogFile();
             appender.AppendToFile = true;
             appender.RollingStyle = RollingFileAppender.RollingMode.Date;
             appender.StaticLogFileName = true;
@@ -72,7 +72,7 @@ namespace AQISet.Control
 
         #region 字段
 
-        private static string Tag = "AqiRemind";
+        private static string tag = "AqiRemind";
         private ILog log = null;
 
         #endregion
@@ -101,7 +101,7 @@ namespace AQISet.Control
 
         #region 日志
 
-        private string GetLogFile()
+        private string getLogFile()
         {
             string location = base.GetType().Assembly.Location;
             int length = location.LastIndexOf('\\');
@@ -173,7 +173,7 @@ namespace AQISet.Control
         {
             get
             {
-                return Tag;
+                return tag;
             }
         }
 

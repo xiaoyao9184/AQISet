@@ -1,15 +1,20 @@
-﻿using System;
-using AQI.Interface;
+﻿using AQI.Interface;
+using System;
 
 namespace AQISet.Interface
 {
     /// <summary>
-    /// 保存接口
+    /// 保存者 接口
     /// </summary>
     public interface IAqiSave
     {
+        /// <summary>
+        /// 名称
+        /// </summary>
         string Name { get; }
-
+        /// <summary>
+        /// 类型
+        /// </summary>
         string SaverType{ get; }
 
         /// <summary>

@@ -1,0 +1,79 @@
+﻿{
+    "TyphoonList_Manual": {
+        "Enabled": false,
+        "boundsParams": [
+            {
+                "Enabled": true,
+                "Name": "1945-2015年",
+                "yearStart": 1945,
+                "yearEnd": 2015
+            }
+        ]
+    },
+    "TyphoonList": {
+        "Enabled": true,
+        "ParamSetting": {
+            "ParamType": "JSON",
+            "ParamCycle": "OnceAgain"
+        },
+        "boundsParams": [
+            {
+                "Enabled": true,
+                "Name": "1945-2015年",
+                "Group": "ONCE",
+                "yearStart": 1945,
+                "yearEnd": 2015
+            },
+            {
+                "Enabled": true,
+                "Name": "今年",
+                "Group": "AGAIN"
+            }
+        ]
+    },
+    "TyphoonInfo_Manual": {
+        "Enabled": false,
+        "depthsParams": [
+            {
+                "Enabled": true,
+                "Name": "1945-2015年",
+                "yearidStart": 194501,
+                "yearidEnd": 201511,
+                "yearidDepth": 50
+            }
+        ]
+    },
+    "TyphoonInfo": {
+        "Enabled": true,
+        "ParamType": "IParseParam"
+    },
+    "LeastRain": {
+        "Enabled": "true",
+        "Params" : [
+		    {
+			    "Enabled" : "true",
+			    "Name" : "6小时",
+			    "Param" : "6",
+			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/6"
+		    },
+		    {
+			    "Enabled" : "true",
+			    "Name" : "12小时",
+			    "Param" : "12",
+			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/12"
+		    },
+		    {
+			    "Enabled" : true,
+			    "Name" : "24小时",
+			    "Param" : "24",
+			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/24"
+		    },
+		    {
+			    "Enabled" : true,
+			    "Name" : "48小时",
+			    "Param" : "48",
+			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/48"
+		    }
+	    ]
+    }
+}

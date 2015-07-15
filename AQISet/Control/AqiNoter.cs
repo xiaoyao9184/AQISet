@@ -54,18 +54,18 @@ namespace AQISet.Control
             string name = null;
             if (ap == null)
             {
-                name = isu.TAG;
+                name = isu.Tag;
             }
             else
             {
-                name = isu.TAG + ap.Name;
+                name = isu.Tag + ap.Name;
             }
             NoteNode item = new NoteNode(name, size);
             lock (this.history)
             {
                 this.history.Add(item);
                 this.endtime = DateTime.Now;
-                this.size += item.DateSize;
+                this.size += item.dateSize;
                 this.count += 1L;
             }
             return item;

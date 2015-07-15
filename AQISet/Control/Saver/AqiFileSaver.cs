@@ -16,9 +16,9 @@ namespace AQISet.Control.Saver
 
         #region 常量
 
-        private const string name = "AqiFileSaver";
-        private const string st = "FS";
-        private const string defaultPath = @"C:\AQISet-Data\";
+        private const string NAME = "AqiFileSaver";
+        private const string SAVER_TYPE = "FS";
+        private const string DEFAULT_PATH = @"C:\AQISet-Data\";
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace AQISet.Control.Saver
         {
             get
             {
-                return name;
+                return NAME;
             }
         }
 
@@ -43,13 +43,13 @@ namespace AQISet.Control.Saver
         {
             get
             {
-                return st;
+                return SAVER_TYPE;
             }
         }
 
         #endregion
 
-        public AqiFileSaver(AqiManage aqimanage)
+        public AqiFileSaver(AqiManage manage)
         {
             string path = AqiManage.Setting["AqiFileSaver.Path"];
             this.saveEmpty = AqiManage.Setting.Get<bool>("AqiFileSaver.SaveEmptyData");
@@ -59,7 +59,7 @@ namespace AQISet.Control.Saver
             }
             else
             {
-                basePath = defaultPath;
+                basePath = DEFAULT_PATH;
             }
 
             if(!Directory.Exists(basePath)) {
@@ -102,7 +102,7 @@ namespace AQISet.Control.Saver
                     }
                 }
                 str = str = this.getDate() + "_" + this.getTime() + "." + isu.IAW.DAT.ToString().ToLower();
-                string path = this.basePath + isu.IAW.TAG + @"\" + isu.TAG + @"\";
+                string path = this.basePath + isu.IAW.Tag + @"\" + isu.Tag + @"\";
                 if (!string.IsNullOrEmpty(grouptag))
                 {
                     path = path + grouptag + @"\";

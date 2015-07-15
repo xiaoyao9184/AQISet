@@ -2,11 +2,11 @@
 using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using AQI.Interface;
 using AQISet.Cfg;
 using AQISet.Control;
 using AQISet.Interface;
-using System.Text;
 
 namespace AQISet.Collection
 {
@@ -85,7 +85,7 @@ namespace AQISet.Collection
             this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
         public SrcUrlGroupTimer(string name, Action<object, System.Timers.ElapsedEventArgs> method)
-            : base(2147483647.0)
+            : base(Int32.MaxValue)
         {
             this.name = name;
             this.intervalseconds = -1.0;
@@ -209,13 +209,13 @@ namespace AQISet.Collection
             {
                 thisLock.EnterWriteLock();
                 {
-                    if (isulist.ContainsKey(isu.TAG))
+                    if (isulist.ContainsKey(isu.Tag))
                     {
-                        isulist[isu.TAG] = isu;
+                        isulist[isu.Tag] = isu;
                     }
                     else
                     {
-                        isulist.Add(isu.TAG, isu);
+                        isulist.Add(isu.Tag, isu);
                     } 
                 }
                 thisLock.ExitWriteLock();
@@ -226,14 +226,14 @@ namespace AQISet.Collection
         /// 删除ISU
         ///      Main控制线程调用
         /// </summary>
-        /// <param name="isuname"></param>
-        public void Dele(string isuname)
+        /// <param name="isuName"></param>
+        public void Dele(string isuName)
         {
             thisLock.EnterWriteLock();
             {
-                if (isulist.ContainsKey(isuname))
+                if (isulist.ContainsKey(isuName))
                 {
-                   isulist.Remove(isuname);
+                   isulist.Remove(isuName);
                 }
             }
             thisLock.ExitWriteLock();
@@ -243,21 +243,21 @@ namespace AQISet.Collection
         /// 删除
         ///      Main控制线程调用
         /// </summary>
-        /// <param name="awtagname">数据源 标识或名称</param>
-        public void DeleSrcUrl(string awtagname)
+        /// <param name="iawTag">数据源 标识或名称</param>
+        public void DeleSrcUrl(string iawTag)
         {
             thisLock.EnterUpgradeableReadLock();
             {
                 List<string> tlist = new List<string>();
                 foreach (ISrcUrl isu in isulist.Values)
                 {
-                    if (isu.IAW.TAG == awtagname)
+                    if (isu.IAW.Tag == iawTag)
                     {
-                        tlist.Add(isu.TAG);
+                        tlist.Add(isu.Tag);
                     }
-                    else if (isu.IAW.NAME == awtagname)
+                    else if (isu.IAW.Name == iawTag)
                     {
-                        tlist.Add(isu.TAG);
+                        tlist.Add(isu.Tag);
                     }
                 }
 
@@ -291,7 +291,7 @@ namespace AQISet.Collection
                 {
                     return false;
                 }
-                runner.routeProcess(url, this);
+                runner.RouteProcess(url, this);
             }
             this.thisLock.ExitReadLock();
             return true;
@@ -305,13 +305,13 @@ namespace AQISet.Collection
         /// 生成“数据源分组计时器”集合
         ///     根据“数据源”UDI分组
         /// </summary>
-        /// <param name="srcUrls"></param>
+        /// <param name="dictSrcUrl"></param>
         /// <returns></returns>
-        public static Dictionary<string, SrcUrlGroupTimer> BuildList(Dictionary<string, ISrcUrl> srcUrls)
+        public static Dictionary<string, SrcUrlGroupTimer> CreateList(Dictionary<string, ISrcUrl> dictSrcUrl)
         {
             List<SrcUrlGroupTimer> sugTimerList = new List<SrcUrlGroupTimer>();
 
-            foreach (ISrcUrl isu in srcUrls.Values)
+            foreach (ISrcUrl isu in dictSrcUrl.Values)
             {
                 SrcUrlGroupTimer sugTimer = sugTimerList.Find(
                     delegate(SrcUrlGroupTimer sugt)
@@ -322,7 +322,7 @@ namespace AQISet.Collection
 
                 if (sugTimer != null)
                 {
-                    sugTimer.isulist.Add(isu.TAG, isu);
+                    sugTimer.isulist.Add(isu.Tag, isu);
                 }
                 else
                 {
@@ -335,18 +335,18 @@ namespace AQISet.Collection
                     {
                         sugTimer = new SrcUrlGroupTimer(name, isu.UDI);
                     }
-                    sugTimer.isulist.Add(isu.TAG, isu);
+                    sugTimer.isulist.Add(isu.Tag, isu);
                     sugTimerList.Add(sugTimer);
                 }
             }
 
-            return sugTimerList.ToDictionary(sugt => sugt.Name, sugt => sugt);
+            return sugTimerList.ToDictionary(sugt => sugt.name, sugt => sugt);
         }
 
-        public static Dictionary<string, SrcUrlGroupTimer> BuildList(List<ISrcUrl> srcUrls, Action<object, System.Timers.ElapsedEventArgs> firstMethod)
+        public static Dictionary<string, SrcUrlGroupTimer> CreateList(List<ISrcUrl> listSrcUrl, Action<object, System.Timers.ElapsedEventArgs> firstMethod)
         {
             List<SrcUrlGroupTimer> source = new List<SrcUrlGroupTimer>();
-            using (List<ISrcUrl>.Enumerator enumerator = srcUrls.GetEnumerator())
+            using (List<ISrcUrl>.Enumerator enumerator = listSrcUrl.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -359,7 +359,7 @@ namespace AQISet.Collection
                     SrcUrlGroupTimer item = source.Find(match);
                     if (item != null)
                     {
-                        item.isulist.Add(isu.TAG, isu);
+                        item.isulist.Add(isu.Tag, isu);
                     }
                     else
                     {
@@ -372,12 +372,12 @@ namespace AQISet.Collection
                         {
                             item = new SrcUrlGroupTimer(someTime, isu.UDI, firstMethod);
                         }
-                        item.isulist.Add(isu.TAG, isu);
+                        item.isulist.Add(isu.Tag, isu);
                         source.Add(item);
                     }
                 }
             }
-            return source.ToDictionary<SrcUrlGroupTimer, string, SrcUrlGroupTimer>(sugt => sugt.Name, sugt => sugt);
+            return source.ToDictionary<SrcUrlGroupTimer, string, SrcUrlGroupTimer>(sugt => sugt.name, sugt => sugt);
         }
 
         #endregion
@@ -401,9 +401,9 @@ namespace AQISet.Collection
             foreach (ISrcUrl url in this.SrcUrl.Values)
             {
                 builder.Append("\n\t\t");
-                builder.Append(url.TAG);
+                builder.Append(url.Tag);
                 builder.Append("\t");
-                builder.Append(url.NAME);
+                builder.Append(url.Name);
             }
             return builder.ToString();
         }

@@ -61,7 +61,7 @@ namespace AQISet.Control
 
         #region 字段
 
-        private static string Tag = "AQIManage";
+        private static string tag = "AQIManage";
         private Dictionary<string, AqiRunner> aqiRunner;    //运行者
         private IAqiSave aqiSaver;      //存储者
         private AqiNoter aqiNoter;      //记录者
@@ -179,7 +179,7 @@ namespace AQISet.Control
         /// </summary>
         private void init()
         {
-            Remind.Log_Info(Plugin.GetInfo(), new string[] { Tag });
+            Remind.Log_Info(Plugin.GetInfo(), new string[] { tag });
             this.aqiNoter = new AqiNoter(this);
             this.aqiRetryer = new AqiRetryer(this);
             this.initSaver();
@@ -201,10 +201,10 @@ namespace AQISet.Control
                     List<IAqiWeb> aqiWebList = AqiPlugin.Instance.GetAqiWebList(new string[0]);
                     foreach (IAqiWeb web in aqiWebList)
                     {
-                        runner = new AqiRunner(this, web.getAllSrcUrl().Values.ToList(), web.TAG + "_Runner");
+                        runner = new AqiRunner(this, web.GetAllSrcUrl().Values.ToList(), web.Tag + "_Runner");
                         runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
                         this.aqiRunner.Add(runner.Name, runner);
-                        Remind.Log_Debug("初始化Runner:" + runner.Name, new string[] { Tag });
+                        Remind.Log_Debug("初始化Runner:" + runner.Name, new string[] { tag });
                     }
                     return;
                 }
@@ -212,7 +212,7 @@ namespace AQISet.Control
             runner = new AqiRunner(this, AqiPlugin.Instance.GetSrcUrlList());
             runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
             this.aqiRunner.Add("default", runner);
-            Remind.Log_Debug("初始化单一Runner:" + runner.Name, new string[] { Tag });
+            Remind.Log_Debug("初始化单一Runner:" + runner.Name, new string[] { tag });
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace AQISet.Control
             {
                 this.aqiSaver = Activator.CreateInstance(type, new object[] { this }) as IAqiSave;
             }
-            Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, new string[] { Tag });
+            Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, new string[] { tag });
         }
 
         #endregion
@@ -247,12 +247,12 @@ namespace AQISet.Control
             {
                 return false;
             }
-            Remind.Log_Debug("开始运行全部Runner", new string[] { Tag });
+            Remind.Log_Debug("开始运行全部Runner", new string[] { tag });
             foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.RunAll();
             }
-            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部启用", new string[] { Tag });
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部启用", new string[] { tag });
             return true;
         }
 
@@ -266,12 +266,12 @@ namespace AQISet.Control
             {
                 return false;
             }
-            Remind.Log_Debug("结束运行全部Runner", new string[] { Tag });
+            Remind.Log_Debug("结束运行全部Runner", new string[] { tag });
             foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.EndAll();
             }
-            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部结束", new string[] { Tag });
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部结束", new string[] { tag });
             return true;
         }
 
@@ -288,11 +288,11 @@ namespace AQISet.Control
             }
             if (this.aqiRunner.ContainsKey(name))
             {
-                Remind.Log_Debug("开始运行Runner:" + name, new string[] { Tag });
+                Remind.Log_Debug("开始运行Runner:" + name, new string[] { tag });
                 this.aqiRunner[name].RunAll();
                 return true;
             }
-            Remind.Log_Error("不存在Runner:" + name, new string[] { Tag });
+            Remind.Log_Error("不存在Runner:" + name, new string[] { tag });
             return false;
         }
 
@@ -309,11 +309,11 @@ namespace AQISet.Control
             }
             if (this.aqiRunner.ContainsKey(name))
             {
-                Remind.Log_Debug("结束运行Runner:" + name, new string[] { Tag });
+                Remind.Log_Debug("结束运行Runner:" + name, new string[] { tag });
                 this.aqiRunner[name].EndAll();
                 return true;
             }
-            Remind.Log_Error("不存在Runner:" + name, new string[] { Tag });
+            Remind.Log_Error("不存在Runner:" + name, new string[] { tag });
             return false;
         }
 
@@ -354,7 +354,7 @@ namespace AQISet.Control
         {
             get
             {
-                return Tag;
+                return tag;
             }
         }
 

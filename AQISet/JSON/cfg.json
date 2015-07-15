@@ -16,7 +16,7 @@
 	},
 	"AqiRetryer" : 
 	{
-		"MaxQueue" : 50,
+		"MaxQueue" : 500,
 		"RetryCount" : 10,
         "RetryTime" : 1,
 		"AlwayRetry" : false

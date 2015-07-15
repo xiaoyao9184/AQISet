@@ -84,12 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AQILibrary\AQILibrary.csproj">
-      <Project>{6CD4ACC4-A6C2-4EE5-9025-88FFEEF4065B}</Project>
-      <Name>AQILibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="AqiResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AqiResource.Designer.cs</LastGenOutput>
@@ -103,6 +97,36 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQIPlugin.aqicn\AQIPlugin.aqicn.csproj">
+      <Project>{e9b0a4f9-1098-4e4e-a8d0-04270ad13539}</Project>
+      <Name>AQIPlugin.aqicn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.BJ.bjmemc\AQIPlugin.BJ.bjmemc.csproj">
+      <Project>{3446990d-78b6-498d-ad4c-9afbe6a1ad1b}</Project>
+      <Name>AQIPlugin.BJ.bjmemc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.QH\AQIPlugin.QH.csproj">
+      <Project>{ba8238d9-4dd7-42ef-b8fe-991bbe1e59ea}</Project>
+      <Name>AQIPlugin.QH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.SX.sxAQIWeb\AQIPlugin.SX.sxAQIWeb.csproj">
+      <Project>{d9a7836a-bf4a-468a-b8bf-7cd3cbffd4c3}</Project>
+      <Name>AQIPlugin.SX.sxAQIWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.TJ.tjemc\AQIPlugin.TJ.tjemc.csproj">
+      <Project>{2dcf778b-9433-44ca-b880-a25cdb9c53bb}</Project>
+      <Name>AQIPlugin.TJ.tjemc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.ZJ.typhoon\AQIPlugin.ZJ.typhoon.csproj">
+      <Project>{defb9f28-a49b-4443-a145-60fcc539f274}</Project>
+      <Name>AQIPlugin.ZJ.typhoon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
+      <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>
+      <Name>AQISet.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

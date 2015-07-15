@@ -18,7 +18,7 @@ namespace Helper.Setting
     public sealed class InstanceSettingHelper
     {
 
-        private const string TAG = "InstanceSettingHelper";
+        private const string tag = "InstanceSettingHelper";
 
         #region 字段
 
@@ -266,7 +266,7 @@ namespace Helper.Setting
                 }
                 catch
                 {
-                    Console.WriteLine(TAG + ":cant change type,use type default value");
+                    Console.WriteLine(tag + ":cant change type,use type default value");
                 }
             }
             thisLock.ExitReadLock();
@@ -293,7 +293,7 @@ namespace Helper.Setting
                 }
                 catch
                 {
-                    Console.WriteLine(TAG + ":cant change type,use type default value");
+                    Console.WriteLine(tag + ":cant change type,use type default value");
                 }
             }
             thisLock.ExitReadLock();
@@ -337,7 +337,7 @@ namespace Helper.Setting
                 }
                 else
                 {
-                    Console.WriteLine(TAG + ":cant save setting,setting not exist,auto add setting");
+                    Console.WriteLine(tag + ":cant save setting,setting not exist,auto add setting");
                     setting.Add(fullname,value);
                 }
             }
@@ -358,7 +358,7 @@ namespace Helper.Setting
                 bool bResult = jh.SaveProperty(settingtag + "." + tag + "." + name, value);
                 if(!bResult)
                 {
-                    Console.WriteLine(TAG + ":cant save property,property not exist,auto add property");
+                    Console.WriteLine(tag + ":cant save property,property not exist,auto add property");
                     jh.AddProperty(settingtag + "." + tag + "." + name, value);
                 }
             }
@@ -378,7 +378,7 @@ namespace Helper.Setting
                 bool bResult = jh.DeleProperty(settingtag + "." + tag + "." + name);
                 if (!bResult)
                 {
-                    Console.WriteLine(TAG + ":cant dele property,property not exist");
+                    Console.WriteLine(tag + ":cant dele property,property not exist");
                 }
             }
             thisLock.ExitWriteLock();

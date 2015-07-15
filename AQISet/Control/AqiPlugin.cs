@@ -18,7 +18,7 @@ namespace AQISet.Control
 
         #region 字段
 
-        private static string Tag = "AQIPluin";
+        private static string tag = "AQIPlugin";
         private List<Assembly> allDLLs;
         private Dictionary<string, IAqiWeb> allAqiWebs;
         private Dictionary<string, ISrcUrl> allSrcUrls;
@@ -50,16 +50,16 @@ namespace AQISet.Control
 
         private AqiPlugin()
         {
-            this.InitDll();
-            this.InitAqiWeb();
-            this.InitSrcUrl();
+            this.initDll();
+            this.initAqiWeb();
+            this.initSrcUrl();
         }
 
         #endregion
 
         #region 初始化
 
-        private void InitDll()
+        private void initDll()
         {
             this.allDLLs = new List<Assembly>();
             string location = Assembly.GetExecutingAssembly().Location;
@@ -67,23 +67,23 @@ namespace AQISet.Control
             DirectoryInfo info = new DirectoryInfo(location.Substring(0, length));
             foreach (FileInfo info2 in info.GetFiles())
             {
-                if (info2.Name.IndexOf("AQI") > 1 && info2.Name.IndexOf(".dll") > 1)
+                if (info2.Name.IndexOf("AQIPlugin") != -1 && info2.Name.IndexOf(".dll") > 1)
                 {
                     try
                     {
                         Assembly item = Assembly.LoadFrom(info2.FullName);
                         this.allDLLs.Add(item);
-                        AqiManage.Remind.Log_Debug("加载程序集:" + item.FullName, new string[] { Tag });
+                        AqiManage.Remind.Log_Debug("加载程序集:" + item.FullName, new string[] { tag });
                     }
                     catch (Exception exception)
                     {
-                        AqiManage.Remind.Log_Error("初始化DLL错误", exception, new string[] { Tag });
+                        AqiManage.Remind.Log_Error("初始化DLL错误", exception, new string[] { tag });
                     }
                 }
             }
         }
 
-        private void InitAqiWeb()
+        private void initAqiWeb()
         {
             this.allAqiWebs = new Dictionary<string, IAqiWeb>();
             foreach (Assembly assembly in this.allDLLs)
@@ -94,21 +94,21 @@ namespace AQISet.Control
                     if (type.GetInterface("IAqiWeb") != null)
                     {
                         IAqiWeb web = Activator.CreateInstance(type) as IAqiWeb;
-                        this.allAqiWebs.Add(web.TAG, web);
-                        AqiManage.Remind.Log_Debug("加载数据源:" + web.NAME, new string[] { Tag });
+                        this.allAqiWebs.Add(web.Tag, web);
+                        AqiManage.Remind.Log_Debug("加载数据源:" + web.Name, new string[] { tag });
                     }
                 }
             }
         }
 
-        private void InitSrcUrl()
+        private void initSrcUrl()
         {
             this.allSrcUrls = new Dictionary<string, ISrcUrl>();
             foreach (IAqiWeb web in this.allAqiWebs.Values)
             {
-                Dictionary<string, ISrcUrl> second = web.getAllSrcUrl();
+                Dictionary<string, ISrcUrl> second = web.GetAllSrcUrl();
                 this.allSrcUrls = this.allSrcUrls.Concat<KeyValuePair<string, ISrcUrl>>(second).ToDictionary<KeyValuePair<string, ISrcUrl>, string, ISrcUrl>(x => x.Key, x => x.Value);
-                AqiManage.Remind.Log_Debug("整合数据源接口:" + web.NAME, new string[] { Tag });
+                AqiManage.Remind.Log_Debug("整合数据源接口:" + web.Name, new string[] { tag });
             }
         }
 
@@ -142,11 +142,11 @@ namespace AQISet.Control
             return this.allAqiWebs.Values.ToList<IAqiWeb>();
         }
 
-        public Dictionary<string, ISrcUrl> GetAqiWebSrcUrlList(string awName, params string[] suName)
+        public Dictionary<string, ISrcUrl> GetAqiWebSrcUrlList(string iawName, params string[] suName)
         {
-            if (this.allAqiWebs.ContainsKey(awName))
+            if (this.allAqiWebs.ContainsKey(iawName))
             {
-                Dictionary<string, ISrcUrl> dictionary = this.allAqiWebs[awName].getAllSrcUrl();
+                Dictionary<string, ISrcUrl> dictionary = this.allAqiWebs[iawName].GetAllSrcUrl();
                 if (suName.Length <= 0)
                 {
                     return dictionary;
@@ -156,7 +156,7 @@ namespace AQISet.Control
                 {
                     if (dictionary.ContainsKey(str))
                     {
-                        dictionary2.Add(dictionary[str].TAG, dictionary[str]);
+                        dictionary2.Add(dictionary[str].Tag, dictionary[str]);
                     }
                 }
                 return dictionary2;
@@ -210,12 +210,12 @@ namespace AQISet.Control
                 }
                 if (web == null)
                 {
-                    AqiManage.Remind.Log_Error("程序集未实现IAqiWeb接口:" + ass.FullName, new string[] { Tag });
+                    AqiManage.Remind.Log_Error("程序集未实现IAqiWeb接口:" + ass.FullName, new string[] { tag });
                     return null;
                 }
                 if (this.allDLLs.Exists(dll => dll.FullName == ass.FullName))
                 {
-                    AqiManage.Remind.Log_Debug("程序集已经存在:" + ass.FullName, new string[] { Tag });
+                    AqiManage.Remind.Log_Debug("程序集已经存在:" + ass.FullName, new string[] { tag });
                     this.allDLLs.Remove(ass);
                 }
                 this.allDLLs.Add(ass);
@@ -223,7 +223,7 @@ namespace AQISet.Control
             }
             catch (Exception exception)
             {
-                AqiManage.Remind.Log_Error("加载DLL错误", exception, new string[] { Tag });
+                AqiManage.Remind.Log_Error("加载DLL错误", exception, new string[] { tag });
                 return null;
             }
         }
@@ -234,10 +234,10 @@ namespace AQISet.Control
             {
                 this.allDLLs.Remove(this.allAqiWebs[name].GetType().Assembly);
                 this.allAqiWebs.Remove(name);
-                AqiManage.Remind.Log_Debug("移除数据源插件成功:" + name, new string[] { Tag });
+                AqiManage.Remind.Log_Debug("移除数据源插件成功:" + name, new string[] { tag });
                 return true;
             }
-            AqiManage.Remind.Log_Error("移除数据源插件失败:" + name, new string[] { Tag });
+            AqiManage.Remind.Log_Error("移除数据源插件失败:" + name, new string[] { tag });
             return false;
         }
 
@@ -249,7 +249,7 @@ namespace AQISet.Control
         {
             get
             {
-                return Tag;
+                return tag;
             }
         }
 
