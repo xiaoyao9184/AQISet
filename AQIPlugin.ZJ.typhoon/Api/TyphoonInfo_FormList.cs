@@ -10,12 +10,12 @@ using AQI.Exception;
 
 namespace typhoon.Api
 {
-    public class TyphoonInfo : AParamSrcUrl, IParseSrcUrlParam
+    public class TyphoonInfo_FormList : AParamSrcUrl, IParseSrcUrlParam
     {
 
         #region 静态变量
 
-        private static string tag = "TyphoonInfo";
+        private static string tag = "TyphoonInfo_FormList";
         private static string name = "浙江台风详情";
         private static string url = "http://typhoon.zjwater.gov.cn/Api/TyphoonInfo";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
@@ -31,7 +31,7 @@ namespace typhoon.Api
 
         #region 变量
 
-        private ISrcUrl ParamISU = new TyhoonActivity();
+        private ISrcUrl ParamISU = new TyphoonList();
 
         #endregion
 

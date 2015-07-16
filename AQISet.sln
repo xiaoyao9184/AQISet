@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.BJ.bjmemc", "AQIP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.SX.sxAQIWeb", "AQIPlugin.SX.sxAQIWeb\AQIPlugin.SX.sxAQIWeb.csproj", "{D9A7836A-BF4A-468A-B8BF-7CD3CBFFD4C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70BAA3B4-036D-45DE-8038-31CABA4AFEB7}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

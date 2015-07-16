@@ -39,10 +39,5 @@ namespace AQI.Interface
         /// </summary>
         /// <returns></returns>
         Dictionary<string, ISrcUrl> GetAllSrcUrl();
-        /// <summary>
-        /// JSON配置文件路径
-        /// </summary>
-        /// <returns></returns>
-        string GetJsonFile();
     }
 }

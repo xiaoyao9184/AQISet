@@ -87,7 +87,7 @@ namespace typhoon.Api
         {
             List<AqiParam> apList = new List<AqiParam>();
             //扩展参数
-            List<AqiParam> apListTemp = AqiParam.CreateListFormJson(this, "depthsParams");
+            List<AqiParam> apListTemp = AqiParam.CreateListFormJson(this, this.Tag, "depthsParams");
             //根据 扩展参数 生成最终参数
             foreach (AqiParam apTemp in apListTemp)
             {

@@ -76,22 +76,57 @@ namespace AQI
 
         #endregion
 
-        #region 
+        #region Factory
 
-        public static AqiConfig Create(ISrcUrl configSrcUrl)
+        /// <summary>
+        /// 读取更新时间
+        ///     从 JSON 文件 
+        /// </summary>
+        /// <param name="icc">ICacheConfig</param>
+        /// <returns></returns>
+        public static DateTime ReadWriteTimeFormJson(ICacheConfig icc)
         {
-            AqiConfig ac = null;
             try
-            { 
+            {
                 //JSON路径
-                string jsonPath = configSrcUrl.IAW.GetJsonFile();
+                string jsonPath = icc.GetJsonFile();
+                FileInfo fi = new FileInfo(jsonPath);
+                return fi.LastWriteTime;
+            }
+            catch (System.Exception ex)
+            {
+                throw new ConfigException("读取配置文件错误", ex);
+            }
+        }
+
+        /// <summary>
+        /// 读取配置列表
+        ///     从 JSON 文件
+        /// </summary>
+        /// <param name="icc">ICacheConfig</param>
+        /// <param name="listProperty">(可选)属性列表</param>
+        /// <returns></returns>
+        public static List<AqiConfig> CreateListFormJson(ICacheConfig icc, params string[] listProperty)
+        {
+            List<AqiConfig> listConfig = new List<AqiConfig>();
+            string propertyPath = String.Join(".", listProperty);
+
+            try
+            {
+                //JSON路径
+                string jsonPath = icc.GetJsonFile();
+
+                if(!File.Exists(jsonPath))
+                {
+                    return listConfig;
+                }
 
                 //读取JSON
                 StreamReader sr = new StreamReader(jsonPath);
                 string jsonText = sr.ReadToEnd();
                 //转JSON Object
                 JObject jo = JObject.Parse(jsonText);
-                JToken jt = jo.SelectToken(configSrcUrl.Tag);
+                JToken jt = jo.SelectToken(propertyPath);
 
                 if (jt == null || !jt.HasValues)
                 {
@@ -99,19 +134,37 @@ namespace AQI
                 }
                 else if (jt is JObject)
                 {
-                    //读取对象(仅一个参数)
-                    ac = createConfigFormJsonObject(jt as JObject);
-                    ac.cName = configSrcUrl.Name;
+                    //读取集合(任意个参数)
+                    JEnumerable<JToken> je = jt.Children();
+                    foreach (JToken j in je)
+                    {
+                        if(j is JProperty)
+                        {
+                            JProperty jp = j as JProperty;
+
+                            //读取对象(仅一个配置)
+                            AqiConfig ac = createConfigFormJsonObject(jp.Value as JObject);
+                            ac.cName = jp.Name;
+                            if (ac != null)
+                                listConfig.Add(ac);
+                        }
+                    }
                 }
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 throw new ConfigException("配置创建错误", ex);
             }
 
-            return ac;
+            return listConfig;
         }
 
+        /// <summary>
+        /// 读取配置
+        ///     自动识别Enabled、Custom
+        /// </summary>
+        /// <param name="jObject">JSONObject对象</param>
+        /// <returns></returns>
         private static AqiConfig createConfigFormJsonObject(JObject jObject)
         {
             AqiConfig ac = new AqiConfig();

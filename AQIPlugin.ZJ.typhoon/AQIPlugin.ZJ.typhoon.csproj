@@ -47,6 +47,7 @@
     <Compile Include="Api\LeastRain.cs" />
     <Compile Include="Api\LeastCloud.cs" />
     <Compile Include="Api\TyhoonActivity.cs" />
+    <Compile Include="Api\TyphoonInfo_FormList.cs" />
     <Compile Include="Api\TyphoonInfo.cs" />
     <Compile Include="Api\TyphoonInfo_Manual.cs" />
     <Compile Include="Api\TyphoonList.cs" />

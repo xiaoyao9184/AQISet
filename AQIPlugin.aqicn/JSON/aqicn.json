@@ -1,9 +1,9 @@
 ﻿{
 "MapStation" :{
-	"Enabled" : "true",
+	"Enabled" : true,
 	"Params" : [
 		{
-			"Enabled" : "true",
+			"Enabled" : true,
 			"Name" : "中国",
 			"Param" : {
 				"z" : "4",
@@ -13,7 +13,7 @@
 			"Refer" : ""
 		},
 		{
-			"Enabled" : "true",
+			"Enabled" : true,
 			"Name" : "美国",
 			"Param" : {
 				"z" : "4",

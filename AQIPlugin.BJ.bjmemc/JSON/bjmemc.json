@@ -2,7 +2,7 @@
 "GetWebPredict" :{
 	"Enabled" : true,
 	"Params" : [{
-			"Enabled" : "true",
+			"Enabled" : true,
 			"Name" : "",
 			"Param" : "GetWebPredict",
 			"Refer" : ""
@@ -12,7 +12,7 @@
 "GetWebData" :{
 	"Enabled" : true,
 	"Params" : [{
-			"Enabled" : "true",
+			"Enabled" : true,
 			"Name" : "",
 			"Param" : "GetWebData",
 			"Refer" : ""
@@ -22,7 +22,7 @@
 "GetWebAlert" :{
 	"Enabled" : true,
 	"Params" : [{
-			"Enabled" : "true",
+			"Enabled" : true,
 			"Name" : "",
 			"Param" : "GetWebAlert",
 			"Refer" : ""

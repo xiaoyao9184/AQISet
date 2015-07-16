@@ -15,6 +15,10 @@ namespace AQI.Abstract
 
         #region 字段
 
+        /// <summary>
+        /// IAqiWeb接口
+        ///     ISrcUrl
+        /// </summary>
         protected IAqiWeb iaw;
 
         #endregion
@@ -24,7 +28,10 @@ namespace AQI.Abstract
         public abstract string Tag { get; }
         public abstract string Name { get; }
         public abstract string Url { get; }
-
+        /// <summary>
+        /// 是否使用参数
+        ///     实现ISrcUrl
+        /// </summary>
         public virtual bool UseParam
         {
             get
@@ -32,6 +39,10 @@ namespace AQI.Abstract
                 return false;
             }
         }
+        /// <summary>
+        /// IAqiWeb接口
+        ///     实现ISrcUrl
+        /// </summary>
         public virtual IAqiWeb IAW
         {
             get
@@ -43,6 +54,10 @@ namespace AQI.Abstract
                 iaw = value;
             }
         }
+        /// <summary>
+        /// 更新间隔
+        ///     实现ISrcUrl
+        /// </summary>
         public virtual double UDI
         {
             get

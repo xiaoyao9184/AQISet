@@ -1,11 +1,11 @@
 ﻿{
 "siteInformation" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "systemSetting" :{
-	"Enabled" : "false"
+	"Enabled" : true
 },
 "Warning" :{
-	"Enabled" : "true"
+	"Enabled" : true
 }
 }

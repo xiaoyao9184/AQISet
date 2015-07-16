@@ -23,6 +23,7 @@ namespace AQI.Abstract
 
         /// <summary>
         /// IAqiWeb接口
+        ///     ISrcUrl
         /// </summary>
         protected IAqiWeb iaw;
 
@@ -50,11 +51,12 @@ namespace AQI.Abstract
                 iaw = value;
             }
         }
+
         /// <summary>
         /// HTTP获取方式
-        ///     AAdvSrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.HttpType HttpType { get; }
+
         /// <summary>
         /// 参数名列表
         ///     IMakeParam
@@ -65,6 +67,7 @@ namespace AQI.Abstract
         ///     IMakeParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamSendType ParamSendType { get; }
+
         /// <summary>
         /// 参数缓存列表
         ///     ICacheParam
@@ -80,6 +83,7 @@ namespace AQI.Abstract
         ///     ICacheParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
+
         /// <summary>
         /// Url参数形式
         /// </summary>
@@ -263,6 +267,21 @@ namespace AQI.Abstract
         #endregion
 
         #region ICacheParam接口
+
+        /// <summary>
+        /// 读取 JSON配置文件 路径
+        /// </summary>
+        /// <returns></returns>
+        public virtual string GetJsonFile()
+        {
+            //JSON文件
+            string exeFile = this.GetType().Assembly.Location;
+            int p = exeFile.LastIndexOf('\\');
+            string dllPath = exeFile.Substring(0, p);
+            string jsonFile = dllPath + "\\JSON\\" + this.iaw.Tag + ".json";
+
+            return jsonFile;
+        }
 
         /// <summary>
         /// 过期检查

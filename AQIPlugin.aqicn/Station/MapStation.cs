@@ -71,8 +71,6 @@ namespace aqicn.Station
         
         #endregion
 
-        #region 方法
-
         #region 内部方法
 
         /// <summary>
@@ -83,7 +81,7 @@ namespace aqicn.Station
         {
             List<AqiParam> apList = new List<AqiParam>();
             //扩展参数
-            List<AqiParam> apListTemp = AqiParam.CreateListFormJson(this, "boundsParams");
+            List<AqiParam> apListTemp = AqiParam.CreateListFormJson(this, this.Tag, "boundsParams");
 
             //根据 扩展参数 生成最终参数
             foreach (AqiParam apTemp in apListTemp)
@@ -103,7 +101,7 @@ namespace aqicn.Station
 
                         ap.Add("lurlv2", apTemp["lurlv2"]);
                         ap.Add("z", apTemp["z"]);
-                        ap.Add("bounds", createurlByLonLat2(lon, lat, increase));
+                        ap.Add("bounds", createUrlByLonLat(lon, lat, increase));
 
                         apList.Add(ap);
                     }
@@ -120,32 +118,7 @@ namespace aqicn.Station
         /// <param name="lat"></param>
         /// <param name="increase">间距</param>
         /// <returns></returns>
-        private string createurlByLonLat(double lon, double lat, double increase)
-        {
-            double lonEnd = lon + increase;
-            double latEnd = lat + increase;
-            StringBuilder sb = new StringBuilder();
-            sb.Append("lurlv2&z=10&bounds=");
-            
-            sb.Append("(");
-                sb.Append("(");
-                sb.Append(lon.ToString());
-                sb.Append(", ");
-                sb.Append(lat.ToString());
-                sb.Append(")");
-            sb.Append(", ");
-                sb.Append("(");
-                sb.Append(lonEnd.ToString());
-                sb.Append(", ");
-                sb.Append(latEnd.ToString());
-                sb.Append(")");
-            sb.Append(")");
-            sb.Append("&fst");
-
-            return sb.ToString();
-        }
-
-        private string createurlByLonLat2(double lon, double lat, double increase)
+        private string createUrlByLonLat(double lon, double lat, double increase)
         {
             double lonEnd = lon + increase;
             double latEnd = lat + increase;
@@ -154,13 +127,13 @@ namespace aqicn.Station
             sb.Append("(");
             sb.Append("(");
             sb.Append(lon.ToString());
-            sb.Append(", ");
+            sb.Append(",");
             sb.Append(lat.ToString());
             sb.Append(")");
-            sb.Append(", ");
+            sb.Append(",");
             sb.Append("(");
             sb.Append(lonEnd.ToString());
-            sb.Append(", ");
+            sb.Append(",");
             sb.Append(latEnd.ToString());
             sb.Append(")");
             sb.Append(")");
@@ -172,7 +145,7 @@ namespace aqicn.Station
 
         #endregion
 
-        #region 重写
+        #region 重写方法
 
         /// <summary>
         /// 加载参数
@@ -192,8 +165,6 @@ namespace aqicn.Station
 
             return base.FilterParams();
         }
-
-        #endregion
 
         #endregion
 

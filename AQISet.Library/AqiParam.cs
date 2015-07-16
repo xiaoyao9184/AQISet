@@ -92,16 +92,17 @@ namespace AQI
         #region Factory
 
         /// <summary>
-        /// 读取 JSON配置文件 更新时间
+        /// 读取更新时间
+        ///     从 JSON 文件
         /// </summary>
-        /// <param name="paramSrcUrl"></param>
+        /// <param name="icp">ICacheParam</param>
         /// <returns></returns>
-        public static DateTime ReadWriteTimeFormJson(ISrcUrl paramSrcUrl)
+        public static DateTime ReadWriteTimeFormJson(ICacheParam icp)
         {
             try
             {
                 //JSON路径
-                string jsonPath = paramSrcUrl.IAW.GetJsonFile();
+                string jsonPath = icp.GetJsonFile();
                 FileInfo fi = new FileInfo(jsonPath);
                 return fi.LastWriteTime;
             }
@@ -112,26 +113,28 @@ namespace AQI
         }
 
         /// <summary>
-        /// 从 JSON配置文件 读取参数列表
-        ///     自动识别Enabled、name、Param、Refer、各种小写
+        /// 读取参数列表
+        ///     从 JSON 文件
         /// </summary>
-        /// <param name="paramSrcUrl">当前SrcUrl</param>
-        /// <param name="propertyName">配置文件属性名称（paramSrcUrl.Tag + "." + propertyname）</param>
+        /// <param name="icp">ICacheParam</param>
+        /// <param name="listProperty">(可选)属性列表</param>
         /// <returns></returns>
-        public static List<AqiParam> CreateListFormJson(ISrcUrl paramSrcUrl, string propertyName)
+        public static List<AqiParam> CreateListFormJson(ICacheParam icp, params string[] listProperty)
         {
             List<AqiParam> listParam = new List<AqiParam>();
+            string propertyPath = String.Join(".", listProperty);
+
             try 
             { 
                 //JSON路径
-                string jsonPath = paramSrcUrl.IAW.GetJsonFile();
+                string jsonPath = icp.GetJsonFile();
 
                 //读取JSON
                 StreamReader sr = new StreamReader(jsonPath);
                 string jsonText = sr.ReadToEnd();
                 //转JSON Object
                 JObject jo = JObject.Parse(jsonText);
-                JToken jt = jo.SelectToken(paramSrcUrl.Tag + "." + propertyName);
+                JToken jt = jo.SelectToken(propertyPath);
             
                 if (jt == null || !jt.HasValues)
                 {
@@ -165,9 +168,10 @@ namespace AQI
         }
 
         /// <summary>
-        /// 从 JSONObject对象 读取参数
+        /// 读取参数
+        ///     自动识别Enabled、Name、Param、Refer、Group、各种小写
         /// </summary>
-        /// <param name="jObject"></param>
+        /// <param name="jObject">JSONObject对象</param>
         /// <returns></returns>
         private static AqiParam createParamFormJsonObject(JObject jObject)
         {
@@ -246,12 +250,13 @@ namespace AQI
         }
 
         /// <summary>
-        /// 从 SrcUrl 读取参数列表
+        /// 读取参数列表
+        ///     从 SrcUrl 接口
         /// </summary>
-        /// <param name="parseParamSrcUrl">实现IParseParam的SrcUrl</param>
+        /// <param name="iParseSrcUrlParam">实现IParseSrcUrlParam的SrcUrl</param>
         /// <param name="relySrcUrl">参数来源SrcUrl</param>
         /// <returns></returns>
-        public static List<AqiParam> CreateListFormSrcUrl(IParseSrcUrlParam parseParamSrcUrl, ISrcUrl relySrcUrl)
+        public static List<AqiParam> CreateListFormSrcUrl(IParseSrcUrlParam iParseSrcUrlParam, ISrcUrl relySrcUrl)
         {
             List<AqiParam> listParam = new List<AqiParam>();
 
@@ -276,14 +281,14 @@ namespace AQI
                             data = relySrcUrl.GetDate();
                         }
 
-                        List<AqiParam> aps = parseParamSrcUrl.ParseParam(data);
+                        List<AqiParam> aps = iParseSrcUrlParam.ParseParam(data);
                         listParam.AddRange(aps);
                     }
                 }
                 else
                 {
                     byte[] data = relySrcUrl.GetDate();
-                    List<AqiParam> aps = parseParamSrcUrl.ParseParam(data);
+                    List<AqiParam> aps = iParseSrcUrlParam.ParseParam(data);
                     listParam.AddRange(aps);
                 }
             }

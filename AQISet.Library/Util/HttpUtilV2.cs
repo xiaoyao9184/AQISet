@@ -9,6 +9,7 @@ namespace Helper.Util.HTTP
     /// <summary>
     /// HTTP工具
     /// xiaoyao9184
+    /// 1.3 2015-07-16 fix stream cant write
     /// 1.2 2015-07-11 fix thread bug
     /// 1.1 2015-07-07 Fix createGetRequest lost set Method to GET
     /// 1.0 2015-01-27
@@ -179,7 +180,7 @@ namespace Helper.Util.HTTP
             {
                 int bufferLength = 1024;
                 byte[] buffer = new byte[bufferLength];
-                BufferedStream bufferStream = new BufferedStream(responseStream);
+                BufferedStream bufferStream = new BufferedStream(new MemoryStream());
 
                 int len = responseStream.Read(buffer, 0, bufferLength);
                 while (len > 0)

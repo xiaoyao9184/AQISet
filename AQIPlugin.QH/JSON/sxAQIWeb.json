@@ -1,26 +1,26 @@
 ﻿{
 "GetAQICityStations" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetAQIDataPublishLives" :{
-	"Enabled" : "false"
+	"Enabled" : true
 },
 "GetAQIDays" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetAQITips" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetCityAqiPublish" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetCityDayAqiPublish" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetIAQIDataPublishLives" :{
-	"Enabled" : "true"
+	"Enabled" : true
 },
 "GetSystemConfigs" :{
-	"Enabled" : "true"
+	"Enabled" : true
 }
 }

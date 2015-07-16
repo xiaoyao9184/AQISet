@@ -121,9 +121,9 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 常用更新间隔
-        ///     AParamSrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
+
         /// <summary>
         /// 参数名列表
         ///     IMakeParam
@@ -167,6 +167,7 @@ namespace AQI.Abstract
                 return pft;
             }
         }
+
         /// <summary>
         /// Url参数形式
         /// </summary>
@@ -348,6 +349,21 @@ namespace AQI.Abstract
         #region ICacheParam接口
 
         /// <summary>
+        /// 读取 JSON配置文件 路径
+        /// </summary>
+        /// <returns></returns>
+        public virtual string GetJsonFile()
+        {
+            //JSON文件
+            string exeFile = this.GetType().Assembly.Location;
+            int p = exeFile.LastIndexOf('\\');
+            string dllPath = exeFile.Substring(0, p);
+            string jsonFile = dllPath + "\\JSON\\" + this.iaw.Tag + ".json";
+
+            return jsonFile;
+        }
+
+        /// <summary>
         /// 过期检查
         /// </summary>
         /// <returns>true过期；false未过期</returns>
@@ -357,7 +373,7 @@ namespace AQI.Abstract
             {
                 case AqiConstant.ParamSourceType.JSON:
                     DateTime dtNewWriteTime = AqiParam.ReadWriteTimeFormJson(this);
-                    if (dtNewWriteTime > dtParamCacheTime)
+                    if (dtNewWriteTime > this.dtParamCacheTime)
                     {
                         return true;
                     }
@@ -379,15 +395,15 @@ namespace AQI.Abstract
             switch (ParamSourceType)
             {
                 case AqiConstant.ParamSourceType.JSON:
-                    listParamCache = AqiParam.CreateListFormJson(this, AqiParam.PARAMS);
-                    dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
+                    this.listParamCache = AqiParam.CreateListFormJson(this, this.Tag, AqiParam.PARAMS);
+                    this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
                     break;
                 case AqiConstant.ParamSourceType.ISrcUrl:
                     if (this is IParseSrcUrlParam) 
                     {
                         IParseSrcUrlParam ipp = this as IParseSrcUrlParam;
-                        listParamCache = AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl);
-                        dtParamCacheTime = DateTime.Now;
+                        this.listParamCache = AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl);
+                        this.dtParamCacheTime = DateTime.Now;
                     }
                     else
                     {
@@ -417,23 +433,23 @@ namespace AQI.Abstract
             switch (ParamFilterType)
             {
                 case AqiConstant.ParamFilterType.NONE:
-                    apList = listParamCache;
+                    apList = this.listParamCache;
                     break;
                 case AqiConstant.ParamFilterType.InTurn:
                     //iParamCycleFlag代表号，从0开始
-                    IEnumerable<IGrouping<string, AqiParam>> query = listParamCache.GroupBy(ap => ap.Group);
+                    IEnumerable<IGrouping<string, AqiParam>> query = this.listParamCache.GroupBy(ap => ap.Group);
                     List<IGrouping<string, AqiParam>> listGroup = query.ToList<IGrouping<string, AqiParam>>();
 
-                    if (iParamCycleFlag >= listGroup.Count)
+                    if (this.iParamCycleFlag >= listGroup.Count)
                     {
                         //复位
-                        iParamCycleFlag = 0;
+                        this.iParamCycleFlag = 0;
                     }
 
                     int i = 0;
                     foreach (IGrouping<string, AqiParam> kv in listGroup)
                     {
-                        if (iParamCycleFlag == i)
+                        if (this.iParamCycleFlag == i)
                         {
                             apList = kv.ToList<AqiParam>();
                             break;
@@ -441,12 +457,12 @@ namespace AQI.Abstract
                         i++;
                     }
 
-                    iParamCycleFlag++;
+                    this.iParamCycleFlag++;
                     break;
                 case AqiConstant.ParamFilterType.OnceAgain:
                     //iParamCycleFlag 0代表ONCE；非0代表AGAIN
-                    apList = listParamCache.FindAll(ap => ap.Group.Equals((iParamCycleFlag == 0) ? AqiParam.ONCE : AqiParam.AGAIN));
-                    iParamCycleFlag = 1;
+                    apList = listParamCache.FindAll(ap => ap.Group.Equals((this.iParamCycleFlag == 0) ? AqiParam.ONCE : AqiParam.AGAIN));
+                    this.iParamCycleFlag = 1;
                     break;
             }
 

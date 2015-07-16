@@ -287,13 +287,21 @@ namespace AQISet.Control
 
         /// <summary>
         /// 路由处理
+        ///     再此方法中调用的方法应保证线程安全
         /// </summary>
         /// <param name="isu">数据接口</param>
         /// <param name="sugt">定时器，用于堵塞</param>
         public void RouteProcess(ISrcUrl isu, SrcUrlGroupTimer sugt)
         {
-            //TODO
             //加载配置
+            if(isu.IAW is ICacheConfig)
+            {
+                ICacheConfig icc = isu.IAW as ICacheConfig;
+                if (!icc.IsSrcUrlEnabled(isu.Tag))
+                {
+                    return;
+                }
+            }
 
             if (isu.UseParam && (isu is IMakeParam))
             {

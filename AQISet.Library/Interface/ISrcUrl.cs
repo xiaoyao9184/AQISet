@@ -27,7 +27,7 @@ namespace AQI.Interface
         IAqiWeb IAW { get;set; }
         /// <summary>
         /// 更新间隔
-        /// Update interval
+        /// Update Interval
         /// </summary>
         double UDI { get; }
         /// <summary>

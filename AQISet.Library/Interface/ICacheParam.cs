@@ -15,13 +15,18 @@ namespace AQI.Interface
         /// </summary>
         AQI.AqiConstant.ParamSourceType ParamSourceType { get; }
         /// <summary>
+        /// 参数过滤方式
+        /// </summary>
+        AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
+        /// <summary>
         /// 参数缓存 列表
         /// </summary>
         List<AQI.AqiParam> ParamCache { get; }
         /// <summary>
-        /// 参数过滤方式
+        /// JSON配置文件路径
         /// </summary>
-        AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
+        /// <returns></returns>
+        string GetJsonFile();
         /// <summary>
         /// 是否过期
         /// </summary>
@@ -37,6 +42,5 @@ namespace AQI.Interface
         /// </summary>
         /// <returns>过滤后的缓存参数</returns>
         List<AQI.AqiParam> FilterParams();
-
     }
 }

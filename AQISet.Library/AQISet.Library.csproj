@@ -59,6 +59,7 @@
     <Compile Include="Exception\ParamException.cs" />
     <Compile Include="Exception\SettingException.cs" />
     <Compile Include="Interface\IAqiWeb.cs" />
+    <Compile Include="Interface\ICacheConfig.cs" />
     <Compile Include="Interface\ICacheParam.cs" />
     <Compile Include="Interface\IExtractData.cs" />
     <Compile Include="Interface\IMakeParam.cs" />

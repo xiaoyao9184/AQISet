@@ -111,14 +111,7 @@ namespace AQISet.Control
         private string messageLevel(string message, params string[] names)
         {
             StringBuilder builder = new StringBuilder();
-            if (names.Length > 0)
-            {
-                foreach (string str in names)
-                {
-                    builder.Append(str);
-                    builder.Append(':');
-                }
-            }
+            builder.Append(String.Join(":", names));
             builder.Append(message);
             return builder.ToString();
         }

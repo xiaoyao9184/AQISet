@@ -29,7 +29,7 @@ namespace AQISet.Control
         private Thread thr;         //线程引用
 
         private Dictionary<string, RetryNode> history;   //历史记录
-        private ReaderWriterLockSlim historyLock;           //读写锁
+        private ReaderWriterLockSlim historyLock;        //读写锁
 
         private Queue m_queue;                      //队列
         private AutoResetEvent m_eventReadAsync;    //读线程使用的自动事件

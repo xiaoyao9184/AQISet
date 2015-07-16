@@ -43,12 +43,16 @@
             }
         ]
     },
+    "TyphoonInfo_FormList": {
+        "Enabled": false,
+        "ParamType": "IParseParam"
+    },
     "TyphoonInfo": {
         "Enabled": true,
         "ParamType": "IParseParam"
     },
     "LeastRain": {
-        "Enabled": "true",
+        "Enabled": true,
         "Params" : [
 		    {
 			    "Enabled" : "true",
