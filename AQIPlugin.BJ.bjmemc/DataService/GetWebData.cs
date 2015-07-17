@@ -71,7 +71,7 @@ namespace bjmemc.DataService
             string strWCFMsg = mh.GetWcfBinaryMessageAsText(responsebody);
             
             //获取WCF Content Binary（=WCF Message Body）
-            byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, tag, CF);
+            byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, tag, WCFContentFormat);
 
             //解密
             string jsonString = DecryptAES(Encoding.UTF8.GetString(wcfbin), "qjkHuIy9D/9i=", "Mi9l/+7Zujhy12se6Yjy111A");

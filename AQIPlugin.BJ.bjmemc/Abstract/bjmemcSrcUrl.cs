@@ -33,11 +33,11 @@ namespace bjmemc.Abstract
         /// <summary>
         /// 使用POST方式
         /// </summary>
-        public override AQI.AqiConstant.ParamSendType ParamSendType
+        public override AQI.AqiConstant.HttpType HttpType
         {
             get
             {
-                return AQI.AqiConstant.ParamSendType.POST;
+                return AQI.AqiConstant.HttpType.POST;
             }
         }
 
@@ -53,9 +53,20 @@ namespace bjmemc.Abstract
         }
 
         /// <summary>
+        /// 使用POST方式
+        /// </summary>
+        public override AQI.AqiConstant.ParamSendType ParamSendType
+        {
+            get
+            {
+                return AQI.AqiConstant.ParamSendType.POST;
+            }
+        }
+
+        /// <summary>
         /// 使用UTF8编码格式WCFBin
         /// </summary>
-        public override Helper.WCFbin.WCFMessageUtil.WCFContentFormat CF
+        public override Helper.WCFbin.WCFMessageUtil.WCFContentFormat WCFContentFormat
         {
             get
             {
@@ -67,28 +78,28 @@ namespace bjmemc.Abstract
 
         #region 方法
 
-        #region ISrcUrl接口
+        #region ISrcUrlParam接口
 
         /// <summary>
         /// 获取数据
         ///     重写
         /// </summary>
-        /// <param name="dictParam"></param>
+        /// <param name="param"></param>
         /// <returns></returns>
-        public override byte[] GetDate(Dictionary<string, string> dictParam)
+        public override byte[] GetDate(AqiParam param)
         {
             //得到responsebody
             byte[] responsebody = null;
             if (ParamSendType == AqiConstant.ParamSendType.POST)
             {
                 //这里使用ContentType为application/soap+msbin1
-                byte[] requestbody = MakeRequestBody(dictParam);
+                byte[] requestbody = MakeRequestBody(param);
                 HttpWebResponse response = HttpUtilV2.createPostResponse(Url, 10000, "application/soap+msbin1", requestbody);
                 responsebody = HttpUtilV2.getResponseBody(response);
             }
             else
             {
-                string urlparam = MakeUrl(dictParam);
+                string urlparam = MakeUrl(param);
                 responsebody = HttpUtilV2.doGetRequest(urlparam);
             }
 

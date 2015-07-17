@@ -14,7 +14,7 @@ namespace AQI.Abstract
     /// WCF数据接口
     ///     抽象类
     /// </summary>
-    public abstract class AWcfSrcUrl : ISrcUrl, IMakeParam, ICacheParam, IExtractData
+    public abstract class AWcfSrcUrl : ISrcUrl, ISrcUrlParam, ICacheParam, IMakeParam, IExtractData
     {
 
         #region 字段
@@ -103,6 +103,12 @@ namespace AQI.Abstract
         }
 
         /// <summary>
+        /// HTTP获取方式
+        ///     扩展ISrcUrl
+        /// </summary>
+        public abstract AQI.AqiConstant.HttpType HttpType { get; }
+
+        /// <summary>
         /// 常用更新间隔
         /// </summary>
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
@@ -155,7 +161,7 @@ namespace AQI.Abstract
         /// <summary>
         /// WCF Content Binary(WCF二进制内容)编码格式
         /// </summary>
-        public abstract Helper.WCFbin.WCFMessageUtil.WCFContentFormat CF { get; }
+        public abstract Helper.WCFbin.WCFMessageUtil.WCFContentFormat WCFContentFormat { get; }
         
         #endregion
 
@@ -202,31 +208,6 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 获取内容
-        ///     可以重写
-        /// </summary>
-        /// <param name="dictParam">参数列表</param>
-        /// <returns></returns>
-        public virtual byte[] GetDate(Dictionary<string, string> dictParam)
-        {
-            //得到responsebody
-            byte[] responsebody = null;
-            if (ParamSendType == AqiConstant.ParamSendType.POST)
-            {
-                byte[] requestbody = MakeRequestBody(dictParam);
-                responsebody = HttpUtilV2.doPostRequest(Url, requestbody);
-            }
-            else
-            {
-                string urlparam = MakeUrl(dictParam);
-                responsebody = HttpUtilV2.doGetRequest(urlparam);
-            }
-
-            //提取数据
-            return ExtractData(responsebody);
-        }
-
-        /// <summary>
-        /// 获取内容
         ///     可以重写 
         /// </summary>
         /// <returns></returns>
@@ -234,7 +215,7 @@ namespace AQI.Abstract
         {
             //得到responsebody
             byte[] responsebody = null;
-            if(ParamSendType == AqiConstant.ParamSendType.POST)
+            if (HttpType == AqiConstant.HttpType.POST)
             {
                 responsebody = HttpUtilV2.doPostRequest(Url, null);
             }
@@ -243,16 +224,15 @@ namespace AQI.Abstract
                 responsebody = HttpUtilV2.doGetRequest(Url);
             }
 
-            //提取数据
             return ExtractData(responsebody);
         }
 
         #endregion
 
-        #region IMakeParam接口
+        #region ISrcUrlParam接口
 
         /// <summary>
-        /// 加载参数
+        /// 枚举参数
         ///     可以重写
         /// </summary>
         /// <returns></returns>
@@ -266,31 +246,28 @@ namespace AQI.Abstract
         }
 
         /// <summary>
-        /// 拼接含参数Url
+        /// 获取内容
         ///     可以重写
         /// </summary>
-        /// <param name="dictParam">参数列表</param>
-        public virtual string MakeUrl(Dictionary<string, string> dictParam)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(Url);
-            sb.Append(MakeKeyValueUrl(dictParam));
-            return Uri.EscapeUriString(sb.ToString());
-        }
-
-        /// <summary>
-        /// 拼接请求体
-        ///     可以重写
-        /// </summary>
-        /// <param name="dictParam">参数列表</param>
+        /// <param name="param">参数列表</param>
         /// <returns></returns>
-        public virtual byte[] MakeRequestBody(Dictionary<string, string> dictParam)
+        public virtual byte[] GetDate(AqiParam param)
         {
-            string wcfmessage = MakeWCFMsg(dictParam);
+            //得到responsebody
+            byte[] responsebody = null;
+            if (ParamSendType == AqiConstant.ParamSendType.POST)
+            {
+                byte[] requestbody = MakeRequestBody(param);
+                responsebody = HttpUtilV2.doPostRequest(Url, requestbody);
+            }
+            else
+            {
+                string urlparam = MakeUrl(param);
+                responsebody = HttpUtilV2.doGetRequest(urlparam);
+            }
 
-            byte[] requestBody = mh.GetWcfBinaryMessageAsBinary(wcfmessage);
-
-            return requestBody;
+            //提取数据
+            return ExtractData(responsebody);
         }
 
         #endregion
@@ -298,7 +275,8 @@ namespace AQI.Abstract
         #region ICacheParam接口
 
         /// <summary>
-        /// 读取 JSON配置文件 路径
+        /// 参数路径
+        ///     可以重写
         /// </summary>
         /// <returns></returns>
         public virtual string GetJsonFile()
@@ -313,7 +291,8 @@ namespace AQI.Abstract
         }
 
         /// <summary>
-        /// 过期检查
+        /// 检查过期
+        ///     可以重写
         /// </summary>
         /// <returns>true过期；false未过期</returns>
         public virtual bool IsParamsExpired()
@@ -328,7 +307,7 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 加载参数
-        ///     需要重写
+        ///     可以重写
         /// </summary>
         /// <returns></returns>
         public virtual bool LoadParams()
@@ -339,14 +318,45 @@ namespace AQI.Abstract
         }
 
         /// <summary>
-        /// 过滤
-        ///     需要重写
+        /// 过滤参数
+        ///     可以重写
         /// </summary>
-        /// <param name="listParam"></param>
         /// <returns></returns>
         public virtual List<AqiParam> FilterParams()
         {
             return this.listParamCache;
+        }
+
+        #endregion
+
+        #region IMakeParam接口
+
+        /// <summary>
+        /// 拼接含参数Url
+        ///     可以重写
+        /// </summary>
+        /// <param name="param">参数列表</param>
+        public virtual string MakeUrl(AqiParam param)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Url);
+            sb.Append(MakeKeyValueUrl(param));
+            return Uri.EscapeUriString(sb.ToString());
+        }
+
+        /// <summary>
+        /// 拼接请求体
+        ///     可以重写
+        /// </summary>
+        /// <param name="param">参数列表</param>
+        /// <returns></returns>
+        public virtual byte[] MakeRequestBody(AqiParam param)
+        {
+            string wcfmessage = MakeWCFMsg(param);
+
+            byte[] requestBody = mh.GetWcfBinaryMessageAsBinary(wcfmessage);
+
+            return requestBody;
         }
 
         #endregion
@@ -366,7 +376,7 @@ namespace AQI.Abstract
             string strWCFMsg = mh.GetWcfBinaryMessageAsText(responsebody);
 
             //获取WCF Content Binary（=WCF Message Body）
-            byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, Tag, CF);
+            byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, Tag, WCFContentFormat);
 
             return wcfbin;
         }

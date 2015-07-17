@@ -169,14 +169,21 @@ namespace AQI.Abstract
         /// <returns></returns>
         public virtual bool LoadConfigs() 
         {
-            thisLock.EnterWriteLock();
+            try
+            {
+                thisLock.EnterWriteLock();
 
-            List<AqiConfig> list = AqiConfig.CreateListFormJson(this);
+                List<AqiConfig> list = AqiConfig.CreateListFormJson(this);
 
-            this.allConfig = list.ToDictionary<AqiConfig, string>(ac => ac.Name);
-            this.dtConfigCacheTime = AqiConfig.ReadWriteTimeFormJson(this);
+                this.allConfig = list.ToDictionary<AqiConfig, string>(ac => ac.Name);
+                this.dtConfigCacheTime = AqiConfig.ReadWriteTimeFormJson(this);
 
-            thisLock.ExitWriteLock();
+            }
+            finally
+            {
+                thisLock.ExitWriteLock();
+            }
+            
             return true;
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Timers;
 using System.Text;
+using System.Linq;
 using AQI;
 using AQI.Interface;
 using AQI.Abstract;
@@ -61,12 +62,19 @@ namespace AQISet.Control
             if (RunEvent != null)
             {
                 RunMessage rm = new RunMessage(RunMessage.RunType.WAIT, eMsg, this);
-                rm.AttachObject = (eSrcUrl as IMakeParam).ParamName;
+                rm.AttachObject = (eSrcUrl as ISrcUrlParam).ParamName;
                 RunEvent(rm);
                 return true;
             }
             return false;
         }
+
+        #endregion
+
+        #region 常量
+
+        public const string DEFAULT_NAME = "default";
+        public const string SET_RUNMODE = "AqiRunner.RunMode";
 
         #endregion
 
@@ -77,7 +85,8 @@ namespace AQISet.Control
         private IAqiSave ias;       //引用
         private AqiNoter an;        //
         private AqiRetryer ar;      //
-        
+        private ReaderWriterLockSlim thisLock;     //读写锁
+
         #endregion
 
         #region 构造
@@ -95,6 +104,7 @@ namespace AQISet.Control
             this.ias = manage.AqiSave;
             this.an = manage.AqiNote;
             this.ar = manage.AqiRetry;
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
 
         /// <summary>
@@ -111,6 +121,7 @@ namespace AQISet.Control
             this.ias = aqiManage.AqiSave;
             this.an = aqiManage.AqiNote;
             this.ar = aqiManage.AqiRetry;
+            this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
 
         #endregion
@@ -186,45 +197,90 @@ namespace AQISet.Control
         #region 动态控制
 
         /// <summary>
-        /// 合并timer
-        /// </summary>
-        /// <param name="runner"></param>
-        public void Union(AqiRunner runner)
-        {
-            foreach (SrcUrlGroupTimer timer in runner.dictTimer.Values)
-            {
-                Add(timer);
-            }
-        }
-
-        /// <summary>
         /// 添加timer
         /// </summary>
         /// <param name="timer"></param>
-        public void Add(SrcUrlGroupTimer timer)
+        public bool Add(SrcUrlGroupTimer timer)
         {
-            if (dictTimer.ContainsKey(timer.Name))
+            try
             {
-                dictTimer[timer.Name].Union(timer);
+                this.thisLock.EnterUpgradeableReadLock();
+
+                if (this.dictTimer.ContainsKey(timer.Name))
+                {
+                    //合并
+                    return this.dictTimer[timer.Name].Union(timer);
+                }
+                else
+                {
+                    this.thisLock.EnterWriteLock();
+                    this.dictTimer.Add(timer.Name, timer);
+                    timer.Elapsed += new ElapsedEventHandler(timer_RunEvent);
+                    timer.Start();
+                    this.thisLock.ExitWriteLock();
+                }
             }
-            else
+            finally
             {
-                dictTimer.Add(timer.Name, timer);
-                timer.Elapsed += new ElapsedEventHandler(timer_RunEvent);
-                timer.Start();
+                this.thisLock.ExitUpgradeableReadLock();
             }
+            return true;
         }
 
         /// <summary>
         /// 删除timer
         /// </summary>
         /// <param name="timerName"></param>
-        public void Dele(string timerName)
+        public bool Dele(string timerName)
         {
-            if (dictTimer.ContainsKey(timerName))
+            try
             {
-                dictTimer[timerName].Stop();
-                dictTimer.Remove(timerName);
+                this.thisLock.EnterUpgradeableReadLock();
+
+                if (this.dictTimer.ContainsKey(timerName))
+                {
+                    this.dictTimer[timerName].Stop();
+                    this.thisLock.EnterWriteLock();
+                    this.dictTimer.Remove(timerName);
+                    this.thisLock.ExitWriteLock();
+                }
+            }
+            finally
+            {
+                this.thisLock.ExitUpgradeableReadLock();
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 合并timer
+        /// </summary>
+        /// <param name="runner"></param>
+        public bool Union(AqiRunner runner)
+        {
+            try
+            {
+                runner.thisLock.EnterWriteLock();
+                this.thisLock.EnterWriteLock();
+
+                foreach(string name in runner.dictTimer.Keys)
+                {
+                    if (this.dictTimer.ContainsKey(name))
+                    {
+                        this.dictTimer[name].Union(runner.dictTimer[name]);
+                    }
+                    else
+                    {
+                        this.dictTimer.Add(name, runner.dictTimer[name]);
+                    }
+                }
+                runner.dictTimer.Clear();
+                return true;
+            }
+            finally
+            {
+                this.thisLock.ExitWriteLock();
+                runner.thisLock.ExitWriteLock();
             }
         }
 
@@ -232,7 +288,7 @@ namespace AQISet.Control
         /// 添加 数据源接口
         /// </summary>
         /// <param name="dictSrcUrl">接口集合</param>
-        public void AddSrcUrl(Dictionary<string, ISrcUrl> dictSrcUrl)
+        public bool AddSrcUrl(Dictionary<string, ISrcUrl> dictSrcUrl)
         {
             //转为Timer集合
             Dictionary<string, SrcUrlGroupTimer> list = SrcUrlGroupTimer.CreateList(dictSrcUrl);
@@ -240,18 +296,34 @@ namespace AQISet.Control
             {
                 Add(timer); 
             }
+
+            return true;
         }
 
         /// <summary>
         /// 删除 数据源接口
         /// </summary>
-        /// <param name="iawTagName">数据源 标识或名称</param>
-        public void DeleSrcUrl(string iawTagName)
+        /// <param name="iawTag">数据源 标识或名称</param>
+        public bool DeleSrcUrl(string iawTag)
         {
-            foreach (SrcUrlGroupTimer timer in dictTimer.Values)
+            try
             {
-                timer.DeleSrcUrl(iawTagName);
+                this.thisLock.EnterUpgradeableReadLock();
+
+                foreach (SrcUrlGroupTimer timer in this.dictTimer.Values)
+                {
+                    if(!timer.DeleAll(iawTag))
+                    {
+                        AqiManage.Remind.Log_Error("删除分组定时器中的ISrcUrl失败:" + iawTag, this.name, timer.Name);
+                        return false;
+                    }
+                }
             }
+            finally
+            {
+                this.thisLock.ExitUpgradeableReadLock();
+            }
+            return true;
         }
 
         #endregion
@@ -303,36 +375,14 @@ namespace AQISet.Control
                 }
             }
 
-            if (isu.UseParam && (isu is IMakeParam))
+            //双向确认是否使用参数
+            if (isu.UseParam && isu is ISrcUrlParam)
             {
-                //枚举此次参数
-                List<AqiParam> list = (isu as IMakeParam).EnumParams();
-
-                while ((list == null) || (list.Count == 0))
-                {
-                    if (this.ThrowWaitEvent(isu.Name + ":缺少参数，请输入以下参数", isu))
-                    {
-                        AqiManage.Remind.Log_Debug("缺少参数，进入等待", new string[] { this.name, sugt.Name, isu.Name });
-                        sugt.Wait();
-                    }
-                    else
-                    {
-                        AqiManage.Remind.Log_Error("缺少参数，而且无法获取忽略此数据接口", new string[] { this.name, sugt.Name, isu.Name });
-                        return;
-                    }
-                }
-                foreach (AqiParam param2 in list)
-                {
-                    if (sugt.IsCancellationRequested)
-                    {
-                        break;
-                    }
-                    this.GetProcess(isu, param2, sugt);
-                }
+                this.GetProcess(isu as ISrcUrlParam, sugt);
             }
             else
             {
-                this.GetProcess(isu, null, sugt);
+                this.GetProcess(isu, sugt);
             }
         }
 
@@ -340,29 +390,72 @@ namespace AQISet.Control
         /// 获取处理
         /// </summary>
         /// <param name="isu">数据接口</param>
-        /// <param name="ap">参数，无null</param>
         /// <param name="sugt">定时器</param>
-        public void GetProcess(ISrcUrl isu, AqiParam ap, SrcUrlGroupTimer sugt)
+        public void GetProcess(ISrcUrl isu, SrcUrlGroupTimer sugt)
         {
             byte[] data = null;
             try
             {
-                if (ap != null)
-                {
-                    data = isu.GetDate(ap);
-                }
-                else
-                {
-                    data = isu.GetDate();
-                }
+                data = isu.GetDate();
             }
             catch (Exception exception)
             {
                 AqiManage.Remind.Log_Error("数据获取失败，进入重试队列", new string[] { this.name, sugt.Name, isu.Name });
-                this.ar.PutNew(this.name, isu, ap, exception);
+                this.ar.PutNew(this.name, isu, null, exception);
                 return;
             }
-            this.SaveProcess(isu, ap, data);
+            this.SaveProcess(data, isu, null);
+        }
+
+        /// <summary>
+        /// 获取处理
+        /// </summary>
+        /// <param name="isup"></param>
+        /// <param name="sugt"></param>
+        public void GetProcess(ISrcUrlParam isup, SrcUrlGroupTimer sugt)
+        {
+            //获取参数
+            List<AqiParam> list = null;
+            ISrcUrl isu = isup as ISrcUrl;
+            if (isup is ICacheParam)
+            {
+                ICacheParam icp = isup as ICacheParam;
+                if (icp.IsParamsExpired())
+                {
+                    icp.LoadParams();
+                }
+                list = icp.FilterParams();
+            }
+            else
+            {
+                list = isup.EnumParams();
+            }
+            //TODO 
+            //应该在检验参数
+            while ((list == null) || (list.Count == 0))
+            {
+                if (this.ThrowWaitEvent(isu.Name + ":缺少参数，请输入以下参数", isu))
+                {
+                    AqiManage.Remind.Log_Debug("缺少参数，进入等待", new string[] { this.name, sugt.Name, isu.Name });
+                    sugt.Wait();
+                }
+                else
+                {
+                    AqiManage.Remind.Log_Error("缺少参数，而且无法获取忽略此数据接口", new string[] { this.name, sugt.Name, isu.Name });
+                    return;
+                }
+            }
+            foreach (AqiParam ap in list)
+            {
+                if (sugt.IsCancellationRequested)
+                {
+                    break;
+                }
+
+                byte[] data = isup.GetDate(ap);
+
+                this.SaveProcess(data, isu, ap);
+            }
         }
 
         /// <summary>
@@ -377,9 +470,10 @@ namespace AQISet.Control
             byte[] data = null;
             try
             {
-                if (ap != null)
+                if (isu is ISrcUrlParam)
                 {
-                    data = isu.GetDate(ap);
+                    ISrcUrlParam isup = isu as ISrcUrlParam;
+                    data = isup.GetDate(ap);
                 }
                 else
                 {
@@ -392,7 +486,7 @@ namespace AQISet.Control
                 this.ar.PutAgain(arn, ex);
                 return false;
             }
-            this.SaveProcess(isu, ap, data);
+            this.SaveProcess(data, isu, ap);
             arn.Reset();
             return true;
         }
@@ -400,10 +494,10 @@ namespace AQISet.Control
         /// <summary>
         /// 保存处理
         /// </summary>
+        /// <param name="data">数据</param>
         /// <param name="isu">数据接口</param>
         /// <param name="ap">参数</param>
-        /// <param name="data">数据</param>
-        public void SaveProcess(ISrcUrl isu, AqiParam ap, byte[] data)
+        public void SaveProcess(byte[] data, ISrcUrl isu, AqiParam ap)
         {
             try
             {

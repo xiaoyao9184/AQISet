@@ -4,6 +4,7 @@ namespace AQI.Interface
 {
     /// <summary>
     /// 数据提取 接口
+    ///     自行扩展ISrcUrl.GetData、ISrcUrlParam.GetData
     /// </summary>
     public interface IExtractData
     {

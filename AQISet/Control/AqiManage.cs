@@ -3,6 +3,9 @@ using System.Linq;
 using System.Reflection;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading;
+using System.Text;
+using Helper.Setting;
 using AQI;
 using AQI.Interface;
 using AQISet.Interface;
@@ -10,9 +13,6 @@ using AQISet.Collection;
 using AQISet.Control;
 using AQISet.Control.Saver;
 using AQISet.Cfg;
-using Helper.Setting;
-using System.Threading;
-using System.Text;
 
 
 namespace AQISet.Control
@@ -140,10 +140,10 @@ namespace AQISet.Control
             {
                 AqiRunner runner = null;
                 this.thisLock.EnterReadLock();
-                string str = Setting["AqiRunner.RunMode"];
+                string str = Setting[AqiRunner.SET_RUNMODE];
                 if (str == null)
                 {
-                    str = "JOINT";
+                    str = AqiRunner.RunMode.JOINT.ToString();
                 }
                 switch (((AqiRunner.RunMode) Enum.Parse(typeof(AqiRunner.RunMode), str)))
                 {
@@ -155,7 +155,7 @@ namespace AQISet.Control
                         break;
 
                     default:
-                        runner = this.aqiRunner["default"];
+                        runner = this.aqiRunner[AqiRunner.DEFAULT_NAME];
                         break;
                 }
                 this.thisLock.ExitReadLock();
@@ -179,7 +179,7 @@ namespace AQISet.Control
         /// </summary>
         private void init()
         {
-            Remind.Log_Info(Plugin.GetInfo(), new string[] { tag });
+            Remind.Log_Info(Plugin.GetInfo(), tag);
             this.aqiNoter = new AqiNoter(this);
             this.aqiRetryer = new AqiRetryer(this);
             this.initSaver();
@@ -194,25 +194,25 @@ namespace AQISet.Control
             this.aqiRunner = new Dictionary<string, AqiRunner>();
             AqiRunner runner = null;
             //读取配置文件，独立或合并
-            switch (((AqiRunner.RunMode) Enum.Parse(typeof(AqiRunner.RunMode), Setting["AqiRunner.RunMode"])))
+            switch (((AqiRunner.RunMode) Enum.Parse(typeof(AqiRunner.RunMode), Setting[AqiRunner.SET_RUNMODE])))
             {
                 case AqiRunner.RunMode.SELF:
-                {
-                    List<IAqiWeb> aqiWebList = AqiPlugin.Instance.GetAqiWebList(new string[0]);
+                    List<IAqiWeb> aqiWebList = AqiPlugin.Instance.GetAqiWebList();
                     foreach (IAqiWeb web in aqiWebList)
                     {
                         runner = new AqiRunner(this, web.GetAllSrcUrl().Values.ToList(), web.Tag + "_Runner");
                         runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
                         this.aqiRunner.Add(runner.Name, runner);
-                        Remind.Log_Debug("初始化Runner:" + runner.Name, new string[] { tag });
+                        Remind.Log_Debug("初始化Runner:" + runner.Name, tag);
                     }
-                    return;
-                }
+                    break;
+                case AqiRunner.RunMode.JOINT:
+                    runner = new AqiRunner(this, AqiPlugin.Instance.GetSrcUrlList());
+                    runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
+                    this.aqiRunner.Add(AqiRunner.DEFAULT_NAME, runner);
+                    Remind.Log_Debug("初始化单一Runner:" + runner.Name, tag);
+                    break;
             }
-            runner = new AqiRunner(this, AqiPlugin.Instance.GetSrcUrlList());
-            runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
-            this.aqiRunner.Add("default", runner);
-            Remind.Log_Debug("初始化单一Runner:" + runner.Name, new string[] { tag });
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace AQISet.Control
             {
                 this.aqiSaver = Activator.CreateInstance(type, new object[] { this }) as IAqiSave;
             }
-            Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, new string[] { tag });
+            Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, tag);
         }
 
         #endregion
@@ -247,12 +247,12 @@ namespace AQISet.Control
             {
                 return false;
             }
-            Remind.Log_Debug("开始运行全部Runner", new string[] { tag });
+            Remind.Log_Debug("开始运行全部Runner", tag);
             foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.RunAll();
             }
-            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部启用", new string[] { tag });
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部启用", tag);
             return true;
         }
 
@@ -266,12 +266,12 @@ namespace AQISet.Control
             {
                 return false;
             }
-            Remind.Log_Debug("结束运行全部Runner", new string[] { tag });
+            Remind.Log_Debug("结束运行全部Runner", tag);
             foreach (AqiRunner runner in this.aqiRunner.Values)
             {
                 runner.EndAll();
             }
-            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部结束", new string[] { tag });
+            Remind.Log_Info(this.aqiRunner.Count + "个运行者，全部结束", tag);
             return true;
         }
 
@@ -288,11 +288,11 @@ namespace AQISet.Control
             }
             if (this.aqiRunner.ContainsKey(name))
             {
-                Remind.Log_Debug("开始运行Runner:" + name, new string[] { tag });
+                Remind.Log_Debug("开始运行Runner:" + name, tag);
                 this.aqiRunner[name].RunAll();
                 return true;
             }
-            Remind.Log_Error("不存在Runner:" + name, new string[] { tag });
+            Remind.Log_Error("不存在Runner:" + name, tag);
             return false;
         }
 
@@ -309,12 +309,118 @@ namespace AQISet.Control
             }
             if (this.aqiRunner.ContainsKey(name))
             {
-                Remind.Log_Debug("结束运行Runner:" + name, new string[] { tag });
+                Remind.Log_Debug("结束运行Runner:" + name, tag);
                 this.aqiRunner[name].EndAll();
                 return true;
             }
-            Remind.Log_Error("不存在Runner:" + name, new string[] { tag });
+            Remind.Log_Error("不存在Runner:" + name, tag);
             return false;
+        }
+
+        #endregion
+
+        #region 动态控制
+
+        /// <summary>
+        /// 加载插件
+        /// </summary>
+        /// <param name="dllPath"></param>
+        /// <returns></returns>
+        public bool Load(string dllPath)
+        {
+            try 
+            {
+                //加载到AqiPlugin
+                IAqiWeb iaw = AqiManage.Plugin.Load(dllPath);
+                if (iaw == null)
+                {
+                    Remind.Log_Info("未能从指定插件加载IAqiWeb接口", tag);
+                    return false;
+                }
+                //加载到AqiRunner
+                AqiRunner runner = null;
+                switch (((AqiRunner.RunMode)Enum.Parse(typeof(AqiRunner.RunMode), Setting[AqiRunner.SET_RUNMODE])))
+                {
+                    case AqiRunner.RunMode.SELF:
+                        runner = new AqiRunner(this, iaw.GetAllSrcUrl().Values.ToList(), iaw.Tag + "_Runner");
+                        runner.RunEvent += new AqiRunner.RunEventHandler(this.aqiRunner_RunEvent);
+                        if (!this.aqiRunner.ContainsKey(runner.Name))
+                        {
+                            this.aqiRunner.Add(runner.Name, runner);
+                            Remind.Log_Info("初始化Runner:" + runner.Name, tag);
+                        }
+                        else
+                        {
+                            if(this.aqiRunner[runner.Name].Union(runner))
+                            {
+                                runner = this.aqiRunner[runner.Name];
+                                Remind.Log_Info("合并存在Runner:" + runner.Name, tag);
+                            }
+                        }
+                        break;
+                    case AqiRunner.RunMode.JOINT:
+                        runner = this.aqiRunner[AqiRunner.DEFAULT_NAME];
+                        runner.AddSrcUrl(iaw.GetAllSrcUrl());
+                        break;
+                }
+                //自动运行
+                if (Setting.Get<bool>("LoadAutoRun"))
+                {
+                    runner.RunAll();
+                    Remind.Log_Info("插件加载自动开启Runner:" + runner.Name, tag);
+                }
+            }
+            catch(Exception ex)
+            {
+                Remind.Log_Error("加载指定插件错误", ex, tag);
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 卸载插件
+        /// </summary>
+        /// <param name="iawTag"></param>
+        /// <returns></returns>
+        public bool UnLoad(string iawTag)
+        {
+            try
+            {
+                //卸载AqiRunner
+                AqiRunner runner = null;
+                switch (((AqiRunner.RunMode)Enum.Parse(typeof(AqiRunner.RunMode), Setting[AqiRunner.SET_RUNMODE])))
+                {
+                    case AqiRunner.RunMode.SELF:
+                        runner = this.aqiRunner[iawTag + "_Runner"];
+                        break;
+                    case AqiRunner.RunMode.JOINT:
+                        runner = this.aqiRunner[AqiRunner.DEFAULT_NAME];
+                        break;
+                }
+                if (runner == null)
+                {
+                    Remind.Log_Error("卸载插件时没有找到同名Runner:" + iawTag, tag);
+                    return false;
+                }
+                if(!runner.DeleSrcUrl(iawTag))
+                {
+                    Remind.Log_Error("未能卸载Runner中的ISrcUrl接口:" + iawTag, tag);
+                    return false;
+                }
+                //卸载AqiPlugin
+                if (!AqiManage.Plugin.UnLoad(iawTag))
+                {
+                    Remind.Log_Error("未能卸载指定插件:" + iawTag, tag);
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Remind.Log_Error("卸载指定插件错误", ex, tag);
+                return false;
+            }
+            return true;
         }
 
         #endregion
@@ -339,6 +445,7 @@ namespace AQISet.Control
             first.Add(this.aqiSaver.Name, this.aqiSaver);
             first.Add(this.aqiNoter.Name, this.aqiNoter);
             first.Add(this.aqiRetryer.Name, this.aqiRetryer);
+            first.Add(AqiManage.Plugin.Name, AqiManage.Plugin);
             if (first.ContainsKey(name))
             {
                 return first[name];

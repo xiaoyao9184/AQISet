@@ -83,7 +83,7 @@ namespace typhoon.Api
         /// 加载boundsParams用于计算
         /// </summary>
         /// <returns></returns>
-        private List<AqiParam> loadboundsParams()
+        private List<AqiParam> loadBoundsParams()
         {
             List<AqiParam> apList = new List<AqiParam>();
             //扩展参数
@@ -130,18 +130,12 @@ namespace typhoon.Api
         ///     读取JSON中的boundsParams字段
         /// </summary>
         /// <returns></returns>
-        public override List<AqiParam> EnumParams()
+        public override bool LoadParams()
         {
-            //过期判断：文件时间
-            DateTime dtNewWriteTime = AqiParam.ReadWriteTimeFormJson(this);
-            if (dtNewWriteTime > dtParamCacheTime)
-            {
-                //文件更新
-                listParamCache = this.loadboundsParams();
-                dtParamCacheTime = dtNewWriteTime;
-            }
+            this.listParamCache = this.loadBoundsParams();
+            this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
 
-            return base.FilterParams();
+            return true;
         }
 
         #endregion

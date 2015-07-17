@@ -26,10 +26,10 @@ namespace tjemc.Abstract
 
         #endregion
 
-        #region 方法
+        #region 重写方法
 
         /// <summary>
-        /// 
+        /// 获取数据
         /// </summary>
         /// <returns></returns>
         public override byte[] GetDate()

@@ -1,6 +1,7 @@
 ﻿{
 "Setting" :{
-	"Saver" : "AqiFileSaver",
+    "Saver": "AqiFileSaver",
+    "LoadAutoRun": true,
 	"AqiFileSaver" : 
 	{
         "Path": "D:\\AQI-DATA\\",

@@ -7,6 +7,7 @@ namespace AQI.Interface
 {
     /// <summary>
     /// 缓存配置 接口
+    ///     扩展IAqiWeb
     ///     需要保证线程安全
     /// </summary>
     public interface ICacheConfig

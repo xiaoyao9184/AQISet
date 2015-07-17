@@ -7,6 +7,7 @@ namespace AQI.Interface
 {
     /// <summary>
     /// 缓存参数 接口
+    ///     扩展ISrcUrlParam.EnumParams
     /// </summary>
     public interface ICacheParam
     {
@@ -19,28 +20,32 @@ namespace AQI.Interface
         /// </summary>
         AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
         /// <summary>
-        /// 参数缓存 列表
+        /// 参数缓存列表
         /// </summary>
         List<AQI.AqiParam> ParamCache { get; }
         /// <summary>
-        /// JSON配置文件路径
+        /// 参数路径
+        ///     JSON参数文件路径
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Json路径</returns>
         string GetJsonFile();
         /// <summary>
-        /// 是否过期
+        /// 检查过期
+        ///     缓存参数是否过期
         /// </summary>
         /// <returns>true过期；false未过期</returns>
         bool IsParamsExpired();
         /// <summary>
         /// 加载参数
+        ///     加载参数到缓存
         /// </summary>
-        /// <returns>是否成功</returns>
+        /// <returns>true成功；false不成功</returns>
         bool LoadParams();
         /// <summary>
         /// 过滤参数
+        ///     筛选缓存中的参数
         /// </summary>
-        /// <returns>过滤后的缓存参数</returns>
+        /// <returns>参数列表</returns>
         List<AQI.AqiParam> FilterParams();
     }
 }

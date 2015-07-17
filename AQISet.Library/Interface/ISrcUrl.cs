@@ -32,6 +32,7 @@ namespace AQI.Interface
         double UDI { get; }
         /// <summary>
         /// 是否使用参数
+        ///     强制关闭参数
         /// </summary>
         bool UseParam { get; }
         /// <summary>
@@ -39,11 +40,5 @@ namespace AQI.Interface
         /// </summary>
         /// <returns></returns>
         byte[] GetDate();
-        /// <summary>
-        /// 根据参数获取数据
-        /// </summary>
-        /// <param name="dictParam"></param>
-        /// <returns></returns>
-        byte[] GetDate(Dictionary<string, string> dictParam);
     }
 }

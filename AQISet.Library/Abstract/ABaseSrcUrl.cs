@@ -88,6 +88,7 @@ namespace AQI.Abstract
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
         /// <summary>
         /// HTTP获取方式
+        ///     扩展ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.HttpType HT { get; }
 
@@ -116,17 +117,6 @@ namespace AQI.Abstract
             }
 
             return responsebody;
-        }
-
-        /// <summary>
-        /// 获取内容
-        ///     无效
-        /// </summary>
-        /// <param name="dictParam"></param>
-        /// <returns></returns>
-        public virtual byte[] GetDate(Dictionary<string, string> dictParam)
-        {
-            return null;
         }
 
         #endregion

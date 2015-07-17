@@ -9,7 +9,6 @@ using System.Configuration;
 using AQI;
 using AQI.Interface;
 using AQISet.Control;
-using AQISet.Exceptions;
 using AQISet.Cfg;
 using AQISet.Collection;
 using AQISet.Interface;

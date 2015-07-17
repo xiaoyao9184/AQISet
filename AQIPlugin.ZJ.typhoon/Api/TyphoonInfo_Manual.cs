@@ -118,21 +118,15 @@ namespace typhoon.Api
 
         /// <summary>
         /// 加载参数
-        ///     读取JSON中的boundsParams字段
+        ///     读取JSON中的depthsParams字段
         /// </summary>
         /// <returns></returns>
-        public override List<AqiParam> EnumParams()
+        public override bool LoadParams()
         {
-            //过期判断：文件时间
-            DateTime dtNewWriteTime = AqiParam.ReadWriteTimeFormJson(this);
-            if (dtNewWriteTime > base.dtParamCacheTime)
-            {
-                //文件更新
-                listParamCache = this.loadDepthsParams();
-                dtParamCacheTime = dtNewWriteTime;
-            }
+            this.listParamCache = this.loadDepthsParams();
+            this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
 
-            return base.FilterParams();
+            return true;
         }
 
         #endregion

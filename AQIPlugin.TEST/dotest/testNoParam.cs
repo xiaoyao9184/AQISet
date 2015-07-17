@@ -71,18 +71,19 @@ namespace TEST.dotest2
         
         #endregion
 
-        #region 方法
+        #region 重写方法
 
         /// <summary>
         /// 加载参数
         ///     空参数
         /// </summary>
         /// <returns></returns>
-        public override List<AqiParam> EnumParams()
+        public override bool LoadParams()
         {
-            List<AqiParam> apList = new List<AqiParam>();
+            this.listParamCache = new List<AqiParam>();
+            this.dtParamCacheTime = DateTime.Now;
 
-            return apList;
+            return true;
         }
 
         #endregion

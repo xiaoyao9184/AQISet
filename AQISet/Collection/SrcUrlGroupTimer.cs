@@ -21,7 +21,7 @@ namespace AQISet.Collection
 
         private string name;                         //名称
         private double intervalseconds;              //时间间隔
-        private Dictionary<string, ISrcUrl> isulist; //"数据接口"集合
+        private Dictionary<string, ISrcUrl> listISU; //"数据接口"集合
         private Action<object, System.Timers.ElapsedEventArgs> method;
         private Thread thr;
         private CancellationTokenSource cts;
@@ -52,7 +52,7 @@ namespace AQISet.Collection
         {
             get
             {
-                return isulist;
+                return listISU;
             }
         }
 
@@ -60,9 +60,9 @@ namespace AQISet.Collection
         {
             get
             {
-                if (isulist.ContainsKey(name))
+                if (listISU.ContainsKey(name))
                 {
-                    return isulist[name];
+                    return listISU[name];
                 }
                 return null;
             }
@@ -81,7 +81,7 @@ namespace AQISet.Collection
         {
             this.name = name;
             this.intervalseconds = -1;
-            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.listISU = new Dictionary<string, ISrcUrl>();
             this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
         public SrcUrlGroupTimer(string name, Action<object, System.Timers.ElapsedEventArgs> method)
@@ -89,7 +89,7 @@ namespace AQISet.Collection
         {
             this.name = name;
             this.intervalseconds = -1.0;
-            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.listISU = new Dictionary<string, ISrcUrl>();
             this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
             this.method = method;
             base.Enabled = false;
@@ -107,7 +107,7 @@ namespace AQISet.Collection
             this.name = name;
             this.intervalseconds = interval;
             this.AutoReset = true;
-            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.listISU = new Dictionary<string, ISrcUrl>();
             this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
         public SrcUrlGroupTimer(string name, double interval, Action<object, System.Timers.ElapsedEventArgs> method)
@@ -116,7 +116,7 @@ namespace AQISet.Collection
             this.name = name;
             this.intervalseconds = interval;
             base.AutoReset = true;
-            this.isulist = new Dictionary<string, ISrcUrl>();
+            this.listISU = new Dictionary<string, ISrcUrl>();
             this.thisLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
             this.method = method;
             base.Elapsed += new System.Timers.ElapsedEventHandler(method.Invoke);
@@ -187,39 +187,28 @@ namespace AQISet.Collection
         #region 动态控制
 
         /// <summary>
-        /// 合并ISU
-        ///      Main控制线程调用
-        /// </summary>
-        /// <param name="timer"></param>
-        public void Union(SrcUrlGroupTimer timer)
-        {
-            foreach (ISrcUrl isu in timer.isulist.Values)
-            {
-                Add(isu);
-            }
-        }
-
-        /// <summary>
         /// 添加ISU
         ///     Main控制线程调用
         /// </summary>
-        public void Add(ISrcUrl isu)
+        public bool Add(ISrcUrl isu)
         {
             if (intervalseconds == isu.UDI)
             {
-                thisLock.EnterWriteLock();
+                if (this.thisLock.TryEnterWriteLock(1000))
                 {
-                    if (isulist.ContainsKey(isu.Tag))
+                    if (listISU.ContainsKey(isu.Tag))
                     {
-                        isulist[isu.Tag] = isu;
+                        listISU[isu.Tag] = isu;
                     }
                     else
                     {
-                        isulist.Add(isu.Tag, isu);
-                    } 
+                        listISU.Add(isu.Tag, isu);
+                    }
+                    this.thisLock.ExitWriteLock();
+                    return true;
                 }
-                thisLock.ExitWriteLock();
             }
+            return false;
         }
 
         /// <summary>
@@ -227,50 +216,73 @@ namespace AQISet.Collection
         ///      Main控制线程调用
         /// </summary>
         /// <param name="isuName"></param>
-        public void Dele(string isuName)
+        public bool Dele(string isuName)
         {
-            thisLock.EnterWriteLock();
+            if (this.thisLock.TryEnterWriteLock(1000))
             {
-                if (isulist.ContainsKey(isuName))
+                if (listISU.ContainsKey(isuName))
                 {
-                   isulist.Remove(isuName);
+                    listISU.Remove(isuName);
                 }
+                this.thisLock.ExitWriteLock();
+                return true;
             }
-            thisLock.ExitWriteLock();
+            return false;
         }
 
         /// <summary>
-        /// 删除
+        /// 批量删除ISU
         ///      Main控制线程调用
         /// </summary>
         /// <param name="iawTag">数据源 标识或名称</param>
-        public void DeleSrcUrl(string iawTag)
+        public bool DeleAll(string iawTag)
         {
-            thisLock.EnterUpgradeableReadLock();
+            List<string> listTemp = new List<string>();
+            foreach (ISrcUrl isu in this.listISU.Values)
             {
-                List<string> tlist = new List<string>();
-                foreach (ISrcUrl isu in isulist.Values)
+                if (isu.IAW.Tag == iawTag)
                 {
-                    if (isu.IAW.Tag == iawTag)
-                    {
-                        tlist.Add(isu.Tag);
-                    }
-                    else if (isu.IAW.Name == iawTag)
-                    {
-                        tlist.Add(isu.Tag);
-                    }
+                    listTemp.Add(isu.Tag);
                 }
-
-                thisLock.EnterWriteLock();
-                {
-                    foreach (string isutag in tlist)
-                    {
-                        isulist.Remove(isutag);
-                    }
-                }
-                thisLock.ExitWriteLock();
             }
-            thisLock.ExitUpgradeableReadLock();
+
+            if(this.thisLock.TryEnterWriteLock(1000))
+            {
+                foreach (string isutag in listTemp)
+                {
+                    this.listISU.Remove(isutag);
+                }
+                this.thisLock.ExitWriteLock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 合并ISU
+        ///      Main控制线程调用
+        /// </summary>
+        /// <param name="timer"></param>
+        public bool Union(SrcUrlGroupTimer timer)
+        {
+            if (timer.thisLock.TryEnterWriteLock(1000))
+            {
+                try
+                {
+                    if (this.thisLock.TryEnterWriteLock(1000))
+                    {
+                        this.listISU = this.listISU.Concat<KeyValuePair<string, ISrcUrl>>(timer.listISU).ToDictionary<KeyValuePair<string, ISrcUrl>, string, ISrcUrl>(x => x.Key, x => x.Value);
+                        timer.listISU.Clear();
+                        return true;
+                    }
+                }
+                finally
+                {
+                    this.thisLock.ExitWriteLock();
+                    timer.thisLock.ExitWriteLock();
+                }
+            }
+            return false;
         }
 
         #endregion
@@ -285,7 +297,7 @@ namespace AQISet.Collection
         public bool Handle(AqiRunner runner)
         {
             this.thisLock.EnterReadLock();
-            foreach (ISrcUrl url in this.isulist.Values)
+            foreach (ISrcUrl url in this.listISU.Values)
             {
                 if (this.IsCancellationRequested)
                 {
@@ -322,7 +334,7 @@ namespace AQISet.Collection
 
                 if (sugTimer != null)
                 {
-                    sugTimer.isulist.Add(isu.Tag, isu);
+                    sugTimer.listISU.Add(isu.Tag, isu);
                 }
                 else
                 {
@@ -335,7 +347,7 @@ namespace AQISet.Collection
                     {
                         sugTimer = new SrcUrlGroupTimer(name, isu.UDI);
                     }
-                    sugTimer.isulist.Add(isu.Tag, isu);
+                    sugTimer.listISU.Add(isu.Tag, isu);
                     sugTimerList.Add(sugTimer);
                 }
             }
@@ -359,7 +371,7 @@ namespace AQISet.Collection
                     SrcUrlGroupTimer item = source.Find(match);
                     if (item != null)
                     {
-                        item.isulist.Add(isu.Tag, isu);
+                        item.listISU.Add(isu.Tag, isu);
                     }
                     else
                     {
@@ -372,7 +384,7 @@ namespace AQISet.Collection
                         {
                             item = new SrcUrlGroupTimer(someTime, isu.UDI, firstMethod);
                         }
-                        item.isulist.Add(isu.Tag, isu);
+                        item.listISU.Add(isu.Tag, isu);
                         source.Add(item);
                     }
                 }

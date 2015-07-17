@@ -10,9 +10,14 @@ namespace AQISet
 {
     class Program
     {
+
         private static AqiManage am;
         private static Stack stack = new Stack();
 
+        /// <summary>
+        /// 程序入口
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Thread.CurrentThread.Name = "ConsoleMainThread";
@@ -123,14 +128,22 @@ namespace AQISet
                     {
                         parameters = new object[] { strArray[1] };
                     }
+                    int paramcount = 0;
                     foreach (ParameterInfo info2 in info.GetParameters())
                     {
+                        paramcount++;
                         if (!info2.ParameterType.Equals(typeof(string)))
                         {
                             Console.WriteLine("不支持调用此方法，参数类型不为String");
                             return null;
                         }
                     }
+                    if (parameters.Length != paramcount)
+                    {
+                        Console.WriteLine("参数数目不匹配");
+                        return null;
+                    }
+
                     object obj3 = info.Invoke(obj2, parameters);
                     if (info.ReturnType.Equals(typeof(bool)))
                     {
@@ -149,7 +162,10 @@ namespace AQISet
             return obj2;
         }
 
-
+        /// <summary>
+        /// 获取栈信息
+        /// </summary>
+        /// <returns></returns>
         private static string getString()
         {
             string str = null;

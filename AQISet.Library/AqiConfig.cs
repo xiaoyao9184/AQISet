@@ -115,7 +115,6 @@ namespace AQI
             {
                 //JSON路径
                 string jsonPath = icc.GetJsonFile();
-
                 if(!File.Exists(jsonPath))
                 {
                     return listConfig;

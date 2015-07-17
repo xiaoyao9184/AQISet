@@ -61,7 +61,7 @@
     <Compile Include="EnvCityPublishDomainService\GetCityAqiPublish.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JSON\sxAQIWeb.json">
+    <None Include="JSON\qhHaixi.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

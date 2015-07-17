@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using AQI.Interface;
 using System.IO;
-using Newtonsoft.Json.Linq;
-using AQI.Abstract;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
+using AQI.Interface;
+using AQI.Abstract;
 using AQI.Exception;
 
 namespace AQI
@@ -128,6 +128,10 @@ namespace AQI
             { 
                 //JSON路径
                 string jsonPath = icp.GetJsonFile();
+                if (!File.Exists(jsonPath))
+                {
+                    return listParam;
+                }
 
                 //读取JSON
                 StreamReader sr = new StreamReader(jsonPath);
@@ -261,26 +265,34 @@ namespace AQI
             List<AqiParam> listParam = new List<AqiParam>();
 
             try 
-            { 
-                if (relySrcUrl.UseParam)
+            {
+                if (relySrcUrl is ISrcUrlParam)
                 {
-                    List<AqiParam> list = (relySrcUrl as IMakeParam).EnumParams();
-                    while ((list == null) || (list.Count == 0))
+                    ISrcUrlParam isup = relySrcUrl as ISrcUrlParam;
+                    List<AqiParam> list = null;
+
+                    if (isup is ICacheParam)
+                    {
+                        ICacheParam icp = isup as ICacheParam;
+                        if (icp.IsParamsExpired())
+                        {
+                            icp.LoadParams();
+                        }
+                        list = icp.FilterParams();
+                    }
+                    else
+                    {
+                        list = isup.EnumParams();
+                    }
+
+                    if ((list == null) || (list.Count == 0))
                     {
                         throw new ParamException("缺少参数");
                     }
-                    foreach (AqiParam param2 in list)
-                    {
-                        byte[] data = null;
-                        if (param2 != null)
-                        {
-                            data = relySrcUrl.GetDate(param2);
-                        }
-                        else
-                        {
-                            data = relySrcUrl.GetDate();
-                        }
 
+                    foreach (AqiParam ap in list)
+                    {
+                        byte[] data = data = isup.GetDate(ap);
                         List<AqiParam> aps = iParseSrcUrlParam.ParseParam(data);
                         listParam.AddRange(aps);
                     }

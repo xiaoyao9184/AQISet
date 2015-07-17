@@ -27,11 +27,11 @@ namespace QH.Abstract
         /// <summary>
         /// 使用GET方式
         /// </summary>
-        public override AQI.AqiConstant.ParamSendType ParamSendType
+        public override AQI.AqiConstant.HttpType HttpType
         {
             get
             {
-                return AQI.AqiConstant.ParamSendType.GET;
+                return AQI.AqiConstant.HttpType.GET;
             }
         }
 
@@ -47,9 +47,20 @@ namespace QH.Abstract
         }
 
         /// <summary>
+        /// 使用GET方式
+        /// </summary>
+        public override AQI.AqiConstant.ParamSendType ParamSendType
+        {
+            get
+            {
+                return AQI.AqiConstant.ParamSendType.GET;
+            }
+        }
+
+        /// <summary>
         /// 使用UTF8编码格式WCFBin
         /// </summary>
-        public override Helper.WCFbin.WCFMessageUtil.WCFContentFormat CF
+        public override Helper.WCFbin.WCFMessageUtil.WCFContentFormat WCFContentFormat
         {
             get
             {
@@ -59,7 +70,29 @@ namespace QH.Abstract
 
         #endregion
 
-        #region 方法
+        #region 重写方法
+
+        /// <summary>
+        /// 检查过期
+        ///     用不过期
+        /// </summary>
+        /// <returns></returns>
+        public override bool IsParamsExpired()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// 加载参数
+        ///     空参数
+        /// </summary>
+        /// <returns></returns>
+        public override bool LoadParams()
+        {
+            this.listParamCache = new List<AQI.AqiParam>();
+            this.dtParamCacheTime = DateTime.Now;
+            return true;
+        }
 
         /// <summary>
         /// 不制作WCFMessage
