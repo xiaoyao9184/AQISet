@@ -1,4 +1,5 @@
-﻿using AQI.Interface;
+﻿using AQI;
+using AQI.Interface;
 using System;
 
 namespace AQISet.Interface
@@ -29,9 +30,9 @@ namespace AQISet.Interface
         /// 保存
         /// </summary>
         /// <param name="isu">数据源</param>
-        /// <param name="grouptag">分组标签</param>
+        /// <param name="param">参数</param>
         /// <param name="data">数据</param>
         /// <returns></returns>
-        bool Save(ISrcUrl isu, string grouptag, byte[] data);
+        bool Save(ISrcUrl isu, AqiParam param, byte[] data);
     }
 }

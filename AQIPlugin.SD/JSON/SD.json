@@ -1,0 +1,296 @@
+﻿{
+    "GetOther": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "GetPageIsFirstLoad",
+                "method": "GetPageIsFirstLoad"
+            },
+            {
+                "Enabled": true,
+                "Name": "GetShowNotice",
+                "method": "GetShowNotice"
+            }
+        ]
+    },
+    "GetCityList": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "城市列表",
+                "method": "GetCityList"
+            }
+        ]
+    },
+    "GetCityAQI": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "城市AQI",
+                "method": "GetCityAQI"
+            }
+        ]
+    },
+    "GetCityAvg": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "济南溶度",
+                "method": "GetCityAvg",
+                "strCode": "370100"
+            },
+            {
+                "Enabled": true,
+                "Name": "青岛溶度",
+                "method": "GetCityAvg",
+                "strCode": "370200"
+            },
+            {
+                "Enabled": true,
+                "Name": "淄博溶度",
+                "method": "GetCityAvg",
+                "strCode": "370300"
+            },
+            {
+                "Enabled": true,
+                "Name": "枣庄溶度",
+                "method": "GetCityAvg",
+                "strCode": "370400"
+            },
+            {
+                "Enabled": true,
+                "Name": "东营溶度",
+                "method": "GetCityAvg",
+                "strCode": "370500"
+            },
+            {
+                "Enabled": true,
+                "Name": "潍坊溶度",
+                "method": "GetCityAvg",
+                "strCode": "370700"
+            },
+            {
+                "Enabled": true,
+                "Name": "济宁溶度",
+                "method": "GetCityAvg",
+                "strCode": "370800"
+            },
+            {
+                "Enabled": true,
+                "Name": "泰安溶度",
+                "method": "GetCityAvg",
+                "strCode": "370900"
+            },
+            {
+                "Enabled": true,
+                "Name": "威海溶度",
+                "method": "GetCityAvg",
+                "strCode": "371000"
+            },
+            {
+                "Enabled": true,
+                "Name": "日照溶度",
+                "method": "GetCityAvg",
+                "strCode": "371100"
+            },
+            {
+                "Enabled": true,
+                "Name": "莱芜溶度",
+                "method": "GetCityAvg",
+                "strCode": "371200"
+            },
+            {
+                "Enabled": true,
+                "Name": "临沂溶度",
+                "method": "GetCityAvg",
+                "strCode": "371300"
+            },
+            {
+                "Enabled": true,
+                "Name": "德州溶度",
+                "method": "GetCityAvg",
+                "strCode": "371400"
+            },
+            {
+                "Enabled": true,
+                "Name": "聊城溶度",
+                "method": "GetCityAvg",
+                "strCode": "371500"
+            },
+            {
+                "Enabled": true,
+                "Name": "滨州溶度",
+                "method": "GetCityAvg",
+                "strCode": "371600"
+            },
+            {
+                "Enabled": true,
+                "Name": "菏泽溶度",
+                "method": "GetCityAvg",
+                "strCode": "371700"
+            }
+        ]
+    },
+    "GetStationList": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部站点",
+                "method": "GetAllSubStation"
+            },
+            {
+                "Enabled": true,
+                "Name": "济南站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370100",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "青岛站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370200",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "淄博站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370300",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "枣庄站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370400",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "东营站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370500",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "烟台站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370600",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "潍坊站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370700",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "济宁站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370800",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "泰安站点",
+                "method": "GetStationByStrCode",
+                "strCode": "370900",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "威海站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371000",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "日照站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371100",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "莱芜站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371200",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "临沂站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371300",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "德州站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371400",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "聊城站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371500",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "滨州站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371600",
+                "type": "AirQuality"
+            },
+            {
+                "Enabled": true,
+                "Name": "菏泽站点",
+                "method": "GetStationByStrCode",
+                "strCode": "371700",
+                "type": "AirQuality"
+            }
+        ]
+    },
+    "GetStationMarkOnMap": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "站点位置",
+                "method": "GetStationMarkOnMap"
+            }
+        ]
+    },
+    "GetQualityItemsValues": {
+        "Enabled": true
+    },
+    "GetVisilbeRank": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "城市能见度排行",
+                "method": "GetVisilbeRank"
+            }
+        ]
+    },
+    "GetNjdValue": {
+        "Enabled": true
+    },
+    "Images": {
+        "Enabled": false
+    }
+}

@@ -1,0 +1,168 @@
+﻿{
+    "findfzsbystationcode": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "哈尔滨",
+                "gas": "SO2",
+                "stationCode": 230100
+            },
+            {
+                "Enabled": true,
+                "Name": "齐齐哈尔",
+                "gas": "SO2",
+                "stationCode": 230200
+            },
+            {
+                "Enabled": true,
+                "Name": "鸡西",
+                "gas": "SO2",
+                "stationCode": 230300
+            },
+            {
+                "Enabled": true,
+                "Name": "鹤岗",
+                "gas": "SO2",
+                "stationCode": 230400
+            },
+            {
+                "Enabled": true,
+                "Name": "双鸭山",
+                "gas": "SO2",
+                "stationCode": 230500
+            },
+            {
+                "Enabled": true,
+                "Name": "大庆",
+                "gas": "SO2",
+                "stationCode": 230600
+            },
+            {
+                "Enabled": true,
+                "Name": "伊春",
+                "gas": "SO2",
+                "stationCode": 230700
+            },
+            {
+                "Enabled": true,
+                "Name": "佳木斯",
+                "gas": "SO2",
+                "stationCode": 230800
+            },
+            {
+                "Enabled": true,
+                "Name": "七台河",
+                "gas": "SO2",
+                "stationCode": 230900
+            },
+            {
+                "Enabled": true,
+                "Name": "牡丹江",
+                "gas": "SO2",
+                "stationCode": 231000
+            },
+            {
+                "Enabled": true,
+                "Name": "黑河",
+                "gas": "SO2",
+                "stationCode": 231100
+            },
+            {
+                "Enabled": true,
+                "Name": "绥化",
+                "gas": "SO2",
+                "stationCode": 231200
+            },
+            {
+                "Enabled": true,
+                "Name": "大兴安岭",
+                "gas": "SO2",
+                "stationCode": 232700
+            }
+        ]
+    },
+    "findbystationcode": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "哈尔滨",
+                "gas": "SO2",
+                "stationCode": 230100
+            },
+            {
+                "Enabled": true,
+                "Name": "齐齐哈尔",
+                "gas": "SO2",
+                "stationCode": 230200
+            },
+            {
+                "Enabled": true,
+                "Name": "鸡西",
+                "gas": "SO2",
+                "stationCode": 230300
+            },
+            {
+                "Enabled": true,
+                "Name": "鹤岗",
+                "gas": "SO2",
+                "stationCode": 230400
+            },
+            {
+                "Enabled": true,
+                "Name": "双鸭山",
+                "gas": "SO2",
+                "stationCode": 230500
+            },
+            {
+                "Enabled": true,
+                "Name": "大庆",
+                "gas": "SO2",
+                "stationCode": 230600
+            },
+            {
+                "Enabled": true,
+                "Name": "伊春",
+                "gas": "SO2",
+                "stationCode": 230700
+            },
+            {
+                "Enabled": true,
+                "Name": "佳木斯",
+                "gas": "SO2",
+                "stationCode": 230800
+            },
+            {
+                "Enabled": true,
+                "Name": "七台河",
+                "gas": "SO2",
+                "stationCode": 230900
+            },
+            {
+                "Enabled": true,
+                "Name": "牡丹江",
+                "gas": "SO2",
+                "stationCode": 231000
+            },
+            {
+                "Enabled": true,
+                "Name": "黑河",
+                "gas": "SO2",
+                "stationCode": 231100
+            },
+            {
+                "Enabled": true,
+                "Name": "绥化",
+                "gas": "SO2",
+                "stationCode": 231200
+            },
+            {
+                "Enabled": true,
+                "Name": "大兴安岭",
+                "gas": "SO2",
+                "stationCode": 232700
+            }
+        ]
+    }
+}

@@ -88,7 +88,7 @@ namespace AQISet.Control.Saver
             return Save(isu, null, data);
         }
 
-        public bool Save(ISrcUrl isu, string grouptag, byte[] data)
+        public bool Save(ISrcUrl isu, AqiParam param, byte[] data)
         {
             try
             {
@@ -101,12 +101,34 @@ namespace AQISet.Control.Saver
                         return false;
                     }
                 }
-                str = str = this.getDate() + "_" + this.getTime() + "." + isu.IAW.DAT.ToString().ToLower();
+                //目录
                 string path = this.basePath + isu.IAW.Tag + @"\" + isu.Tag + @"\";
-                if (!string.IsNullOrEmpty(grouptag))
+                //分组
+                string grouptag = param.Name;
+                //文件名
+                string nameFile = this.getDate() + "_" + this.getTime();
+                if (param.Unique)
+                {
+                    nameFile = grouptag;
+                }
+                else
                 {
                     path = path + grouptag + @"\";
                 }
+                //扩展名
+                string nameExtension = "." + isu.IAW.DAT.ToString().ToLower();
+                if (isu is IDataType)
+                {
+                    IDataType idt = (isu as IDataType);
+                    if (idt.DAT == AqiConstant.DataType.NONE)
+                    {
+                        nameExtension = "";
+                    }else{
+                        nameExtension = "." + idt.DAT.ToString().ToLower();
+                    }
+                }
+                str = nameFile + nameExtension;
+
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

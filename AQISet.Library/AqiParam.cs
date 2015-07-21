@@ -36,6 +36,7 @@ namespace AQI
         private string pName;
         private string pRefer;
         private string pGroup;
+        private bool pUnique;
 
         #endregion
 
@@ -79,6 +80,21 @@ namespace AQI
             set
             {
                 pGroup = value;
+            }
+        }
+
+        /// <summary>
+        /// 唯一
+        /// </summary>
+        public bool Unique
+        {
+            get
+            {
+                return pUnique;
+            }
+            set
+            {
+                pUnique = value;
             }
         }
 

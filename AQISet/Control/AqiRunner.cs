@@ -452,7 +452,16 @@ namespace AQISet.Control
                     break;
                 }
 
-                byte[] data = isup.GetDate(ap);
+                byte[] data = null;
+                try
+                {
+                    data = isup.GetDate(ap);
+                }
+                catch (Exception exception)
+                {
+                    AqiManage.Remind.Log_Error("数据获取失败，进入重试队列", new string[] { this.name, sugt.Name, isu.Name });
+                    this.ar.PutNew(this.name, isu, ap, exception);
+                }
 
                 this.SaveProcess(data, isu, ap);
             }
@@ -510,7 +519,7 @@ namespace AQISet.Control
                 }
                 else
                 {
-                    node.Saved = this.ias.Save(isu, ap.Name, data);
+                    node.Saved = this.ias.Save(isu, ap, data);
                 }
                 if (node.Saved)
                 {
