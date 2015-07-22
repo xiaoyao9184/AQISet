@@ -59,8 +59,13 @@ namespace AQI.Abstract
         public abstract AQI.AqiConstant.HttpType HttpType { get; }
 
         /// <summary>
+        /// 是否忽略空参数
+        ///     ISrcUrlParam
+        /// </summary>
+        public abstract bool ParamIgnoreEmpty { get; }
+        /// <summary>
         /// 参数名列表
-        ///     IMakeParam
+        ///     ISrcUrlParam
         /// </summary>
         public abstract List<string> ParamName { get; }
         /// <summary>
@@ -68,7 +73,6 @@ namespace AQI.Abstract
         ///     IMakeParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamSendType ParamSendType { get; }
-
         /// <summary>
         /// 参数缓存列表
         ///     ICacheParam

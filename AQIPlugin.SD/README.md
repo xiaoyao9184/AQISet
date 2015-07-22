@@ -1,11 +1,13 @@
 #说明
 
 请求数据分为2种，HTTP GET方式、POST方式
-数据接口地址为http://58.56.98.78:8801/AirDeploy.web/Ajax/AirQuality/AirQuality.ashx
-由于接口单一，故按请求方式不同划分不同的虚拟接口
+数据接口地址为
+数据接口 http://58.56.98.78:8801/AirDeploy.web/Ajax/AirQuality/AirQuality.ashx
+图片接口 http://60.208.91.115:6600/Images
+按请求方式方法不同划分不同的虚拟接口
 
 
-一下为接口列表
+以下为接口列表
 名称					解释				数据类型		请求方式
 ============================================================
 GetOther				其他未知数据		未知			GET

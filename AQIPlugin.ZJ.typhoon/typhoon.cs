@@ -16,10 +16,9 @@ namespace Plugin_ZJTF
         private static AqiConstant.SourceLevel src = AqiConstant.SourceLevel.OTHER;
         private static AqiConstant.DataType dat = AqiConstant.DataType.JSON;
         private static string[] srcNameSpace = new string[]{
-            "typhoon.Api"
+            "typhoon.Api", "typhoon.Api.Auto"
         };
         
-
         #endregion
 
         #region 属性

@@ -1,0 +1,1059 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "乌鲁木齐",
+                "cityName": "乌鲁木齐"
+            },
+            {
+                "Enabled": true,
+                "Name": "克拉玛依",
+                "cityName": "克拉玛依"
+            },
+            {
+                "Enabled": true,
+                "Name": "吐鲁番地",
+                "cityName": "吐鲁番地"
+            },
+            {
+                "Enabled": true,
+                "Name": "哈密地",
+                "cityName": "哈密地"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "博州",
+                "cityName": "博州"
+            },
+            {
+                "Enabled": true,
+                "Name": "巴音郭楞",
+                "cityName": "巴音郭楞"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿克苏地",
+                "cityName": "阿克苏地"
+            },
+            {
+                "Enabled": true,
+                "Name": "克州",
+                "cityName": "克州"
+            },
+            {
+                "Enabled": true,
+                "Name": "昌吉",
+                "cityName": "昌吉"
+            },
+            {
+                "Enabled": true,
+                "Name": "喀什地",
+                "cityName": "喀什地"
+            },
+            {
+                "Enabled": true,
+                "Name": "和田地",
+                "cityName": "和田地"
+            },
+            {
+                "Enabled": true,
+                "Name": "伊犁哈萨克",
+                "cityName": "伊犁哈萨克"
+            },
+            {
+                "Enabled": true,
+                "Name": "塔城地",
+                "cityName": "塔城地"
+            },
+            {
+                "Enabled": true,
+                "Name": "阿勒泰地",
+                "cityName": "阿勒泰地"
+            },
+            {
+                "Enabled": true,
+                "Name": "石河子",
+                "cityName": "石河子"
+            },
+            {
+                "Enabled": true,
+                "Name": "五家渠",
+                "cityName": "五家渠"
+            },
+            {
+                "Enabled": true,
+                "Name": "奎屯市",
+                "cityName": "奎屯市"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_监测站",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_收费所",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_新疆农科院农场",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_铁路局",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_三十一中学",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_七十四中学",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_米东区环保局",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_长征新村",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_南林小区",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_白碱滩区",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_独山子区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_乌尔禾区商贸楼",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_市环保局",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_地区环保局",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_地区监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_哈密师范学校",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_天山天池",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_州监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_新区政务中心",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_博乐市西郊区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_市环保局",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_孔雀公园",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_棉纺厂",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_经济开发区",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_电视台",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_艺术中心",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_市人民政府",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_巡警大队",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_吾办",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_市环境监测站",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_地区站",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_古江巴格乡院内",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_市环保局",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_新政府片区",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_第二水厂",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_东门外小游园",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_小东沟",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_市站",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_艾青诗歌馆",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_农水大厦",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_阳光学校",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_艺术中心",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1075A_奎屯华新公司",
+                "stationCode": "1075A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1076A_奎屯市政府",
+                "stationCode": "1076A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_监测站",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_收费所",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_新疆农科院农场",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_铁路局",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_三十一中学",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_七十四中学",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_米东区环保局",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_长征新村",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_南林小区",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_白碱滩区",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_独山子区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_乌尔禾区商贸楼",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_市环保局",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_地区环保局",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_地区监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_哈密师范学校",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_天山天池",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_州监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_新区政务中心",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_博乐市西郊区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_市环保局",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_孔雀公园",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_棉纺厂",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_经济开发区",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_电视台",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_艺术中心",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_市人民政府",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_巡警大队",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_吾办",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_市环境监测站",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_地区站",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_古江巴格乡院内",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_市环保局",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_新政府片区",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_第二水厂",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_东门外小游园",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_小东沟",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_市站",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_艾青诗歌馆",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_农水大厦",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_阳光学校",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_艺术中心",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1075A_奎屯华新公司",
+                "stationCode": "1075A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1076A_奎屯市政府",
+                "stationCode": "1076A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

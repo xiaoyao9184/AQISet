@@ -104,17 +104,23 @@ namespace AQISet.Control.Saver
                 //目录
                 string path = this.basePath + isu.IAW.Tag + @"\" + isu.Tag + @"\";
                 //分组
-                string grouptag = param.Name;
+                string grouptag = "";
                 //文件名
                 string nameFile = this.getDate() + "_" + this.getTime();
-                if (param.Unique)
+
+                if (param != null)
                 {
-                    nameFile = grouptag;
+                    grouptag = param.Name;
+                    if (param.Unique)
+                    {
+                        nameFile = grouptag;
+                    }
+                    else
+                    {
+                        path = path + grouptag + @"\";
+                    }
                 }
-                else
-                {
-                    path = path + grouptag + @"\";
-                }
+                
                 //扩展名
                 string nameExtension = "." + isu.IAW.DAT.ToString().ToLower();
                 if (isu is IDataType)

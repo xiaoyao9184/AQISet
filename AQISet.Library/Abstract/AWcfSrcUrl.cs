@@ -7,6 +7,7 @@ using System.Xml;
 using Helper.Util.HTTP;
 using Helper.WCFbin;
 using AQI.Interface;
+using AQI.Exception;
 
 namespace AQI.Abstract
 {
@@ -110,12 +111,24 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 常用更新间隔
+        ///     扩展ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
 
         /// <summary>
+        /// 不可忽略空参数
+        ///     实现ISrcUrlParam
+        /// </summary>
+        public virtual bool ParamIgnoreEmpty 
+        {
+            get
+            {
+                return false;
+            }
+        }
+        /// <summary>
         /// 参数名列表
-        ///     IMakeParam
+        ///     ISrcUrlParam
         /// </summary>
         public abstract List<string> ParamName { get; }
         /// <summary>
@@ -159,7 +172,13 @@ namespace AQI.Abstract
         }
 
         /// <summary>
-        /// WCF Content Binary(WCF二进制内容)编码格式
+        /// 仅提取WCF内容（WCF Content）
+        ///     扩展IExtractData
+        /// </summary>
+        public abstract bool ExtractWCFContent { get; }
+        /// <summary>
+        /// WCF内容编码格式（WCF Content即WCF Message Body，提取为WCF Content Binary(WCF二进制内容)）
+        ///     扩展IExtractData
         /// </summary>
         public abstract Helper.WCFbin.WCFMessageUtil.WCFContentFormat WCFContentFormat { get; }
         
@@ -312,8 +331,28 @@ namespace AQI.Abstract
         /// <returns></returns>
         public virtual bool LoadParams()
         {
-            this.listParamCache = AqiParam.CreateListFormJson(this, this.Tag, AqiParam.PARAMS);
-            this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
+            switch (ParamSourceType)
+            {
+                case AqiConstant.ParamSourceType.JSON:
+                    this.listParamCache = AqiParam.CreateListFormJson(this, this.Tag, AqiParam.PARAMS);
+                    this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
+                    break;
+                case AqiConstant.ParamSourceType.ISrcUrl:
+                    if (this is IParseSrcUrlParam)
+                    {
+                        IParseSrcUrlParam ipp = this as IParseSrcUrlParam;
+                        this.listParamCache = AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl);
+                        this.dtParamCacheTime = DateTime.Now;
+                    }
+                    else
+                    {
+                        throw new ParamException("参数来源类型(ISRCUrl)与接口(IParseParam)不匹配");
+                    }
+                    break;
+                default:
+                    throw new ParamException("参数来源类型(ParamSourceType)未知");
+            }
+
             return true;
         }
 
@@ -341,7 +380,7 @@ namespace AQI.Abstract
             StringBuilder sb = new StringBuilder();
             sb.Append(Url);
             sb.Append(MakeKeyValueUrl(param));
-            return Uri.EscapeUriString(sb.ToString());
+            return sb.ToString();
         }
 
         /// <summary>
@@ -375,9 +414,18 @@ namespace AQI.Abstract
             //获取WCF Message
             string strWCFMsg = mh.GetWcfBinaryMessageAsText(responsebody);
 
-            //获取WCF Content Binary（=WCF Message Body）
-            byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, Tag, WCFContentFormat);
-
+            byte[] wcfbin = null;
+            if (ExtractWCFContent)
+            {
+                //从WCF Message提取WCF Message Body，转化为WCF Content Binary
+                //获取WCF Content Binary
+                wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, Tag, WCFContentFormat);
+            }
+            else
+            {
+                wcfbin = Encoding.UTF8.GetBytes(strWCFMsg);
+            }
+            
             return wcfbin;
         }
 

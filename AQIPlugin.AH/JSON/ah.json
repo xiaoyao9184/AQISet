@@ -1,0 +1,1239 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "合肥",
+                "cityName": "合肥"
+            },
+            {
+                "Enabled": true,
+                "Name": "芜湖",
+                "cityName": "芜湖"
+            },
+            {
+                "Enabled": true,
+                "Name": "蚌埠",
+                "cityName": "蚌埠"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮南",
+                "cityName": "淮南"
+            },
+            {
+                "Enabled": true,
+                "Name": "马鞍山",
+                "cityName": "马鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "淮北",
+                "cityName": "淮北"
+            },
+            {
+                "Enabled": true,
+                "Name": "铜陵",
+                "cityName": "铜陵"
+            },
+            {
+                "Enabled": true,
+                "Name": "安庆",
+                "cityName": "安庆"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄山",
+                "cityName": "黄山"
+            },
+            {
+                "Enabled": true,
+                "Name": "滁州",
+                "cityName": "滁州"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜阳",
+                "cityName": "阜阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "宿州",
+                "cityName": "宿州"
+            },
+            {
+                "Enabled": true,
+                "Name": "六安",
+                "cityName": "六安"
+            },
+            {
+                "Enabled": true,
+                "Name": "亳州",
+                "cityName": "亳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "池州",
+                "cityName": "池州"
+            },
+            {
+                "Enabled": true,
+                "Name": "宣城",
+                "cityName": "宣城"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_明珠广场",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_三里街",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_琥珀山庄",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_董铺水库",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_长江中路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_庐阳区",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_瑶海区",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_包河区",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_滨湖新区",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_高新区",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_马钢动力厂",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_监测站",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_科创中心",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_四水厂",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_五七二零厂",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_工人疗养院",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_百货大楼",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_二水厂",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_蚌埠学院",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_淮上区政府",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_潘集区政府",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_师范学院",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_谢家集区政府",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_八公山区政府",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_焦岗湖风景区管理处",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_湖东路四小",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_天平服装",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_慈湖二小",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市教育基地",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_监测站",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_烈山区政府",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_职业技术学院",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_市第四中学",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_市公路局",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_市新民污水厂",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_市第九中学",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_市委党校",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_十一中学",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_环科院",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_马山宾馆",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_联富花园",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_安庆大学",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_延安路89号",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_黄山东路89号",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_黄山区政府5号楼",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_老年大学",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_人大宾馆",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_监测站",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_市监测站",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_阜阳职业技术学校",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_开发区",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_监测楼",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_一中",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_火车站",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_监测大楼",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_皖西学院",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_朝阳厂",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_开发区",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_污水处理厂",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_三国揽胜宫",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_环保大楼",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_池州学院",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_平天湖",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_鳌峰子站",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_敬亭山子站",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_开发区子站",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_高新区",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1152A_益益乳业工业园",
+                "stationCode": "1152A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_明珠广场",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_三里街",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_琥珀山庄",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_董铺水库",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_长江中路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_庐阳区",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_瑶海区",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_包河区",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_滨湖新区",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_高新区",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_马钢动力厂",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_监测站",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_科创中心",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_四水厂",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_五七二零厂",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_工人疗养院",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_百货大楼",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_二水厂",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_蚌埠学院",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_淮上区政府",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_潘集区政府",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_师范学院",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_谢家集区政府",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_八公山区政府",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_焦岗湖风景区管理处",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_湖东路四小",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_天平服装",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_慈湖二小",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市教育基地",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_监测站",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_烈山区政府",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_职业技术学院",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_市第四中学",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_市公路局",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_市新民污水厂",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_市第九中学",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_市委党校",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_十一中学",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_环科院",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_马山宾馆",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_联富花园",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_安庆大学",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_延安路89号",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_黄山东路89号",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_黄山区政府5号楼",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_老年大学",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_人大宾馆",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_监测站",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_市监测站",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_阜阳职业技术学校",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_开发区",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_监测楼",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_一中",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_火车站",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_监测大楼",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_皖西学院",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_朝阳厂",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_开发区",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_污水处理厂",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_三国揽胜宫",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_环保大楼",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_池州学院",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_平天湖",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_鳌峰子站",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_敬亭山子站",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_开发区子站",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_高新区",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1152A_益益乳业工业园",
+                "stationCode": "1152A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

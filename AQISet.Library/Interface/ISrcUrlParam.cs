@@ -12,6 +12,10 @@ namespace AQI.Interface
     public interface ISrcUrlParam
     {
         /// <summary>
+        /// 是否忽略空参数
+        /// </summary>
+        bool ParamIgnoreEmpty { get; }
+        /// <summary>
         /// 参数名列表
         /// </summary>
         List<string> ParamName { get; }

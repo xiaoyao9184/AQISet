@@ -47,11 +47,11 @@
     <Compile Include="Api\LeastRain.cs" />
     <Compile Include="Api\LeastCloud.cs" />
     <Compile Include="Api\TyhoonActivity.cs" />
-    <Compile Include="Api\TyphoonInfo_FormList.cs" />
+    <Compile Include="Api\Auto\TyphoonInfo_FormList.cs" />
+    <Compile Include="Api\Auto\TyphoonInfo_FormActivity.cs" />
     <Compile Include="Api\TyphoonInfo.cs" />
-    <Compile Include="Api\TyphoonInfo_Manual.cs" />
+    <Compile Include="Api\Auto\TyphoonList_Auto.cs" />
     <Compile Include="Api\TyphoonList.cs" />
-    <Compile Include="Api\TyphoonList_Manual.cs" />
     <Compile Include="typhoon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +60,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">

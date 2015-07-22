@@ -1,26 +1,24 @@
-﻿using System;
+﻿using AQI.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AQI.Abstract;
-using AQI.Interface;
 
 namespace QH
 {
-    public class QHAqi: ABaseAqiWeb
+    public class QHAqi : ABaseAqiWeb
     {
 
         #region 静态字段
 
-        private static string name = "(青海省)海西州空气质量实时发布系统";
-        private static string tag = "qhHaixi";
-        private static string url = "http://61.133.239.78:82/";
-        private static AQI.AqiConstant.SourceLevel src = AQI.AqiConstant.SourceLevel.CITY;
+        private static string name = "青海空气质量实时发布系统";
+        private static string tag = "qh";
+        private static string url = "http://221.207.21.89:8080/";
+        private static AQI.AqiConstant.SourceLevel src = AQI.AqiConstant.SourceLevel.PROVINCIAL;
         private static AQI.AqiConstant.DataType dat = AQI.AqiConstant.DataType.XML;
         private static string[] srcNameSpace = new string[]{
-            "QHHX.EnvCityPublishDomainService"
+            "QH.ProvincePublishDomainService", "QH.ProvincePublishDomainService.Auto"
         };
-        
 
         #endregion
 
@@ -68,7 +66,7 @@ namespace QH
                 return dat;
             }
         }
-        
+
         #endregion
 
     }

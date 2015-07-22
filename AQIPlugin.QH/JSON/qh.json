@@ -1,0 +1,449 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "西宁",
+                "cityName": "西宁"
+            },
+            {
+                "Enabled": true,
+                "Name": "海东",
+                "cityName": "海东"
+            },
+            {
+                "Enabled": true,
+                "Name": "海南",
+                "cityName": "海南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海北",
+                "cityName": "海北"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉树",
+                "cityName": "玉树"
+            },
+            {
+                "Enabled": true,
+                "Name": "果洛",
+                "cityName": "果洛"
+            },
+            {
+                "Enabled": true,
+                "Name": "黄南",
+                "cityName": "黄南"
+            },
+            {
+                "Enabled": true,
+                "Name": "海西",
+                "cityName": "海西"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_市环境监测站",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_省医药仓库",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_四陆医院",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_第五水厂",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_民和县",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_乐都子站",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_平安子站",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_共和子站",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_西海子站",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_玉树子站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_果洛子站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_同仁子站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_德令哈子站",
+                "stationCode": "1016A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_市环境监测站",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_省医药仓库",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_四陆医院",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_第五水厂",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_民和县",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_乐都子站",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_平安子站",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_共和子站",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_西海子站",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_玉树子站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_果洛子站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_同仁子站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_德令哈子站",
+                "stationCode": "1016A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

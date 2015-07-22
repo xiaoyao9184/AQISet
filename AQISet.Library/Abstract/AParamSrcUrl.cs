@@ -121,12 +121,24 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 常用更新间隔
+        ///     扩展ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
 
         /// <summary>
+        /// 不可忽略空参数
+        ///     实现ISrcUrlParam
+        /// </summary>
+        public virtual bool ParamIgnoreEmpty
+        {
+            get
+            {
+                return false;
+            }
+        }
+        /// <summary>
         /// 参数名列表
-        ///     IMakeParam
+        ///     ISrcUrlParam
         /// </summary>
         public abstract List<string> ParamName { get; }
         /// <summary>
@@ -449,7 +461,7 @@ namespace AQI.Abstract
                 throw new ParamException("使用了未知的ParamUrlType");
             }
 
-            return Uri.EscapeUriString(sb.ToString());
+            return sb.ToString();
         }
 
         /// <summary>

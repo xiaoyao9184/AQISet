@@ -1,5 +1,5 @@
 ﻿{
-    "TyphoonList_Manual": {
+    "TyphoonList": {
         "Enabled": false,
         "boundsParams": [
             {
@@ -10,7 +10,7 @@
             }
         ]
     },
-    "TyphoonList": {
+    "TyphoonList_Auto": {
         "Enabled": true,
         "ParamSetting": {
             "ParamType": "JSON",
@@ -31,7 +31,7 @@
             }
         ]
     },
-    "TyphoonInfo_Manual": {
+    "TyphoonInfo": {
         "Enabled": false,
         "depthsParams": [
             {
@@ -47,37 +47,40 @@
         "Enabled": false,
         "ParamType": "IParseParam"
     },
-    "TyphoonInfo": {
+    "TyphoonInfo_FormActivity": {
         "Enabled": true,
         "ParamType": "IParseParam"
     },
     "LeastRain": {
         "Enabled": true,
-        "Params" : [
-		    {
-			    "Enabled" : "true",
-			    "Name" : "6小时",
-			    "Param" : "6",
-			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/6"
-		    },
-		    {
-			    "Enabled" : "true",
-			    "Name" : "12小时",
-			    "Param" : "12",
-			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/12"
-		    },
-		    {
-			    "Enabled" : true,
-			    "Name" : "24小时",
-			    "Param" : "24",
-			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/24"
-		    },
-		    {
-			    "Enabled" : true,
-			    "Name" : "48小时",
-			    "Param" : "48",
-			    "Refer" : "http://typhoon.zjwater.gov.cn/Api/LeastRain/48"
-		    }
-	    ]
+        "Params": [
+            {
+                "Enabled": "true",
+                "Name": "6小时",
+                "Param": "6",
+                "Refer": "http://typhoon.zjwater.gov.cn/Api/LeastRain/6"
+            },
+            {
+                "Enabled": "true",
+                "Name": "12小时",
+                "Param": "12",
+                "Refer": "http://typhoon.zjwater.gov.cn/Api/LeastRain/12"
+            },
+            {
+                "Enabled": true,
+                "Name": "24小时",
+                "Param": "24",
+                "Refer": "http://typhoon.zjwater.gov.cn/Api/LeastRain/24"
+            },
+            {
+                "Enabled": true,
+                "Name": "48小时",
+                "Param": "48",
+                "Refer": "http://typhoon.zjwater.gov.cn/Api/LeastRain/48"
+            }
+        ]
+    },
+    "LeastCloud": { 
+        "Enabled": true
     }
 }

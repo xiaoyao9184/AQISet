@@ -434,6 +434,11 @@ namespace AQISet.Control
             //应该在检验参数
             while ((list == null) || (list.Count == 0))
             {
+                if (isup.ParamIgnoreEmpty)
+                {
+                    AqiManage.Remind.Log_Error("缺少参数，此数据接口在无参数是将被忽略", new string[] { this.name, sugt.Name, isu.Name });
+                    return;
+                }
                 if (this.ThrowWaitEvent(isu.Name + ":缺少参数，请输入以下参数", isu))
                 {
                     AqiManage.Remind.Log_Debug("缺少参数，进入等待", new string[] { this.name, sugt.Name, isu.Name });

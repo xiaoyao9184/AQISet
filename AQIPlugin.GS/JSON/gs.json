@@ -1,0 +1,839 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "兰州",
+                "cityName": "兰州"
+            },
+            {
+                "Enabled": true,
+                "Name": "嘉峪关",
+                "cityName": "嘉峪关"
+            },
+            {
+                "Enabled": true,
+                "Name": "金昌",
+                "cityName": "金昌"
+            },
+            {
+                "Enabled": true,
+                "Name": "白银",
+                "cityName": "白银"
+            },
+            {
+                "Enabled": true,
+                "Name": "天水",
+                "cityName": "天水"
+            },
+            {
+                "Enabled": true,
+                "Name": "武威",
+                "cityName": "武威"
+            },
+            {
+                "Enabled": true,
+                "Name": "张掖",
+                "cityName": "张掖"
+            },
+            {
+                "Enabled": true,
+                "Name": "平凉",
+                "cityName": "平凉"
+            },
+            {
+                "Enabled": true,
+                "Name": "酒泉",
+                "cityName": "酒泉"
+            },
+            {
+                "Enabled": true,
+                "Name": "庆阳",
+                "cityName": "庆阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "定西",
+                "cityName": "定西"
+            },
+            {
+                "Enabled": true,
+                "Name": "陇南",
+                "cityName": "陇南"
+            },
+            {
+                "Enabled": true,
+                "Name": "甘南州",
+                "cityName": "甘南州"
+            },
+            {
+                "Enabled": true,
+                "Name": "临夏州",
+                "cityName": "临夏州"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_职工医院",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_兰炼宾馆",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_榆中兰大校区",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_生物制品所",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_铁路设计院",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_七十四中学",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_气象局",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_酒钢耐材公司",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_市科委",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_新川苑",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_公司二招",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_豫源饭店",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_动力公司",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_仙人崖",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_进步巷",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_文化馆",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_监测站",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_雷台",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_监测站",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_科委",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_监测站",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_博物馆",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_仓门街子站",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_富康家世界子站",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_区环保局",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_粮贸总公司",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_市环保局",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_监测站（原粮食局）",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_南峰招待所（原起重机厂）",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_汉王镇固水子",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市林业局",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_环保局",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_环保局",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_州委党校",
+                "stationCode": "1034A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_职工医院",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_兰炼宾馆",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_榆中兰大校区",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_生物制品所",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_铁路设计院",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_七十四中学",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_气象局",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_酒钢耐材公司",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_市科委",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_新川苑",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_公司二招",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_豫源饭店",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_动力公司",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_仙人崖",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_进步巷",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_文化馆",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_监测站",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_雷台",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_监测站",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_科委",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_监测站",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_博物馆",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_仓门街子站",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_富康家世界子站",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_区环保局",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_粮贸总公司",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_市环保局",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_监测站（原粮食局）",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_南峰招待所（原起重机厂）",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_汉王镇固水子",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市林业局",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_环保局",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_环保局",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_州委党校",
+                "stationCode": "1034A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

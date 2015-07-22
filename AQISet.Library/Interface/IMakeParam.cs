@@ -16,13 +16,13 @@ namespace AQI.Interface
         /// <summary>
         /// 拼接含参数Url
         /// </summary>
-        /// <param name="dictParam">参数列表</param>
+        /// <param name="param">参数</param>
         /// <returns>完整的url</returns>
         string MakeUrl(AqiParam param);
         /// <summary>
         /// 拼接请求体
         /// </summary>
-        /// <param name="dictParam">参数列表</param>
+        /// <param name="param">参数</param>
         /// <returns>字节数组</returns>
         byte[] MakeRequestBody(AqiParam param);
     }

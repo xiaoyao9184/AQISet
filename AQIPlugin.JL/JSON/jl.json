@@ -1,0 +1,679 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长春",
+                "cityName": "长春"
+            },
+            {
+                "Enabled": true,
+                "Name": "吉林",
+                "cityName": "吉林"
+            },
+            {
+                "Enabled": true,
+                "Name": "四平",
+                "cityName": "四平"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽源",
+                "cityName": "辽源"
+            },
+            {
+                "Enabled": true,
+                "Name": "通化",
+                "cityName": "通化"
+            },
+            {
+                "Enabled": true,
+                "Name": "白山",
+                "cityName": "白山"
+            },
+            {
+                "Enabled": true,
+                "Name": "松原",
+                "cityName": "松原"
+            },
+            {
+                "Enabled": true,
+                "Name": "白城",
+                "cityName": "白城"
+            },
+            {
+                "Enabled": true,
+                "Name": "延边",
+                "cityName": "延边"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_食品厂",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_客车厂",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_邮电学院",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_劳动公园",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_园林处",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_净月潭",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_甩湾子",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_经开区环卫处",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_高新区管委会",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_岱山公园",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_哈达湾",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_东局子",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_电力学院",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_江北",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_江南公园",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_丰满",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_一商场",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_境园",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_环保局",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_污水处理厂",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_光明",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_铁路",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_喜丰",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_环保局",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_江南",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_江北",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_洮北区环保局",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_市环保局",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_妇幼医院",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_延边医院",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_朝阳川镇医院",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_九站",
+                "stationCode": "1034A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_食品厂",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_客车厂",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_邮电学院",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_劳动公园",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_园林处",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_净月潭",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_甩湾子",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_经开区环卫处",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_高新区管委会",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_岱山公园",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_哈达湾",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_东局子",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_电力学院",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_江北",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_江南公园",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_丰满",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_一商场",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_境园",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_环保局",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_污水处理厂",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_光明",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_铁路",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_喜丰",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_环保局",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_江南",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_江北",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_洮北区环保局",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_市环保局",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_妇幼医院",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_延边医院",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_朝阳川镇医院",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_九站",
+                "stationCode": "1034A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

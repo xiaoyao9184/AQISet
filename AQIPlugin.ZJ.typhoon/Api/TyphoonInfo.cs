@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using AQI;
-using AQI.Interface;
 using AQI.Abstract;
 using AQI.Exception;
 
 namespace typhoon.Api
 {
-    public class TyphoonInfo : AParamSrcUrl, IParseSrcUrlParam
+    public class TyphoonInfo : AParamSrcUrl
     {
 
         #region 静态变量
@@ -18,20 +14,12 @@ namespace typhoon.Api
         private static string tag = "TyphoonInfo";
         private static string name = "浙江台风详情";
         private static string url = "http://typhoon.zjwater.gov.cn/Api/TyphoonInfo";
-        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
+        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static List<string> pn = new List<string>(){
-            "ParamType."
+            "depthsParams.", ".yearidStart", ".yearidEnd", ".yearidDepth"
         };
-        private static AqiConstant.ParamSendType ppst = AqiConstant.ParamSendType.GET;
-        private static new AqiConstant.ParamSourceType pst = AqiConstant.ParamSourceType.ISrcUrl;
-        private static new AqiConstant.ParamFilterType pft = AqiConstant.ParamFilterType.NONE;
+        private static new AqiConstant.ParamSendType pst = AqiConstant.ParamSendType.GET;
         private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
-
-        #endregion
-
-        #region 变量
-
-        private ISrcUrl ParamISU = new TyhoonActivity();
 
         #endregion
 
@@ -58,18 +46,6 @@ namespace typhoon.Api
                 return url;
             }
         }
-        public override IAqiWeb IAW
-        {
-            get
-            {
-                return iaw;
-            }
-            set
-            {
-                base.iaw = value;
-                this.ParamISU.IAW = value;
-            }
-        }
         public override AqiConstant.SourceUpdataInterval SUI
         {
             get
@@ -88,21 +64,7 @@ namespace typhoon.Api
         {
             get
             {
-                return ppst;
-            }
-        }
-        public override AqiConstant.ParamSourceType ParamSourceType
-        {
-            get
-            {
                 return pst;
-            }
-        }
-        public override AqiConstant.ParamFilterType ParamFilterType
-        {
-            get
-            {
-                return pft;
             }
         }
         public override AqiConstant.ParamUrlType ParamUrlType
@@ -115,45 +77,56 @@ namespace typhoon.Api
 
         #endregion
 
-        #region IParseSrcUrlParam
+        #region 内部方法
 
-        public ISrcUrl ParamSrcUrl 
+        /// <summary>
+        /// 加载depthsParams用于计算
+        /// </summary>
+        /// <returns></returns>
+        private List<AqiParam> loadDepthsParams()
         {
-            get
+            List<AqiParam> apList = new List<AqiParam>();
+            //扩展参数
+            List<AqiParam> apListTemp = AqiParam.CreateListFormJson(this, this.Tag, "depthsParams");
+            //根据 扩展参数 生成最终参数
+            foreach (AqiParam apTemp in apListTemp)
             {
-                return ParamISU;
-                //Dictionary<string, ISrcUrl> all = IAW.GetAllSrcUrl();
-                //string key = typeof(TyphoonList).Fullname;
-                //return all[key];
+                int idS = Int32.Parse(apTemp["yearidStart"]);
+                int idE = Int32.Parse(apTemp["yearidEnd"]);
+                int idD = Int32.Parse(apTemp["yearidDepth"]);
+
+                for (int yearid = idS; yearid <= idE; yearid++)
+                {
+                    int id = yearid % 100;
+                    if (id > idD)
+                    {
+                        yearid = (yearid / 100) * 100 + 101;
+                        continue;
+                    }
+                    AqiParam ap = new AqiParam(apTemp.Name + "\\" + yearid);
+                    ap.Add("", yearid.ToString());
+                    apList.Add(ap);
+                }
             }
+
+            return apList;
         }
 
-        public List<AqiParam> ParseParam(byte[] data)
+        #endregion
+
+        #region 重写方法
+
+        /// <summary>
+        /// 加载参数
+        ///     读取JSON中的depthsParams字段
+        /// </summary>
+        /// <returns></returns>
+        public override bool LoadParams()
         {
-            List<AqiParam> listParam = new List<AqiParam>();
+            this.listParamCache = this.loadDepthsParams();
+            this.dtParamCacheTime = AqiParam.ReadWriteTimeFormJson(this);
 
-            string json = Encoding.UTF8.GetString(data);
-            JArray ja = JArray.Parse(json);
-            JEnumerable<JToken> je = ja.Children();
-            foreach (JToken j in je)
-            {
-                if (!(j is JObject))
-                {
-                    throw new DataDifferentException("与预期的数据不一致(JSON数组子元素应该是对象)，可能数据源已经发生变化");
-                }
-                JObject joOne = j as JObject;
-                JToken jttf = joOne.GetValue("tfid");
-                if (jttf == null)
-                {
-                    throw new DataDifferentException("与预期的数据不一致(JSON数组对象应该包含tfid属性)，可能数据源已经发生变化");
-                }
-                AqiParam ap = new AqiParam(jttf.ToString() + "号台风");
-                ap.Add("", jttf.ToString());
-                listParam.Add(ap);
-
-            }
-            
-            return listParam;
+            return true;
         }
 
         #endregion

@@ -64,6 +64,16 @@ namespace bjmemc.Abstract
         }
 
         /// <summary>
+        /// 仅提取WCF内容
+        /// </summary>
+        public override bool ExtractWCFContent
+        {
+            get
+            {
+                return true;
+            }
+        }
+        /// <summary>
         /// 使用UTF8编码格式WCFBin
         /// </summary>
         public override Helper.WCFbin.WCFMessageUtil.WCFContentFormat WCFContentFormat
