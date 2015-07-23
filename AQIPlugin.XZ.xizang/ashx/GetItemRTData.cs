@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using AQI;
+﻿using AQI;
 using AQI.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace typhoon.Api
+namespace xizang.ashx
 {
-    public class LeastRain : AParamSrcUrl
+    public class GetItemRTData : AParamSrcUrl
     {
 
         #region 静态变量
 
-        private static string tag = "LeastRain";
-        private static string name = "浙江台风当前雨图";
-        private static string url = "http://typhoon.zjwater.gov.cn/Api/LeastRain";
+        private static string tag = "GetItemRTData";
+        private static string name = "西藏城市站点1小时AQI";
+        private static string url = "http://111.11.241.103:9001/ashx/GetItemRTData.ashx";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
         private static List<string> pn = new List<string>(){
             ""
         };
         private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
-        private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
 

@@ -1,0 +1,1279 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "长沙",
+                "cityName": "长沙"
+            },
+            {
+                "Enabled": true,
+                "Name": "株洲",
+                "cityName": "株洲"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘潭",
+                "cityName": "湘潭"
+            },
+            {
+                "Enabled": true,
+                "Name": "衡阳",
+                "cityName": "衡阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "邵阳",
+                "cityName": "邵阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "岳阳",
+                "cityName": "岳阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "常德",
+                "cityName": "常德"
+            },
+            {
+                "Enabled": true,
+                "Name": "张家界",
+                "cityName": "张家界"
+            },
+            {
+                "Enabled": true,
+                "Name": "益阳",
+                "cityName": "益阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "郴州",
+                "cityName": "郴州"
+            },
+            {
+                "Enabled": true,
+                "Name": "永州",
+                "cityName": "永州"
+            },
+            {
+                "Enabled": true,
+                "Name": "怀化",
+                "cityName": "怀化"
+            },
+            {
+                "Enabled": true,
+                "Name": "娄底",
+                "cityName": "娄底"
+            },
+            {
+                "Enabled": true,
+                "Name": "湘西",
+                "cityName": "湘西"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_经开区环保局",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_高开区环保局",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_马坡岭",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_湖南师范大学",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_雨花区环保局",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_伍家岭",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_火车新站",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_天心区环保局",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_湖南中医药大学",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_沙坪",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_大京风景区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_株冶医院",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_市监测站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_火车站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_天台山庄",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_市四中",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_市监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_江麓",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_岳塘",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_板塘",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_科大",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_昭山",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_韶山",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_云田中学",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_原169医院",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_衡阳化工总厂",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_珠晖区环保局",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市委党校",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_真空机电公司",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_市水土所",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_市一中",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_市化工厂",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_市罐头厂",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_市环保局",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_南湖风景区",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_城陵矶",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_开发区",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_云溪区",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_君山区",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_金凤水库",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_市二中",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_鼎城区环保局",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_市技术监督局",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_百合山",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_永定新区",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_电业局",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_未央路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_袁家界",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_甘溪港",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_市环保局",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_市特殊教育学校",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_资阳区政务中心",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_赫山环保分局",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_马头岭",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_市职中",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_兴隆步行街",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_市审计局",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_市环保局",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_零陵南津渡",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_市环境监测站",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_零陵区环保局",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_永州市环保局",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_冷水滩区环保局",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_林科所",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河西地税局",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_市四医院",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_监测楼",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_市委党校",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_电视发射台",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_市委党校",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_涟钢",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1075A_市政府",
+                "stationCode": "1075A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_市监测站",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1083A_市监测站",
+                "stationCode": "1083A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1111A_市监测站",
+                "stationCode": "1111A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1115A_跃进水库",
+                "stationCode": "1115A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1116A_州政府",
+                "stationCode": "1116A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1117A_吉首市计生局",
+                "stationCode": "1117A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_经开区环保局",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_高开区环保局",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_马坡岭",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_湖南师范大学",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_雨花区环保局",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_伍家岭",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_火车新站",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_天心区环保局",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_湖南中医药大学",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_沙坪",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_大京风景区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_株冶医院",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_市监测站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_火车站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_天台山庄",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_市四中",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_市监测站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_江麓",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_岳塘",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_板塘",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_科大",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_昭山",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_韶山",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_云田中学",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_原169医院",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_衡阳化工总厂",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_珠晖区环保局",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_市委党校",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_真空机电公司",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_市水土所",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_市一中",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_市化工厂",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_市罐头厂",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_市环保局",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_南湖风景区",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_城陵矶",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_开发区",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_云溪区",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_君山区",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_金凤水库",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_市二中",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_鼎城区环保局",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_市技术监督局",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_百合山",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_永定新区",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_电业局",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_未央路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_袁家界",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_甘溪港",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_市环保局",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_市特殊教育学校",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_资阳区政务中心",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_赫山环保分局",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_马头岭",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_市职中",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_兴隆步行街",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_市审计局",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_市环保局",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_零陵南津渡",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_市环境监测站",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_零陵区环保局",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_永州市环保局",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_冷水滩区环保局",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_林科所",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河西地税局",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_市四医院",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_监测楼",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_市委党校",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_电视发射台",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_市委党校",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_涟钢",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1075A_市政府",
+                "stationCode": "1075A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_市监测站",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1083A_市监测站",
+                "stationCode": "1083A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1111A_市监测站",
+                "stationCode": "1111A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1115A_跃进水库",
+                "stationCode": "1115A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1116A_州政府",
+                "stationCode": "1116A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1117A_吉首市计生局",
+                "stationCode": "1117A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

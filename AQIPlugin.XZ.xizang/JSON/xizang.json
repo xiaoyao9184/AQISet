@@ -1,0 +1,540 @@
+﻿{
+    "CityShow": {
+        "Enabled": true,
+        "Name": "城市列表"
+    },
+    "GetCityInfo": {
+        "Enabled": true,
+        "Name": "城市1小时AQI等级",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "cityId": 54260000
+            }
+        ]
+    },
+    "GetCityItemRTData": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "cityId": 54260000
+            }
+        ]
+    },
+    "CitySinSite": {
+        "Enabled": true,
+        "Name": "城市24小时AQI历史",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "type": 1,
+                "itemId": 0,
+                "cityId": 54260000
+            }
+        ]
+    },
+
+    "SiteShow": {
+        "Enabled": true,
+        "Name": "城市站点列表(1小时AQI)",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "cityId": 54260000
+            }
+        ]
+    },
+    "GetCityRTData": {
+        "Enabled": true,
+        "Name": "城市站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "type": 0,
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "type": 0,
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "type": 0,
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "type": 0,
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "type": 0,
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "type": 0,
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "type": 0,
+                "cityId": 54260000
+            }
+        ]
+    },
+    "GetItemRTData": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "区监测站",
+                "itemId": 0,
+                "siteId": 54010001
+            },
+            {
+                "Enabled": true,
+                "Name": "区辐射站",
+                "itemId": 0,
+                "siteId": 54010002
+            },
+            {
+                "Enabled": true,
+                "Name": "八廓街",
+                "itemId": 0,
+                "siteId": 54010003
+            },
+            {
+                "Enabled": true,
+                "Name": "西藏大学",
+                "itemId": 0,
+                "siteId": 54010004
+            },
+            {
+                "Enabled": true,
+                "Name": "市环保局",
+                "itemId": 0,
+                "siteId": 54010005
+            },
+            {
+                "Enabled": true,
+                "Name": "拉萨火车站",
+                "itemId": 0,
+                "siteId": 54010006
+            },
+
+            {
+                "Enabled": true,
+                "Name": "昌都监测站",
+                "itemId": 0,
+                "siteId": 54210001
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都昌都坝",
+                "itemId": 0,
+                "siteId": 54210002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "山南监测站",
+                "itemId": 0,
+                "siteId": 54220001
+            },
+            {
+                "Enabled": true,
+                "Name": "山南人民医院",
+                "itemId": 0,
+                "siteId": 54220002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "日喀则监测站",
+                "itemId": 0,
+                "siteId": 54230001
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则鸿达花园",
+                "itemId": 0,
+                "siteId": 54230002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "那曲监测站",
+                "itemId": 0,
+                "siteId": 54240001
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲嘉兴医院",
+                "itemId": 0,
+                "siteId": 54240002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "阿里监测站",
+                "itemId": 0,
+                "siteId": 54250001
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地委",
+                "itemId": 0,
+                "siteId": 54250002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "林芝监测站",
+                "itemId": 0,
+                "siteId": 54260001
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝人民医院",
+                "itemId": 0,
+                "siteId": 54260002
+            }
+        ]
+    },
+    "SinSite": {
+        "Enabled": true,
+        "Name": "站点24小时AQI历史",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "区监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010001
+            },
+            {
+                "Enabled": true,
+                "Name": "区辐射站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010002
+            },
+            {
+                "Enabled": true,
+                "Name": "八廓街",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010003
+            },
+            {
+                "Enabled": true,
+                "Name": "西藏大学",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010004
+            },
+            {
+                "Enabled": true,
+                "Name": "市环保局",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010005
+            },
+            {
+                "Enabled": true,
+                "Name": "拉萨火车站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54010006
+            },
+
+            {
+                "Enabled": true,
+                "Name": "昌都监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54210001
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都昌都坝",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54210002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "山南监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54220001
+            },
+            {
+                "Enabled": true,
+                "Name": "山南人民医院",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54220002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "日喀则监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54230001
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则鸿达花园",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54230002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "那曲监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54240001
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲嘉兴医院",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54240002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "阿里监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54250001
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地委",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54250002
+            },
+
+            {
+                "Enabled": true,
+                "Name": "林芝监测站",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54260001
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝人民医院",
+                "itemId": 0,
+                "type": 1,
+                "siteId": 54260002
+            }
+        ]
+    },
+
+    "GetCityRTData_24": {
+        "Enabled": true,
+        "Name": "城市站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "拉萨市",
+                "type": 1,
+                "cityId": 54010000
+            },
+            {
+                "Enabled": true,
+                "Name": "昌都市",
+                "type": 1,
+                "cityId": 54210000
+            },
+            {
+                "Enabled": true,
+                "Name": "山南地区",
+                "type": 1,
+                "cityId": 54220000
+            },
+            {
+                "Enabled": true,
+                "Name": "日喀则市",
+                "type": 1,
+                "cityId": 54230000
+            },
+            {
+                "Enabled": true,
+                "Name": "那曲地区",
+                "type": 1,
+                "cityId": 54240000
+            },
+            {
+                "Enabled": true,
+                "Name": "阿里地区",
+                "type": 1,
+                "cityId": 54250000
+            },
+            {
+                "Enabled": true,
+                "Name": "林芝市",
+                "type": 1,
+                "cityId": 54260000
+            }
+        ]
+    }
+}

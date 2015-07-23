@@ -179,11 +179,18 @@ namespace AQISet.Control
         /// </summary>
         private void init()
         {
-            Remind.Log_Info(Plugin.GetInfo(), tag);
-            this.aqiNoter = new AqiNoter(this);
-            this.aqiRetryer = new AqiRetryer(this);
-            this.initSaver();
-            this.initRunner();
+            try
+            {
+                Remind.Log_Info(Plugin.GetInfo(), tag);
+                this.aqiNoter = new AqiNoter(this);
+                this.aqiRetryer = new AqiRetryer(this);
+                this.initSaver();
+                this.initRunner();
+            }
+            catch(Exception ex)
+            {
+                Remind.Log_Error("初始化失败", ex, tag);
+            }
         }
 
         /// <summary>

@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using AQI;
 using AQI.Abstract;
+using HN.Abstract;
+using AQI;
+using System.Collections.Generic;
 
-namespace typhoon.Api
+namespace HN.ProvincePublishDomainService
 {
-    public class LeastRain : AParamSrcUrl
+    public class GetIaqiHistoryByCondition : HNSrcUrl_Param
     {
 
         #region 静态变量
 
-        private static string tag = "LeastRain";
-        private static string name = "浙江台风当前雨图";
-        private static string url = "http://typhoon.zjwater.gov.cn/Api/LeastRain";
-        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
+        private static string tag = "GetIaqiHistoryByCondition";
+        private static string name = "湖南站点24小时历史浓度";
+        private static string url = "http://222.247.51.155:8025/ClientBin/Env-Publish-Province-RiaService-ProvincePublishDomainService.svc/binary/GetIaqiHistoryByCondition";
+        private static AQI.AqiConstant.SourceUpdataInterval sui = AQI.AqiConstant.SourceUpdataInterval.DAY;
         private static List<string> pn = new List<string>(){
-            ""
+            ".stationCode"
         };
         private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
-        private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace typhoon.Api
                 return url;
             }
         }
-        public override AqiConstant.SourceUpdataInterval SUI
+        public override AQI.AqiConstant.SourceUpdataInterval SUI
         {
             get
             {
@@ -64,13 +64,6 @@ namespace typhoon.Api
             get
             {
                 return ps;
-            }
-        }
-        public override AqiConstant.ParamUrlType ParamUrlType
-        {
-            get
-            {
-                return put;
             }
         }
 

@@ -139,6 +139,10 @@
       <Project>{95b4dc84-9bf6-4497-9f29-8e56988d11f2}</Project>
       <Name>AQIPlugin.HLJ.hljkq</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.HN\AQIPlugin.HN.csproj">
+      <Project>{7cb645dd-3a65-4fa7-99cc-0bedab774ef4}</Project>
+      <Name>AQIPlugin.HN</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AQIPlugin.JL\AQIPlugin.JL.csproj">
       <Project>{49d630c6-51e2-4b9e-a298-41aacdda3aee}</Project>
       <Name>AQIPlugin.JL</Name>
@@ -150,6 +154,10 @@
     <ProjectReference Include="..\AQIPlugin.QH\AQIPlugin.QH.csproj">
       <Project>{95959d75-4bf0-4ebc-a2e2-7a8c25f40c92}</Project>
       <Name>AQIPlugin.QH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.SC.sichuan\AQIPlugin.SC.sichuan.csproj">
+      <Project>{07ae2fc2-3589-46d1-8640-b74ddfdabf23}</Project>
+      <Name>AQIPlugin.SC.sichuan</Name>
     </ProjectReference>
     <ProjectReference Include="..\AQIPlugin.SD\AQIPlugin.SD.csproj">
       <Project>{74c1cbc5-3a78-4c96-8c19-f59770512207}</Project>
@@ -166,6 +174,10 @@
     <ProjectReference Include="..\AQIPlugin.XJ\AQIPlugin.XJ.csproj">
       <Project>{ecf142c9-8859-4e70-8d1c-704e5755c8b0}</Project>
       <Name>AQIPlugin.XJ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.YN.YNAS\AQIPlugin.YN.YNAS.csproj">
+      <Project>{4acc8467-fbcf-49d0-8d8f-393f2009b040}</Project>
+      <Name>AQIPlugin.YN.YNAS</Name>
     </ProjectReference>
     <ProjectReference Include="..\AQIPlugin.ZJ.typhoon\AQIPlugin.ZJ.typhoon.csproj">
       <Project>{defb9f28-a49b-4443-a145-60fcc539f274}</Project>

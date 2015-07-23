@@ -23,7 +23,7 @@ namespace typhoon.Api.Auto
         private static List<string> pn = new List<string>(){
             "ParamType."
         };
-        private static AqiConstant.ParamSendType ppst = AqiConstant.ParamSendType.GET;
+        private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
 
         private static new AqiConstant.ParamSourceType pst = AqiConstant.ParamSourceType.ISrcUrl;
         private static new AqiConstant.ParamFilterType pft = AqiConstant.ParamFilterType.NONE;
@@ -97,7 +97,7 @@ namespace typhoon.Api.Auto
         {
             get
             {
-                return ppst;
+                return ps;
             }
         }
         public override AqiConstant.ParamSourceType ParamSourceType

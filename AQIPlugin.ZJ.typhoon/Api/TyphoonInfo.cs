@@ -18,7 +18,7 @@ namespace typhoon.Api
         private static List<string> pn = new List<string>(){
             "depthsParams.", ".yearidStart", ".yearidEnd", ".yearidDepth"
         };
-        private static new AqiConstant.ParamSendType pst = AqiConstant.ParamSendType.GET;
+        private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
         private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
@@ -64,7 +64,7 @@ namespace typhoon.Api
         {
             get
             {
-                return pst;
+                return ps;
             }
         }
         public override AqiConstant.ParamUrlType ParamUrlType

@@ -1,0 +1,2443 @@
+﻿{
+    "citylist": {
+        "Enabled": true
+    },
+    "queryStationList": {
+        "Enabled": true
+    },
+
+    "queryCityNotice": {
+        "Enabled": false,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部通知",
+                "areaCode": ""
+            },
+            {
+                "Enabled": true,
+                "Name": "昆明市-通知",
+                "areaCode": "530100"
+            },
+            {
+                "Enabled": true,
+                "Name": "曲靖市-通知",
+                "areaCode": "530300"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉溪市-通知",
+                "areaCode": "530400"
+            },
+            {
+                "Enabled": true,
+                "Name": "保山市-通知",
+                "areaCode": "530500"
+            },
+            {
+                "Enabled": true,
+                "Name": "昭通市-通知",
+                "areaCode": "530600"
+            },
+            {
+                "Enabled": true,
+                "Name": "丽江市-通知",
+                "areaCode": "530700"
+            },
+            {
+                "Enabled": true,
+                "Name": "普洱市-通知",
+                "areaCode": "530800"
+            },
+            {
+                "Enabled": true,
+                "Name": "临沧市-通知",
+                "areaCode": "530900"
+            },
+            {
+                "Enabled": true,
+                "Name": "大理州-通知",
+                "areaCode": "532900"
+            },
+            {
+                "Enabled": true,
+                "Name": "文山州-通知",
+                "areaCode": "532600"
+            },
+            {
+                "Enabled": true,
+                "Name": "红河州-通知",
+                "areaCode": "532500"
+            },
+            {
+                "Enabled": true,
+                "Name": "西双版纳-通知",
+                "areaCode": "532800"
+            },
+            {
+                "Enabled": true,
+                "Name": "楚雄州-通知",
+                "areaCode": "532300"
+            },
+            {
+                "Enabled": true,
+                "Name": "德宏州-通知",
+                "areaCode": "533100"
+            },
+            {
+                "Enabled": true,
+                "Name": "怒江州-通知",
+                "areaCode": "533300"
+            }
+        ]
+    },
+
+    "queryStationDataList": {
+        "Enabled": false
+    },
+
+    "queryLatestTime": {
+        "Enabled": false,
+        "Name": "24小时数据时间"
+    },
+    "queryDailyDataOfCitys": {
+        "Enabled": true,
+        "Name": "24小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部城市",
+                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            }
+        ]
+    },
+    "queryCityAQIInfo": {
+        "Enabled": false,
+        "Name": "24小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "昆明市",
+                "area": "530100"
+            },
+            {
+                "Enabled": true,
+                "Name": "曲靖市",
+                "area": "530300"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉溪市",
+                "area": "530400"
+            },
+            {
+                "Enabled": true,
+                "Name": "保山市",
+                "area": "530500"
+            },
+            {
+                "Enabled": true,
+                "Name": "昭通市",
+                "area": "530600"
+            },
+            {
+                "Enabled": true,
+                "Name": "丽江市",
+                "area": "530700"
+            },
+            {
+                "Enabled": true,
+                "Name": "普洱市",
+                "area": "530800"
+            },
+            {
+                "Enabled": true,
+                "Name": "临沧市",
+                "area": "530900"
+            },
+            {
+                "Enabled": true,
+                "Name": "大理州",
+                "area": "532900"
+            },
+            {
+                "Enabled": true,
+                "Name": "文山州",
+                "area": "532600"
+            },
+            {
+                "Enabled": true,
+                "Name": "红河州",
+                "area": "532500"
+            },
+            {
+                "Enabled": true,
+                "Name": "西双版纳",
+                "area": "532800"
+            },
+            {
+                "Enabled": true,
+                "Name": "楚雄州",
+                "area": "532300"
+            },
+            {
+                "Enabled": true,
+                "Name": "德宏州",
+                "area": "533100"
+            },
+            {
+                "Enabled": true,
+                "Name": "怒江州",
+                "area": "533300"
+            }
+        ]
+    },
+    "queryAreaDailyData": {
+        "Enabled": true,
+        "Name": "24小时站点AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部站点",
+                "fact_code": "AQI"
+            },
+            {
+                "Enabled": false,
+                "Name": "昆明市-站点",
+                "area": "530100",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "曲靖市-站点",
+                "area": "530300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "玉溪市-站点",
+                "area": "530400",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "保山市-站点",
+                "area": "530500",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "昭通市-站点",
+                "area": "530600",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "丽江市-站点",
+                "area": "530700",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "普洱市-站点",
+                "area": "530800",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "临沧市-站点",
+                "area": "530900",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "大理州-站点",
+                "area": "532900",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "文山州-站点",
+                "area": "532600",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "红河州-站点",
+                "area": "532500",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "西双版纳-站点",
+                "area": "532800",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "楚雄州-站点",
+                "area": "532300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "德宏州-站点",
+                "area": "533100",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "怒江州-站点",
+                "area": "533300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            }
+        ]
+    },
+    "queryAQIDetail": {
+        "Enabled": false,
+        "Name": "24小时站点AQI",
+        "Params": [
+            {
+                "stat_code": "1001A",
+                "Name": "1001A-关上",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1002A",
+                "Name": "1002A-呈贡新区",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1003A",
+                "Name": "1003A-西山森林公园",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1005A",
+                "Name": "1005A-东风东路",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1006A",
+                "Name": "1006A-金鼎山",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1007A",
+                "Name": "1007A-碧鸡广场",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1008A",
+                "Name": "1008A-环境监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1009A",
+                "Name": "1009A-烟厂办公区",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1010A",
+                "Name": "1010A-东风水库",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1011A",
+                "Name": "101A-市监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1012A",
+                "Name": "1012A-大营街镇",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1013A",
+                "Name": "1013A-市环保局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1014A",
+                "Name": "1014A-市环境监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1015A",
+                "Name": "1015A-监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1016A",
+                "Name": "1016A-环保局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1017A",
+                "Name": "1017A-西南郊",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1018A",
+                "Name": "1018A-丽江古城",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1019A",
+                "Name": "1019A-市中心",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1020A",
+                "Name": "1020A-市环保局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1021A",
+                "Name": "1021A-普洱第二中学",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1022A",
+                "Name": "1022A-市环保局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1023A",
+                "Name": "1023A-市气象局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1038A",
+                "Name": "1038A-州环境监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1039A",
+                "Name": "1039A-市经济开发区",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1024A",
+                "Name": "1024A-雨过铺",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1025A",
+                "Name": "1025A-污水处理厂",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1026A",
+                "Name": "1026A-监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1043A",
+                "Name": "1043A-州水务局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1044A",
+                "Name": "1044A-市便民服务中心",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1045A",
+                "Name": "1045A-景洪市江南",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1046A",
+                "Name": "1046A-景洪市江北",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1047A",
+                "Name": "1047A-大理市环境监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1048A",
+                "Name": "1048A-大理古城",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1049A",
+                "Name": "1049A-德宏州监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1050A",
+                "Name": "1050A-芒市建设局",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1051A",
+                "Name": "1051A-州监测站",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1052A",
+                "Name": "1052A-泸水一中",
+                "Enabled": true
+            },
+            {
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站",
+                "Enabled": true
+            }
+        ]
+    },
+
+    "queryLatestTime_2": {
+        "Enabled": false,
+        "Name": "1小时数据时间"
+    },
+    "queryRealDataOfCitys": {
+        "Enabled": true,
+        "Name": "1小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部城市",
+                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400"
+            }
+        ]
+    },
+    "queryCityAQIInfo_2": {
+        "Enabled": false,
+        "Name": "1小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "昆明市",
+                "area": "530100"
+            },
+            {
+                "Enabled": true,
+                "Name": "曲靖市",
+                "area": "530300"
+            },
+            {
+                "Enabled": true,
+                "Name": "玉溪市",
+                "area": "530400"
+            },
+            {
+                "Enabled": true,
+                "Name": "保山市",
+                "area": "530500"
+            },
+            {
+                "Enabled": true,
+                "Name": "昭通市",
+                "area": "530600"
+            },
+            {
+                "Enabled": true,
+                "Name": "丽江市",
+                "area": "530700"
+            },
+            {
+                "Enabled": true,
+                "Name": "普洱市",
+                "area": "530800"
+            },
+            {
+                "Enabled": true,
+                "Name": "临沧市",
+                "area": "530900"
+            },
+            {
+                "Enabled": true,
+                "Name": "大理州",
+                "area": "532900"
+            },
+            {
+                "Enabled": true,
+                "Name": "文山州",
+                "area": "532600"
+            },
+            {
+                "Enabled": true,
+                "Name": "红河州",
+                "area": "532500"
+            },
+            {
+                "Enabled": true,
+                "Name": "西双版纳",
+                "area": "532800"
+            },
+            {
+                "Enabled": true,
+                "Name": "楚雄州",
+                "area": "532300"
+            },
+            {
+                "Enabled": true,
+                "Name": "德宏州",
+                "area": "533100"
+            },
+            {
+                "Enabled": true,
+                "Name": "怒江州",
+                "area": "533300"
+            }
+        ]
+    },
+    "queryRealData": {
+        "Enabled": true,
+        "Name": "1小时站点AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部站点\\AQI",
+                "fact_code": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\PM25",
+                "fact_code": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\PM10",
+                "fact_code": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\SO2",
+                "fact_code": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\NO2",
+                "fact_code": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\CO",
+                "fact_code": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "全部站点\\O3",
+                "fact_code": "O3"
+            },
+            {
+                "Enabled": false,
+                "Name": "昆明市-站点AQI",
+                "area": "530100",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "曲靖市-站点AQI",
+                "area": "530300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "玉溪市-站点AQI",
+                "area": "530400",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "保山市-站点AQI",
+                "area": "530500",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "昭通市-站点AQI",
+                "area": "530600",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "丽江市-站点AQI",
+                "area": "530700",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "普洱市-站点AQI",
+                "area": "530800",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "临沧市-站点AQI",
+                "area": "530900",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "大理州-站点AQI",
+                "area": "532900",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "文山州-站点AQI",
+                "area": "532600",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "红河州-站点AQI",
+                "area": "532500",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "西双版纳-站点AQI",
+                "area": "532800",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "楚雄州-站点AQI",
+                "area": "532300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "德宏州-站点AQI",
+                "area": "533100",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            },
+            {
+                "Enabled": false,
+                "Name": "怒江州-站点AQI",
+                "area": "533300",
+                "page": 1,
+                "start": 0,
+                "limit": 25
+            }
+        ]
+    },
+    "queryCTDetail": {
+        "Enabled": true,
+        "Name": "1小时站点AQI",
+        "Params": [
+            {
+                "fact_code": "AQI",
+                "stat_code": "1001A",
+                "Name": "1001A-关上",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1002A",
+                "Name": "1002A-呈贡新区",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1003A",
+                "Name": "1003A-西山森林公园",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1005A",
+                "Name": "1005A-东风东路",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1006A",
+                "Name": "1006A-金鼎山",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1007A",
+                "Name": "1007A-碧鸡广场",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1008A",
+                "Name": "1008A-环境监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1009A",
+                "Name": "1009A-烟厂办公区",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1010A",
+                "Name": "1010A-东风水库",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1011A",
+                "Name": "1011A-市监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1012A",
+                "Name": "1012A-大营街镇",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1013A",
+                "Name": "1013A-市环保局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1014A",
+                "Name": "1014A-市环境监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1015A",
+                "Name": "1015A-监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1016A",
+                "Name": "1016A-环保局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1017A",
+                "Name": "1017A-西南郊",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1018A",
+                "Name": "1018A-丽江古城",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1019A",
+                "Name": "1019A-市中心",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1020A",
+                "Name": "1020A-市环保局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1021A",
+                "Name": "1021A-普洱第二中学",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1022A",
+                "Name": "1022A-市环保局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1023A",
+                "Name": "1023A-市气象局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1038A",
+                "Name": "1038A-州环境监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1039A",
+                "Name": "1039A-市经济开发区",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1024A",
+                "Name": "1024A-雨过铺",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1025A",
+                "Name": "1025A-污水处理厂",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1026A",
+                "Name": "1026A-监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1043A",
+                "Name": "1043A-州水务局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1044A",
+                "Name": "1044A-市便民服务中心",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1045A",
+                "Name": "1045A-景洪市江南",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1046A",
+                "Name": "1046A-景洪市江北",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1047A",
+                "Name": "1047A-大理市环境监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1048A",
+                "Name": "1048A-大理古城",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1049A",
+                "Name": "1049A-德宏州监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1050A",
+                "Name": "1050A-芒市建设局",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1051A",
+                "Name": "1051A-州监测站",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1052A",
+                "Name": "1052A-泸水一中",
+                "Enabled": true
+            },
+            {
+                "fact_code": "AQI",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站",
+                "Enabled": true
+            }
+        ]
+    },
+    "queryCTDetail_HISTORY": {
+        "Enabled": true,
+        "Name": "1小时站污染物历史",
+        "Params": [ 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\PM25", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM25", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\PM25", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "PM25",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\PM25",
+                "Enabled": true
+            },
+            
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\PM10", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "PM10", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\PM10", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "PM10",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\PM10",
+                "Enabled": true
+            },
+            
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\SO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "SO2", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\SO2", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "SO2",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\SO2",
+                "Enabled": true
+            },
+            
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\NO2", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "NO2", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\NO2", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "NO2",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\NO2",
+                "Enabled": true
+            },
+            
+            {
+                "fact_code": "CO", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\CO", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "CO", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\CO", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "CO",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\CO",
+                "Enabled": true
+            },
+            
+            {
+                "fact_code": "O3", 
+                "stat_code": "1001A",
+                "Name": "1001A-关上\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1002A", 
+                "Name": "1002A-呈贡新区\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1003A", 
+                "Name": "1003A-西山森林公园\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1004A",
+                "Name": "1004A-龙泉镇\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1005A", 
+                "Name": "1005A-东风东路\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1006A", 
+                "Name": "1006A-金鼎山\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1007A", 
+                "Name": "1007A-碧鸡广场\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1008A", 
+                "Name": "1008A-环境监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1009A", 
+                "Name": "1009A-烟厂办公区\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1010A", 
+                "Name": "1010A-东风水库\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1011A", 
+                "Name": "1011A-市监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1012A", 
+                "Name": "1012A-大营街镇\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1013A", 
+                "Name": "1013A-市环保局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1014A", 
+                "Name": "1014A-市环境监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1015A", 
+                "Name": "1015A-监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1016A", 
+                "Name": "1016A-环保局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1017A", 
+                "Name": "1017A-西南郊\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1018A", 
+                "Name": "1018A-丽江古城\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1019A", 
+                "Name": "1019A-市中心\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1020A", 
+                "Name": "1020A-市环保局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1021A", 
+                "Name": "1021A-普洱第二中学\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1022A", 
+                "Name": "1022A-市环保局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1023A", 
+                "Name": "1023A-市气象局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1038A", 
+                "Name": "1038A-州环境监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1039A", 
+                "Name": "1039A-市经济开发区\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1024A", 
+                "Name": "1024A-雨过铺\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1025A", 
+                "Name": "1025A-污水处理厂\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1026A", 
+                "Name": "1026A-监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1043A", 
+                "Name": "1043A-州水务局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1044A", 
+                "Name": "1044A-市便民服务中心\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1045A", 
+                "Name": "1045A-景洪市江南\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1046A", 
+                "Name": "1046A-景洪市江北\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1047A", 
+                "Name": "1047A-大理市环境监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1048A", 
+                "Name": "1048A-大理古城\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1049A", 
+                "Name": "1049A-德宏州监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1050A", 
+                "Name": "1050A-芒市建设局\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1051A", 
+                "Name": "1051A-州监测站\\O3", 
+                "Enabled": true
+            }, 
+            {
+                "fact_code": "O3", 
+                "stat_code": "1052A", 
+                "Name": "1052A-泸水一中\\O3", 
+                "Enabled": true
+            },
+            {
+                "fact_code": "O3",
+                "stat_code": "1054A",
+                "Name": "1054A-迪庆州站\\O3",
+                "Enabled": true
+            }
+        ]
+    }
+}

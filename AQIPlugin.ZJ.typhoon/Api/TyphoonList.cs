@@ -15,10 +15,10 @@ namespace typhoon.Api
         private static string name = "浙江台风历史";
         private static string url = "http://typhoon.zjwater.gov.cn/Api/TyphoonList";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
-        private static List<string> pnList = new List<string>(){
+        private static List<string> pn = new List<string>(){
             "boundsParams.", ".yearStart", ".yearEnd"
         };
-        private static new AqiConstant.ParamSendType pst = AqiConstant.ParamSendType.GET;
+        private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
         private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
@@ -57,14 +57,14 @@ namespace typhoon.Api
         {
             get
             {
-                return pnList;
+                return pn;
             }
         }
         public override AqiConstant.ParamSendType ParamSendType
         {
             get
             {
-                return pst;
+                return ps;
             }
         }
         public override AqiConstant.ParamUrlType ParamUrlType

@@ -1,0 +1,358 @@
+﻿{
+    "getInfo": {
+        "Enabled": true,
+        "Name": "??"
+    },
+    "getState": {
+        "Enabled": true,
+        "Name": "??"
+    },
+    "getUpperLimit": {
+        "Enabled": true,
+        "Name": "城市列表"
+    },
+    "getAllCityRealTimeAQIC": {
+        "Enabled": true,
+        "Name": "城市1小时AQI"
+    },
+    "getAllCityDayAQIC": {
+        "Enabled": true,
+        "Name": "城市24小时AQI"
+    },
+    "getAllCity24HRealTimeAQIC": {
+        "Enabled": true,
+        "Name": "城市24小时AQI历史"
+    },
+
+    "getUpperLimitByCityCode": {
+        "Enabled": true,
+        "Name": "城市信息",
+        "Params": [
+            {
+                "cityCode": 5101, 
+                "Enabled": true,
+                "Name": "成都市"
+            }, 
+            {
+                "cityCode": 5103, 
+                "Enabled": true,
+                "Name": "自贡市"
+            }, 
+            {
+                "cityCode": 5104, 
+                "Enabled": true,
+                "Name": "攀枝花市"
+            }, 
+            {
+                "cityCode": 5105, 
+                "Enabled": true,
+                "Name": "泸州市"
+            }, 
+            {
+                "cityCode": 5106, 
+                "Enabled": true,
+                "Name": "德阳市"
+            }, 
+            {
+                "cityCode": 5107, 
+                "Enabled": true,
+                "Name": "绵阳市"
+            }, 
+            {
+                "cityCode": 5113, 
+                "Enabled": true,
+                "Name": "南充市"
+            }, 
+            {
+                "cityCode": 5115, 
+                "Enabled": true,
+                "Name": "宜宾市"
+            }, 
+            {
+                "cityCode": 5110, 
+                "Enabled": true,
+                "Name": "内江市"
+            }, 
+            {
+                "cityCode": 5114, 
+                "Enabled": true,
+                "Name": "眉山市"
+            }, 
+            {
+                "cityCode": 5109, 
+                "Enabled": true,
+                "Name": "遂宁市"
+            }, 
+            {
+                "cityCode": 5117, 
+                "Enabled": true,
+                "Name": "达州市"
+            }, 
+            {
+                "cityCode": 5116, 
+                "Enabled": true,
+                "Name": "广安市"
+            }, 
+            {
+                "cityCode": 5120, 
+                "Enabled": true,
+                "Name": "资阳市"
+            }, 
+            {
+                "cityCode": 5111, 
+                "Enabled": true,
+                "Name": "乐山市"
+            }, 
+            {
+                "cityCode": 5118, 
+                "Enabled": true,
+                "Name": "雅安市"
+            }, 
+            {
+                "cityCode": 5133, 
+                "Enabled": true,
+                "Name": "康定市"
+            }, 
+            {
+                "cityCode": 5108, 
+                "Enabled": true,
+                "Name": "广元市"
+            }, 
+            {
+                "cityCode": 5119, 
+                "Enabled": true,
+                "Name": "巴中市"
+            }, 
+            {
+                "cityCode": 5132, 
+                "Enabled": true,
+                "Name": "马尔康县"
+            }, 
+            {
+                "cityCode": 5134, 
+                "Enabled": true,
+                "Name": "西昌市"                                                                                             }
+        ]
+    },
+    "getCityInfoC": {
+        "Enabled": true,
+        "Name": "城市&城市站点24小时&1小时AQI",
+        "Params": [
+            {
+                "cityCode": 5101, 
+                "Enabled": true,
+                "Name": "成都市"
+            }, 
+            {
+                "cityCode": 5103, 
+                "Enabled": true,
+                "Name": "自贡市"
+            }, 
+            {
+                "cityCode": 5104, 
+                "Enabled": true,
+                "Name": "攀枝花市"
+            }, 
+            {
+                "cityCode": 5105, 
+                "Enabled": true,
+                "Name": "泸州市"
+            }, 
+            {
+                "cityCode": 5106, 
+                "Enabled": true,
+                "Name": "德阳市"
+            }, 
+            {
+                "cityCode": 5107, 
+                "Enabled": true,
+                "Name": "绵阳市"
+            }, 
+            {
+                "cityCode": 5113, 
+                "Enabled": true,
+                "Name": "南充市"
+            }, 
+            {
+                "cityCode": 5115, 
+                "Enabled": true,
+                "Name": "宜宾市"
+            }, 
+            {
+                "cityCode": 5110, 
+                "Enabled": true,
+                "Name": "内江市"
+            }, 
+            {
+                "cityCode": 5114, 
+                "Enabled": true,
+                "Name": "眉山市"
+            }, 
+            {
+                "cityCode": 5109, 
+                "Enabled": true,
+                "Name": "遂宁市"
+            }, 
+            {
+                "cityCode": 5117, 
+                "Enabled": true,
+                "Name": "达州市"
+            }, 
+            {
+                "cityCode": 5116, 
+                "Enabled": true,
+                "Name": "广安市"
+            }, 
+            {
+                "cityCode": 5120, 
+                "Enabled": true,
+                "Name": "资阳市"
+            }, 
+            {
+                "cityCode": 5111, 
+                "Enabled": true,
+                "Name": "乐山市"
+            }, 
+            {
+                "cityCode": 5118, 
+                "Enabled": true,
+                "Name": "雅安市"
+            }, 
+            {
+                "cityCode": 5133, 
+                "Enabled": true,
+                "Name": "康定市"
+            }, 
+            {
+                "cityCode": 5108, 
+                "Enabled": true,
+                "Name": "广元市"
+            }, 
+            {
+                "cityCode": 5119, 
+                "Enabled": true,
+                "Name": "巴中市"
+            }, 
+            {
+                "cityCode": 5132, 
+                "Enabled": true,
+                "Name": "马尔康县"
+            }, 
+            {
+                "cityCode": 5134, 
+                "Enabled": true,
+                "Name": "西昌市"                                                                                             }
+        ]
+    },
+    "getAllStation24HRealTimeAQIC": {
+        "Enabled": true,
+        "Name": "城市站点24小时AQI历史",
+        "Params": [
+            {
+                "cityCode": 5101, 
+                "Enabled": true,
+                "Name": "成都市"
+            }, 
+            {
+                "cityCode": 5103, 
+                "Enabled": true,
+                "Name": "自贡市"
+            }, 
+            {
+                "cityCode": 5104, 
+                "Enabled": true,
+                "Name": "攀枝花市"
+            }, 
+            {
+                "cityCode": 5105, 
+                "Enabled": true,
+                "Name": "泸州市"
+            }, 
+            {
+                "cityCode": 5106, 
+                "Enabled": true,
+                "Name": "德阳市"
+            }, 
+            {
+                "cityCode": 5107, 
+                "Enabled": true,
+                "Name": "绵阳市"
+            }, 
+            {
+                "cityCode": 5113, 
+                "Enabled": true,
+                "Name": "南充市"
+            }, 
+            {
+                "cityCode": 5115, 
+                "Enabled": true,
+                "Name": "宜宾市"
+            }, 
+            {
+                "cityCode": 5110, 
+                "Enabled": true,
+                "Name": "内江市"
+            }, 
+            {
+                "cityCode": 5114, 
+                "Enabled": true,
+                "Name": "眉山市"
+            }, 
+            {
+                "cityCode": 5109, 
+                "Enabled": true,
+                "Name": "遂宁市"
+            }, 
+            {
+                "cityCode": 5117, 
+                "Enabled": true,
+                "Name": "达州市"
+            }, 
+            {
+                "cityCode": 5116, 
+                "Enabled": true,
+                "Name": "广安市"
+            }, 
+            {
+                "cityCode": 5120, 
+                "Enabled": true,
+                "Name": "资阳市"
+            }, 
+            {
+                "cityCode": 5111, 
+                "Enabled": true,
+                "Name": "乐山市"
+            }, 
+            {
+                "cityCode": 5118, 
+                "Enabled": true,
+                "Name": "雅安市"
+            }, 
+            {
+                "cityCode": 5133, 
+                "Enabled": true,
+                "Name": "康定市"
+            }, 
+            {
+                "cityCode": 5108, 
+                "Enabled": true,
+                "Name": "广元市"
+            }, 
+            {
+                "cityCode": 5119, 
+                "Enabled": true,
+                "Name": "巴中市"
+            }, 
+            {
+                "cityCode": 5132, 
+                "Enabled": true,
+                "Name": "马尔康县"
+            }, 
+            {
+                "cityCode": 5134, 
+                "Enabled": true,
+                "Name": "西昌市"                                                                                             }
+        ]
+    }
+    
+}

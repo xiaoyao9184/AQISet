@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using AQI;
+﻿using AQI;
 using AQI.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace typhoon.Api
+namespace YNAS.dailyDataAction
 {
-    public class LeastRain : AParamSrcUrl
+    public class queryAreaDailyData : AParamSrcUrl
     {
 
         #region 静态变量
 
-        private static string tag = "LeastRain";
-        private static string name = "浙江台风当前雨图";
-        private static string url = "http://typhoon.zjwater.gov.cn/Api/LeastRain";
-        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
+        private static string tag = "queryAreaDailyData";
+        private static string name = "云南城市站点24小时AQI";
+        private static string url = "http://61.166.240.109:6013/YNAS/dailyDataAction!queryAreaDailyData";
+        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.DAY;
         private static List<string> pn = new List<string>(){
             ""
         };
         private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
-        private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
 

@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using AQI;
+﻿using AQI;
 using AQI.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace typhoon.Api
+namespace sichuan.publish
 {
-    public class LeastRain : AParamSrcUrl
+    public class getUpperLimitByCityCode : AParamSrcUrl
     {
 
         #region 静态变量
 
-        private static string tag = "LeastRain";
-        private static string name = "浙江台风当前雨图";
-        private static string url = "http://typhoon.zjwater.gov.cn/Api/LeastRain";
-        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
+        private static string tag = "getUpperLimitByCityCode";
+        private static string name = "四川城市信息";
+        private static string url = "http://221.237.179.45:5100/publish/getUpperLimitByCityCode";
+        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static List<string> pn = new List<string>(){
-            ""
+            ".cityCode"
         };
         private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
-        private static new AqiConstant.ParamUrlType put = AqiConstant.ParamUrlType.PATH;
 
         #endregion
 
