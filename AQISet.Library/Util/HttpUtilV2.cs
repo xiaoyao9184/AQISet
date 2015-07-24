@@ -9,6 +9,7 @@ namespace Helper.Util.HTTP
     /// <summary>
     /// HTTP工具
     /// xiaoyao9184
+    /// 1.4 2015-07-24 add custom request header
     /// 1.3 2015-07-16 fix stream cant write
     /// 1.2 2015-07-11 fix thread bug
     /// 1.1 2015-07-07 Fix createGetRequest lost set Method to GET
@@ -107,6 +108,22 @@ namespace Helper.Util.HTTP
             return createRequest(strUrl, dictHeader);
         }
 
+        /// <summary>
+        /// 修改RequestHeader中对字符合法适配HttpWebRequest
+        /// </summary>
+        /// <param name="header"></param>
+        /// <returns></returns>
+        private static Dictionary<string, string> changeHeader(Dictionary<string, string> header)
+        {
+            if(header.ContainsKey("Content-Type"))
+            {
+                header.Add("ContentType", header["Content-Type"]);
+                header.Remove("Content-Type");
+            }
+
+            return header;
+        }
+
         #endregion
 
         #region Response
@@ -150,6 +167,49 @@ namespace Helper.Util.HTTP
                 {
                     req.ContentType = strContentType;
                 }
+                //设置POST数据格式长度
+                req.ContentLength = bContentBody.Length;
+                //写入POST数据
+                Stream reqStream = req.GetRequestStream();
+                reqStream.Write(bContentBody, 0, bContentBody.Length);
+            }
+
+            HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+
+            return response;
+        }
+
+        /// <summary>
+        /// 获取 POST方法 HTTP响应 对象
+        /// </summary>
+        /// <param name="strUrl"></param>
+        /// <param name="iTimeOut"></param>
+        /// <param name="requestHeader"></param>
+        /// <param name="bContentBody"></param>
+        /// <returns></returns>
+        public static HttpWebResponse createPostResponse(string strUrl, int iTimeOut, Dictionary<string, string> requestHeader, byte[] bContentBody)
+        {
+            Dictionary<string, string> dictHeader = new Dictionary<string, string>(oftenRequestHeader);
+            foreach (KeyValuePair<string, string> kv in requestHeader)
+            {
+                if(dictHeader.ContainsKey(kv.Key))
+                {
+                    dictHeader[kv.Key] = kv.Value;
+                }
+                else
+                {
+                    dictHeader.Add(kv.Key, kv.Value);
+                }
+            }
+            dictHeader["Method"] = "POST";
+
+            HttpWebRequest req = createRequest(strUrl, changeHeader(dictHeader));
+            if (iTimeOut > 0)
+            {
+                req.Timeout = iTimeOut;
+            }
+            if (bContentBody != null)
+            {
                 //设置POST数据格式长度
                 req.ContentLength = bContentBody.Length;
                 //写入POST数据
@@ -215,7 +275,7 @@ namespace Helper.Util.HTTP
         /// <returns></returns>
         public static byte[] doPostRequest(string strUrl, byte[] bBody)
         {
-            HttpWebResponse res = createPostResponse(strUrl, -1, null, bBody);
+            HttpWebResponse res = createPostResponse(strUrl, -1, "", bBody);
 
             byte[] bResponseBody = getResponseBody(res);
             return bResponseBody;

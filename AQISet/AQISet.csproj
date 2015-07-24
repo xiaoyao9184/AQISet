@@ -127,6 +127,10 @@
       <Project>{ef46073f-d3a3-4efb-9da5-f72ce8c684ba}</Project>
       <Name>AQIPlugin.nullschool.earth</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.GD.guangdong\AQIPlugin.GD.guangdong.csproj">
+      <Project>{60832ddd-fd2d-438b-bfff-e1d5da0d4e23}</Project>
+      <Name>AQIPlugin.GD.guangdong</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AQIPlugin.GS\AQIPlugin.GS.csproj">
       <Project>{4c3558d9-6064-473c-b53c-da4bf5ae3cc9}</Project>
       <Name>AQIPlugin.GS</Name>
@@ -174,6 +178,10 @@
     <ProjectReference Include="..\AQIPlugin.XJ\AQIPlugin.XJ.csproj">
       <Project>{ecf142c9-8859-4e70-8d1c-704e5755c8b0}</Project>
       <Name>AQIPlugin.XJ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQIPlugin.XZ.xizang\AQIPlugin.XZ.xizang.csproj">
+      <Project>{9238642c-e761-49dd-a383-0be032246d92}</Project>
+      <Name>AQIPlugin.XZ.xizang</Name>
     </ProjectReference>
     <ProjectReference Include="..\AQIPlugin.YN.YNAS\AQIPlugin.YN.YNAS.csproj">
       <Project>{4acc8467-fbcf-49d0-8d8f-393f2009b040}</Project>

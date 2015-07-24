@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.SC.sichuan", "AQI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.XZ.xizang", "AQIPlugin.XZ.xizang\AQIPlugin.XZ.xizang.csproj", "{9238642C-E761-49DD-A383-0BE032246D92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.GD.guangdong", "AQIPlugin.GD.guangdong\AQIPlugin.GD.guangdong.csproj", "{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +285,16 @@ Global
 		{9238642C-E761-49DD-A383-0BE032246D92}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9238642C-E761-49DD-A383-0BE032246D92}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9238642C-E761-49DD-A383-0BE032246D92}.Release|x86.ActiveCfg = Release|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

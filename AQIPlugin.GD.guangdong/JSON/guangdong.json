@@ -1,0 +1,42 @@
+﻿{
+    "GetAllStationInfo": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "Param": "GetAllStationInfo"
+            }
+        ]
+    },
+    "GetAllAQIPublish": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "Param": "GetAllAQIPublish"
+            }
+        ]
+    },
+    "GetCityStationContained": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "Param": "GetCityStationContained"
+            }
+        ]
+    },
+    "GetAllAQILayerURL": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "Param": "GetAllAQILayerURL"
+            }
+        ]
+    }
+}

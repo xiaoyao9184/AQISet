@@ -104,7 +104,7 @@ namespace bjmemc.Abstract
             {
                 //这里使用ContentType为application/soap+msbin1
                 byte[] requestbody = MakeRequestBody(param);
-                HttpWebResponse response = HttpUtilV2.createPostResponse(Url, 10000, "application/soap+msbin1", requestbody);
+                HttpWebResponse response = HttpUtilV2.createPostResponse(Url, -1, "application/soap+msbin1", requestbody);
                 responsebody = HttpUtilV2.getResponseBody(response);
             }
             else

@@ -139,7 +139,7 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 参数缓存列表
-        ///     ICacheParam
+        ///     实现ICacheParam
         /// </summary>
         public virtual List<AQI.AqiParam> ParamCache
         {
