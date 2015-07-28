@@ -111,85 +111,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AQIPlugin.AH\AQIPlugin.AH.csproj">
-      <Project>{e0a9abd6-1a8d-4242-9c67-224cae226870}</Project>
-      <Name>AQIPlugin.AH</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.aqicn\AQIPlugin.aqicn.csproj">
-      <Project>{e9b0a4f9-1098-4e4e-a8d0-04270ad13539}</Project>
-      <Name>AQIPlugin.aqicn</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.BJ.bjmemc\AQIPlugin.BJ.bjmemc.csproj">
-      <Project>{3446990d-78b6-498d-ad4c-9afbe6a1ad1b}</Project>
-      <Name>AQIPlugin.BJ.bjmemc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.earth.nullschool\AQIPlugin.nullschool.earth.csproj">
-      <Project>{ef46073f-d3a3-4efb-9da5-f72ce8c684ba}</Project>
-      <Name>AQIPlugin.nullschool.earth</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.GD.guangdong\AQIPlugin.GD.guangdong.csproj">
-      <Project>{60832ddd-fd2d-438b-bfff-e1d5da0d4e23}</Project>
-      <Name>AQIPlugin.GD.guangdong</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.GS\AQIPlugin.GS.csproj">
-      <Project>{4c3558d9-6064-473c-b53c-da4bf5ae3cc9}</Project>
-      <Name>AQIPlugin.GS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.HB\AQIPlugin.HB.csproj">
-      <Project>{72af7756-c908-43f0-bb7d-0fa5385cc01f}</Project>
-      <Name>AQIPlugin.HB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.HLJ.hljkq\AQIPlugin.HLJ.hljkq.csproj">
-      <Project>{95b4dc84-9bf6-4497-9f29-8e56988d11f2}</Project>
-      <Name>AQIPlugin.HLJ.hljkq</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.HN\AQIPlugin.HN.csproj">
-      <Project>{7cb645dd-3a65-4fa7-99cc-0bedab774ef4}</Project>
-      <Name>AQIPlugin.HN</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.JL\AQIPlugin.JL.csproj">
-      <Project>{49d630c6-51e2-4b9e-a298-41aacdda3aee}</Project>
-      <Name>AQIPlugin.JL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.QHhx\AQIPlugin.QHhx.csproj">
-      <Project>{ba8238d9-4dd7-42ef-b8fe-991bbe1e59ea}</Project>
-      <Name>AQIPlugin.QHhx</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.QH\AQIPlugin.QH.csproj">
-      <Project>{95959d75-4bf0-4ebc-a2e2-7a8c25f40c92}</Project>
-      <Name>AQIPlugin.QH</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.SC.sichuan\AQIPlugin.SC.sichuan.csproj">
-      <Project>{07ae2fc2-3589-46d1-8640-b74ddfdabf23}</Project>
-      <Name>AQIPlugin.SC.sichuan</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.SD\AQIPlugin.SD.csproj">
-      <Project>{74c1cbc5-3a78-4c96-8c19-f59770512207}</Project>
-      <Name>AQIPlugin.SD</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.SX.sxAQIWeb\AQIPlugin.SX.sxAQIWeb.csproj">
-      <Project>{d9a7836a-bf4a-468a-b8bf-7cd3cbffd4c3}</Project>
-      <Name>AQIPlugin.SX.sxAQIWeb</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.TJ.tjemc\AQIPlugin.TJ.tjemc.csproj">
-      <Project>{2dcf778b-9433-44ca-b880-a25cdb9c53bb}</Project>
-      <Name>AQIPlugin.TJ.tjemc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.XJ\AQIPlugin.XJ.csproj">
-      <Project>{ecf142c9-8859-4e70-8d1c-704e5755c8b0}</Project>
-      <Name>AQIPlugin.XJ</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.XZ.xizang\AQIPlugin.XZ.xizang.csproj">
-      <Project>{9238642c-e761-49dd-a383-0be032246d92}</Project>
-      <Name>AQIPlugin.XZ.xizang</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.YN.YNAS\AQIPlugin.YN.YNAS.csproj">
-      <Project>{4acc8467-fbcf-49d0-8d8f-393f2009b040}</Project>
-      <Name>AQIPlugin.YN.YNAS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.ZJ.typhoon\AQIPlugin.ZJ.typhoon.csproj">
-      <Project>{defb9f28-a49b-4443-a145-60fcc539f274}</Project>
-      <Name>AQIPlugin.ZJ.typhoon</Name>
+    <ProjectReference Include="..\AQIPlugin.JS.jsair\AQIPlugin.JS.jsair.csproj">
+      <Project>{5af18004-67b4-4cef-9052-b95b1b096995}</Project>
+      <Name>AQIPlugin.JS.jsair</Name>
     </ProjectReference>
     <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
       <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>

@@ -1,0 +1,153 @@
+﻿{
+    "StationAQIDayNow": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationAQINow": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationCONow": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationNO2Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationO31Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationO38Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationPM10Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationPM25Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+    "StationSO2Now": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32
+            }
+        ]
+    },
+
+    "StationAQIDay": {
+        "Enabled": false,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "area": 32,
+                "time": 20150728090000
+            }
+        ]
+    },
+    "LSZDSB": {
+        "Enabled": false,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "PM25",
+                "pollutant": "PM25",
+                "timestart": 20150727090000,
+                "timeend": 20150728090000,
+                "citycode": 320700,
+                "stationcode": 811
+            }
+        ]
+    },
+    "LSZDSB_Auto": {
+        "Enabled": true,
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "PM25",
+                "pollutant": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "PM10",
+                "pollutant": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "SO2",
+                "pollutant": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "O3",
+                "pollutant": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "ONO2",
+                "pollutant": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "CO",
+                "pollutant": "CO"
+            }
+        ]
+    }
+}

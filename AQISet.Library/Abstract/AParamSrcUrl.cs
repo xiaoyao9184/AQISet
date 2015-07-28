@@ -441,7 +441,7 @@ namespace AQI.Abstract
         /// 拼接含参数Url
         ///     可以重写
         /// </summary>
-        /// <param name="dictParam">参数列表</param>
+        /// <param name="param">参数列表</param>
         /// <returns>完整URL</returns>
         public virtual string MakeUrl(AqiParam param)
         {
@@ -468,7 +468,7 @@ namespace AQI.Abstract
         /// 拼接请求体
         ///     可以重写
         /// </summary>
-        /// <param name="dictParam">参数列表</param>
+        /// <param name="param">参数列表</param>
         /// <returns>RequestBody字节数组</returns>
         public virtual byte[] MakeRequestBody(AqiParam param)
         {

@@ -54,6 +54,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.XZ.xizang", "AQIP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.GD.guangdong", "AQIPlugin.GD.guangdong\AQIPlugin.GD.guangdong.csproj", "{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQIPlugin.JS.jsair", "AQIPlugin.JS.jsair\AQIPlugin.JS.jsair.csproj", "{5AF18004-67B4-4CEF-9052-B95B1B096995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -295,6 +297,16 @@ Global
 		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{60832DDD-FD2D-438B-BFFF-E1D5DA0D4E23}.Release|x86.ActiveCfg = Release|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5AF18004-67B4-4CEF-9052-B95B1B096995}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
