@@ -1,26 +1,31 @@
 ﻿{
-"Setting" :{
-    "Saver": "AqiFileSaver",
-    "LoadAutoRun": true,
-	"AqiFileSaver" : 
-	{
-        "Path": "D:\\AQI-DATA\\",
-        "SaveEmptyData": true
-	},
-	"AqiRunner" : 
-	{
-		"RunMode" : "SELF"
-	},
-	"AqiNoter" : 
-	{
-		"MaxFailCount" : 5 
-	},
-	"AqiRetryer" : 
-	{
-		"MaxQueue" : 500,
-		"RetryCount" : 10,
-        "RetryTime" : 1,
-		"AlwayRetry" : false
-	}
-}
+    "Setting": {
+        "Saver": "AqiFileSaver",
+        "LoadAutoRun": true,
+        "AqiFileSaver": {
+            "Path": "D:\\AQI-DATA\\",
+            "SaveEmptyData": true
+        },
+        "AqiRunner": {
+            "RunMode": "SELF"
+        },
+        "AqiNoter": {
+            "MaxFailCount": 5
+        },
+        "AqiRetryer": {
+            "MaxQueue": 500,
+            "RetryCount": 10,
+            "RetryTime": 1,
+            "AlwayRetry": false
+        },
+        "AqiMemind": {
+            "LogLocation": "\\AqiSet.log",
+            "LogLayout": "记录时间：%date 线程ID:[%thread] 日志级别：%-5level 出错类：%logger property:[%property{NDC}] - 描述：%message%newline",
+            "EmailFrom": "you",
+            "EmailPwd": "idontlikeemail",
+            "EmailTo": "me",
+            "EmailHost": "smtp.xy.com",
+            "AlwayRetry": false
+        }
+    }
 }

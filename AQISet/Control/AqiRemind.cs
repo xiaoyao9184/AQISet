@@ -1,5 +1,7 @@
 ﻿using AQISet.Collection;
 using AQISet.Interface;
+using Helper.Email;
+using Helper.Util.IO;
 using log4net;
 using log4net.Appender;
 using log4net.Config;
@@ -58,7 +60,7 @@ namespace AQISet.Control
             appender.AppendToFile = true;
             appender.RollingStyle = RollingFileAppender.RollingMode.Date;
             appender.StaticLogFileName = true;
-            appender.Layout = new PatternLayout("记录时间：%date 线程ID:[%thread] 日志级别：%-5level 出错类：%logger property:[%property{NDC}] - 描述：%message%newline");
+            appender.Layout = new PatternLayout(AqiManage.Setting["LogLayout"]);
             LevelRangeFilter filter = new LevelRangeFilter();
             filter.LevelMax = Level.Fatal;
             filter.LevelMin = Level.Debug;
@@ -93,8 +95,47 @@ namespace AQISet.Control
             }
         }
         
-        private void Email()
+        private void Email(object obj)
         {
+            try
+            {
+                string mailSubject = "";
+                string mailBody = "";
+
+                if (obj == null)
+                {
+                    mailSubject = "AQISet日志";
+                    mailBody = FileReadSaveUtil.ReadText(this.getLogFile());
+                }
+                else if (obj is IStatus)
+                {
+                    IStatus s = (obj as IStatus);
+                    mailSubject = "AQISet状态_" + s.Name;
+                    mailBody = s.GetInfo();
+                }
+
+                EmailHelper emh = new EmailHelper();
+                emh.mailFrom = AqiManage.Setting["AqiMemind.EmailFrom"];    //发送人的邮箱地址
+                emh.mailPwd = AqiManage.Setting["AqiMemind.EmailPwd"];      //发送人邮箱的密码
+                emh.mailSubject = mailSubject;                              //邮件主题;
+                emh.mailBody = mailBody;                                    //邮件内容;
+                emh.isbodyHtml = true;                                      //是否是HTML
+                emh.host = AqiManage.Setting["AqiMemind.EmailHost"];        //服务器
+                emh.mailToArray = new string[] { AqiManage.Setting["AqiMemind.EmailTo"] };//接收者邮件集合
+                if (emh.Send())
+                {
+                    AqiManage.Remind.Log_Error("Email发送成功", tag);
+                }
+                else
+                {
+                    AqiManage.Remind.Log_Error("Email发送失败", tag);
+                }
+            }
+            catch(System.Exception ex)
+            {
+                Beep();
+                AqiManage.Remind.Log_Error("Email生成失败", ex, tag);
+            }
         }
 
         #endregion
@@ -103,9 +144,23 @@ namespace AQISet.Control
 
         private string getLogFile()
         {
-            string location = base.GetType().Assembly.Location;
-            int length = location.LastIndexOf('\\');
-            return (location.Substring(0, length) + @"\AqiSet.log");
+            string loc = AqiManage.Setting["LogLocation"];
+            if(String.IsNullOrEmpty(loc))
+            {
+                string location = base.GetType().Assembly.Location;
+                int length = location.LastIndexOf('\\');
+                return (location.Substring(0, length) + @"\AqiSet.log");
+            }
+            else if (loc.StartsWith(@"\") || loc.StartsWith(@"/"))
+            {
+                string location = base.GetType().Assembly.Location;
+                int length = location.LastIndexOf('\\');
+                return (location.Substring(0, length) + loc);
+            }
+            else
+            {
+                return loc;
+            }
         }
 
         private string messageLevel(string message, params string[] names)

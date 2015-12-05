@@ -19,11 +19,12 @@ namespace AQI
 
         public const string PARAMS = "Params";
         private const string PARAM = "Param";
+        private const string PERMUTATION = "Permutation";
         private const string REFER = "Refer";
         private const string GROUP = "Group";
         private const string NAME = "Name";
         private const string ENEABLED = "Enabled";
-
+        
         private const string REGEX_LOWWORLD = "^[a-z].*$";
 
         //ParamCycle.OnceAgain使用
@@ -36,6 +37,10 @@ namespace AQI
         private string pName;
         private string pRefer;
         private string pGroup;
+        /// <summary>
+        /// TODO 添加置换参数
+        /// </summary>
+        private bool bPermutation;
         private bool pUnique;
 
         #endregion
@@ -103,6 +108,21 @@ namespace AQI
         public AqiParam(string name) 
         {
             pName = name;
+        }
+
+        public AqiParam(AqiParam aqiParam, Dictionary<string,string> map)
+        {
+            pName = aqiParam.pName;
+            pRefer = aqiParam.pRefer;
+            pGroup = aqiParam.pGroup;
+            pRefer = aqiParam.pRefer;
+            bPermutation = aqiParam.bPermutation;
+            pUnique = aqiParam.pUnique;
+            foreach (var kv in map)
+            {
+                this.Add(kv.Key, kv.Value);
+                pName = pName.Replace("{" + kv.Key + "}", kv.Value);
+            }
         }
 
         #region Factory
@@ -257,6 +277,13 @@ namespace AQI
 
             //5分组
             jt = jObject.GetValue(GROUP);
+            if (jt != null)
+            {
+                ap.pGroup = jt.ToString();
+            }
+
+            //6置换
+            jt = jObject.GetValue(PERMUTATION);
             if (jt != null)
             {
                 ap.pGroup = jt.ToString();

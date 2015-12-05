@@ -1,0 +1,749 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "福州",
+                "cityName": "福州"
+            },
+            {
+                "Enabled": true,
+                "Name": "厦门",
+                "cityName": "厦门"
+            },
+            {
+                "Enabled": true,
+                "Name": "莆田",
+                "cityName": "莆田"
+            },
+            {
+                "Enabled": true,
+                "Name": "三明",
+                "cityName": "三明"
+            },
+            {
+                "Enabled": true,
+                "Name": "泉州",
+                "cityName": "泉州"
+            },
+            {
+                "Enabled": true,
+                "Name": "漳州",
+                "cityName": "漳州"
+            },
+            {
+                "Enabled": true,
+                "Name": "南平",
+                "cityName": "南平"
+            },
+            {
+                "Enabled": true,
+                "Name": "龙岩",
+                "cityName": "龙岩"
+            },
+            {
+                "Enabled": true,
+                "Name": "宁德",
+                "cityName": "宁德"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_鼓山",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_快安",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_师大",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_五四北路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_杨桥西路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_紫阳",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_溪东",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_洪文",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_鼓浪屿",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_湖里",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1011A_",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1012A_",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1013A_",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_荔城区仓后路",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_莆田市监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_涵江区六中",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_秀屿区政府",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_东圳水库",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_三钢",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_三明二中",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_三元区政府",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_洋溪",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_涂山街",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_津头埔",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_万安",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_清源山",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_蓝田",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_漳州三中",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_九湖",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_茫荡山",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_南平市监测站",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_南平铝业有限公司",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_南平七中",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_龙岩师专",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_龙岩市监测站",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_闽西职业技术学院",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_龙岩学院",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_金涵水库",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_蕉城区农机局",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_宁德市监测站",
+                "stationCode": "1040A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_鼓山",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_快安",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_师大",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_五四北路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_杨桥西路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_紫阳",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_溪东",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_洪文",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_鼓浪屿",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_湖里",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1011A_",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1012A_",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": false,
+                "Name": "1013A_",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_荔城区仓后路",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_莆田市监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_涵江区六中",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_秀屿区政府",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_东圳水库",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_三钢",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_三明二中",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_三元区政府",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_洋溪",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_涂山街",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_津头埔",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_万安",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_清源山",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_蓝田",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_漳州三中",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_九湖",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_茫荡山",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_南平市监测站",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_南平铝业有限公司",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_南平七中",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_龙岩师专",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_龙岩市监测站",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_闽西职业技术学院",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_龙岩学院",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_金涵水库",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_蕉城区农机局",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_宁德市监测站",
+                "stationCode": "1040A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

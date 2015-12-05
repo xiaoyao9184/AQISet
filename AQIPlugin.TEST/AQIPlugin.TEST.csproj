@@ -43,6 +43,7 @@
     <Compile Include="dotest\testNoParam.cs" />
     <Compile Include="dotest\testNone.cs" />
     <Compile Include="dotest\testTimeout.cs" />
+    <Compile Include="Saver\TestSaver.cs" />
     <Compile Include="TESTAqi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

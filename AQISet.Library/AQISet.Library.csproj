@@ -58,6 +58,7 @@
     <Compile Include="Exception\RetryException.cs" />
     <Compile Include="Exception\ParamException.cs" />
     <Compile Include="Exception\SettingException.cs" />
+    <Compile Include="Interface\IAqiSave.cs" />
     <Compile Include="Interface\IAqiWeb.cs" />
     <Compile Include="Interface\ICacheConfig.cs" />
     <Compile Include="Interface\ICacheParam.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Abstract\AParamSrcUrl.cs" />
     <Compile Include="Util\HttpUtilV2.cs" />
     <Compile Include="Util\JsonHelper.cs" />
+    <Compile Include="Util\EmailHelper.cs" />
     <Compile Include="Util\WCFbin\WcfBinaryDictionary.cs" />
     <Compile Include="Util\WCFbin\WCFMessageHelper.cs" />
     <Compile Include="Util\WCFbin\WCFMessageUtil.cs" />

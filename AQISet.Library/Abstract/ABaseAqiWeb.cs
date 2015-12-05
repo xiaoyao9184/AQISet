@@ -7,7 +7,6 @@ using AQI.Interface;
 using AQI.Exception;
 using System.Threading;
 
-
 namespace AQI.Abstract
 {
     public abstract class ABaseAqiWeb : IAqiWeb, ICacheConfig
@@ -179,11 +178,15 @@ namespace AQI.Abstract
                 this.dtConfigCacheTime = AqiConfig.ReadWriteTimeFormJson(this);
 
             }
+            catch (System.Exception e)
+            {
+                throw e;
+            }
             finally
             {
                 thisLock.ExitWriteLock();
             }
-            
+
             return true;
         }
 

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDFC87E1-CE14-41BE-BDB6-FD1D22273731}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AQIPlugin.LN</RootNamespace>
+    <AssemblyName>AQIPlugin.LN</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AirQualityService\GetAQIDetail.cs" />
+    <Compile Include="AirQualityService\Get48Hours.cs" />
+    <Compile Include="AirQualityService\GetCity30Days.cs" />
+    <Compile Include="AirQualityService\GetCity48Hours.cs" />
+    <Compile Include="AirQualityService\GetReportPointAQIList.cs" />
+    <Compile Include="AirQualityService\getZHZS.cs" />
+    <Compile Include="AirQualityService\getRJND.cs" />
+    <Compile Include="AirQualityService\GetReportCityAQIList.cs" />
+    <Compile Include="AirQualityService\GetReportPointAQI.cs" />
+    <Compile Include="AirQualityService\GetCityDetail.cs" />
+    <Compile Include="AirQualityService\GetStationAQIDetailByStationCode.cs" />
+    <Compile Include="AirQualityService\Get30Days.cs" />
+    <Compile Include="Ajax\Permutation\Get.cs" />
+    <Compile Include="Ajax\GetCityDetailList.cs" />
+    <Compile Include="Home\GetStationDailyDataListByCityName.cs" />
+    <Compile Include="Ajax\GetO38.cs" />
+    <Compile Include="Ajax\GetSO2.cs" />
+    <Compile Include="Ajax\GetCO.cs" />
+    <Compile Include="Ajax\GetO3.cs" />
+    <Compile Include="Ajax\GetNO2.cs" />
+    <Compile Include="Ajax\GetPM10.cs" />
+    <Compile Include="Ajax\GetPM25.cs" />
+    <Compile Include="Ajax\GetAQI.cs" />
+    <Compile Include="Ajax\GetStationDetailList.cs" />
+    <Compile Include="Ajax\GetCityPollutant.cs" />
+    <Compile Include="Home\GetCityDetailByCityName.cs" />
+    <Compile Include="LNAqi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WSReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="JSON\ln.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md" />
+    <None Include="Service References\WSReference\AirQualityService.wsdl" />
+    <None Include="Service References\WSReference\AQIPlugin.LN.WSReference.StationDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSReference\AirQualityService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
+      <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>
+      <Name>AQISet.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using AQISet.Control.Saver;
 
 namespace AQISet.Control
 {
@@ -29,7 +30,12 @@ namespace AQISet.Control
         private List<Assembly> allDLLs;
         private Dictionary<string, IAqiWeb> allAqiWebs;
         private Dictionary<string, ISrcUrl> allSrcUrls;
-        
+        private Dictionary<string, IAqiSave> allAqiSaves;
+// 
+//         private Dictionary<string, List<Type>> allPluginInterface;
+// 
+//         private Dictionary<Type, Dictionary<string, Type>> allPluginType;
+
         #endregion
 
         #region 单例
@@ -57,6 +63,12 @@ namespace AQISet.Control
 
         private AqiPlugin()
         {
+//             allPluginType = new Dictionary<Type, Dictionary<string, Type>>();
+//             allPluginType.Add(typeof(IAqiWeb), new Dictionary<string,Type>());
+//             allPluginType.Add(typeof(IAqiSave), new Dictionary<string,Type>());
+            allAqiSaves = new Dictionary<string, IAqiSave>();
+            allAqiSaves.Add(AqiFileSaver.NAME, new AqiFileSaver());
+            
             this.initDll();
             this.initAqiWeb();
             this.initSrcUrl();
@@ -100,9 +112,33 @@ namespace AQISet.Control
                 {
                     if (type.GetInterface(typeof(IAqiWeb).Name) != null)
                     {
-                        IAqiWeb iaw = Activator.CreateInstance(type) as IAqiWeb;
-                        this.allAqiWebs.Add(iaw.Tag, iaw);
-                        AqiManage.Remind.Log_Debug("加载数据源:" + iaw.Name, AqiPlugin.tag);
+                        try
+                        {
+                            IAqiWeb iaw = Activator.CreateInstance(type) as IAqiWeb;
+                            this.allAqiWebs.Add(iaw.Tag, iaw);
+                            AqiManage.Remind.Log_Debug("加载数据源:" + iaw.Name, AqiPlugin.tag);
+                        }
+                        catch (Exception ex)
+                        {
+                            AqiManage.Remind.Log_Error("加载数据源错误", ex, AqiPlugin.tag);
+                        }
+                    }
+                    else if (type.GetInterface(typeof(IAqiSave).Name) != null)
+                    {
+/*                        AddTypeToMapping(typeof (IAqiSave), type);*/
+//                         string name = typeof(IAqiSave).Name;
+//                         this.allPluginInterface[name].Add(type);
+//                         AqiManage.Remind.Log_Debug("加载持久插件:" + type.Name, AqiPlugin.tag);
+                        try
+                        {
+                            IAqiSave ias = Activator.CreateInstance(type) as IAqiSave;
+                            this.allAqiSaves.Add(ias.Name, ias);
+                            AqiManage.Remind.Log_Debug("加载持久插件:" + ias.Name, AqiPlugin.tag);
+                        }
+                        catch (Exception ex)
+                        {
+                            AqiManage.Remind.Log_Error("加载持久插件错误", ex, AqiPlugin.tag);
+                        }
                     }
                 }
             }
@@ -119,9 +155,29 @@ namespace AQISet.Control
             }
         }
 
+
+//         private void AddTypeToMapping(Type baseType, Type type)
+//         {
+//             allPluginType[baseType].Add(type.Name, type);
+//         }
+// 
+//         private void GetTypeFormMapping()
+//         {
+//             
+//         }
+// 
+//         private List<Type> GetSupportType()
+//         {
+//             return allPluginType.Keys.ToList();
+//         }
+
+
         #endregion
 
         #region 基本控制
+
+        
+
 
         public IAqiWeb GetAqiWeb(string name)
         {
@@ -289,6 +345,48 @@ namespace AQISet.Control
                 AqiManage.Remind.Log_Error("移除数据源插件失败:" + iawName, ex, tag);
             }
             return false;
+        }
+
+        #endregion
+
+        #region 工厂方法
+
+
+//         public T CreateInterface<T>(T t, string name)
+//         {
+//             Dictionary<string, Type> mapType = allPluginType[typeof(T)];
+//             if (mapType.Count < 1)
+//             {
+//                 throw Exception("空集合，无法创建");
+//             }
+// 
+//             Type type = null;
+// 
+//             if (mapType.ContainsKey(name))
+//             {
+//                 type = mapType[name];
+//             }
+//             else
+//             {
+//                 AqiManage.Remind.Log_Error("没有找到相关类型", AqiPlugin.tag);
+//                 type = mapType.ElementAt(0).Value;
+//             }
+// 
+//             T obj = (T)Activator.CreateInstance(type);
+// 
+//             return obj;
+//         }
+
+        public IAqiSave CreateSave(string saverName)
+        {
+            if (String.IsNullOrEmpty(saverName) || !allAqiSaves.ContainsKey(saverName))
+            {
+                return allAqiSaves.ElementAt(0).Value;
+            }
+            else
+            {
+                return allAqiSaves[saverName];
+            }
         }
 
         #endregion

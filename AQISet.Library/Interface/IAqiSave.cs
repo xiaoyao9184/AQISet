@@ -2,7 +2,7 @@
 using AQI.Interface;
 using System;
 
-namespace AQISet.Interface
+namespace AQI.Interface
 {
     /// <summary>
     /// 保存者 接口

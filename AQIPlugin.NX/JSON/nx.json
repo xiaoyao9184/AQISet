@@ -1,0 +1,419 @@
+﻿{
+    "GetAqiCity": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+    "GetAqiCityStation": {
+        "Enabled": true,
+        "Name": "城市下所以站点",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+
+    "GetAQIDataByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+    "GetIaqiPublishEtyByCityName": {
+        "Enabled": true,
+        "Name": "站点1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+    "GetAQIDay": {
+        "Enabled": true,
+        "Name": "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+
+    "GetCityAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+    "GetCityDayAqiByCityName": {
+        "Enabled": true,
+        "Name": "城市24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "银川",
+                "cityName": "银川"
+            },
+            {
+                "Enabled": true,
+                "Name": "石嘴山",
+                "cityName": "石嘴山"
+            },
+            {
+                "Enabled": true,
+                "Name": "吴忠",
+                "cityName": "吴忠"
+            },
+            {
+                "Enabled": true,
+                "Name": "固原",
+                "cityName": "固原"
+            },
+            {
+                "Enabled": true,
+                "Name": "中卫",
+                "cityName": "中卫"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition": {
+        "Enabled": false,
+        "Name": "站点24小时浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_贺兰山马莲口",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_银湖巷",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_宁安大街",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_宁化生活区",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_贺兰山东路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_学院路",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_沙湖旅游区",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_大武口黄河东街",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_惠农南大街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_红果子镇惠新街",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_教育园区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_高级中学",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_新区二泵站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_马园",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_新区",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_沙坡头消防站",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_官桥站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_环保局站",
+                "stationCode": "1019A"
+            }
+        ]
+    },
+    "GetIaqiHistoryByCondition": {
+        "Enabled": false,
+        "Name":  "站点24小时AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_贺兰山马莲口",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_银湖巷",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_宁安大街",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_宁化生活区",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_贺兰山东路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_学院路",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_沙湖旅游区",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_大武口黄河东街",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_惠农南大街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_红果子镇惠新街",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_教育园区",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_高级中学",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_新区二泵站",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_马园",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_监测站",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_新区",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_沙坡头消防站",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_官桥站",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_环保局站",
+                "stationCode": "1019A"
+            }
+        ]
+    },
+
+    "GetAqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name": "站点24小时浓度"
+    },
+    "GetIaqiHistoryByCondition_Auto": {
+        "Enabled": true,
+        "Name":  "站点24小时AQI"
+    },
+
+    "GetAQITips": {
+        "Enabled": true,
+        "Name":  "AQI等级提示"
+    },
+    "GetSystemConfigs": {
+        "Enabled": true,
+        "Name":  "系统设置"
+    },
+    "GetServerTime": {
+        "Enabled": false,
+        "Name":  "系统时间"
+    }
+}

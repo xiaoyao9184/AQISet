@@ -1,0 +1,4055 @@
+﻿{
+    "GetCityDetailList": {
+        "Enabled": true,
+        "Name": "所有城市"
+    },
+
+    "GetCityDetailByCityName": {
+        "Enabled": true,
+        "Name": "城市1小时AQI&浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "沈阳",
+                "cityName": "沈阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连",
+                "cityName": "大连"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山",
+                "cityName": "鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺",
+                "cityName": "抚顺"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪",
+                "cityName": "本溪"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东",
+                "cityName": "丹东"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州",
+                "cityName": "锦州"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口",
+                "cityName": "营口"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新",
+                "cityName": "阜新"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳",
+                "cityName": "辽阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦",
+                "cityName": "盘锦"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭",
+                "cityName": "铁岭"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳",
+                "cityName": "朝阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛",
+                "cityName": "葫芦岛"
+            }
+        ]
+    },
+    "GetStationDetailList": {
+        "Enabled": true,
+        "Name": "城市站点1小时AQI&浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "沈阳",
+                "cityName": "沈阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连",
+                "cityName": "大连"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山",
+                "cityName": "鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺",
+                "cityName": "抚顺"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪",
+                "cityName": "本溪"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东",
+                "cityName": "丹东"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州",
+                "cityName": "锦州"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口",
+                "cityName": "营口"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新",
+                "cityName": "阜新"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳",
+                "cityName": "辽阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦",
+                "cityName": "盘锦"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭",
+                "cityName": "铁岭"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳",
+                "cityName": "朝阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛",
+                "cityName": "葫芦岛"
+            }
+        ]
+    },
+    "GetStationDailyDataListByCityName": {
+        "Enabled": true,
+        "Name": "城市站点24小时AQI&浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "沈阳",
+                "cityName": "沈阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连",
+                "cityName": "大连"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山",
+                "cityName": "鞍山"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺",
+                "cityName": "抚顺"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪",
+                "cityName": "本溪"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东",
+                "cityName": "丹东"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州",
+                "cityName": "锦州"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口",
+                "cityName": "营口"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新",
+                "cityName": "阜新"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳",
+                "cityName": "辽阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦",
+                "cityName": "盘锦"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭",
+                "cityName": "铁岭"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳",
+                "cityName": "朝阳"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛",
+                "cityName": "葫芦岛"
+            }
+        ]
+    },
+
+    "GetCityPollutant": {
+        "Enabled": true,
+        "Name": "城市24小时历史AQI&浓度",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "沈阳AQI",
+                "cityName": "沈阳",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连AQI",
+                "cityName": "大连",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山AQI",
+                "cityName": "鞍山",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺AQI",
+                "cityName": "抚顺",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪AQI",
+                "cityName": "本溪",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东AQI",
+                "cityName": "丹东",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州AQI",
+                "cityName": "锦州",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口AQI",
+                "cityName": "营口",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新AQI",
+                "cityName": "阜新",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳AQI",
+                "cityName": "辽阳",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦AQI",
+                "cityName": "盘锦",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭AQI",
+                "cityName": "铁岭",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳AQI",
+                "cityName": "朝阳",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛AQI",
+                "cityName": "葫芦岛",
+                "pollutantName": "AQI"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳PM25",
+                "cityName": "沈阳",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连PM25",
+                "cityName": "大连",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山PM25",
+                "cityName": "鞍山",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺PM25",
+                "cityName": "抚顺",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪PM25",
+                "cityName": "本溪",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东PM25",
+                "cityName": "丹东",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州PM25",
+                "cityName": "锦州",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口PM25",
+                "cityName": "营口",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新PM25",
+                "cityName": "阜新",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳PM25",
+                "cityName": "辽阳",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦PM25",
+                "cityName": "盘锦",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭PM25",
+                "cityName": "铁岭",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳PM25",
+                "cityName": "朝阳",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛PM25",
+                "cityName": "葫芦岛",
+                "pollutantName": "PM25"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳PM10",
+                "cityName": "沈阳",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连PM10",
+                "cityName": "大连",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山PM10",
+                "cityName": "鞍山",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺PM10",
+                "cityName": "抚顺",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪PM10",
+                "cityName": "本溪",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东PM10",
+                "cityName": "丹东",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州PM10",
+                "cityName": "锦州",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口PM10",
+                "cityName": "营口",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新PM10",
+                "cityName": "阜新",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳PM10",
+                "cityName": "辽阳",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦PM10",
+                "cityName": "盘锦",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭PM10",
+                "cityName": "铁岭",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳PM10",
+                "cityName": "朝阳",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛PM10",
+                "cityName": "葫芦岛",
+                "pollutantName": "PM10"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳SO2",
+                "cityName": "沈阳",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连SO2",
+                "cityName": "大连",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山SO2",
+                "cityName": "鞍山",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺SO2",
+                "cityName": "抚顺",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪SO2",
+                "cityName": "本溪",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东SO2",
+                "cityName": "丹东",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州SO2",
+                "cityName": "锦州",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口SO2",
+                "cityName": "营口",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新SO2",
+                "cityName": "阜新",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳SO2",
+                "cityName": "辽阳",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦SO2",
+                "cityName": "盘锦",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭SO2",
+                "cityName": "铁岭",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳SO2",
+                "cityName": "朝阳",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛SO2",
+                "cityName": "葫芦岛",
+                "pollutantName": "SO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳NO2",
+                "cityName": "沈阳",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连NO2",
+                "cityName": "大连",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山NO2",
+                "cityName": "鞍山",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺NO2",
+                "cityName": "抚顺",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪NO2",
+                "cityName": "本溪",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东NO2",
+                "cityName": "丹东",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州NO2",
+                "cityName": "锦州",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口NO2",
+                "cityName": "营口",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新NO2",
+                "cityName": "阜新",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳NO2",
+                "cityName": "辽阳",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦NO2",
+                "cityName": "盘锦",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭NO2",
+                "cityName": "铁岭",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳NO2",
+                "cityName": "朝阳",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛NO2",
+                "cityName": "葫芦岛",
+                "pollutantName": "NO2"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳CO",
+                "cityName": "沈阳",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连CO",
+                "cityName": "大连",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山CO",
+                "cityName": "鞍山",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺CO",
+                "cityName": "抚顺",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪CO",
+                "cityName": "本溪",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东CO",
+                "cityName": "丹东",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州CO",
+                "cityName": "锦州",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口CO",
+                "cityName": "营口",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新CO",
+                "cityName": "阜新",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳CO",
+                "cityName": "辽阳",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦CO",
+                "cityName": "盘锦",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭CO",
+                "cityName": "铁岭",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳CO",
+                "cityName": "朝阳",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛CO",
+                "cityName": "葫芦岛",
+                "pollutantName": "CO"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳O3",
+                "cityName": "沈阳",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连O3",
+                "cityName": "大连",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山O3",
+                "cityName": "鞍山",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺O3",
+                "cityName": "抚顺",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪O3",
+                "cityName": "本溪",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东O3",
+                "cityName": "丹东",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州O3",
+                "cityName": "锦州",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口O3",
+                "cityName": "营口",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新O3",
+                "cityName": "阜新",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳O3",
+                "cityName": "辽阳",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦O3",
+                "cityName": "盘锦",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭O3",
+                "cityName": "铁岭",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳O3",
+                "cityName": "朝阳",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛O3",
+                "cityName": "葫芦岛",
+                "pollutantName": "O3"
+            },
+            {
+                "Enabled": true,
+                "Name": "沈阳O38",
+                "cityName": "沈阳",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "大连O38",
+                "cityName": "大连",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "鞍山O38",
+                "cityName": "鞍山",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "抚顺O38",
+                "cityName": "抚顺",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "本溪O38",
+                "cityName": "本溪",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "丹东O38",
+                "cityName": "丹东",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "锦州O38",
+                "cityName": "锦州",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "营口O38",
+                "cityName": "营口",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "阜新O38",
+                "cityName": "阜新",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "辽阳O38",
+                "cityName": "辽阳",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "盘锦O38",
+                "cityName": "盘锦",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "铁岭O38",
+                "cityName": "铁岭",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "朝阳O38",
+                "cityName": "朝阳",
+                "pollutantName": "O38"
+            },
+            {
+                "Enabled": true,
+                "Name": "葫芦岛O38",
+                "cityName": "葫芦岛",
+                "pollutantName": "O38"
+            }
+        ]
+    },
+
+    "Get": {
+        "Enabled": true,
+        "Name": "站点24小时历史AQI&浓度",
+        "Params": [ 
+            {
+                "Enabled": true,
+                "Name": "{p}\\{stationCode}",
+                "p": "AQI.PM25.PM10.SO2.NO2.CO.O3.O38",
+                "stationCode": "1001A.1002A.1003A.1004A.1005A.1006A.1007A.1008A.1009A.1010A.1011A.1012A.1013A.1014A.1015A.1016A.1017A.1018A.1019A.1020A.1021A.1022A.1023A.1024A.1025A.1026A.1027A.1028A.1029A.1030A.1031A.1032A.1033A.1034A.1035A.1036A.1037A.1038A.1039A.1040A.1041A.1042A.1043A.1044A.1045A.1046A.1047A.1048A.1049A.1050A.1051A.1052A.1053A.1054A.1055A.1056A.1057A.1058A.1059A.1060A.1061A.1062A.1063A.1064A.1065A.1066A.1067A.1068A.1069A.1070A.1071A.1072A.1073A.1074A.1077A.1078A.1079A"
+            }
+        ]
+    },
+    "GetAQI": {
+        "Enabled": true,
+        "Name": "站点24小时历史AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetPM25": {
+        "Enabled": true,
+        "Name": "站点24小时历史PM25",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetPM10": {
+        "Enabled": true,
+        "Name": "站点24小时历史PM10",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetSO2": {
+        "Enabled": true,
+        "Name": "站点24小时历史SO2",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetNO2": {
+        "Enabled": true,
+        "Name": "站点24小时历史NO2",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetCO": {
+        "Enabled": true,
+        "Name": "站点24小时历史CO",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetO3": {
+        "Enabled": true,
+        "Name": "站点24小时历史O3",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    },
+    "GetO38": { 
+        "Enabled": true,
+        "Name": "站点24小时历史O38",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "1001A_森林路",
+                "stationCode": "1001A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1002A_浑南东路",
+                "stationCode": "1002A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1003A_浑南东路",
+                "stationCode": "1003A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1004A_沧海路",
+                "stationCode": "1004A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1005A_东陵路",
+                "stationCode": "1005A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1006A_陵东街",
+                "stationCode": "1006A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1007A_文化路",
+                "stationCode": "1007A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1008A_小河沿",
+                "stationCode": "1008A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1009A_太原街",
+                "stationCode": "1009A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1010A_南十东路",
+                "stationCode": "1010A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1011A_京沈街",
+                "stationCode": "1011A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1012A_大连",
+                "stationCode": "1012A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1013A_周水子",
+                "stationCode": "1013A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1014A_星海三站",
+                "stationCode": "1014A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1015A_青泥洼桥",
+                "stationCode": "1015A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1016A_傅家庄",
+                "stationCode": "1016A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1017A_七贤岭",
+                "stationCode": "1017A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1018A_旅顺",
+                "stationCode": "1018A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1019A_金州",
+                "stationCode": "1019A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1020A_开发区",
+                "stationCode": "1020A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1021A_双D港",
+                "stationCode": "1021A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1022A_深沟寺",
+                "stationCode": "1022A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1023A_太阳城",
+                "stationCode": "1023A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1024A_太平",
+                "stationCode": "1024A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1025A_铁西三道街",
+                "stationCode": "1025A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1026A_明达新区",
+                "stationCode": "1026A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1027A_千山",
+                "stationCode": "1027A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1028A_望花区",
+                "stationCode": "1028A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1029A_顺城区",
+                "stationCode": "1029A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1030A_东洲区",
+                "stationCode": "1030A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1031A_新抚区",
+                "stationCode": "1031A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1032A_大伙房水库",
+                "stationCode": "1032A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1033A_沈抚新城",
+                "stationCode": "1033A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1034A_大峪",
+                "stationCode": "1034A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1035A_溪湖",
+                "stationCode": "1035A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1036A_彩屯",
+                "stationCode": "1036A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1037A_东明",
+                "stationCode": "1037A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1038A_新立屯",
+                "stationCode": "1038A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1039A_威宁",
+                "stationCode": "1039A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1040A_江湾东路",
+                "stationCode": "1040A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1041A_临江后街",
+                "stationCode": "1041A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1042A_元宝山",
+                "stationCode": "1042A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1043A_民主桥",
+                "stationCode": "1043A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1044A_南山",
+                "stationCode": "1044A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1045A_百股街道",
+                "stationCode": "1045A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1046A_天安街道",
+                "stationCode": "1046A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1047A_北湖公园",
+                "stationCode": "1047A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1048A_学府南路",
+                "stationCode": "1048A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1049A_大庆路",
+                "stationCode": "1049A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1050A_镜湖西路",
+                "stationCode": "1050A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1051A_西炮台",
+                "stationCode": "1051A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1052A_工业园区",
+                "stationCode": "1052A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1053A_长青街",
+                "stationCode": "1053A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1054A_农业园区",
+                "stationCode": "1054A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1055A_东苑",
+                "stationCode": "1055A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1056A_玉龙新城",
+                "stationCode": "1056A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1057A_宏伟区",
+                "stationCode": "1057A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1058A_新华园",
+                "stationCode": "1058A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1059A_滨河路",
+                "stationCode": "1059A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1060A_铁西工业园",
+                "stationCode": "1060A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1061A_兴隆台",
+                "stationCode": "1061A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1062A_新生街道",
+                "stationCode": "1062A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1063A_汇工街西",
+                "stationCode": "1063A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1064A_水上乐园",
+                "stationCode": "1064A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1065A_银州路东段",
+                "stationCode": "1065A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1066A_金沙江路北",
+                "stationCode": "1066A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1067A_西梁",
+                "stationCode": "1067A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1068A_河畔小区",
+                "stationCode": "1068A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1069A_八里堡",
+                "stationCode": "1069A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1070A_农业园区",
+                "stationCode": "1070A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1071A_龙港区",
+                "stationCode": "1071A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1072A_化工街",
+                "stationCode": "1072A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1073A_新区",
+                "stationCode": "1073A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1074A_东城区",
+                "stationCode": "1074A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1077A_开发区",
+                "stationCode": "1077A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1078A_开发区",
+                "stationCode": "1078A"
+            },
+            {
+                "Enabled": true,
+                "Name": "1079A_铁西工业园区",
+                "stationCode": "1079A"
+            }
+        ]
+    }
+}

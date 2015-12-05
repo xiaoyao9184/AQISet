@@ -227,16 +227,8 @@ namespace AQISet.Control
         /// </summary>
         private void initSaver()
         {
-            Type type = Type.GetType("AQISet.Control.Saver." + Setting["Saver"]);
-            //读取配置文件，使用不同Saver
-            if (type == null)
-            {
-                this.aqiSaver = new AqiFileSaver(this);
-            }
-            else
-            {
-                this.aqiSaver = Activator.CreateInstance(type, new object[] { this }) as IAqiSave;
-            }
+            this.aqiSaver = Plugin.CreateSave(AqiManage.Setting["Saver"]);
+            
             Remind.Log_Debug("初始化Saver:" + this.aqiSaver.Name, tag);
         }
 

@@ -84,7 +84,7 @@ namespace AH.Abstract
 
         /// <summary>
         /// 检查过期
-        ///     用不过期
+        ///     永不过期
         /// </summary>
         /// <returns></returns>
         public override bool IsParamsExpired()

@@ -1,6 +1,6 @@
 #说明
 
-请求数据分WCF方式，大部分为GET方式
+请求数据为WCF方式
 数据接口地址为http://61.178.102.124:82/ClientBin/Env-Publish-Province-RiaService-ProvincePublishDomainService.svc
 由于接口单一，故按请求方法不同划分不同的虚拟接口
 
@@ -12,7 +12,7 @@ GetAqiCity						城市列表			XML(WCF)			GET
 GetAqiCityStation				城市站点列表		XML(WCF)			GET
 GetAQIDataByCityName			城市站点1小时浓度	XML(WCF)			GET
 GetIaqiPublishEtyByCityName		城市站点1小时AQI	XML(WCF)			GET
-GetAQIDay						城市站点24AQI		XML(WCF)			GET
+GetAQIDay						城市站点24小时AQI	XML(WCF)			GET
 GetCityAqiByCityName			城市1小时AQI		XML(WCF)			GET
 GetCityDayAqiByCityName			城市24小时AQI		XML(WCF)			GET
 GetAqiHistoryByCondition		站点24小时历史浓度	XML(WCF)			GET

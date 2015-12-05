@@ -16,7 +16,7 @@ namespace AQISet.Control.Saver
 
         #region 常量
 
-        private const string NAME = "AqiFileSaver";
+        public const string NAME = "AqiFileSaver";
         private const string SAVER_TYPE = "FS";
         private const string DEFAULT_PATH = @"C:\AQISet-Data\";
 
@@ -49,7 +49,7 @@ namespace AQISet.Control.Saver
 
         #endregion
 
-        public AqiFileSaver(AqiManage manage)
+        public AqiFileSaver()
         {
             string path = AqiManage.Setting["AqiFileSaver.Path"];
             this.saveEmpty = AqiManage.Setting.Get<bool>("AqiFileSaver.SaveEmptyData");
