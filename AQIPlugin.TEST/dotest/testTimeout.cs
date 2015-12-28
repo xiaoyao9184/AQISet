@@ -67,7 +67,7 @@ namespace TEST.dotest
         /// 超时测试
         /// </summary>
         /// <returns></returns>
-        public override byte[] GetDate()
+        public override byte[] GetData()
         {
             //得到responsebody
             

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 using AQI.Interface;
 using AQI.Abstract;
@@ -305,8 +306,10 @@ namespace AQI
         /// <returns></returns>
         public static List<AqiParam> CreateListFormSrcUrl(IParseSrcUrlParam iParseSrcUrlParam, ISrcUrl relySrcUrl)
         {
+            
             List<AqiParam> listParam = new List<AqiParam>();
 
+            //TODO 应该将 runner的处理过程公开，交由Runner处理，公用代码，考虑将Process处理函数静态化
             try 
             {
                 if (relySrcUrl is ISrcUrlParam)
@@ -335,14 +338,14 @@ namespace AQI
 
                     foreach (AqiParam ap in list)
                     {
-                        byte[] data = data = isup.GetDate(ap);
+                        byte[] data = data = isup.GetData(ap);
                         List<AqiParam> aps = iParseSrcUrlParam.ParseParam(data);
                         listParam.AddRange(aps);
                     }
                 }
                 else
                 {
-                    byte[] data = relySrcUrl.GetDate();
+                    byte[] data = relySrcUrl.GetData();
                     List<AqiParam> aps = iParseSrcUrlParam.ParseParam(data);
                     listParam.AddRange(aps);
                 }

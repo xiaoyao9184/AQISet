@@ -332,6 +332,7 @@ namespace AQISet.Control
 
         /// <summary>
         /// 运行处理
+        ///     Elapsed事件放在这里主要是为了能够获取Runner
         /// </summary>
         /// <param name="source">定时器</param>
         /// <param name="e">定时器参数</param>
@@ -341,6 +342,7 @@ namespace AQISet.Control
             if (e != null)
             {
                 Thread.CurrentThread.Name = timer.Name + "_Timer(Timer)";
+                //TODO 设置Runner timer等信息到线程上下文
             }
             AqiManage.Remind.Log_Debug("定时任务开始执行", new string[] { this.name, timer.Name });
             if (timer.Handle(this))
@@ -356,9 +358,15 @@ namespace AQISet.Control
         #endregion
 
         #region 处理
+        /*
+         * Process处理函数应该保持线程安全
+         * Runner下的多个Timer会调用此Runner的处理函数
+         * 
+         * */
 
         /// <summary>
         /// 路由处理
+        ///     应该由Timer线程调用，可能会嵌套
         ///     再此方法中调用的方法应保证线程安全
         /// </summary>
         /// <param name="isu">数据接口</param>
@@ -396,7 +404,7 @@ namespace AQISet.Control
             byte[] data = null;
             try
             {
-                data = isu.GetDate();
+                data = isu.GetData();
             }
             catch (Exception exception)
             {
@@ -407,7 +415,10 @@ namespace AQISet.Control
             this.SaveProcess(data, isu, null);
         }
 
+        //TODO 应该合并GetProcess
+
         /// <summary>
+        /// 
         /// 获取处理
         /// </summary>
         /// <param name="isup"></param>
@@ -417,19 +428,29 @@ namespace AQISet.Control
             //获取参数
             List<AqiParam> list = null;
             ISrcUrl isu = isup as ISrcUrl;
-            if (isup is ICacheParam)
+
+            try
             {
-                ICacheParam icp = isup as ICacheParam;
-                if (icp.IsParamsExpired())
+                if (isup is ICacheParam)
                 {
-                    icp.LoadParams();
+                    ICacheParam icp = isup as ICacheParam;
+                    if (icp.IsParamsExpired())
+                    {
+                        icp.LoadParams();
+                    }
+                    list = icp.FilterParams();
                 }
-                list = icp.FilterParams();
+                else
+                {
+                    list = isup.EnumParams();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                list = isup.EnumParams();
+                AqiManage.Remind.Log_Error("获取参数错误，错误严重无法继续", this.name, sugt.Name, isu.Name);
+                return;
             }
+            
             //TODO 
             //应该在检验参数
             while ((list == null) || (list.Count == 0))
@@ -460,7 +481,7 @@ namespace AQISet.Control
                 byte[] data = null;
                 try
                 {
-                    data = isup.GetDate(ap);
+                    data = isup.GetData(ap);
                 }
                 catch (Exception exception)
                 {
@@ -474,6 +495,7 @@ namespace AQISet.Control
 
         /// <summary>
         /// 重试处理
+        ///     应该由Retryer线程调用
         /// </summary>
         /// <param name="arn">重试节点</param>
         /// <returns></returns>
@@ -487,11 +509,11 @@ namespace AQISet.Control
                 if (isu is ISrcUrlParam)
                 {
                     ISrcUrlParam isup = isu as ISrcUrlParam;
-                    data = isup.GetDate(ap);
+                    data = isup.GetData(ap);
                 }
                 else
                 {
-                    data = isu.GetDate();
+                    data = isu.GetData();
                 }
             }
             catch (Exception ex)

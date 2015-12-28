@@ -29,6 +29,6 @@ namespace AQI.Interface
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        byte[] GetDate(AQI.AqiParam param);
+        byte[] GetData(AQI.AqiParam param);
     }
 }

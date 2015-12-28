@@ -32,7 +32,7 @@ namespace tjemc.Abstract
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        public override byte[] GetDate()
+        public override byte[] GetData()
         {
             HttpWebRequest req = HttpUtilV2.createPostRequest(Url);
             req.Timeout = 10000;

@@ -3,7 +3,6 @@ using AQI.Abstract;
 using Helper.Util.HTTP;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -18,7 +17,7 @@ namespace YNAS.Abstract
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        public override byte[] GetDate(AqiParam param)
+        public override byte[] GetData(AqiParam param)
         {
             //得到responsebody
             byte[] responsebody = null;

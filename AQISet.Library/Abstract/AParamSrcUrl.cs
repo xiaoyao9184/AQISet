@@ -254,7 +254,7 @@ namespace AQI.Abstract
         ///     不会被调用，已经被ISrcUrlParam取代
         /// </summary>
         /// <returns>null</returns>
-        public byte[] GetDate()
+        public byte[] GetData()
         {
             return null;
         }
@@ -283,7 +283,7 @@ namespace AQI.Abstract
         /// </summary>
         /// <param name="param">参数列表</param>
         /// <returns></returns>
-        public virtual byte[] GetDate(AqiParam param)
+        public virtual byte[] GetData(AqiParam param)
         {
             //得到responsebody
             byte[] responsebody = null;

@@ -52,19 +52,8 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-client\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cfg\InstanceSettingHelper.cs" />
@@ -110,18 +99,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AQIPlugin.FJ\AQIPlugin.FJ.csproj">
-      <Project>{0665a382-6c81-4cb5-bd7b-5836993416c3}</Project>
-      <Name>AQIPlugin.FJ</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.LN\AQIPlugin.LN.csproj">
-      <Project>{fdfc87e1-ce14-41be-bdb6-fd1d22273731}</Project>
-      <Name>AQIPlugin.LN</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AQIPlugin.NX\AQIPlugin.NX.csproj">
-      <Project>{ae4f80c3-3d62-4595-b768-a9ab3cfd00a0}</Project>
-      <Name>AQIPlugin.NX</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
       <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>
       <Name>AQISet.Library</Name>

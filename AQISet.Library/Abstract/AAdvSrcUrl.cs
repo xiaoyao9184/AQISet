@@ -157,7 +157,7 @@ namespace AQI.Abstract
         ///     可以重写
         /// </summary>
         /// <returns></returns>
-        public byte[] GetDate()
+        public byte[] GetData()
         {
             //得到responsebody
             byte[] responsebody = null;
@@ -197,7 +197,7 @@ namespace AQI.Abstract
         /// </summary>
         /// <param name="param">参数列表</param>
         /// <returns></returns>
-        public virtual byte[] GetDate(AqiParam param)
+        public virtual byte[] GetData(AqiParam param)
         {
             //得到responsebody
             byte[] responsebody = null;

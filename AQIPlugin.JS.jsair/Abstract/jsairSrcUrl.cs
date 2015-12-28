@@ -54,7 +54,7 @@ namespace jsair.Abstract
         /// </summary>
         /// <param name="param">参数列表</param>
         /// <returns></returns>
-        public override byte[] GetDate(AqiParam param)
+        public override byte[] GetData(AqiParam param)
         {
             //得到responsebody
             byte[] responsebody = null;

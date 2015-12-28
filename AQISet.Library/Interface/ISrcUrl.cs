@@ -39,6 +39,6 @@ namespace AQI.Interface
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        byte[] GetDate();
+        byte[] GetData();
     }
 }

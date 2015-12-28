@@ -103,7 +103,7 @@ namespace AQI.Abstract
         ///     可以重写
         /// </summary>
         /// <returns></returns>
-        public virtual byte[] GetDate()
+        public virtual byte[] GetData()
         {
             //得到responsebody
             byte[] responsebody = null;
