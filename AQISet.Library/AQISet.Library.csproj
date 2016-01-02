@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,6 +57,7 @@
     <Compile Include="Interface\IAqiSave.cs" />
     <Compile Include="Interface\IAqiWeb.cs" />
     <Compile Include="Interface\ICacheConfig.cs" />
+    <Compile Include="Interface\ICacheData.cs" />
     <Compile Include="Interface\ICacheParam.cs" />
     <Compile Include="Interface\IDataType.cs" />
     <Compile Include="Interface\IExtractData.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Interface\ISrcUrl.cs" />
     <Compile Include="Interface\ISrcUrlParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ByteArrayEx.cs" />
     <Compile Include="Util\FileReadSaveUtil.cs" />
     <Compile Include="Abstract\AParamSrcUrl.cs" />
     <Compile Include="Util\HttpUtilV2.cs" />

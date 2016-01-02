@@ -20,6 +20,12 @@ namespace AQI.Interface
         /// <returns>完整的url</returns>
         string MakeUrl(AqiParam param);
         /// <summary>
+        /// 拼接请求头
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        Dictionary<string, string> MakeRequestHeader(AqiParam param);
+        /// <summary>
         /// 拼接请求体
         /// </summary>
         /// <param name="param">参数</param>

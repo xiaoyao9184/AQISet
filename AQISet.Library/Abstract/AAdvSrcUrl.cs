@@ -31,14 +31,34 @@ namespace AQI.Abstract
 
         #region 属性
 
+        /// <summary>
+        /// 内部标签
+        ///     .ISrcUrl
+        /// </summary>
         public abstract string Tag{ get; }
+        /// <summary>
+        /// 名称
+        ///     .ISrcUrl
+        /// </summary>
         public abstract string Name { get; }
+        /// <summary>
+        /// 数据接口地址
+        ///     .ISrcUrl
+        /// </summary>
         public abstract string Url { get; }
+        /// <summary>
+        /// 是否使用参数
+        ///     .ISrcUrl
+        /// </summary>
         public abstract bool UseParam { get; }
+        /// <summary>
+        /// 更新间隔
+        ///     .ISrcUrl
+        /// </summary>
         public abstract double UDI { get; }
         /// <summary>
         /// IAqiWeb接口
-        ///     实现ISrcUrl
+        ///     .实现ISrcUrl
         /// </summary>
         public virtual IAqiWeb IAW
         {
@@ -54,101 +74,56 @@ namespace AQI.Abstract
 
         /// <summary>
         /// HTTP获取方式
-        ///     扩展ISrcUrl
+        ///     .ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.HttpType HttpType { get; }
 
         /// <summary>
         /// 是否忽略空参数
-        ///     ISrcUrlParam
+        ///     .ISrcUrlParam
         /// </summary>
         public abstract bool ParamIgnoreEmpty { get; }
         /// <summary>
         /// 参数名列表
-        ///     ISrcUrlParam
+        ///     .ISrcUrlParam
         /// </summary>
         public abstract List<string> ParamName { get; }
         /// <summary>
         /// 参数发送类型(HTTP获取方式)
-        ///     IMakeParam
+        ///     .IMakeParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamSendType ParamSendType { get; }
         /// <summary>
         /// 参数缓存列表
-        ///     ICacheParam
+        ///     .ICacheParam
         /// </summary>
         public abstract List<AQI.AqiParam> ParamCache { get; }
         /// <summary>
         /// 参数来源
-        ///     ICacheParam
+        ///     .ICacheParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamSourceType ParamSourceType { get; }
         /// <summary>
         /// 参数过滤
-        ///     ICacheParam
+        ///     .ICacheParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
 
         /// <summary>
         /// Url参数形式
-        ///     扩展IMakeParam
+        ///     .IMakeParam
         /// </summary>
         public abstract AQI.AqiConstant.ParamUrlType ParamUrlType { get; }
+
+        /// <summary>
+        /// HttpBody参数形式
+        ///     .IMakeParam
+        /// </summary>
+        public abstract AQI.AqiConstant.ParamBodyType ParamBodyType { get; }
 
         #endregion
 
         #region 方法
-
-        #region 内部方法
-
-        /// <summary>
-        /// 拼接Url参数：值对
-        /// </summary>
-        /// <param name="dictParam"></param>
-        /// <returns></returns>
-        protected virtual string MakeKeyValueUrl(Dictionary<string, string> dictParam)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("?");
-            foreach (KeyValuePair<string, string> kv in dictParam)
-            {
-                sb.Append(kv.Key);
-                if (String.IsNullOrEmpty(kv.Key) || String.IsNullOrEmpty(kv.Value))
-                {
-
-                }
-                else
-                {
-                    sb.Append("=");
-                }
-                sb.Append(kv.Value);
-                sb.Append("&");
-            }
-
-            string str = sb.ToString(0, sb.Length - 1);
-            return Uri.EscapeUriString(str);
-        }
-
-        /// <summary>
-        /// 拼接Url参数：路径
-        /// </summary>
-        /// <param name="listParam"></param>
-        /// <returns></returns>
-        protected virtual string MakePathUrl(List<string> listParam)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("/");
-            foreach (string param in listParam)
-            {
-                sb.Append(param);
-                sb.Append("/");
-            }
-
-            string str = sb.ToString(0, sb.Length - 1);
-            return Uri.EscapeUriString(str);
-        }
-
-        #endregion
 
         #region ISrcUrl接口
 
@@ -267,9 +242,15 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 拼接含参数Url
-        ///     可以重写
+        ///     .可以重写
         /// </summary>
+        /// <remarks>
+        /// 读取参数 所有 ，根据实例属性ParamUrlType处理
+        ///     1、 ParamUrlType 为 PATH ，将 所有 交由 MakePathUrl 方法处理，与 Url 属性合并为字符串；
+        ///     2、 ParamUrlType 为 KEY_VALUE ，将 所有 交由 MakeKeyValueUrl 方法处理，与 Url 属性合并为字符串；
+        /// </remarks>
         /// <param name="param">参数列表</param>
+        /// <returns>完整URL</returns>
         public virtual string MakeUrl(AqiParam param)
         {
             StringBuilder sb = new StringBuilder();
@@ -288,19 +269,115 @@ namespace AQI.Abstract
                 throw new ParamException("使用了未知的ParamUrlType");
             }
 
-            return Uri.EscapeUriString(sb.ToString());
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// 拼接请求头
+        ///     .可以重写
+        /// </summary>
+        /// <remarks>
+        /// 读取参数 header ，将 header 作为 json 字符串解析为键值集合；
+        /// //TODO 考虑其他格式
+        /// </remarks>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public virtual Dictionary<string, string> MakeRequestHeader(AqiParam param)
+        {
+            Dictionary<string, string> header = new Dictionary<string, string>();
+
+            if (param.ContainsKey(AqiConstant.PARAM_HEADER))
+            {
+                header = JsonConvert.DeserializeObject<Dictionary<string, string>>(param[AqiConstant.PARAM_HEADER]);
+            }
+
+            return header;
         }
 
         /// <summary>
         /// 拼接请求体
-        ///     可以重写
+        ///     .可以重写
         /// </summary>
+        /// <remarks>
+        /// 读取参数 所有 ，转为 html form 表单字符串，转为字节数组
+        /// </remarks>
         /// <param name="param">参数列表</param>
-        /// <returns></returns>
+        /// <returns>RequestBody字节数组</returns>
         public virtual byte[] MakeRequestBody(AqiParam param)
         {
+            switch (ParamBodyType)
+            {
+                case AqiConstant.ParamBodyType.HTTP_FORM:
+                    return MakeFromBody(param);
+                case AqiConstant.ParamBodyType.TEXT:
+                    return MakeTextBody(param);
+                case AqiConstant.ParamBodyType.BIN_BASE64:
+                    return MakeBinBodyByBase64(param);
+                default:
+                    throw new NotSupportedException("不被支持的参数类型，ParamBodyType=" + (int)ParamBodyType);
+            }
+        }
+
+        #endregion
+
+        #region IMakeParam接口内部扩展
+
+        /// <summary>
+        /// 拼接Url参数：值对
+        /// </summary>
+        /// <param name="dictParam"></param>
+        /// <returns></returns>
+        protected virtual string MakeKeyValueUrl(Dictionary<string, string> dictParam)
+        {
             StringBuilder sb = new StringBuilder();
-            foreach (KeyValuePair<string, string> kv in param)
+            sb.Append("?");
+            foreach (KeyValuePair<string, string> kv in dictParam)
+            {
+                sb.Append(kv.Key);
+                if (String.IsNullOrEmpty(kv.Key) || String.IsNullOrEmpty(kv.Value))
+                {
+
+                }
+                else
+                {
+                    sb.Append("=");
+                }
+                sb.Append(kv.Value);
+                sb.Append("&");
+            }
+
+            string str = sb.ToString(0, sb.Length - 1);
+            return Uri.EscapeUriString(str);
+        }
+
+        /// <summary>
+        /// 拼接Url参数：路径
+        /// </summary>
+        /// <param name="listParam"></param>
+        /// <returns></returns>
+        protected virtual string MakePathUrl(List<string> listParam)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("/");
+            foreach (string param in listParam)
+            {
+                sb.Append(param);
+                sb.Append("/");
+            }
+
+            string str = sb.ToString(0, sb.Length - 1);
+            return Uri.EscapeUriString(str);
+        }
+
+        /// <summary>
+        /// 拼接HttpBody参数：Form表单
+        /// </summary>
+        /// <param name="dictParam"></param>
+        /// <returns></returns>
+        protected virtual byte[] MakeFromBody(Dictionary<string, string> dictParam)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (KeyValuePair<string, string> kv in dictParam)
             {
                 sb.Append(kv.Key);
                 if (kv.Value != null)
@@ -314,6 +391,42 @@ namespace AQI.Abstract
             string str = sb.ToString(0, sb.Length - 1);
 
             return Encoding.UTF8.GetBytes(str);
+        }
+
+        /// <summary>
+        /// 拼接HttpBody参数：文本
+        /// </summary>
+        /// <param name="dictParam"></param>
+        /// <returns></returns>
+        protected virtual byte[] MakeTextBody(Dictionary<string, string> dictParam)
+        {
+            if (dictParam.ContainsKey(AqiConstant.PARAM_BODY) &&
+                !String.IsNullOrEmpty(dictParam[AqiConstant.PARAM_BODY]))
+            {
+                return Encoding.UTF8.GetBytes(dictParam[AqiConstant.PARAM_BODY]);
+            }
+            else
+            {
+                throw new ParamException("缺少‘" + AqiConstant.PARAM_BODY + "’参数");
+            }
+        }
+
+        /// <summary>
+        /// 拼接HttpBody参数：Base64
+        /// </summary>
+        /// <param name="dictParam"></param>
+        /// <returns></returns>
+        protected virtual byte[] MakeBinBodyByBase64(Dictionary<string, string> dictParam)
+        {
+            if (dictParam.ContainsKey(AqiConstant.PARAM_BODY) &&
+                    !String.IsNullOrEmpty(dictParam[AqiConstant.PARAM_BODY]))
+            {
+                return Convert.FromBase64String(dictParam[AqiConstant.PARAM_BODY]);
+            }
+            else
+            {
+                throw new ParamException("缺少‘" + AqiConstant.PARAM_BODY + "’参数");
+            }
         }
 
         #endregion

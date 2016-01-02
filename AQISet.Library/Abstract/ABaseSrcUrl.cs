@@ -25,12 +25,24 @@ namespace AQI.Abstract
 
         #region 属性
 
+        /// <summary>
+        /// 内部标签
+        ///     .抽象实现ISrcUrl
+        /// </summary>
         public abstract string Tag { get; }
+        /// <summary>
+        /// 名称
+        ///     .抽象实现ISrcUrl
+        /// </summary>
         public abstract string Name { get; }
+        /// <summary>
+        /// 数据接口地址
+        ///     .抽象实现ISrcUrl
+        /// </summary>
         public abstract string Url { get; }
         /// <summary>
         /// 是否使用参数
-        ///     实现ISrcUrl
+        ///     .实现ISrcUrl
         /// </summary>
         public virtual bool UseParam
         {
@@ -41,7 +53,7 @@ namespace AQI.Abstract
         }
         /// <summary>
         /// IAqiWeb接口
-        ///     实现ISrcUrl
+        ///     .实现ISrcUrl
         /// </summary>
         public virtual IAqiWeb IAW
         {
@@ -56,7 +68,7 @@ namespace AQI.Abstract
         }
         /// <summary>
         /// 更新间隔
-        ///     实现ISrcUrl
+        ///     .实现ISrcUrl
         /// </summary>
         public virtual double UDI
         {
@@ -84,11 +96,12 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 常用更新间隔
+        ///     .扩展ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.SourceUpdataInterval SUI { get; }
         /// <summary>
         /// HTTP获取方式
-        ///     扩展ISrcUrl
+        ///     .扩展ISrcUrl
         /// </summary>
         public abstract AQI.AqiConstant.HttpType HT { get; }
 
@@ -100,7 +113,7 @@ namespace AQI.Abstract
 
         /// <summary>
         /// 获取响应体
-        ///     可以重写
+        ///     .可以重写
         /// </summary>
         /// <returns></returns>
         public virtual byte[] GetData()

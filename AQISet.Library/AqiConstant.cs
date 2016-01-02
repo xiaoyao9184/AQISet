@@ -96,11 +96,32 @@ namespace AQI
             InTurn      //循环过滤：按分组循环执行
         }
 
+        /// <summary>
+        /// URL参数形式
+        /// </summary>
         public enum ParamUrlType
         {
             KEY_VALUE,  //键值对
             PATH        //路径
         }
+
+        /// <summary>
+        /// HttpBody参数形式
+        /// </summary>
+        public enum ParamBodyType
+        {
+            HTTP_FORM,
+            TEXT,
+            BIN_BASE64
+        }
+
+        #endregion
+
+        #region AParamSrcUrl常量
+
+        public const string PARAM_HEADER = "header";
+
+        public const string PARAM_BODY = "body";
 
         #endregion
 

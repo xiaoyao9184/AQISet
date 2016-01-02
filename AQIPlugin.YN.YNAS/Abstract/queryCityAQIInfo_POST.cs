@@ -13,33 +13,28 @@ namespace YNAS.Abstract
 
         #region 重写方法
 
-        /// <summary>
-        /// 获取数据
-        /// </summary>
-        /// <returns></returns>
-        public override byte[] GetData(AqiParam param)
-        {
-            //得到responsebody
-            byte[] responsebody = null;
-            switch (ParamSendType)
-            {
-                case AqiConstant.ParamSendType.GET:
-                    string urlparam = MakeUrl(param);
-                    responsebody = HttpUtilV2.doGetRequest(urlparam);
-                    break;
-                case AqiConstant.ParamSendType.POST:
-                    byte[] requestbody = MakeRequestBody(param);
-                    //需要设置ContentType才可
-                    HttpWebResponse res = HttpUtilV2.createPostResponse(Url, -1, "application/x-www-form-urlencoded; charset=UTF-8", requestbody);
-                    responsebody = HttpUtilV2.getResponseBody(res);
-                    break;
-                default:
-                    responsebody = HttpUtilV2.doGetRequest(Url);
-                    break;
-            }
+        #region IMakeParam接口
 
-            return responsebody;
+        /// <summary>
+        /// 拼接请求头
+        ///     .可以重写
+        /// </summary>
+        /// <remarks>
+        /// 读取参数，若不存在‘Content-Type’则添加默认‘application/x-www-form-urlencoded; charset=UTF-8’
+        /// </remarks>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public override Dictionary<string, string> MakeRequestHeader(AqiParam param)
+        {
+            Dictionary<string, string> header = base.MakeRequestHeader(param);
+            if (!header.ContainsKey("Content-Type"))
+            {
+                header.Add("Content-Type", @"application/x-www-form-urlencoded; charset=UTF-8");
+            }
+            return header;
         }
+
+        #endregion
 
         #endregion
 

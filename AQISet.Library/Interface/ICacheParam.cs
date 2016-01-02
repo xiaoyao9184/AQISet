@@ -12,6 +12,10 @@ namespace AQI.Interface
     public interface ICacheParam
     {
         /// <summary>
+        /// 参数缓存列表
+        /// </summary>
+        List<AQI.AqiParam> ParamCache { get; }
+        /// <summary>
         /// 参数来源类型
         /// </summary>
         AQI.AqiConstant.ParamSourceType ParamSourceType { get; }
@@ -19,10 +23,6 @@ namespace AQI.Interface
         /// 参数过滤方式
         /// </summary>
         AQI.AqiConstant.ParamFilterType ParamFilterType { get; }
-        /// <summary>
-        /// 参数缓存列表
-        /// </summary>
-        List<AQI.AqiParam> ParamCache { get; }
         /// <summary>
         /// 参数路径
         ///     JSON参数文件路径

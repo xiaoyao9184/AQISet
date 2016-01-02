@@ -1,0 +1,504 @@
+﻿{
+    "_5": {
+        "Enabled": false,
+        "Name": "_5",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "messageType": "base64",
+            "message": "AAMAAAABAARudWxsAAIvMQAAAOAKAAAAAREKgRNNZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuQ29tbWFuZE1lc3NhZ2UTb3BlcmF0aW9uG2NvcnJlbGF0aW9uSWQVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAQFBgEEAAQABgEKCwEBAQoFJURTTWVzc2FnaW5nVmVyc2lvbgQBCURTSWQGB25pbAEGSTY3REM5OEU2LTBBMDYtQzc3OC05QUZCLTYxNUIxNTI0OUJCRQ==",
+            "message2": {
+                "Version": 3,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "Response": "/1",
+                        "Content": [
+                            {
+                                "clientId": null,
+                                "destination": "",
+                                "messageId": "0ECEA1A3-FCDE-9120-F8D2-E602F8569DE7",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": { },
+                                "headers": {
+                                    "DSId": "nil",
+                                    "DSMessagingVersion": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message3": {
+                "Version": 3,
+                "BodyCount": 1,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/1",
+                        "Content": [
+                            {
+                                "messageRefType": null,
+                                "operation": 5,
+                                "correlationId": "",
+                                "clientId": null,
+                                "destination": "",
+                                "messageId": "0ECEA1A3-FCDE-9120-F8D2-E602F8569DE7",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": { },
+                                "headers": {
+                                    "DSId": "nil",
+                                    "DSMessagingVersion": 1
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    "getOneAndTwoLevelDivision": {
+        "Enabled": true,
+        "Name": "getOneAndTwoLevelDivision",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAABAARudWxsAAIvMgAAASUKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYzZ2V0T25lQW5kVHdvTGV2ZWxEaXZpc2lvbgEEAAQABiNHaXNDb21tb25EYXRhVXRpbAkDAQYRcmVhbFRpbWUBCgsBFURTRW5kcG9pbnQBCURTSWQGSUFFQUYxRTYyLTA1MUYtRjIzRS05NTU5LTJFQzU1MjUwRkRBQwEGSUI0OUM4RUFELTlEQjItNEQ4OC1BRTBFLTYxNUIxNEI0MDUwMw==",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 1,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/2",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getOneAndTwoLevelDivision",
+                                "clientId": null,
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "32984428-EB0C-C501-C898-E602F6B08939",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [
+                                    "realTime"
+                                ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    "getHourlyDataForAllSites": {
+        "Enabled": true,
+        "Name": "getHourlyDataForAllSites",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAACAARudWxsAAIvMwAAAT8KAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYxZ2V0SG91cmx5RGF0YUZvckFsbFNpdGVzAQQABAAGI0dpc0NvbW1vbkRhdGFVdGlsCQEBBklBRUFGMjg1NC02ODBGLTg5MjEtRDgxNy1FMzM4MDBGMDJCRTUKCwEVRFNFbmRwb2ludAEJRFNJZAZJQUVBRjFFNjItMDUxRi1GMjNFLTk1NTktMkVDNTUyNTBGREFDAQZJN0NBRkQ0QkItOUIzQi0zRDVELTMyRUUtNjE1QjE0QjQ0NERCAARudWxsAAIvNAAAAUQKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAY7Z2V0SG91cmx5Q3VydmVEYXRhRm9yQWxsU2l0ZXMBBAAEAAYjR2lzQ29tbW9uRGF0YVV0aWwJAQEGSUFFQUYyODU0LTY4MEYtODkyMS1EODE3LUUzMzgwMEYwMkJFNQoLARVEU0VuZHBvaW50AQlEU0lkBklBRUFGMUU2Mi0wNTFGLUYyM0UtOTU1OS0yRUM1NTI1MEZEQUMBBkk1RUY3NDdCRi0wQzdCLTU3NTQtNjVCOS02MTVCMTRCNDJEMEU=",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 2,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/3",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getHourlyDataForAllSites",
+                                "clientId": "F28D1E20-D80F-164D-8C76-C8B41B9B43BC",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "03039109-8434-9C06-C842-E602F6B078E7",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    },
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/4",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getHourlyCurveDataForAllSites",
+                                "clientId": "F28D1E20-D80F-164D-8C76-C8B41B9B43BC",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "6161CD0A-413F-D9B4-00BE-E602F6B00897",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    
+    "getAreaUsedToRealTime": {
+        "Enabled": true,
+        "Name": "getAreaUsedToRealTime",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAABAARudWxsAAIvMgAAARcKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYrZ2V0QXJlYVVzZWRUb1JlYWxUaW1lAQQABAAGI0dpc0NvbW1vbkRhdGFVdGlsCQEBAQoLARVEU0VuZHBvaW50AQlEU0lkBklBRUFGMUU2Mi0wNTFGLUYyM0UtOTU1OS0yRUM1NTI1MEZEQUMBBkk1Q0ZDQzkzMS1EMjM2LThFNjItQkI2OC02MTVCMTRBODY2QzY=",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 1,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/2",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getAreaUsedToRealTime",
+                                "clientId": null,
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "ED767793-5D85-B595-A1A3-E6038FA57004",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    "getAreaRealTimeReportData": {
+        "Enabled": true,
+        "Name": "getAreaRealTimeReportData",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAADAARudWxsAAIvMwAAAUAKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYzZ2V0QXJlYVJlYWxUaW1lUmVwb3J0RGF0YQEEAAQABiNHaXNDb21tb25EYXRhVXRpbAkBAQZJQUVBRjIzMUMtRjUwOS05NzY4LTI3RjYtOTc5NkM3QzZCMUQxCgsBFURTRW5kcG9pbnQBCURTSWQGSUFFQUYxRTYyLTA1MUYtRjIzRS05NTU5LTJFQzU1MjUwRkRBQwEGSUZCRTk4NTRCLTU5QjItODhCQS02MDBGLTYxNUIxNEE4Mjk4OAAEbnVsbAACLzQAAAFFCgAAAAERCoETT2ZsZXgubWVzc2FnaW5nLm1lc3NhZ2VzLlJlbW90aW5nTWVzc2FnZRNvcGVyYXRpb24Nc291cmNlFXRpbWVUb0xpdmUTdGltZXN0YW1wF2Rlc3RpbmF0aW9uCWJvZHkRY2xpZW50SWQPaGVhZGVycxNtZXNzYWdlSWQGPWdldEFyZWFSZWFsVGltZVJlcG9ydEN1cnZlRGF0YQEEAAQABiNHaXNDb21tb25EYXRhVXRpbAkBAQZJQUVBRjIzMUMtRjUwOS05NzY4LTI3RjYtOTc5NkM3QzZCMUQxCgsBFURTRW5kcG9pbnQBCURTSWQGSUFFQUYxRTYyLTA1MUYtRjIzRS05NTU5LTJFQzU1MjUwRkRBQwEGSUVGOEU3QkFDLTk4QjktQTMwMi05RjJELTYxNUIxNEE4N0ZEMAAEbnVsbAACLzUAAAE1CgAAAAERCoETT2ZsZXgubWVzc2FnaW5nLm1lc3NhZ2VzLlJlbW90aW5nTWVzc2FnZRNvcGVyYXRpb24Nc291cmNlFXRpbWVUb0xpdmUTdGltZXN0YW1wF2Rlc3RpbmF0aW9uCWJvZHkRY2xpZW50SWQPaGVhZGVycxNtZXNzYWdlSWQGHWdldFdhcm5pbmdEYXRhAQQABAAGI0dpc0NvbW1vbkRhdGFVdGlsCQEBBklBRUFGMjMxQy1GNTA5LTk3NjgtMjdGNi05Nzk2QzdDNkIxRDEKCwEVRFNFbmRwb2ludAEJRFNJZAZJQUVBRjFFNjItMDUxRi1GMjNFLTk1NTktMkVDNTUyNTBGREFDAQZJQzU4QjI3MDMtNkQ3QS03MjlDLTI2MkQtNjE1QjE0QThFRjU5",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 3,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/3",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getAreaRealTimeReportData",
+                                "clientId": "F28E91EB-110D-81A5-E803-B9C4527ABBE0",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "7971FED2-9811-7708-2CB1-E6038FA571CC",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    },
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/4",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getAreaRealTimeReportCurveData",
+                                "clientId": "F28E91EB-110D-81A5-E803-B9C4527ABBE0",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "41B5BDB6-09B7-B2F4-2417-E6038FA5883B",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    },
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/5",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getWarningData",
+                                "clientId": "F28E91EB-110D-81A5-E803-B9C4527ABBE0",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "B52DA209-4FF2-F120-79DC-E6038FA56060",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    
+    "getAreaUsedToDayReport": {
+        "Enabled": true,
+        "Name": "getAreaUsedToDayReport",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": { 
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAABAARudWxsAAIvMgAAARgKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYtZ2V0QXJlYVVzZWRUb0RheVJlcG9ydAEEAAQABiNHaXNDb21tb25EYXRhVXRpbAkBAQEKCwEVRFNFbmRwb2ludAEJRFNJZAZJQUVBRjFFNjItMDUxRi1GMjNFLTk1NTktMkVDNTUyNTBGREFDAQZJRDY1OEZEQTMtRTFGMC00M0Y2LTVCN0MtNjE1QjE0QTZFMkQ1",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 1,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/2",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getAreaUsedToDayReport",
+                                "clientId": null,
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "A44154FE-1BF2-765A-D8BA-E6040B4C0403",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    },
+    "getAreaDayReprotData": {
+        "Enabled": true,
+        "Name": "getAreaDayReprotData",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "header": {
+                "Cookie": "JSESSIONID=DC108A0C66E864C361A2A41EDC209A98.aqi1",
+                "Origin": "http://218.108.43.220:8099",
+                "Referer": "http://218.108.43.220:8099/aqi/flex/index.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/19.0.0.226"
+            },
+            "replaceDSId" : "AEAF1E62-051F-F23E-9559-2EC55250FDAC",
+            "messageType": "base64",
+            "message": "AAMAAAABAARudWxsAAIvMwAAATsKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UVdGltZVRvTGl2ZRN0aW1lc3RhbXAXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZA9oZWFkZXJzE21lc3NhZ2VJZAYpZ2V0QXJlYURheVJlcHJvdERhdGEBBAAEAAYjR2lzQ29tbW9uRGF0YVV0aWwJAQEGSUFFQUYyMDA4LTYyMDgtMTA3MC03MDU4LUUyMDIyREE1MDc0RgoLARVEU0VuZHBvaW50AQlEU0lkBklBRUFGMUU2Mi0wNTFGLUYyM0UtOTU1OS0yRUM1NTI1MEZEQUMBBklDQThCQjFCRS0xMUNGLTk3QTYtQTQ5Qi02MTVCMTRBNjg4Rjk=",
+            "message2": {
+                "Version": 3,
+                "BodyCount": 1,
+                "Bodies": [
+                    {
+                        "Target": "null",
+                        "IsEmptyTarget": true,
+                        "Response": "/3",
+                        "Content": [
+                            {
+                                "source": null,
+                                "operation": "getAreaDayReprotData",
+                                "clientId": "F28FC0ED-DE0B-9046-02DE-F31486C2406A",
+                                "destination": "GisCommonDataUtil",
+                                "messageId": "04FD431E-7D62-E4B2-B1A7-E6040B4CB425",
+                                "timestamp": 0,
+                                "timeToLive": 0,
+                                "body": [ ],
+                                "headers": {
+                                    "DSEndpoint": null,
+                                    "DSId": "F28D194D-7E18-BD04-4A14-6EB508CB7923"
+                                }
+                            }
+                        ],
+                        "IsAuthenticationAction": false,
+                        "IgnoreResults": false,
+                        "IsDebug": false,
+                        "IsDescribeService": false,
+                        "IsWebService": false,
+                        "IsRecordsetDelivery": false,
+                        "TypeName": null,
+                        "Method": null,
+                        "Call": "."
+                    }
+                ],
+                "HeaderCount": 0,
+                "ObjectEncoding": 3
+            }
+        }
+    }
+}

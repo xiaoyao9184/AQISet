@@ -60,7 +60,7 @@ namespace AQISet.Control
             appender.AppendToFile = true;
             appender.RollingStyle = RollingFileAppender.RollingMode.Date;
             appender.StaticLogFileName = true;
-            appender.Layout = new PatternLayout(AqiManage.Setting["LogLayout"]);
+            appender.Layout = new PatternLayout(AqiManage.Setting["AqiRemind.LogLayout"]);
             LevelRangeFilter filter = new LevelRangeFilter();
             filter.LevelMax = Level.Fatal;
             filter.LevelMin = Level.Debug;
@@ -115,13 +115,13 @@ namespace AQISet.Control
                 }
 
                 EmailHelper emh = new EmailHelper();
-                emh.mailFrom = AqiManage.Setting["AqiMemind.EmailFrom"];    //发送人的邮箱地址
-                emh.mailPwd = AqiManage.Setting["AqiMemind.EmailPwd"];      //发送人邮箱的密码
+                emh.mailFrom = AqiManage.Setting["AqiRemind.EmailFrom"];    //发送人的邮箱地址
+                emh.mailPwd = AqiManage.Setting["AqiRemind.EmailPwd"];      //发送人邮箱的密码
                 emh.mailSubject = mailSubject;                              //邮件主题;
                 emh.mailBody = mailBody;                                    //邮件内容;
                 emh.isbodyHtml = true;                                      //是否是HTML
-                emh.host = AqiManage.Setting["AqiMemind.EmailHost"];        //服务器
-                emh.mailToArray = new string[] { AqiManage.Setting["AqiMemind.EmailTo"] };//接收者邮件集合
+                emh.host = AqiManage.Setting["AqiRemind.EmailHost"];        //服务器
+                emh.mailToArray = new string[] { AqiManage.Setting["AqiRemind.EmailTo"] };//接收者邮件集合
                 if (emh.Send())
                 {
                     AqiManage.Remind.Log_Error("Email发送成功", tag);
@@ -144,7 +144,7 @@ namespace AQISet.Control
 
         private string getLogFile()
         {
-            string loc = AqiManage.Setting["LogLocation"];
+            string loc = AqiManage.Setting["AqiRemind.LogLocation"];
             if(String.IsNullOrEmpty(loc))
             {
                 string location = base.GetType().Assembly.Location;

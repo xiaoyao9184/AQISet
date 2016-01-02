@@ -68,7 +68,7 @@ namespace bjmemc.DataService
         public override byte[] ExtractData(byte[] responsebody)
         {
             //获取WCF Message
-            string strWCFMsg = mh.GetWcfBinaryMessageAsText(responsebody);
+            string strWCFMsg = _mh.GetWcfBinaryMessageAsText(responsebody);
             
             //获取WCF Content Binary（=WCF Message Body）
             byte[] wcfbin = WCFMessageUtil.getWCFBinByWCFMsg(strWCFMsg, tag, WCFContentFormat);

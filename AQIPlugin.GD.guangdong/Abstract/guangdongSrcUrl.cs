@@ -44,50 +44,42 @@ namespace guangdong.Abstract
 
         #endregion
 
-        #region 方法
+        #region 重写方法
 
-        #region ISrcUrlParam接口
+        #region AParamSrcUrl
 
         /// <summary>
-        /// 获取数据
-        ///     重写
+        /// 拼接请求头
+        ///     .可以重写
         /// </summary>
+        /// <remarks>
+        /// 读取参数，添加2个Header
+        //  SOAPAction: "http://tempuri.org/IEnvCriteriaAqiService/GetAllAQIPublish"
+        //  Content-Type: text/xml; charset=utf-8
+        /// </remarks>
         /// <param name="param"></param>
         /// <returns></returns>
-        public override byte[] GetData(AqiParam param)
+        public override Dictionary<string, string> MakeRequestHeader(AqiParam param)
         {
-            //得到responsebody
-            byte[] responsebody = null;
-            if (ParamSendType == AqiConstant.ParamSendType.POST)
+            Dictionary<string, string> header = base.MakeRequestHeader(param);
+            if (!header.ContainsKey("Content-Type"))
             {
-                //添加2个Header
-                //SOAPAction: "http://tempuri.org/IEnvCriteriaAqiService/GetAllAQIPublish"
-                //Content-Type: text/xml; charset=utf-8
-                Dictionary<string, string> header = new Dictionary<string, string>();
-                header.Add("SOAPAction", @"http://tempuri.org/IEnvCriteriaAqiService/" + this.Tag);
                 header.Add("Content-Type", @"text/xml; charset=utf-8");
-
-                byte[] requestbody = MakeRequestBody(param);
-                HttpWebResponse response = HttpUtilV2.createPostResponse(Url, -1, header, requestbody);
-                responsebody = HttpUtilV2.getResponseBody(response);
             }
-            else
+            if (!header.ContainsKey("SOAPAction"))
             {
-                string urlparam = MakeUrl(param);
-                responsebody = HttpUtilV2.doGetRequest(urlparam);
+                header.Add("SOAPAction", @"http://tempuri.org/IEnvCriteriaAqiService/" + this.Tag);
             }
-
-            //提取数据
-            return responsebody;
+            return header;
         }
-
-        #endregion
-
-        #region 重写方法
 
         /// <summary>
         /// 拼接请求体
+        ///     .可以重写
         /// </summary>
+        /// <remarks>
+        /// 应该是SOAP消息
+        /// </remarks>
         /// <param name="param">参数列表</param>
         /// <returns></returns>
         public override byte[] MakeRequestBody(AqiParam param)

@@ -86,35 +86,27 @@ namespace bjmemc.Abstract
 
         #endregion
 
-        #region 方法
+        #region 重写方法
 
-        #region ISrcUrlParam接口
+        #region IMakeParam接口
 
         /// <summary>
-        /// 获取数据
-        ///     重写
+        /// 拼接请求头
+        ///     .可以重写
         /// </summary>
+        /// <remarks>
+        /// 读取参数，若不存在‘Content-Type’则添加默认‘application/soap+msbin1’
+        /// </remarks>
         /// <param name="param"></param>
         /// <returns></returns>
-        public override byte[] GetData(AqiParam param)
+        public override Dictionary<string, string> MakeRequestHeader(AqiParam param)
         {
-            //得到responsebody
-            byte[] responsebody = null;
-            if (ParamSendType == AqiConstant.ParamSendType.POST)
+            Dictionary<string, string> header = base.MakeRequestHeader(param);
+            if (!header.ContainsKey("Content-Type"))
             {
-                //这里使用ContentType为application/soap+msbin1
-                byte[] requestbody = MakeRequestBody(param);
-                HttpWebResponse response = HttpUtilV2.createPostResponse(Url, -1, "application/soap+msbin1", requestbody);
-                responsebody = HttpUtilV2.getResponseBody(response);
+                header.Add("Content-Type", @"application/soap+msbin1");
             }
-            else
-            {
-                string urlparam = MakeUrl(param);
-                responsebody = HttpUtilV2.doGetRequest(urlparam);
-            }
-
-            //提取数据
-            return ExtractData(responsebody);
+            return header;
         }
 
         #endregion

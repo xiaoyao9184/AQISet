@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FB0E6A0-A7D1-4A3A-B42A-07AB4F0FA0F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AQI</RootNamespace>
+    <AssemblyName>AQISet.Library.AMF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>..\lib\FluorineFx 1.0.0.17\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluorineFx">
+      <HintPath>..\lib\FluorineFx 1.0.0.17\FluorineFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\AAmfSrcUrl.cs" />
+    <Compile Include="Interface\IMakeAMFMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AMF\AMF3\ByteArrayEx.cs" />
+    <Compile Include="Util\AMF\AMFMessageHelper.cs" />
+    <Compile Include="Util\AMF\Json\AMFMessageConverter.cs" />
+    <Compile Include="Util\AMF\Messaging\IO\IClassAlias.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\AbstractMessage.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\AcknowledgeMessage.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\AcknowledgeMessageExt.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\AsyncMessage.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\AsyncMessageExt.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\CommandMessage.cs" />
+    <Compile Include="Util\AMF\Messaging\Messages\CommandMessageExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="log4net1210\log4net.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
+      <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>
+      <Name>AQISet.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

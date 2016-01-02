@@ -18,7 +18,7 @@
             "RetryTime": 1,
             "AlwayRetry": false
         },
-        "AqiMemind": {
+        "AqiRemind": {
             "LogLocation": "\\AqiSet.log",
             "LogLayout": "记录时间：%date 线程ID:[%thread] 日志级别：%-5level 出错类：%logger property:[%property{NDC}] - 描述：%message%newline",
             "EmailFrom": "you",
