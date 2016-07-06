@@ -18,6 +18,7 @@ namespace earth.data
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
         private static AqiConstant.HttpType httpType = AqiConstant.HttpType.GET;
 
+        //TODO 增加自定义文件名 epak后缀文件
         private static AqiConstant.DataType dat = AqiConstant.DataType.OTHER;
 
         #endregion
