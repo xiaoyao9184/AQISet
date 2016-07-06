@@ -21,8 +21,9 @@
                 "Enabled": true,
                 "Name": "1945-2015年",
                 "Group": "ONCE",
-                "yearStart": 1945,
-                "yearEnd": 2015
+                "yearStart": 1945
+                //,
+                //"yearEnd": 2015
             },
             {
                 "Enabled": true,
