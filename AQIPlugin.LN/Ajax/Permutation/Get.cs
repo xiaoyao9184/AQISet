@@ -15,7 +15,7 @@ namespace LN.Ajax.Permutation
 
         private static string tag = "Get";
         private static string name = "站点24小时历史AQI&浓度";
-        private static string url = "http://211.137.19.74:8089/Ajax/Get{0}/?stationCode={1}";
+        private static string url = "http://211.137.19.74:8089/Ajax/Get{0}?stationCode={1}";
         private static AQI.AqiConstant.SourceUpdataInterval sui = AQI.AqiConstant.SourceUpdataInterval.HOUR;
         private static List<string> pn = new List<string>(){
             "p", "stationCode"
@@ -71,8 +71,11 @@ namespace LN.Ajax.Permutation
 
         /// <summary>
         /// 拼接含参数Url
-        ///     重写
+        ///     .重写
         /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         /// <param name="param">参数列表</param>
         /// <returns>完整URL</returns>
         public override string MakeUrl(AqiParam param)

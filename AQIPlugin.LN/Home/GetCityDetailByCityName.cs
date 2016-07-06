@@ -13,7 +13,7 @@ namespace LN.Home
 
         private static string tag = "GetCityDetailByCityName";
         private static string name = "城市1小时AQI&浓度";
-        private static string url = "http://211.137.19.74:8089/Home/GetCityDetailByCityName/";
+        private static string url = "http://211.137.19.74:8089/Home/GetCityDetailByCityName";
         private static AQI.AqiConstant.SourceUpdataInterval sui = AQI.AqiConstant.SourceUpdataInterval.HOUR;
         private static List<string> pn = new List<string>(){
             "cityName"
