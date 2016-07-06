@@ -24,11 +24,3 @@ GetNO2								站点24小时历史浓度NO2		JSON			GET
 GetCO								站点24小时历史浓度CO		JSON			GET
 GetO3								站点24小时历史浓度O3		JSON			GET
 GetO38								站点24小时历史浓度O38		JSON			GET
-
-
-由于与站点相关的数据参数太多，故增加自动化接口自动获取站点参数
-
-名称									解释
-============================================================
-GetAqiHistoryByCondition_Auto			参数从GetAqiCityStation接口获得
-GetIaqiHistoryByCondition_Auto			参数从GetAqiCityStation接口获得

@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetStationAQIDetailByStationCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStationAQIDetailByStationCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStationAQIDetailByStationCodeResult" type="tns:StationDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StationDetail">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AQICityStation">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="PrimaryPollutant" type="tns:KeyValuePairOfStringDouble" />
+              <s:element minOccurs="0" maxOccurs="1" name="Detail" type="tns:PollutantDetail" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AQICityStation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMargin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PositionName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePairOfStringDouble" />
+      <s:complexType name="PollutantDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AQI" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SO2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NO2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PM1024" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PM10" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="O3" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="O38" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CO" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PM25" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PM2524" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_SO2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_NO2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_PM1024" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_PM2524" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_O3" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_O38" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI_CO" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="IAQIList" type="tns:ArrayOfIAQIEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIAQIEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IAQIEntity" nillable="true" type="tns:IAQIEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IAQIEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PollutantName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IAQI" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="IAQIColor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get48Hours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get48HoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get48HoursResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAQIDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAQIDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAQIDetailResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCity30Days">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCity30DaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCity30DaysResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get30Days">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get30DaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get30DaysResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCity48Hours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCity48HoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCity48HoursResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityDetailResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportCityAQIList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReportCityAQIListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportCityAQIListResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetReportPointAQI">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReportPointAQIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportPointAQIResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportPointAQIList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReportPointAQIListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportPointAQIListResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRJND">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enddate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRJNDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRJNDResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getZHZS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enddate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getZHZSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getZHZSResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StationDetail" nillable="true" type="tns:StationDetail" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfArrayOfString" nillable="true" type="tns:ArrayOfArrayOfString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStationAQIDetailByStationCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStationAQIDetailByStationCode" />
+  </wsdl:message>
+  <wsdl:message name="GetStationAQIDetailByStationCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStationAQIDetailByStationCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursSoapIn">
+    <wsdl:part name="parameters" element="tns:Get48Hours" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursSoapOut">
+    <wsdl:part name="parameters" element="tns:Get48HoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAQIDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAQIDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCity30Days" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCity30DaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysSoapIn">
+    <wsdl:part name="parameters" element="tns:Get30Days" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysSoapOut">
+    <wsdl:part name="parameters" element="tns:Get30DaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCity48Hours" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCity48HoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportCityAQIListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportCityAQIList" />
+  </wsdl:message>
+  <wsdl:message name="GetReportCityAQIListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportCityAQIListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQISoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportPointAQI" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQISoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportPointAQIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportPointAQIList" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportPointAQIListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDSoapIn">
+    <wsdl:part name="parameters" element="tns:getRJND" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDSoapOut">
+    <wsdl:part name="parameters" element="tns:getRJNDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSSoapIn">
+    <wsdl:part name="parameters" element="tns:getZHZS" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSSoapOut">
+    <wsdl:part name="parameters" element="tns:getZHZSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStationAQIDetailByStationCodeHttpGetIn">
+    <wsdl:part name="stationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStationAQIDetailByStationCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:StationDetail" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportCityAQIListHttpGetIn" />
+  <wsdl:message name="GetReportCityAQIListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIHttpGetIn" />
+  <wsdl:message name="GetReportPointAQIHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIListHttpGetIn" />
+  <wsdl:message name="GetReportPointAQIListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStationAQIDetailByStationCodeHttpPostIn">
+    <wsdl:part name="stationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStationAQIDetailByStationCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:StationDetail" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get48HoursHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAQIDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCity30DaysHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get30DaysHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCity48HoursHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportCityAQIListHttpPostIn" />
+  <wsdl:message name="GetReportCityAQIListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIHttpPostIn" />
+  <wsdl:message name="GetReportPointAQIHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPointAQIListHttpPostIn" />
+  <wsdl:message name="GetReportPointAQIListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRJNDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getZHZSHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="AirQualityServiceSoap">
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <wsdl:input message="tns:GetStationAQIDetailByStationCodeSoapIn" />
+      <wsdl:output message="tns:GetStationAQIDetailByStationCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <wsdl:input message="tns:Get48HoursSoapIn" />
+      <wsdl:output message="tns:Get48HoursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <wsdl:input message="tns:GetAQIDetailSoapIn" />
+      <wsdl:output message="tns:GetAQIDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <wsdl:input message="tns:GetCity30DaysSoapIn" />
+      <wsdl:output message="tns:GetCity30DaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <wsdl:input message="tns:Get30DaysSoapIn" />
+      <wsdl:output message="tns:Get30DaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <wsdl:input message="tns:GetCity48HoursSoapIn" />
+      <wsdl:output message="tns:GetCity48HoursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <wsdl:input message="tns:GetCityDetailSoapIn" />
+      <wsdl:output message="tns:GetCityDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <wsdl:input message="tns:GetReportCityAQIListSoapIn" />
+      <wsdl:output message="tns:GetReportCityAQIListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <wsdl:input message="tns:GetReportPointAQISoapIn" />
+      <wsdl:output message="tns:GetReportPointAQISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <wsdl:input message="tns:GetReportPointAQIListSoapIn" />
+      <wsdl:output message="tns:GetReportPointAQIListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <wsdl:input message="tns:getRJNDSoapIn" />
+      <wsdl:output message="tns:getRJNDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <wsdl:input message="tns:getZHZSSoapIn" />
+      <wsdl:output message="tns:getZHZSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AirQualityServiceHttpGet">
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <wsdl:input message="tns:GetStationAQIDetailByStationCodeHttpGetIn" />
+      <wsdl:output message="tns:GetStationAQIDetailByStationCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <wsdl:input message="tns:Get48HoursHttpGetIn" />
+      <wsdl:output message="tns:Get48HoursHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <wsdl:input message="tns:GetAQIDetailHttpGetIn" />
+      <wsdl:output message="tns:GetAQIDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <wsdl:input message="tns:GetCity30DaysHttpGetIn" />
+      <wsdl:output message="tns:GetCity30DaysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <wsdl:input message="tns:Get30DaysHttpGetIn" />
+      <wsdl:output message="tns:Get30DaysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <wsdl:input message="tns:GetCity48HoursHttpGetIn" />
+      <wsdl:output message="tns:GetCity48HoursHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <wsdl:input message="tns:GetCityDetailHttpGetIn" />
+      <wsdl:output message="tns:GetCityDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <wsdl:input message="tns:GetReportCityAQIListHttpGetIn" />
+      <wsdl:output message="tns:GetReportCityAQIListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <wsdl:input message="tns:GetReportPointAQIHttpGetIn" />
+      <wsdl:output message="tns:GetReportPointAQIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <wsdl:input message="tns:GetReportPointAQIListHttpGetIn" />
+      <wsdl:output message="tns:GetReportPointAQIListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <wsdl:input message="tns:getRJNDHttpGetIn" />
+      <wsdl:output message="tns:getRJNDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <wsdl:input message="tns:getZHZSHttpGetIn" />
+      <wsdl:output message="tns:getZHZSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AirQualityServiceHttpPost">
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <wsdl:input message="tns:GetStationAQIDetailByStationCodeHttpPostIn" />
+      <wsdl:output message="tns:GetStationAQIDetailByStationCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <wsdl:input message="tns:Get48HoursHttpPostIn" />
+      <wsdl:output message="tns:Get48HoursHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <wsdl:input message="tns:GetAQIDetailHttpPostIn" />
+      <wsdl:output message="tns:GetAQIDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <wsdl:input message="tns:GetCity30DaysHttpPostIn" />
+      <wsdl:output message="tns:GetCity30DaysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <wsdl:input message="tns:Get30DaysHttpPostIn" />
+      <wsdl:output message="tns:Get30DaysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <wsdl:input message="tns:GetCity48HoursHttpPostIn" />
+      <wsdl:output message="tns:GetCity48HoursHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <wsdl:input message="tns:GetCityDetailHttpPostIn" />
+      <wsdl:output message="tns:GetCityDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <wsdl:input message="tns:GetReportCityAQIListHttpPostIn" />
+      <wsdl:output message="tns:GetReportCityAQIListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <wsdl:input message="tns:GetReportPointAQIHttpPostIn" />
+      <wsdl:output message="tns:GetReportPointAQIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <wsdl:input message="tns:GetReportPointAQIListHttpPostIn" />
+      <wsdl:output message="tns:GetReportPointAQIListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <wsdl:input message="tns:getRJNDHttpPostIn" />
+      <wsdl:output message="tns:getRJNDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <wsdl:input message="tns:getZHZSHttpPostIn" />
+      <wsdl:output message="tns:getZHZSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AirQualityServiceSoap" type="tns:AirQualityServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <soap:operation soapAction="http://tempuri.org/GetStationAQIDetailByStationCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <soap:operation soapAction="http://tempuri.org/Get48Hours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <soap:operation soapAction="http://tempuri.org/GetAQIDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <soap:operation soapAction="http://tempuri.org/GetCity30Days" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <soap:operation soapAction="http://tempuri.org/Get30Days" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <soap:operation soapAction="http://tempuri.org/GetCity48Hours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <soap:operation soapAction="http://tempuri.org/GetCityDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <soap:operation soapAction="http://tempuri.org/GetReportCityAQIList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <soap:operation soapAction="http://tempuri.org/GetReportPointAQI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <soap:operation soapAction="http://tempuri.org/GetReportPointAQIList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <soap:operation soapAction="http://tempuri.org/getRJND" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <soap:operation soapAction="http://tempuri.org/getZHZS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AirQualityServiceSoap12" type="tns:AirQualityServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <soap12:operation soapAction="http://tempuri.org/GetStationAQIDetailByStationCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <soap12:operation soapAction="http://tempuri.org/Get48Hours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetAQIDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <soap12:operation soapAction="http://tempuri.org/GetCity30Days" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <soap12:operation soapAction="http://tempuri.org/Get30Days" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <soap12:operation soapAction="http://tempuri.org/GetCity48Hours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetCityDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <soap12:operation soapAction="http://tempuri.org/GetReportCityAQIList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <soap12:operation soapAction="http://tempuri.org/GetReportPointAQI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <soap12:operation soapAction="http://tempuri.org/GetReportPointAQIList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <soap12:operation soapAction="http://tempuri.org/getRJND" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <soap12:operation soapAction="http://tempuri.org/getZHZS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AirQualityServiceHttpGet" type="tns:AirQualityServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <http:operation location="/GetStationAQIDetailByStationCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <http:operation location="/Get48Hours" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <http:operation location="/GetAQIDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <http:operation location="/GetCity30Days" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <http:operation location="/Get30Days" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <http:operation location="/GetCity48Hours" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <http:operation location="/GetCityDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <http:operation location="/GetReportCityAQIList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <http:operation location="/GetReportPointAQI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <http:operation location="/GetReportPointAQIList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <http:operation location="/getRJND" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <http:operation location="/getZHZS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AirQualityServiceHttpPost" type="tns:AirQualityServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetStationAQIDetailByStationCode">
+      <http:operation location="/GetStationAQIDetailByStationCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get48Hours">
+      <http:operation location="/Get48Hours" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDetail">
+      <http:operation location="/GetAQIDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity30Days">
+      <http:operation location="/GetCity30Days" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get30Days">
+      <http:operation location="/Get30Days" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity48Hours">
+      <http:operation location="/GetCity48Hours" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetail">
+      <http:operation location="/GetCityDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportCityAQIList">
+      <http:operation location="/GetReportCityAQIList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQI">
+      <http:operation location="/GetReportPointAQI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPointAQIList">
+      <http:operation location="/GetReportPointAQIList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRJND">
+      <http:operation location="/getRJND" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZHZS">
+      <http:operation location="/getZHZS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AirQualityService">
+    <wsdl:port name="AirQualityServiceSoap" binding="tns:AirQualityServiceSoap">
+      <soap:address location="http://211.137.19.74:8089/AirQualityService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AirQualityServiceSoap12" binding="tns:AirQualityServiceSoap12">
+      <soap12:address location="http://211.137.19.74:8089/AirQualityService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AirQualityServiceHttpGet" binding="tns:AirQualityServiceHttpGet">
+      <http:address location="http://211.137.19.74:8089/AirQualityService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AirQualityServiceHttpPost" binding="tns:AirQualityServiceHttpPost">
+      <http:address location="http://211.137.19.74:8089/AirQualityService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

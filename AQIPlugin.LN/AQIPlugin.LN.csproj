@@ -74,6 +74,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AirQualityService.asmx.wsdl" />
+    <None Include="API.md" />
     <None Include="app.config" />
     <None Include="JSON\ln.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -17,7 +17,8 @@ namespace JL
         private static AQI.AqiConstant.SourceLevel src = AQI.AqiConstant.SourceLevel.PROVINCIAL;
         private static AQI.AqiConstant.DataType dat = AQI.AqiConstant.DataType.JSON;
         private static string[] srcNameSpace = new string[]{
-            "LN.Ajax.Permutation"//, "LN.Ajax", "LN.Home",// "LN.AirQualityService"
+            "LN.Ajax.Permutation", "LN.Ajax", "LN.Home",// "LN.AirQualityService"
+            //TODO 检查AirQualityService中是否重复
         };
 
         #endregion
