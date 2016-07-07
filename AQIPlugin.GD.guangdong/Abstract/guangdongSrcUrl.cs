@@ -78,7 +78,7 @@ namespace guangdong.Abstract
         ///     .可以重写
         /// </summary>
         /// <remarks>
-        /// 应该是SOAP消息
+        /// TODO 应该是SOAP消息
         /// </remarks>
         /// <param name="param">参数列表</param>
         /// <returns></returns>

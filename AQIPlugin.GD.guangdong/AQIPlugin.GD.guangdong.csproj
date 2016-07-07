@@ -52,6 +52,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnvGDService.svc.wsdl" />
     <None Include="JSON\guangdong.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
