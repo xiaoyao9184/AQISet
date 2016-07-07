@@ -2,8 +2,6 @@
 using System.IO;
 using AQI;
 using AQI.Interface;
-using AQISet.Interface;
-using AQISet.Control;
 using Helper.Util.IO;
 
 namespace AQISet.Control.Saver
@@ -26,26 +24,6 @@ namespace AQISet.Control.Saver
 
         private string basePath;
         private bool saveEmpty;
-
-        #endregion
-
-        #region 属性
-
-        public string Name
-        {
-            get
-            {
-                return NAME;
-            }
-        }
-
-        public string SaverType
-        {
-            get
-            {
-                return SAVER_TYPE;
-            }
-        }
 
         #endregion
 
@@ -81,7 +59,30 @@ namespace AQISet.Control.Saver
 
         #endregion
 
-        #region 接口方法
+        #region IAqiSave
+
+        public string Name
+        {
+            get
+            {
+                return NAME;
+            }
+        }
+
+        public string SaverType
+        {
+            get
+            {
+                return SAVER_TYPE;
+            }
+        }
+
+        public long GetSpace()
+        {
+            DriveInfo driveInfo = new DriveInfo(Path.GetPathRoot(basePath));
+            
+            return driveInfo.TotalFreeSpace;
+        }
 
         public bool Save(ISrcUrl isu, byte[] data)
         {

@@ -19,6 +19,12 @@ namespace AQI.Interface
         string SaverType{ get; }
 
         /// <summary>
+        /// 获取空间
+        /// </summary>
+        /// <returns></returns>
+        long GetSpace();
+
+        /// <summary>
         /// 保存
         /// </summary>
         /// <param name="isu">数据源</param>
