@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71A95857-CDEF-464D-96A2-C0DB70E20AC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>henan</RootNamespace>
+    <AssemblyName>AQIPlugin.HN.henan</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\henanSrcUrl.cs" />
+    <Compile Include="messagebroker\findNdInfoByCityCode.cs" />
+    <Compile Include="messagebroker\findAqiInfoByCityCode.cs" />
+    <Compile Include="messagebroker\findCityInfoDAByCityCode.cs" />
+    <Compile Include="messagebroker\find24HourNdInfoByCode.cs" />
+    <Compile Include="messagebroker\find24HourAqiInfoByCode.cs" />
+    <Compile Include="messagebroker\find12HourNdInfoByCode.cs" />
+    <Compile Include="messagebroker\find12HourAqiInfoByCode.cs" />
+    <Compile Include="messagebroker\findMainCityAqiInfo.cs" />
+    <Compile Include="messagebroker\find10DaysDayAqiInfoByCode.cs" />
+    <Compile Include="messagebroker\getCityHourInfo.cs" />
+    <Compile Include="messagebroker\find8InfoByCityCode.cs" />
+    <Compile Include="messagebroker\_5.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="henan.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JSON\henan.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MessageBin\find10DaysDayAqiInfoByCode" />
+    <None Include="MessageBin\find12HourAqiInfoByCode" />
+    <None Include="MessageBin\find12HourNdInfoByCode" />
+    <None Include="MessageBin\find24HourAqiInfoByCode" />
+    <None Include="MessageBin\find24HourNdInfoByCode" />
+    <None Include="MessageBin\find8InfoByCityCode" />
+    <None Include="MessageBin\findAqiInfoByCityCode" />
+    <None Include="MessageBin\findCityInfoDAByCityCode" />
+    <None Include="MessageBin\findNdInfoByCityCode" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQISet.Library.AMF\AQISet.Library.AMF.csproj">
+      <Project>{5fb0e6a0-a7d1-4a3a-b42a-07ab4f0fa0f1}</Project>
+      <Name>AQISet.Library.AMF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
+      <Project>{6cd4acc4-a6c2-4ee5-9025-88ffeef4065b}</Project>
+      <Name>AQISet.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
