@@ -46,44 +46,15 @@ namespace jsair.Abstract
 
         #region 方法
 
-        #region ISrcUrlParam接口
-
-        /// <summary>
-        /// 获取内容
-        ///     重写
-        /// </summary>
-        /// <param name="param">参数列表</param>
-        /// <returns></returns>
-        public override byte[] GetData(AqiParam param)
-        {
-            //得到responsebody
-            byte[] responsebody = null;
-            switch (ParamSendType)
-            {
-                case AqiConstant.ParamSendType.GET:
-                    string urlparam = MakeUrl(param);
-                    responsebody = HttpUtilV2.doGetRequest(urlparam);
-                    break;
-                case AqiConstant.ParamSendType.POST:
-                    byte[] requestbody = MakeRequestBody(param);
-                    responsebody = HttpUtilV2.doPostRequest(Url, requestbody);
-                    break;
-                default:
-                    responsebody = HttpUtilV2.doGetRequest(Url);
-                    break;
-            }
-
-            return ExtractData(responsebody);
-        }
-
-        #endregion
-
         #region IMakeParam接口
 
         /// <summary>
         /// 拼接含参数Url
-        ///     重写
+        ///     .重写
         /// </summary>
+        /// <remarks>
+        /// 将token装入URL中
+        /// </remarks>
         /// <param name="param">参数列表</param>
         /// <returns>完整URL</returns>
         public override string MakeUrl(AqiParam param)
