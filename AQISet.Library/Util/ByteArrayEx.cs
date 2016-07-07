@@ -51,6 +51,10 @@ namespace AQI.Util
                     index + repl.Length,
                     src.Length - (index + search.Length));
             }
+            else
+            {
+                dst = src;
+            }
             return dst;
         }
     }
