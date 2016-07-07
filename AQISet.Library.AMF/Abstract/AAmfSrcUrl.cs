@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using AQI.Interface;
 using AQI.Exception;
+using FluorineFx.Configuration;
 using FluorineFx.IO;
 using Helper.AMF;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AQI.Abstract
 {
@@ -15,6 +19,29 @@ namespace AQI.Abstract
     public abstract class AAmfSrcUrl : AParamSrcUrl, IExtractData
     {
 
+        #region 常量
+
+        public const string PARAM_AMF = "amf";
+        public const string PARAM_AMF_TYPE = "type";
+        public const string PARAM_AMF_MSG = "message";
+
+        #endregion
+
+        #region 枚举
+
+        /// <summary>
+        /// 参数amf.type
+        /// </summary>
+        public enum AMFMessageParamType
+        {
+            NoUse,
+            UseJson,
+            UseXml,
+            UseCode
+        }
+
+        #endregion
+        
         #region 字段
 
         /// <summary>
@@ -42,6 +69,7 @@ namespace AQI.Abstract
         protected AAmfSrcUrl()
         {
             _mh = new AMFMessageHelper();
+            pbt = AqiConstant.ParamBodyType.NONE;
         }
 
         #region 方法
@@ -72,74 +100,75 @@ namespace AQI.Abstract
         ///     .可以重写
         /// </summary>
         /// <remarks>
-        /// 读取参数 messageType、message ，根据 messageType 进行处理
-        ///     1、 messageType 为 base64，将 message 作为 base64 字符串转为字节数组；
-        ///     2、 messageType 为 json，将 message 作为 json 字符串解析为字节数组；
-        ///     3、 messageType 不存在或为 code 或为空，若实例实现 IMakeAMFMessage 接口，
-        ///         将调用 MakeAMFMsg 处理并将返回的AMFMessage对象 序列化为字节数组；
+        /// 读取参数 amf ，将 amf.type 解析为枚举 AMFMessageParamType 进行处理
+        ///     1、 AMFMessageParamType 为 UseJson，将 amf.message 作为 json 字符串解析为字节数组；
+        ///     2、 AMFMessageParamType 为 UseXml，将 amf.message 作为 xml 字符串解析为字节数组；
+        ///     3、 AMFMessageParamType 为 UseCode 并且本实例实现 IMakeAMFMessage 接口，
+        ///         将 amf.message 作为参数调用 IMakeAMFMessage接口 MakeAMFMsg方法生成 AMFMessage对象，序列化为字节数组；
+        ///     4、AMFMessageParamType 为 NoUse，使用父类 MakeRequestBody。
+        /// 若无参数 amf 则使用父类 MakeRequestBody
         /// </remarks>
         /// <param name="param">参数列表</param>
         /// <returns></returns>
         public override byte[] MakeRequestBody(AqiParam param)
         {
-            string type = "base64";
-            string message = null;
-            byte[] requestBody = null;
-            //check
-            if (param.ContainsKey("messageType") &&
-                !String.IsNullOrEmpty(param["messageType"]))
+            if (param.ContainsKey(PARAM_AMF) &&
+                !String.IsNullOrEmpty(param[PARAM_AMF]))
             {
-                type = param["messageType"];
-            }
-            else if (this is IMakeAMFMessage)
-            {
-                IMakeAMFMessage iMakeAmfMsg = this as IMakeAMFMessage;
-                AMFMessage amfmessage = iMakeAmfMsg.MakeAMFMsg(param);
-                return _mh.LoadAmfMessageIntoBinMessage(amfmessage);
-            }
-            if (param.ContainsKey("message") &&
-                !String.IsNullOrEmpty(param["message"]))
-            {
-                message = param["message"];
+                Dictionary<string, string> map = new Dictionary<string, string>();
+                JObject jo = JObject.Parse(param[PARAM_AMF]);
+                JToken jt = jo.SelectToken(PARAM_AMF_TYPE);
+                map.Add(PARAM_AMF_TYPE,jt.ToString());
+                jt = jo.SelectToken(PARAM_AMF_MSG);
+                map.Add(PARAM_AMF_MSG, jt.ToString());
+                
+                if (map.ContainsKey(PARAM_AMF_TYPE) &&
+                    !String.IsNullOrEmpty(map[PARAM_AMF_TYPE]) &&
+                    map.ContainsKey(PARAM_AMF_MSG) &&
+                    !String.IsNullOrEmpty(map[PARAM_AMF_MSG]))
+                {
+                    AMFMessageParamType ampt;
+                    if (Enum.TryParse(map[PARAM_AMF_TYPE], out ampt))
+                    {
+                        switch (ampt)
+                        {
+                            case AMFMessageParamType.UseJson:
+                                param.Body = _mh.GetAmfBinaryMessageAsBinary(map[PARAM_AMF_MSG]);
+                                break;
+                            case AMFMessageParamType.UseXml:
+                                //TODO 尝试amfx
+                                throw new NotSupportedException("不被支持的参数类型，amf.type=" + (int) ampt);
+                            case AMFMessageParamType.UseCode:
+                                if (this is IMakeAMFMessage)
+                                {
+                                    IMakeAMFMessage iMakeAmfMsg = this as IMakeAMFMessage;
+                                    AMFMessage amfmessage = iMakeAmfMsg.MakeAMFMsg(param);
+                                    return _mh.LoadAmfMessageIntoBinMessage(amfmessage);
+                                }
+                                else
+                                {
+                                    throw new NotImplementedException();
+                                }
+                                break;
+                            case AMFMessageParamType.NoUse:
+                                base.MakeRequestBody(param);
+                                break;
+                            default:
+                                throw new NotSupportedException("不被支持的参数类型，amf.type=" + (int) ampt);
+                        }
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("参数amf.type=" + map[PARAM_AMF_TYPE] + "是不被支持的！");
+                    }
+                }
             }
             else
             {
-                throw new ParamException("所需message参数丢失");
+                base.MakeRequestBody(param);
             }
 
-            try
-            {
-                switch (type)
-                {
-                    case "base64":
-                        requestBody = Convert.FromBase64String(message);
-                        break;
-                    case "json":
-                        requestBody = _mh.GetAmfBinaryMessageAsBinary(message);
-                        break;
-                    case "code":
-                        if (this is IMakeAMFMessage)
-                        {
-                            IMakeAMFMessage iMakeAmfMsg = this as IMakeAMFMessage;
-                            AMFMessage amfmessage = iMakeAmfMsg.MakeAMFMsg(param);
-                            return _mh.LoadAmfMessageIntoBinMessage(amfmessage);
-                        }
-                        else
-                        {
-                            throw new NotImplementedException();
-                        }
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                        break;
-                }
-            }
-            catch (System.Exception ex)
-            {
-                throw new ParamException("参数格式错误",ex);
-            }
-            
-            return requestBody;
+            return param.Body;
         }
 
         #endregion
