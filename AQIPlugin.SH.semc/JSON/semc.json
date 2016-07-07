@@ -1,0 +1,388 @@
+﻿{
+    "_5": {
+        "Enabled": false,
+        "Name": "_5",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMQAAAOAKAAAAAREKgRNNZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuQ29tbWFuZE1lc3NhZ2UTb3BlcmF0aW9uG2NvcnJlbGF0aW9uSWQTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAQFBgEGSTZCRjFDRDg3LTlEMEUtNDJDMi0xQzQ1LTBGQjdBMzNCNjVGMwQABAAKCwElRFNNZXNzYWdpbmdWZXJzaW9uBAEJRFNJZAYHbmlsAQYBCgUBAQ=="
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/1", "Content": [ { "messageRefType": null, "operation": 5, "correlationId": "", "clientId": null, "destination": "", "messageId": "6BF1CD87-9D0E-42C2-1C45-0FB7A33B65F3", "timestamp": 0, "timeToLive": 0, "body": { }, "headers": { "DSMessagingVersion": 1, "DSId": "nil" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+
+    "GetMaxDayAQI": {
+        "Enabled": false,
+        "Name": "GetMaxDayAQI",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "cf7b173613bb4b53b9180974ed11b85b",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMgAAARcKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlDXNvdXJjZRNvcGVyYXRpb24TbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMJYm9keRFjbGllbnRJZBdkZXN0aW5hdGlvbgYrU2VydmljZUxpYnJhcnkuU2FtcGxlBhlHZXRNYXhEYXlBUUkGSUYyMzgwMzQ1LTIyNTgtOTk4Qy0wNjZBLTE2MDY4REFGQjg0QwQABAAKCwEJRFNJZAZBY2Y3YjE3MzYxM2JiNGI1M2I5MTgwOTc0ZWQxMWI4NWIVRFNFbmRwb2ludAEBCQEBAQYRZmx1b3JpbmU="
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/2", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetMaxDayAQI", "clientId": null, "destination": "fluorine", "messageId": "F2380345-2258-998C-066A-16068DAFB84C", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSId": "cf7b173613bb4b53b9180974ed11b85b", "DSEndpoint": null } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+    "GetMaxDayAQI1": {
+        "Enabled": false,
+        "Name": "GetMaxDayAQI1",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "5fe5868c19ba487e98b3d35f0f507998",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMgAAARgKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYbR2V0TWF4RGF5QVFJMQYrU2VydmljZUxpYnJhcnkuU2FtcGxlBklDNzUzOUY3NS1BQ0NCLTI2NTctMDQzNC0wRkI3QTMyNkIwNTkEAAQACgsBCURTSWQGQTVmZTU4NjhjMTliYTQ4N2U5OGIzZDM1ZjBmNTA3OTk4FURTRW5kcG9pbnQBAQYRZmx1b3JpbmUJAQEB"
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/2", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetMaxDayAQI1", "clientId": null, "destination": "fluorine", "messageId": "C7539F75-ACCB-2657-0434-0FB7A326B059", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSId": "5fe5868c19ba487e98b3d35f0f507998", "DSEndpoint": null } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+    "getSHSiteValueData": {
+        "Enabled": false,
+        "Name": "getSHSiteValueData",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "b43b8d5591a5473aa0d412db226f4223",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMwAAAUIKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYlZ2V0U0hTaXRlVmFsdWVEYXRhBitTZXJ2aWNlTGlicmFyeS5TYW1wbGUGSUMxOUEzOUJBLTI0QTctNzBBNy05OUIzLTBGQjdBMkRCNzVFRQQABAAKCwEVRFNFbmRwb2ludAEJRFNJZAZBYjQzYjhkNTU5MWE1NDczYWEwZDQxMmRiMjI2ZjQyMjMBBhFmbHVvcmluZQkBAQZJZmZlNTkwODMtMWM3ZS00ZGQxLTliYjUtYjZkYjQyOTAwZjVl"
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/3", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "getsemcSiteValueData", "clientId": "ffe59083-1c7e-4dd1-9bb5-b6db42900f5e", "destination": "fluorine", "messageId": "C19A39BA-24A7-70A7-99B3-0FB7A2DB75EE", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSEndpoint": null, "DSId": "b43b8d5591a5473aa0d412db226f4223" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+
+    "GetAllCityList": {
+        "Enabled": false,
+        "Name": "GetAllCityList",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "2fb24c1c-16a8-4d30-bea4-ea002178abe2",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMwAAAT4KAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYdR2V0QWxsQ2l0eUxpc3QGK1NlcnZpY2VMaWJyYXJ5LlNhbXBsZQZJN0VFODAzODEtRUIzRC1BQ0JELUM5OUYtMEZCN0EzMTIxQjg1BAAEAAoLAQlEU0lkBkFhNTVmNDcwNGM3YjE0NjdlOTZjY2JhZjg1OTEzNTQ4YxVEU0VuZHBvaW50AQEGEWZsdW9yaW5lCQEBBkkyZmIyNGMxYy0xNmE4LTRkMzAtYmVhNC1lYTAwMjE3OGFiZTI="
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/3", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetAllCityList", "clientId": "2fb24c1c-16a8-4d30-bea4-ea002178abe2", "destination": "fluorine", "messageId": "7EE80381-EB3D-ACBD-C99F-0FB7A3121B85", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSId": "a55f4704c7b1467e96ccbaf85913548c", "DSEndpoint": null } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+    "GetAllCityList1": {
+        "Enabled": false,
+        "Name": "GetAllCityList1",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "5fe5868c19ba487e98b3d35f0f507998",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMwAAAT8KAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYfR2V0QWxsQ2l0eUxpc3QxBitTZXJ2aWNlTGlicmFyeS5TYW1wbGUGSTQyRTVGQkRELThGMUQtRkVFQi0zQzg4LTBGQjdBMzI5NUIzQQQABAAKCwEJRFNJZAZBNWZlNTg2OGMxOWJhNDg3ZTk4YjNkMzVmMGY1MDc5OTgVRFNFbmRwb2ludAEBBhFmbHVvcmluZQkBAQZJYjdlY2NjMzYtYzJiOS00Y2U2LWFhMmEtZjY2OWI1MDA1NDhh"
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/3", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetAllCityList1", "clientId": "b7eccc36-c2b9-4ce6-aa2a-f669b500548a", "destination": "fluorine", "messageId": "42E5FBDD-8F1D-FEEB-3C88-0FB7A3295B3A", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSId": "5fe5868c19ba487e98b3d35f0f507998", "DSEndpoint": null } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+    "GetValueTrend": {
+        "Enabled": false,
+        "Name": "GetValueTrend",
+        "Params": [
+            {
+                "Enabled": true,
+                "Template": true,
+                "replaceDSId": "b43b8d5591a5473aa0d412db226f4223",
+                "Header": {
+                    "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                    "Origin": "http://www.semc.gov.cn",
+                    "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                    "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+                },
+                "Body": {
+                    "Type": "Base64",
+                    "Content": "AAMAAAABAARudWxsAAIvMgAAARsKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYbR2V0VmFsdWVUcmVuZAYrU2VydmljZUxpYnJhcnkuU2FtcGxlBklEQTMyODIxNi05MENDLUI4QTMtQUVFNy0wRkI3QTJEODAxNzEEAAQACgsBFURTRW5kcG9pbnQBCURTSWQGQWI0M2I4ZDU1OTFhNTQ3M2FhMGQ0MTJkYjIyNmY0MjIzAQYRZmx1b3JpbmUJAwEGAzgB"
+                },
+                "amf": {
+                    "type": "NoUse",
+                    "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/2", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetValueTrend", "clientId": null, "destination": "fluorine", "messageId": "DA328216-90CC-B8A3-AEE7-0FB7A2D80171", "timestamp": 0, "timeToLive": 0, "body": [ "8" ], "headers": { "DSEndpoint": null, "DSId": "b43b8d5591a5473aa0d412db226f4223" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+                }
+            },
+            {
+                "Enabled": true,
+                "Name": "PM2524小时浓度变化历史",
+                "pollutantCode": 8
+            },
+            {
+                "Enabled": true,
+                "Name": "PM2524小时浓度变化历史（滑动变化）",
+                "pollutantCode": 9
+            },
+            {
+                "Enabled": true,
+                "Name": "PM1024小时浓度变化历史",
+                "pollutantCode": 3
+            },
+            {
+                "Enabled": true,
+                "Name": "PM1024小时浓度变化历史（滑动变化）",
+                "pollutantCode": 4
+            },
+            {
+                "Enabled": true,
+                "Name": "O324小时浓度变化历史",
+                "pollutantCode": 6
+            },
+            {
+                "Enabled": true,
+                "Name": "CO24小时浓度变化历史",
+                "pollutantCode": 5
+            },
+            {
+                "Enabled": true,
+                "Name": "SO224小时浓度变化历史",
+                "pollutantCode": 1
+            },
+            {
+                "Enabled": true,
+                "Name": "NO24小时浓度变化历史",
+                "pollutantCode": 2
+            }
+        ]
+    },
+    "GetRecentlyDays": {
+        "Enabled": false,
+        "Name": "GetRecentlyDays",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "b29587c654aa48b8b29714a983ecddd9",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMgAAARoKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlE29wZXJhdGlvbg1zb3VyY2UTbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMXZGVzdGluYXRpb24JYm9keRFjbGllbnRJZAYfR2V0UmVjZW50bHlEYXlzBitTZXJ2aWNlTGlicmFyeS5TYW1wbGUGSTM0QTM1OEE3LTRDRUYtQ0FGNS0yQzgxLTBGQjdBNENDRkY2NwQABAAKCwEVRFNFbmRwb2ludAEJRFNJZAZBYjI5NTg3YzY1NGFhNDhiOGIyOTcxNGE5ODNlY2RkZDkBBhFmbHVvcmluZQkBAQE="
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/2", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetRecentlyDays", "clientId": null, "destination": "fluorine", "messageId": "34A358A7-4CEF-CAF5-2C81-0FB7A4CCFF67", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSEndpoint": null, "DSId": "b29587c654aa48b8b29714a983ecddd9" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+
+    "getTOP1siteid": {
+        "Enabled": false,
+        "Name": "getTOP1siteid",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAABAARudWxsAAIvMgAAARgKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlDXNvdXJjZRNvcGVyYXRpb24TbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMJYm9keRFjbGllbnRJZBdkZXN0aW5hdGlvbgYrU2VydmljZUxpYnJhcnkuU2FtcGxlBhtnZXRUT1Axc2l0ZWlkBkk2NjRBMzRDOC03NDkwLUI3MjAtREVGNi0xMERBMzlERjA2QTkEAAQACgsBFURTRW5kcG9pbnQBCURTSWQGQTFkNTQyNGFjNDQ3NzQxNTNhY2M0NzJiOWQzMWY3ODJjAQkBAQEGEWZsdW9yaW5l"
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 1, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/2", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "getTOP1siteid", "clientId": null, "destination": "fluorine", "messageId": "664A34C8-7490-B720-DEF6-10DA39DF06A9", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+
+    "get5Info": {
+        "Enabled": false,
+        "Name": "get5Info",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Base64",
+                "Content": "AAMAAAAFAARudWxsAAIvMwAAAUUKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlDXNvdXJjZRNvcGVyYXRpb24TbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMJYm9keRFjbGllbnRJZBdkZXN0aW5hdGlvbgYrU2VydmljZUxpYnJhcnkuU2FtcGxlBiFnZXRTaXRlVmFsdWVEYXRhBkk5MTgzMjRDNi05REZELUQ0MUQtQzAyMS0xMERBM0FDM0Q5REIEAAQACgsBFURTRW5kcG9pbnQBCURTSWQGQTFkNTQyNGFjNDQ3NzQxNTNhY2M0NzJiOWQzMWY3ODJjAQkDAQYHMjAxBkkyNmFiYzRlNC00NDJmLTRlNDEtOGVkMi02ODYzMWE4OTE1NTYGEWZsdW9yaW5lAARudWxsAAIvNAAAAUMKAAAAAREKgRNPZmxleC5tZXNzYWdpbmcubWVzc2FnZXMuUmVtb3RpbmdNZXNzYWdlDXNvdXJjZRNvcGVyYXRpb24TbWVzc2FnZUlkE3RpbWVzdGFtcBV0aW1lVG9MaXZlD2hlYWRlcnMJYm9keRFjbGllbnRJZBdkZXN0aW5hdGlvbgYrU2VydmljZUxpYnJhcnkuU2FtcGxlBh1nZXRTaXRlQVFJRGF0YQZJMzFCNUY1NDgtOEI0Qi0wQTk4LTc4ODctMTBEQTNBQzMwRjVEBAAEAAoLARVEU0VuZHBvaW50AQlEU0lkBkExZDU0MjRhYzQ0Nzc0MTUzYWNjNDcyYjlkMzFmNzgyYwEJAwEGBzIwMQZJMjZhYmM0ZTQtNDQyZi00ZTQxLThlZDItNjg2MzFhODkxNTU2BhFmbHVvcmluZQAEbnVsbAACLzUAAAFJCgAAAAERCoETT2ZsZXgubWVzc2FnaW5nLm1lc3NhZ2VzLlJlbW90aW5nTWVzc2FnZQ1zb3VyY2UTb3BlcmF0aW9uE21lc3NhZ2VJZBN0aW1lc3RhbXAVdGltZVRvTGl2ZQ9oZWFkZXJzCWJvZHkRY2xpZW50SWQXZGVzdGluYXRpb24GK1NlcnZpY2VMaWJyYXJ5LlNhbXBsZQYjR2V0U2l0ZVZhbHVlVHJlbmQGSUZFQTk5MkVCLTgwNEQtNkM3OS1GMDNBLTEwREEzQUMzNzg3MwQABAAKCwEVRFNFbmRwb2ludAEJRFNJZAZBMWQ1NDI0YWM0NDc3NDE1M2FjYzQ3MmI5ZDMxZjc4MmMBCQUBBgM5BgcyMDEGSTI2YWJjNGU0LTQ0MmYtNGU0MS04ZWQyLTY4NjMxYTg5MTU1NgYRZmx1b3JpbmUABG51bGwAAi82AAABRwoAAAABEQqBE09mbGV4Lm1lc3NhZ2luZy5tZXNzYWdlcy5SZW1vdGluZ01lc3NhZ2UNc291cmNlE29wZXJhdGlvbhNtZXNzYWdlSWQTdGltZXN0YW1wFXRpbWVUb0xpdmUPaGVhZGVycwlib2R5EWNsaWVudElkF2Rlc3RpbmF0aW9uBitTZXJ2aWNlTGlicmFyeS5TYW1wbGUGH0dldFNpdGVBcWlUcmVuZAZJREQ2QTBFMjMtODkxNy02QTYxLTdBMzMtMTBEQTNBQzMzMDkyBAAEAAoLARVEU0VuZHBvaW50AQlEU0lkBkExZDU0MjRhYzQ0Nzc0MTUzYWNjNDcyYjlkMzFmNzgyYwEJBQEGAzkGBzIwMQZJMjZhYmM0ZTQtNDQyZi00ZTQxLThlZDItNjg2MzFhODkxNTU2BhFmbHVvcmluZQAEbnVsbAACLzcAAAE9CgAAAAERCoETT2ZsZXgubWVzc2FnaW5nLm1lc3NhZ2VzLlJlbW90aW5nTWVzc2FnZQ1zb3VyY2UTb3BlcmF0aW9uE21lc3NhZ2VJZBN0aW1lc3RhbXAVdGltZVRvTGl2ZQ9oZWFkZXJzCWJvZHkRY2xpZW50SWQXZGVzdGluYXRpb24GK1NlcnZpY2VMaWJyYXJ5LlNhbXBsZQYbZ2V0VXBkYXRlVGltZQZJM0U2RjBFRkEtMjlBOC0xQzMzLTVGRkYtMTBEQTNBQzQ5MTlBBAAEAAoLARVEU0VuZHBvaW50AQlEU0lkBkExZDU0MjRhYzQ0Nzc0MTUzYWNjNDcyYjlkMzFmNzgyYwEJAQEGSTI2YWJjNGU0LTQ0MmYtNGU0MS04ZWQyLTY4NjMxYTg5MTU1NgYRZmx1b3JpbmU="
+            },
+            "amf": {
+                "type": "NoUse",
+                "message": { "Version": 3, "BodyCount": 5, "Bodies": [ { "Target": "null", "IsEmptyTarget": true, "Response": "/3", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "getSiteValueData", "clientId": "26abc4e4-442f-4e41-8ed2-68631a891556", "destination": "fluorine", "messageId": "918324C6-9DFD-D41D-C021-10DA3AC3D9DB", "timestamp": 0, "timeToLive": 0, "body": [ "201" ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." }, { "Target": "null", "IsEmptyTarget": true, "Response": "/4", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "getSiteAQIData", "clientId": "26abc4e4-442f-4e41-8ed2-68631a891556", "destination": "fluorine", "messageId": "31B5F548-8B4B-0A98-7887-10DA3AC30F5D", "timestamp": 0, "timeToLive": 0, "body": [ "201" ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." }, { "Target": "null", "IsEmptyTarget": true, "Response": "/5", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetSiteValueTrend", "clientId": "26abc4e4-442f-4e41-8ed2-68631a891556", "destination": "fluorine", "messageId": "FEA992EB-804D-6C79-F03A-10DA3AC37873", "timestamp": 0, "timeToLive": 0, "body": [ "9", "201" ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." }, { "Target": "null", "IsEmptyTarget": true, "Response": "/6", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "GetSiteAqiTrend", "clientId": "26abc4e4-442f-4e41-8ed2-68631a891556", "destination": "fluorine", "messageId": "DD6A0E23-8917-6A61-7A33-10DA3AC33092", "timestamp": 0, "timeToLive": 0, "body": [ "9", "201" ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." }, { "Target": "null", "IsEmptyTarget": true, "Response": "/7", "Content": [ { "source": "ServiceLibrary.Sample", "operation": "getUpdateTime", "clientId": "26abc4e4-442f-4e41-8ed2-68631a891556", "destination": "fluorine", "messageId": "3E6F0EFA-29A8-1C33-5FFF-10DA3AC4919A", "timestamp": 0, "timeToLive": 0, "body": [ ], "headers": { "DSEndpoint": null, "DSId": "1d5424ac44774153acc472b9d31f782c" } } ], "IsAuthenticationAction": false, "IgnoreResults": false, "IsDebug": false, "IsDescribeService": false, "IsWebService": false, "IsRecordsetDelivery": false, "TypeName": null, "Method": null, "Call": "." } ], "HeaderCount": 0, "ObjectEncoding": 3 }
+            }
+        }
+    },
+
+    "getSiteValueData": {
+        "Enabled": true,
+        "Name": "find24HourAqiInfoByCode",
+        "Params": [
+            {
+                "Enabled": true,
+                "Template": true,
+                "Header": {
+                    "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                    "Origin": "http://www.semc.gov.cn",
+                    "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                    "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+                },
+                "Body": {
+                    "Type": "Hex",
+                    "Content": "00030000000100046E756C6C00032F3435000001470A00000001110A81134F666C65782E6D6573736167696E672E6D657373616765732E52656D6F74696E674D6573736167650D736F75726365136F7065726174696F6E1374696D657374616D7011636C69656E7449641574696D65546F4C69766509626F64790F68656164657273136D65737361676549641764657374696E6174696F6E01062F66696E643234486F7572417169496E666F4279436F64650400064934424434353242392D463630462D423144322D433935442D3230443333453630363345370400090501060D343130353031060530310A0B01154453456E64706F696E74010944534964064934424434353146422D383831442D353041352D314642302D34444632324644424239444301064932383832373942362D383937422D444139312D444430302D304231424245434643394237061D6461746150756253657276696365"
+                },
+                "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+                "replaceCityCode": "410500"
+            },
+            {
+                "Enabled": true,
+                "Name": "新乡市",
+                "cityCode": "410501",
+                "stationCode": "01"                
+            }
+        ]
+    },
+    "getSiteAQIData": {
+        "Enabled": false,
+        "Name": "find24HourNdInfoByCode",
+        "Params": {
+            "Enabled": true,
+            "Name": "新乡市",
+            "cityCode": "410500",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "replaceCityCode": "410500",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Hex",
+                "Content": "00030000000100046E756C6C00032F3436000001460A00000001110A81134F666C65782E6D6573736167696E672E6D657373616765732E52656D6F74696E674D6573736167650D736F75726365136F7065726174696F6E1374696D657374616D7011636C69656E7449641574696D65546F4C69766509626F64790F68656164657273136D65737361676549641764657374696E6174696F6E01062D66696E643234486F75724E64496E666F4279436F64650400064934424434353242392D463630462D423144322D433935442D3230443333453630363345370400090501060D343130353031060530310A0B01154453456E64706F696E74010944534964064934424434353146422D383831442D353041352D314642302D34444632324644424239444301064944423032343138422D363934362D453844342D313731422D304231424245434643383534061D6461746150756253657276696365"
+            }
+        }
+    },
+    "GetSiteValueTrend": {
+        "Enabled": false,
+        "Name": "find24HourAqiInfoByCode",
+        "Params": {
+            "Enabled": true,
+            "Name": "新乡市",
+            "cityCode": "410500",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "replaceCityCode": "410500",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Hex",
+                "Content": "00030000000100046E756C6C00032F3435000001470A00000001110A81134F666C65782E6D6573736167696E672E6D657373616765732E52656D6F74696E674D6573736167650D736F75726365136F7065726174696F6E1374696D657374616D7011636C69656E7449641574696D65546F4C69766509626F64790F68656164657273136D65737361676549641764657374696E6174696F6E01062F66696E643234486F7572417169496E666F4279436F64650400064934424434353242392D463630462D423144322D433935442D3230443333453630363345370400090501060D343130353031060530310A0B01154453456E64706F696E74010944534964064934424434353146422D383831442D353041352D314642302D34444632324644424239444301064932383832373942362D383937422D444139312D444430302D304231424245434643394237061D6461746150756253657276696365"
+            }
+        }
+    },
+    "GetSiteAqiTrend": {
+        "Enabled": false,
+        "Name": "find24HourAqiInfoByCode",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "stationCode": "410500",
+            "pollCode": "9",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Hex",
+                "Content": "00030000000100046E756C6C00022F36000001470A00000001110A81134F666C65782E6D6573736167696E672E6D657373616765732E52656D6F74696E674D6573736167650D736F75726365136F7065726174696F6E136D65737361676549641374696D657374616D701574696D65546F4C6976650F6865616465727309626F647911636C69656E7449641764657374696E6174696F6E062B536572766963654C6962726172792E53616D706C65061F476574536974654171695472656E64064944443641304532332D383931372D364136312D374133332D313044413341433333303932040004000A0B01154453456E64706F696E7401094453496406413164353432346163343437373431353361636334373262396433316637383263010905010603390607323031064932366162633465342D343432662D346534312D386564322D3638363331613839313535360611666C756F72696E65"
+            }
+        }
+    },
+    "getUpdateTime": {
+        "Enabled": false,
+        "Name": "getUpdateTime",
+        "Params": {
+            "Enabled": true,
+            "Name": "",
+            "replaceDSId": "1d5424ac44774153acc472b9d31f782c",
+            "Header": {
+                "Cookie": "JSESSIONID=C07C7FBCCCA880851F3606EB8FDA89D6",
+                "Origin": "http://www.semc.gov.cn",
+                "Referer": "http://www.semc.gov.cn/aqi/flexline/chart_value.swf/[[DYNAMIC]]/4",
+                "X-Requested-With": "ShockwaveFlash/20.0.0.267"
+            },
+            "Body": {
+                "Type": "Hex",
+                "Content": "00030000000100046E756C6C00022F370000013D0A00000001110A81134F666C65782E6D6573736167696E672E6D657373616765732E52656D6F74696E674D6573736167650D736F75726365136F7065726174696F6E136D65737361676549641374696D657374616D701574696D65546F4C6976650F6865616465727309626F647911636C69656E7449641764657374696E6174696F6E062B536572766963654C6962726172792E53616D706C65061B67657455706461746554696D65064933453646304546412D323941382D314333332D354646462D313044413341433439313941040004000A0B01154453456E64706F696E740109445349640641316435343234616334343737343135336163633437326239643331663738326301090101064932366162633465342D343432662D346534312D386564322D3638363331613839313535360611666C756F72696E65"
+            }
+        }
+    }
+}
