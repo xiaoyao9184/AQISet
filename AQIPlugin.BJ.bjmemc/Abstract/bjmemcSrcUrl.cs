@@ -117,6 +117,7 @@ namespace bjmemc.Abstract
         /// 制作WCFMessage
         ///     实现
         /// ！ 生成的2进制xml,序列化时，效果不太一样
+        /// TODO 考虑合并到AWcfSrcUrl
         /// </summary>
         /// <param name="dictParam"></param>
         /// <returns></returns>

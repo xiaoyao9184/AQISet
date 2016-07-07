@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataService\GetWebAlert.cs" />
+    <None Include="DataService.svc.wsdl" />
     <None Include="JSON\bjmemc.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
