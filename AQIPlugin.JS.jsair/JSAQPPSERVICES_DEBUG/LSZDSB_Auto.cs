@@ -18,7 +18,7 @@ namespace jsair.JSAQPPSERVICES_DEBUG
 
         private static string tag = "LSZDSB_Auto";
         private static string name = "江苏站点污染物历史(24小时)";
-        private static string url = "http://218.94.78.75/JSAQPPSERVICES/REST/V100/STATION/{0}/{1}/{2}/{3}/{4}/Histroy?token={5}";
+        private static string url = "http://218.94.78.75:20001/JSAQPPSERVICES/REST/V100/STATION/{0}/{1}/{2}/{3}/{4}/Histroy?token={5}";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.DAY;
         private static List<string> pn = new List<string>(){
             "pollutant", "timestart", "timeend", "citycode", "stationcode"

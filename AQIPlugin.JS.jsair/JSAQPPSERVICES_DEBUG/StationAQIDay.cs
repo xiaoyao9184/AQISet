@@ -14,7 +14,7 @@ namespace jsair.JSAQPPSERVICES_DEBUG
         
         private static string tag = "StationAQIDay";
         private static string name = "江苏站点24小时AQI？？";
-        private static string url = "http://218.94.78.75/JSAQPPSERVICES/REST/V100/STATION/{0}/AQI/DAY/{1}?token={2}";
+        private static string url = "http://218.94.78.75:20001/JSAQPPSERVICES/REST/V100/STATION/{0}/AQI/DAY/{1}?token={2}";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static List<string> pn = new List<string>(){
             "area", "time"

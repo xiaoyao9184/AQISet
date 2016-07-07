@@ -14,7 +14,7 @@ namespace jsair
 
         private static string name = "江苏省城市空气质量新标准试运行监测数据发布平台";
         private static string tag = "jsair";
-        private static string url = "http://218.94.78.75/jsair/";
+        private static string url = "http://218.94.78.75:20001/jsair/";
         private static AqiConstant.SourceLevel src = AqiConstant.SourceLevel.PROVINCIAL;
         private static AqiConstant.DataType dat = AqiConstant.DataType.JSON;
         private static string[] srcNameSpace = new string[]{

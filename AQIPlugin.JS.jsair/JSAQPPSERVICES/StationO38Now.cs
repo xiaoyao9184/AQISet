@@ -14,7 +14,7 @@ namespace jsair.JSAQPPSERVICES
 
         private static string tag = "StationO38Now";
         private static string name = "江苏所有站点8小时O3";
-        private static string url = "http://218.94.78.75/JSAQPPSERVICES/REST/V100/STATION/{0}/O38/NOW?token={1}";
+        private static string url = "http://218.94.78.75:20001/JSAQPPSERVICES/REST/V100/STATION/{0}/O38/NOW?token={1}";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
         private static List<string> pn = new List<string>(){
             "area"
