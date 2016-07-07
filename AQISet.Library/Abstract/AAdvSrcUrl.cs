@@ -277,21 +277,15 @@ namespace AQI.Abstract
         ///     .可以重写
         /// </summary>
         /// <remarks>
-        /// 读取参数 header ，将 header 作为 json 字符串解析为键值集合；
-        /// //TODO 考虑其他格式
+        /// 读取参数 Header ，将 Header 作为 Http Header
+        /// TODO 考虑其他格式
         /// </remarks>
         /// <param name="param"></param>
         /// <returns></returns>
         public virtual Dictionary<string, string> MakeRequestHeader(AqiParam param)
         {
-            Dictionary<string, string> header = new Dictionary<string, string>();
-
-            if (param.ContainsKey(AqiConstant.PARAM_HEADER))
-            {
-                header = JsonConvert.DeserializeObject<Dictionary<string, string>>(param[AqiConstant.PARAM_HEADER]);
-            }
-
-            return header;
+            //允许null
+            return param.Header;
         }
 
         /// <summary>
@@ -305,17 +299,24 @@ namespace AQI.Abstract
         /// <returns>RequestBody字节数组</returns>
         public virtual byte[] MakeRequestBody(AqiParam param)
         {
-            switch (ParamBodyType)
+            if (param.Body == null)
             {
-                case AqiConstant.ParamBodyType.HTTP_FORM:
-                    return MakeFromBody(param);
-                case AqiConstant.ParamBodyType.TEXT:
-                    return MakeTextBody(param);
-                case AqiConstant.ParamBodyType.BIN_BASE64:
-                    return MakeBinBodyByBase64(param);
-                default:
-                    throw new NotSupportedException("不被支持的参数类型，ParamBodyType=" + (int)ParamBodyType);
+                switch (ParamBodyType)
+                {
+                    case AqiConstant.ParamBodyType.NONE:
+                        param.Body = new byte[0];
+                        break;
+                    case AqiConstant.ParamBodyType.HTTP_FORM:
+                        param.Body = MakeFromBody(param);
+                        break;
+                    case AqiConstant.ParamBodyType.TEXT:
+                        param.Body = MakeTextBody(param);
+                        break;
+                    default:
+                        throw new NotSupportedException("不被支持的参数类型，ParamBodyType=" + (int)ParamBodyType);
+                }
             }
+            return param.Body;
         }
 
         #endregion
@@ -400,33 +401,12 @@ namespace AQI.Abstract
         /// <returns></returns>
         protected virtual byte[] MakeTextBody(Dictionary<string, string> dictParam)
         {
-            if (dictParam.ContainsKey(AqiConstant.PARAM_BODY) &&
-                !String.IsNullOrEmpty(dictParam[AqiConstant.PARAM_BODY]))
+            StringBuilder sb = new StringBuilder();
+            foreach (KeyValuePair<string, string> kv in dictParam.OrderBy(kv => kv.Key))
             {
-                return Encoding.UTF8.GetBytes(dictParam[AqiConstant.PARAM_BODY]);
+                sb.Append(kv.Value);
             }
-            else
-            {
-                throw new ParamException("缺少‘" + AqiConstant.PARAM_BODY + "’参数");
-            }
-        }
-
-        /// <summary>
-        /// 拼接HttpBody参数：Base64
-        /// </summary>
-        /// <param name="dictParam"></param>
-        /// <returns></returns>
-        protected virtual byte[] MakeBinBodyByBase64(Dictionary<string, string> dictParam)
-        {
-            if (dictParam.ContainsKey(AqiConstant.PARAM_BODY) &&
-                    !String.IsNullOrEmpty(dictParam[AqiConstant.PARAM_BODY]))
-            {
-                return Convert.FromBase64String(dictParam[AqiConstant.PARAM_BODY]);
-            }
-            else
-            {
-                throw new ParamException("缺少‘" + AqiConstant.PARAM_BODY + "’参数");
-            }
+            return Encoding.UTF8.GetBytes(sb.ToString());
         }
 
         #endregion

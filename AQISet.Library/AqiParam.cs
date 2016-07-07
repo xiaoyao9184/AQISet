@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using AQI.Interface;
 using AQI.Abstract;
 using AQI.Exception;
+using Newtonsoft.Json;
 
 namespace AQI
 {
@@ -18,6 +21,8 @@ namespace AQI
 
         #region 常用字符串
 
+        private const string HEADER = "Header";
+        private const string BODY = "Body";
         public const string PARAMS = "Params";
         private const string PARAM = "Param";
         private const string PERMUTATION = "Permutation";
@@ -25,17 +30,22 @@ namespace AQI
         private const string GROUP = "Group";
         private const string NAME = "Name";
         private const string ENEABLED = "Enabled";
-        
+        private const string TEMPLATE = "Template";
         private const string REGEX_LOWWORLD = "^[a-z].*$";
 
         //ParamCycle.OnceAgain使用
         public const string ONCE = "ONCE";
         public const string AGAIN = "AGAIN";
+        //Body使用
+        public const string BODY_TYPE = "Type";
+        public const string BODY_CONTENT = "Content";
+
         #endregion
 
         #region 字段
 
         private string pName;
+        private bool pTemplate;
         private string pRefer;
         private string pGroup;
         /// <summary>
@@ -43,6 +53,8 @@ namespace AQI
         /// </summary>
         private bool bPermutation;
         private bool pUnique;
+        private Dictionary<string, string> pHeader;
+        private byte[] pBody; 
 
         #endregion
 
@@ -56,6 +68,21 @@ namespace AQI
             get
             {
                 return pName;
+            }
+        }
+
+        /// <summary>
+        /// 模板
+        /// </summary>
+        public bool IsTemplate
+        {
+            get
+            {
+                return pTemplate;
+            }
+            set
+            {
+                pTemplate = value;
             }
         }
 
@@ -104,11 +131,62 @@ namespace AQI
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary<string,string> Header
+        {
+            get
+            {
+                return pHeader;
+            }
+            set
+            {
+                pHeader = value;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] Body
+        {
+            get
+            {
+                return pBody;
+            }
+            set
+            {
+                pBody = value;
+            }
+        }
+
+
         #endregion
 
         public AqiParam(string name) 
         {
             pName = name;
+        }
+
+        public AqiParam(string name, AqiParam aqiParam)
+        {
+            pName = name;
+            if (aqiParam != null)
+            {
+                pRefer = aqiParam.pRefer;
+                pGroup = aqiParam.pGroup;
+                pRefer = aqiParam.pRefer;
+                bPermutation = aqiParam.bPermutation;
+                pUnique = aqiParam.pUnique;
+                pHeader = aqiParam.pHeader;
+                pBody = aqiParam.pBody;
+
+                foreach (var kv in aqiParam)
+                {
+                    base.Add(kv.Key, kv.Value);
+                }
+            }
         }
 
         public AqiParam(AqiParam aqiParam, Dictionary<string,string> map)
@@ -185,11 +263,21 @@ namespace AQI
                 {
                     //读取集合(任意个参数)
                     JEnumerable<JToken> je = jt.Children();
+                    AqiParam baseAP = null;
                     foreach (JToken j in je)
                     {
-                        AqiParam ap = createParamFormJsonObject(j as JObject);
-                        if (ap != null)
-                            listParam.Add(ap);
+                        AqiParam ap = createParamFormJsonObject(j as JObject, baseAP);
+                        if (ap != null) 
+                        {
+                            if (ap.IsTemplate)
+                            {
+                                baseAP = ap;
+                            }
+                            else
+                            {
+                                listParam.Add(ap); 
+                            }
+                        }
                     }
                 }
                 else if (jt is JObject)
@@ -213,8 +301,9 @@ namespace AQI
         ///     自动识别Enabled、Name、Param、Refer、Group、各种小写
         /// </summary>
         /// <param name="jObject">JSONObject对象</param>
+        /// <param name="baseAqiParam">模板AqiParam</param>
         /// <returns></returns>
-        private static AqiParam createParamFormJsonObject(JObject jObject)
+        private static AqiParam createParamFormJsonObject(JObject jObject, AqiParam baseAqiParam = null)
         {
             //检查4个属性
             //1开启
@@ -227,15 +316,27 @@ namespace AQI
             {
                 return null;
             }
+            AqiParam ap = null;
             //2名称
-            jt = jObject.GetValue(NAME);
-            if(jt == null)
+            jt = jObject.GetValue(TEMPLATE);
+            if (jt != null && jt.ToObject<bool>() == true)
             {
-                return null;
+                //模板
+                ap = new AqiParam(TEMPLATE);
+                ap.IsTemplate = true;
             }
-            //缓存名称
-            string name = jt.ToString();
-            AqiParam ap = new AqiParam(name);
+            else
+            {
+                jt = jObject.GetValue(NAME);
+                if (jt == null)
+                {
+                    return null;
+                }
+                //缓存名称
+                string name = jt.ToString();
+                ap = new AqiParam(name, baseAqiParam);
+            }
+
             //3参数
             jt = jObject.GetValue(PARAM);
             if (jt == null)
@@ -246,6 +347,7 @@ namespace AQI
                 {
                     if (Regex.IsMatch(kv.Key, REGEX_LOWWORLD))
                     {
+                        //TODO 是否使用ap[]= 代替可以忽略相同键错误
                         ap.Add(kv.Key, kv.Value.ToString());
                     }
                 }
@@ -288,6 +390,59 @@ namespace AQI
             if (jt != null)
             {
                 ap.pGroup = jt.ToString();
+            }
+
+            //7Header
+            jt = jObject.GetValue(HEADER);
+            if (jt != null)
+            {
+                ap.pHeader = JsonConvert.DeserializeObject<Dictionary<string, string>>(jt.ToString());
+            }
+
+            //8Body
+            jt = jObject.GetValue(BODY);
+            if (jt != null)
+            {
+                AqiConstant.BodyFormatType bft = AqiConstant.BodyFormatType.NONE;
+                string content = null;
+                JToken jtsub = jt.SelectToken(BODY_TYPE);
+                if (jtsub != null)
+                {
+                    if(Enum.TryParse(jtsub.ToString(), out bft))
+                    {
+                        jtsub = jt.SelectToken(BODY_CONTENT);
+                        if (jtsub != null)
+                        {
+                            content = jtsub.ToString();
+                        }
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("参数Body.Type=" + jtsub.ToString() + "是不被支持的！");
+                    }
+                }
+
+                if (!String.IsNullOrEmpty(content))
+                {
+                    switch (bft)
+                    {
+                        case AqiConstant.BodyFormatType.Hex:
+                            ap.pBody = Enumerable.Range(0, content.Length)
+                                .Where(x => x % 2 == 0)
+                                .Select(x => Convert.ToByte(content.Substring(x, 2), 16))
+                                .ToArray();
+                            break;
+                        case AqiConstant.BodyFormatType.Base64:
+                            ap.pBody = Convert.FromBase64String(content);
+                            break;
+                        case AqiConstant.BodyFormatType.Text:
+                            ap.pBody = Encoding.UTF8.GetBytes(content);
+                            break;
+                        case AqiConstant.BodyFormatType.NONE:
+                        default:
+                            break;
+                    }
+                }
             }
 
             //if(ap.Count == 0){

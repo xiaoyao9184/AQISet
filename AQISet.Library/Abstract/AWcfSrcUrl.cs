@@ -51,6 +51,7 @@ namespace AQI.Abstract
         protected AWcfSrcUrl()
         {
             _mh = new WCFMessageHelper();
+            pbt = AqiConstant.ParamBodyType.NONE;
         }
 
         #region 方法
@@ -93,6 +94,7 @@ namespace AQI.Abstract
         /// <returns></returns>
         public override byte[] MakeRequestBody(AqiParam param)
         {
+            //TODO 创建MakeWCFMsg接口
             string wcfmessage = MakeWCFMsg(param);
 
             byte[] requestBody = _mh.GetWcfBinaryMessageAsBinary(wcfmessage);
@@ -111,7 +113,7 @@ namespace AQI.Abstract
         /// <remarks>
         /// 提取Bin形式的WCFMessge为XML形式的WCFMessage，根据属性ExtractWCFContent、WCFContentFormat提取WCFContent
         /// </remarks>
-        /// <param name="requestbody"></param>
+        /// <param name="responsebody"></param>
         /// <returns></returns>
         public virtual byte[] ExtractData(byte[] responsebody)
         {

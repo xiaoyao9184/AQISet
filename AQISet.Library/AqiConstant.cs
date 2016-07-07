@@ -110,18 +110,33 @@ namespace AQI
         /// </summary>
         public enum ParamBodyType
         {
+            NONE,
             HTTP_FORM,
-            TEXT,
-            BIN_BASE64
+            TEXT
         }
 
         #endregion
 
         #region AParamSrcUrl常量
 
-        public const string PARAM_HEADER = "header";
+        //public const string PARAM_HEADER = "header";
 
-        public const string PARAM_BODY = "body";
+        //public const string PARAM_BODY = "body";
+
+        #endregion
+
+        #region AqiParam枚举
+
+        /// <summary>
+        /// AqiParam Body属性的格式
+        /// </summary>
+        public enum BodyFormatType
+        {
+            NONE,      //不存在
+            Hex,       //16进制文本
+            Base64,    //Base64文本
+            Text       //纯文本
+        }
 
         #endregion
 
