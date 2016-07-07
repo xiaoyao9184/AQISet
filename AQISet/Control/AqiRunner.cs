@@ -447,7 +447,7 @@ namespace AQISet.Control
             }
             catch (Exception ex)
             {
-                AqiManage.Remind.Log_Error("获取参数错误，错误严重无法继续", this.name, sugt.Name, isu.Name);
+                AqiManage.Remind.Log_Error("获取参数错误，错误严重无法继续", ex, this.name, sugt.Name, isu.Name);
                 return;
             }
             
@@ -483,10 +483,10 @@ namespace AQISet.Control
                 {
                     data = isup.GetData(ap);
                 }
-                catch (Exception exception)
+                catch (Exception ex)
                 {
-                    AqiManage.Remind.Log_Error("数据获取失败，进入重试队列", new string[] { this.name, sugt.Name, isu.Name });
-                    this.ar.PutNew(this.name, isu, ap, exception);
+                    AqiManage.Remind.Log_Error("数据获取失败，进入重试队列", ex, new string[] { this.name, sugt.Name, isu.Name });
+                    this.ar.PutNew(this.name, isu, ap, ex);
                 }
 
                 this.SaveProcess(data, isu, ap);
