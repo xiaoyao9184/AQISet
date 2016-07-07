@@ -56,6 +56,66 @@ namespace ZJ.Abstract
 
         #endregion
 
+        #region ICacheParam接口
+
+        /// <summary>
+        /// 检查过期
+        ///     可以重写
+        /// </summary>
+        /// <remarks>
+        /// 判断是否需要重新设置Cookie
+        /// </remarks>
+        /// <returns>true过期；false未过期</returns>
+        public override bool IsParamsExpired()
+        {
+            if (ParamCache == null || ParamCache.Count == 0)
+            {
+                return true;
+            }
+            IParseSrcUrlParam ipp = this as IParseSrcUrlParam;
+            AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl);
+
+            HttpData data = ((ICacheData)ipp.ParamSrcUrl).Data;
+            if (data.Header.ContainsKey("Set-Cookie"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 加载参数
+        ///     可以重写
+        /// </summary>
+        /// <remarks>
+        /// 获取DSId与Cookie
+        /// </remarks>
+        /// <returns></returns>
+        public override bool LoadParams()
+        {
+            bool result = base.LoadParams();
+
+            if (result)
+            {
+                IParseSrcUrlParam ipp = this as IParseSrcUrlParam;
+                AqiParam dsidAqiParam = AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl)[0];
+                HttpData data = ((ICacheData)ipp.ParamSrcUrl).Data;
+
+                foreach (AqiParam param in ParamCache)
+                {
+                    param["DSId"] = dsidAqiParam["DSId"];
+                    if (data.Header.ContainsKey("Set-Cookie"))
+                    {
+                        param.Header["Cookie"] = data.Header["Set-Cookie"];
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        #endregion
+
         #region IMakeParam接口
 
         /// <summary>
@@ -80,33 +140,7 @@ namespace ZJ.Abstract
             
             return requestbody;
         }
-
-        /// <summary>
-        /// 拼接请求头
-        ///     .可以重写
-        /// </summary>
-        /// <remarks>
-        /// DSId必须要与Cookie对应，需要通过 _5 动态获取，Cookie加入返回，DSId加入参数
-        /// </remarks>
-        /// <param name="param"></param>
-        /// <returns></returns>
-        public override Dictionary<string, string> MakeRequestHeader(AqiParam param)
-        {
-            Dictionary<string, string> header = base.MakeRequestHeader(param);
-
-            IParseSrcUrlParam ipp = this as IParseSrcUrlParam;
-            AqiParam dsidAqiParam = AqiParam.CreateListFormSrcUrl(ipp, ipp.ParamSrcUrl)[0];
-            param["DSId"] = dsidAqiParam["DSId"];
-
-            HttpData data = ((ICacheData)ipp.ParamSrcUrl).Data;
-            if (data.Header.ContainsKey("Set-Cookie"))
-            {
-                header["Cookie"] = data.Header["Set-Cookie"];
-            }
-
-            return header;
-        }
-
+        
         #endregion
         
         #region IParseSrcUrlParam

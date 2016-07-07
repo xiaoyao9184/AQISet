@@ -39,6 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ZJSrcUrl.cs" />
+    <Compile Include="messagebroker\getCityForecastAQI.cs" />
+    <Compile Include="messagebroker\getDailyDataForAllSites.cs" />
     <Compile Include="messagebroker\getHourlyDataForAllSites.cs" />
     <Compile Include="messagebroker\getOneAndTwoLevelDivision.cs" />
     <Compile Include="messagebroker\getAreaDayReprotData.cs" />
