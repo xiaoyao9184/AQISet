@@ -63,9 +63,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="API.md" />
     <None Include="JSON\hn.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="PUBServicForGisLiving.asmx.wsdl" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup />

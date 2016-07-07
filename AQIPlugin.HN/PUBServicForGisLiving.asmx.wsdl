@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:8020/service/PUBServicForGisLiving.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://localhost:8020/service/PUBServicForGisLiving.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:8020/service/PUBServicForGisLiving.asmx">
+      <s:element name="GetAirExceptionPoint">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirExceptionPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirExceptionPointResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPointItemInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PointItemInfo" type="tns:PointItemInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PointItemInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemQualityLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemAQI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemCharCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemEtime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="outStgFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STGValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="O3Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="O3AQIValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM10Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM10AQIValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM101AQIValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM25Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM25AQIValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM251AQIValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Several" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimePeriod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YesterdayAVGVal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTimeValue" type="tns:ArrayOfDataTimeValue" />
+          <s:element minOccurs="0" maxOccurs="1" name="PTrafic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EIntensity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MIntensity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Power" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDataTimeValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataTimeValue" type="tns:DataTimeValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DataTimeValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAirPointByExceptionValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirPointByExceptionValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirPointByExceptionValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirPointByOutValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirPointByOutValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirPointByOutValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirPointValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirAllPointValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointHourValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSTName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointHourValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPointHourValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoiseAllPointValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNoiseAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNoiseAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPollutionAllPointValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPollutionAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPollutionAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatitudeAndLongitude">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatitudeAndLongitudeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLatitudeAndLongitudeResult" type="tns:ArrayOfPointInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPointInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PointInfo" type="tns:PointInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PointInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AutoId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PointType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RiverBasinName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RiverCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RiverName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fun" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attribute" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operators" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManagedStation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PicPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VideoPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeaWaterCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeaWaterName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetIPPower">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIPPowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIPPowerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRadiationAllPointValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRadiationAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRadiationAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeaWaterAllPointValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSeaWaterAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeaWaterAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterExceptionPoint">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWaterExceptionPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterExceptionPointResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterPointByExceptionValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWaterPointByExceptionValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterPointByExceptionValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterPointByOutValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWaterPointByOutValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterPointByOutValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterPointValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterAllPointValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWaterAllPointValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterAllPointValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterHourValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSTName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRSName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaterHourValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaterHourValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOrMonthAvgValueLiving">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strtype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOrMonthAvgValueLivingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayOrMonthAvgValueLivingResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOrMonthAvgValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strtype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RSCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeginDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOrMonthAvgValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayOrMonthAvgValueResult" type="tns:ArrayOfPointItemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfPointItemInfo" nillable="true" type="tns:ArrayOfPointItemInfo" />
+      <s:element name="ArrayOfPointInfo" nillable="true" type="tns:ArrayOfPointInfo" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAirExceptionPointSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirExceptionPoint" />
+  </wsdl:message>
+  <wsdl:message name="GetAirExceptionPointSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirExceptionPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByExceptionValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirPointByExceptionValue" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByExceptionValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirPointByExceptionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByOutValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirPointByOutValue" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByOutValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirPointByOutValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetAirAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPointHourValue" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPointHourValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNoiseAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNoiseAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetNoiseAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNoiseAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPollutionAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPollutionAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatitudeAndLongitude" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatitudeAndLongitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIPPower" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIPPowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRadiationAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRadiationAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetRadiationAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRadiationAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSeaWaterAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeaWaterAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetSeaWaterAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeaWaterAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterExceptionPointSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterExceptionPoint" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterExceptionPointSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterExceptionPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByExceptionValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterPointByExceptionValue" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByExceptionValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterPointByExceptionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByOutValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterPointByOutValue" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByOutValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterPointByOutValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterAllPointValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterAllPointValue" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterAllPointValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterAllPointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaterHourValue" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaterHourValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayOrMonthAvgValueLiving" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayOrMonthAvgValueLivingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayOrMonthAvgValue" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayOrMonthAvgValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirExceptionPointHttpGetIn" />
+  <wsdl:message name="GetAirExceptionPointHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByExceptionValueHttpGetIn" />
+  <wsdl:message name="GetAirPointByExceptionValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByOutValueHttpGetIn" />
+  <wsdl:message name="GetAirPointByOutValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueHttpGetIn">
+    <wsdl:part name="StCode" type="s:string" />
+    <wsdl:part name="Pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirAllPointValueHttpGetIn" />
+  <wsdl:message name="GetAirAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueHttpGetIn">
+    <wsdl:part name="strSTName" type="s:string" />
+    <wsdl:part name="strPName" type="s:string" />
+    <wsdl:part name="iDay" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNoiseAllPointValueHttpGetIn" />
+  <wsdl:message name="GetNoiseAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueHttpGetIn">
+    <wsdl:part name="strType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeHttpGetIn">
+    <wsdl:part name="modType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerHttpGetIn">
+    <wsdl:part name="strIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRadiationAllPointValueHttpGetIn" />
+  <wsdl:message name="GetRadiationAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSeaWaterAllPointValueHttpGetIn" />
+  <wsdl:message name="GetSeaWaterAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterExceptionPointHttpGetIn" />
+  <wsdl:message name="GetWaterExceptionPointHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByExceptionValueHttpGetIn" />
+  <wsdl:message name="GetWaterPointByExceptionValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByOutValueHttpGetIn" />
+  <wsdl:message name="GetWaterPointByOutValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterAllPointValueHttpGetIn" />
+  <wsdl:message name="GetWaterAllPointValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueHttpGetIn">
+    <wsdl:part name="strSTName" type="s:string" />
+    <wsdl:part name="strRName" type="s:string" />
+    <wsdl:part name="strRSName" type="s:string" />
+    <wsdl:part name="iDay" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingHttpGetIn">
+    <wsdl:part name="strtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueHttpGetIn">
+    <wsdl:part name="strtype" type="s:string" />
+    <wsdl:part name="STCode" type="s:string" />
+    <wsdl:part name="RCode" type="s:string" />
+    <wsdl:part name="RSCode" type="s:string" />
+    <wsdl:part name="ItemCode" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirExceptionPointHttpPostIn" />
+  <wsdl:message name="GetAirExceptionPointHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByExceptionValueHttpPostIn" />
+  <wsdl:message name="GetAirPointByExceptionValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointByOutValueHttpPostIn" />
+  <wsdl:message name="GetAirPointByOutValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueHttpPostIn">
+    <wsdl:part name="StCode" type="s:string" />
+    <wsdl:part name="Pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAirAllPointValueHttpPostIn" />
+  <wsdl:message name="GetAirAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueHttpPostIn">
+    <wsdl:part name="strSTName" type="s:string" />
+    <wsdl:part name="strPName" type="s:string" />
+    <wsdl:part name="iDay" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPointHourValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNoiseAllPointValueHttpPostIn" />
+  <wsdl:message name="GetNoiseAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueHttpPostIn">
+    <wsdl:part name="strType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPollutionAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeHttpPostIn">
+    <wsdl:part name="modType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeAndLongitudeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerHttpPostIn">
+    <wsdl:part name="strIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPPowerHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRadiationAllPointValueHttpPostIn" />
+  <wsdl:message name="GetRadiationAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSeaWaterAllPointValueHttpPostIn" />
+  <wsdl:message name="GetSeaWaterAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterExceptionPointHttpPostIn" />
+  <wsdl:message name="GetWaterExceptionPointHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByExceptionValueHttpPostIn" />
+  <wsdl:message name="GetWaterPointByExceptionValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointByOutValueHttpPostIn" />
+  <wsdl:message name="GetWaterPointByOutValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterAllPointValueHttpPostIn" />
+  <wsdl:message name="GetWaterAllPointValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueHttpPostIn">
+    <wsdl:part name="strSTName" type="s:string" />
+    <wsdl:part name="strRName" type="s:string" />
+    <wsdl:part name="strRSName" type="s:string" />
+    <wsdl:part name="iDay" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWaterHourValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingHttpPostIn">
+    <wsdl:part name="strtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueLivingHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueHttpPostIn">
+    <wsdl:part name="strtype" type="s:string" />
+    <wsdl:part name="STCode" type="s:string" />
+    <wsdl:part name="RCode" type="s:string" />
+    <wsdl:part name="RSCode" type="s:string" />
+    <wsdl:part name="ItemCode" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOrMonthAvgValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPointItemInfo" />
+  </wsdl:message>
+  <wsdl:portType name="PUBServicForGisLivingSoap">
+    <wsdl:operation name="GetAirExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirExceptionPointSoapIn" />
+      <wsdl:output message="tns:GetAirExceptionPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByExceptionValueSoapIn" />
+      <wsdl:output message="tns:GetAirPointByExceptionValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByOutValueSoapIn" />
+      <wsdl:output message="tns:GetAirPointByOutValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointValueSoapIn" />
+      <wsdl:output message="tns:GetAirPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetAirAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetPointHourValueSoapIn" />
+      <wsdl:output message="tns:GetPointHourValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取噪声所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetNoiseAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetNoiseAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取污染源所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetPollutionAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetPollutionAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气、水质的经纬度</wsdl:documentation>
+      <wsdl:input message="tns:GetLatitudeAndLongitudeSoapIn" />
+      <wsdl:output message="tns:GetLatitudeAndLongitudeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 获取IP地址是否有权限  NO没权限（石家庄）</wsdl:documentation>
+      <wsdl:input message="tns:GetIPPowerSoapIn" />
+      <wsdl:output message="tns:GetIPPowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取电磁辐射所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetRadiationAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetRadiationAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取海水水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetSeaWaterAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetSeaWaterAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterExceptionPointSoapIn" />
+      <wsdl:output message="tns:GetWaterExceptionPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByExceptionValueSoapIn" />
+      <wsdl:output message="tns:GetWaterPointByExceptionValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByOutValueSoapIn" />
+      <wsdl:output message="tns:GetWaterPointByOutValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointValueSoapIn" />
+      <wsdl:output message="tns:GetWaterPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterAllPointValueSoapIn" />
+      <wsdl:output message="tns:GetWaterAllPointValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterHourValueSoapIn" />
+      <wsdl:output message="tns:GetWaterHourValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[实时表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueLivingSoapIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueLivingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[正式表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueSoapIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PUBServicForGisLivingHttpGet">
+    <wsdl:operation name="GetAirExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirExceptionPointHttpGetIn" />
+      <wsdl:output message="tns:GetAirExceptionPointHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByExceptionValueHttpGetIn" />
+      <wsdl:output message="tns:GetAirPointByExceptionValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByOutValueHttpGetIn" />
+      <wsdl:output message="tns:GetAirPointByOutValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetAirPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetAirAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetPointHourValueHttpGetIn" />
+      <wsdl:output message="tns:GetPointHourValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取噪声所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetNoiseAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetNoiseAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取污染源所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetPollutionAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetPollutionAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气、水质的经纬度</wsdl:documentation>
+      <wsdl:input message="tns:GetLatitudeAndLongitudeHttpGetIn" />
+      <wsdl:output message="tns:GetLatitudeAndLongitudeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 获取IP地址是否有权限  NO没权限（石家庄）</wsdl:documentation>
+      <wsdl:input message="tns:GetIPPowerHttpGetIn" />
+      <wsdl:output message="tns:GetIPPowerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取电磁辐射所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetRadiationAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetRadiationAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取海水水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetSeaWaterAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetSeaWaterAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterExceptionPointHttpGetIn" />
+      <wsdl:output message="tns:GetWaterExceptionPointHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByExceptionValueHttpGetIn" />
+      <wsdl:output message="tns:GetWaterPointByExceptionValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByOutValueHttpGetIn" />
+      <wsdl:output message="tns:GetWaterPointByOutValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetWaterPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterAllPointValueHttpGetIn" />
+      <wsdl:output message="tns:GetWaterAllPointValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterHourValueHttpGetIn" />
+      <wsdl:output message="tns:GetWaterHourValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[实时表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueLivingHttpGetIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueLivingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[正式表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueHttpGetIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PUBServicForGisLivingHttpPost">
+    <wsdl:operation name="GetAirExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirExceptionPointHttpPostIn" />
+      <wsdl:output message="tns:GetAirExceptionPointHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByExceptionValueHttpPostIn" />
+      <wsdl:output message="tns:GetAirPointByExceptionValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointByOutValueHttpPostIn" />
+      <wsdl:output message="tns:GetAirPointByOutValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetAirPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetAirAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetAirAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetPointHourValueHttpPostIn" />
+      <wsdl:output message="tns:GetPointHourValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取噪声所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetNoiseAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetNoiseAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取污染源所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetPollutionAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetPollutionAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大气、水质的经纬度</wsdl:documentation>
+      <wsdl:input message="tns:GetLatitudeAndLongitudeHttpPostIn" />
+      <wsdl:output message="tns:GetLatitudeAndLongitudeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 获取IP地址是否有权限  NO没权限（石家庄）</wsdl:documentation>
+      <wsdl:input message="tns:GetIPPowerHttpPostIn" />
+      <wsdl:output message="tns:GetIPPowerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取电磁辐射所有点最新监测值</wsdl:documentation>
+      <wsdl:input message="tns:GetRadiationAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetRadiationAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取海水水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetSeaWaterAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetSeaWaterAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterExceptionPointHttpPostIn" />
+      <wsdl:output message="tns:GetWaterExceptionPointHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取河流异常点位(数据没有传输完成)</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByExceptionValueHttpPostIn" />
+      <wsdl:output message="tns:GetWaterPointByExceptionValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动超标点位</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointByOutValueHttpPostIn" />
+      <wsdl:output message="tns:GetWaterPointByOutValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水自动最新检测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetWaterPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质所有点最新监测值及超标项</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterAllPointValueHttpPostIn" />
+      <wsdl:output message="tns:GetWaterAllPointValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取水质当前时间往前几天的小时值</wsdl:documentation>
+      <wsdl:input message="tns:GetWaterHourValueHttpPostIn" />
+      <wsdl:output message="tns:GetWaterHourValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[实时表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueLivingHttpPostIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueLivingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得水质月均值,日均值,周均值(month,day,week)[正式表]</wsdl:documentation>
+      <wsdl:input message="tns:GetDayOrMonthAvgValueHttpPostIn" />
+      <wsdl:output message="tns:GetDayOrMonthAvgValueHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PUBServicForGisLivingSoap" type="tns:PUBServicForGisLivingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAirExceptionPoint">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirExceptionPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointByExceptionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointByOutValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetPointHourValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetNoiseAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetPollutionAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetLatitudeAndLongitude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetIPPower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetRadiationAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetSeaWaterAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterExceptionPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointByExceptionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointByOutValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterAllPointValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterHourValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetDayOrMonthAvgValueLiving" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <soap:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetDayOrMonthAvgValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PUBServicForGisLivingSoap12" type="tns:PUBServicForGisLivingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAirExceptionPoint">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirExceptionPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointByExceptionValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointByOutValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetAirAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetPointHourValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetNoiseAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetPollutionAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetLatitudeAndLongitude" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetIPPower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetRadiationAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetSeaWaterAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterExceptionPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointByExceptionValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointByOutValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterAllPointValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetWaterHourValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetDayOrMonthAvgValueLiving" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <soap12:operation soapAction="http://localhost:8020/service/PUBServicForGisLiving.asmx/GetDayOrMonthAvgValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PUBServicForGisLivingHttpGet" type="tns:PUBServicForGisLivingHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAirExceptionPoint">
+      <http:operation location="/GetAirExceptionPoint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <http:operation location="/GetAirPointByExceptionValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <http:operation location="/GetAirPointByOutValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <http:operation location="/GetAirPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <http:operation location="/GetAirAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <http:operation location="/GetPointHourValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <http:operation location="/GetNoiseAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <http:operation location="/GetPollutionAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <http:operation location="/GetLatitudeAndLongitude" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <http:operation location="/GetIPPower" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <http:operation location="/GetRadiationAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <http:operation location="/GetSeaWaterAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <http:operation location="/GetWaterExceptionPoint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <http:operation location="/GetWaterPointByExceptionValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <http:operation location="/GetWaterPointByOutValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <http:operation location="/GetWaterPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <http:operation location="/GetWaterAllPointValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <http:operation location="/GetWaterHourValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <http:operation location="/GetDayOrMonthAvgValueLiving" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <http:operation location="/GetDayOrMonthAvgValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PUBServicForGisLivingHttpPost" type="tns:PUBServicForGisLivingHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAirExceptionPoint">
+      <http:operation location="/GetAirExceptionPoint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByExceptionValue">
+      <http:operation location="/GetAirPointByExceptionValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointByOutValue">
+      <http:operation location="/GetAirPointByOutValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPointValue">
+      <http:operation location="/GetAirPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirAllPointValue">
+      <http:operation location="/GetAirAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointHourValue">
+      <http:operation location="/GetPointHourValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoiseAllPointValue">
+      <http:operation location="/GetNoiseAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPollutionAllPointValue">
+      <http:operation location="/GetPollutionAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeAndLongitude">
+      <http:operation location="/GetLatitudeAndLongitude" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPPower">
+      <http:operation location="/GetIPPower" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiationAllPointValue">
+      <http:operation location="/GetRadiationAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeaWaterAllPointValue">
+      <http:operation location="/GetSeaWaterAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterExceptionPoint">
+      <http:operation location="/GetWaterExceptionPoint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByExceptionValue">
+      <http:operation location="/GetWaterPointByExceptionValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointByOutValue">
+      <http:operation location="/GetWaterPointByOutValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterPointValue">
+      <http:operation location="/GetWaterPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterAllPointValue">
+      <http:operation location="/GetWaterAllPointValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterHourValue">
+      <http:operation location="/GetWaterHourValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValueLiving">
+      <http:operation location="/GetDayOrMonthAvgValueLiving" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOrMonthAvgValue">
+      <http:operation location="/GetDayOrMonthAvgValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PUBServicForGisLiving">
+    <wsdl:port name="PUBServicForGisLivingSoap" binding="tns:PUBServicForGisLivingSoap">
+      <soap:address location="http://222.247.51.155/GISManage/services/PUBServicForGisLiving.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PUBServicForGisLivingSoap12" binding="tns:PUBServicForGisLivingSoap12">
+      <soap12:address location="http://222.247.51.155/GISManage/services/PUBServicForGisLiving.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PUBServicForGisLivingHttpGet" binding="tns:PUBServicForGisLivingHttpGet">
+      <http:address location="http://222.247.51.155/GISManage/services/PUBServicForGisLiving.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PUBServicForGisLivingHttpPost" binding="tns:PUBServicForGisLivingHttpPost">
+      <http:address location="http://222.247.51.155/GISManage/services/PUBServicForGisLiving.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
