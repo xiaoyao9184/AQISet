@@ -1,33 +1,19 @@
 FORMAT: 1A
-HOST: http://typhoon.zjwater.gov.cn/Api/
+HOST: http://211.137.19.74:8089/
 
 
 
 
-# 浙江台风路径实时发布系统
+# 辽宁省空气质量实时发布系统(beta)
 
-文档日期 2016-07-05
-系统地址 http://typhoon.zjwater.gov.cn/。
-
-
+文档日期 2016-07-06
+系统地址 http://211.137.19.74:8089/。
 
 
-# LeastCloud [GET /LeastCloud]
-云图
 
 
-+ Attributes (object)
-
-    + cloud1h: 201607041930.png (string) - 1小时前图片
-    + cloud3h: 201607041700.png (string) - 3小时前图片
-    + cloud6h: 201607041400.png (string) - 6小时前图片
-    + cloudFullPath: http://taifeng.oss-cn-hangzhou.aliyuncs.com/cloud (string) - 图片服务地址
-    + cloudname: 201607042000.png (string) - 30分钟图片
-    + cloudtime: 2016/7/4 20:00:00 (string) - 时间
-    + maxLat: 50 (number) - 最大经度
-    + maxLng: 140 (number) - 最大纬度
-    + minLat: 4 (number) - 最小经度
-    + minLng: 80 (number) - 最小纬度
+# GetCityDetailList [GET /Ajax/GetCityDetailList]
+城市1小时AQI&浓度
 
 + Request JSON格式
 
@@ -37,249 +23,231 @@ HOST: http://typhoon.zjwater.gov.cn/Api/
 
 + Response 200 (application/json)
 
-    + Attributes (array[LeastCloud])
+    + Body
+            [
+              {
+                "IsUse":true,
+                "AQIColor":"#00E400",
+                "AQIDescription":"空气质量令人满意，基本无污染。",
+                "PrimaryPollutantInfoList":null,
+                "Id":0,
+                "CityName":"沈阳",
+                "TimePoint":"\/Date(1467806400000)\/",
+                "AQI":48,
+                "PM25":24,
+                "PM10":48,
+                "SO2":6,
+                "NO2":22,
+                "CO":0.6,
+                "O3":122,
+                "O38":147,
+                "PrimaryPollutantName":"-",
+                "Value":48,
+                "PM2524":29,
+                "PM1024":58,
+                "Level":"一级",
+                "Status":"优",
+                "IAQI_PM2524":35,
+                "IAQI_PM1024":48,
+                "IAQI_SO2":2,
+                "IAQI_NO2":11,
+                "IAQI_CO":6,
+                "IAQI_O3":39,
+                "IAQI_O38":90,
+                "SO2_24":0,
+                "NO2_24":0,
+                "CO_24":0,
+                "O3_24":0,
+                "O38_24":0
+              }
+            ]
+
+
+# GetCityDetailByCityName [GET Home/GetCityDetailByCityName{?cityName}]
+城市1小时AQI&浓度
+
++ Parameters
+
+    + cityName: 沈阳 (string, required) - 城市名称
+
++ Request JSON格式
+
+    + Headers
+
+            Accept: application/javascript
+
++ Response 200 (application/json)
+
+    + Body
+            {
+              "IsUse":true,
+              "AQIColor":"#00E400",
+              "AQIDescription":"空气质量令人满意，基本无污染。",
+              "PrimaryPollutantInfoList":null,
+              "Id":0,
+              "CityName":"沈阳",
+              "TimePoint":"\/Date(1467806400000)\/",
+              "AQI":48,
+              "PM25":24,
+              "PM10":48,
+              "SO2":6,
+              "NO2":22,
+              "CO":0.6,
+              "O3":122,
+              "O38":147,
+              "PrimaryPollutantName":"-",
+              "Value":48,
+              "PM2524":29,
+              "PM1024":58,
+              "Level":"一级",
+              "Status":"优",
+              "IAQI_PM2524":0,
+              "IAQI_PM1024":0,
+              "IAQI_SO2":0,
+              "IAQI_NO2":0,
+              "IAQI_CO":0,
+              "IAQI_O3":0,
+              "IAQI_O38":0,
+              "SO2_24":0,
+              "NO2_24":0,
+              "CO_24":0,
+              "O3_24":0,
+              "O38_24":0
+            }
+
+
+# GetStationDetailList [GET /Ajax/GetStationDetailList{?cityName}]
+城市站点1小时AQI&浓度
+
++ Parameters
+
+    + cityName: 沈阳 (string, required) - 城市名称
+
++ Request JSON格式
+
+    + Headers
+
+            Accept: application/javascript
+
++ Response 200 (application/json)
+
+    + Attributes (array[LeastRain])
 
     + Body
 
             [
               {
-                "cloud1h":"201607041930.png",
-                "cloud3h":"201607041700.png",
-                "cloud6h":"201607041400.png",
-                "cloudFullPath":"http://taifeng.oss-cn-hangzhou.aliyuncs.com/cloud",
-                "cloudname":"201607042000.png",
-                "cloudtime":"2016/7/4 20:00:00",
-                "maxLat":"50",
-                "maxLng":"140",
-                "minLat":"4",
-                "minLng":"80"
+                "AQIColor": "#FFFF00",
+                "PrimaryPollutantInfoList": [
+                  {
+                    "SpecialName": "PM<sub>10</sub>",
+                    "Unit": "μg/m³",
+                    "Value": 67
+                  }
+                ],
+                "Id": 0,
+                "StationName": "裕农路",
+                "StationCode": "1084A",
+                "CityName": null,
+                "TimePoint": "/Date(-62135596800000)/",
+                "AQI": 59,
+                "PM25": 32,
+                "PM10": 67,
+                "SO2": 9,
+                "NO2": 18,
+                "CO": 1,
+                "O3": 135,
+                "O38": 175,
+                "PrimaryPollutantName": "PM10:67",
+                "Value": 0,
+                "PM2524": 21,
+                "PM1024": 48,
+                "Level": null,
+                "Status": null,
+                "IAQI_PM2524": 46,
+                "IAQI_PM1024": 59,
+                "IAQI_SO2": 3,
+                "IAQI_NO2": 9,
+                "IAQI_CO": 10,
+                "IAQI_O3": 43,
+                "IAQI_O38": 114,
+                "SO2_24": 0,
+                "NO2_24": 0,
+                "CO_24": 0,
+                "O3_24": 0,
+                "O38_24": 0
               }
             ]
 
 
-+ Request XML格式
-
-    + Headers
-
-            Accept: application/xml
-
-+ Response 200 (text/html)
-
-    + Attributes (array[LeastCloud])
-
-    + Body
-
-            <ArrayOfCloudModel
-              xmlns="http://schemas.datacontract.org/2004/07/Typhoon"
-              xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-              <CloudModel>
-                <cloud1h>201607041930.png</cloud1h>
-                <cloud3h>201607041700.png</cloud3h>
-                <cloud6h>201607041400.png</cloud6h>
-                <cloudFullPath>http://taifeng.oss-cn-hangzhou.aliyuncs.com/cloud</cloudFullPath>
-                <cloudname>201607042000.png</cloudname>
-                <cloudtime>2016/7/4 20:00:00</cloudtime>
-                <maxLat>50</maxLat>
-                <maxLng>140</maxLng>
-                <minLat>4</minLat>
-                <minLng>80</minLng>
-              </CloudModel>
-            </ArrayOfCloudModel>
-
-
-
-
-# LeastRain [GET /LeastRain/{hour}]
-雨图
+# GetStationDailyDataListByCityName [GET /Home/GetStationDailyDataListByCityName{?cityName}]
+城市站点24小时AQI&浓度
 
 + Parameters
 
-    + hour: 6 (enum[number], required) - 小时
+    + cityName: 沈阳 (string, required) - 城市名称
+
++ Request JSON格式
+
+    + Headers
+
+            Accept: application/javascript
+
++ Response 200 (application/json)
+
+    + Attributes (array[TyhoonActivity])
+
+    + Body
+
+            [
+              {
+                "AQIColor": "#FF7E00",
+                "PrimaryPollutantInfo": "O<sub>3</sub>8小时",
+                "Id": 0,
+                "TimePoint": "/Date(1467648000000)/",
+                "CityName": "沈阳",
+                "AQI": 110,
+                "PrimaryPollutantName": "O<sub>3</sub>8小时",
+                "QualityStatus": "轻度污染",
+                "QualityLevel": "三级",
+                "StationName": "森林路",
+                "PM25": 0,
+                "PM10": 0,
+                "PM2524": 0,
+                "PM1024": 0,
+                "SO2": 0,
+                "NO2": 0,
+                "CO": 0,
+                "O3": 0,
+                "O38": 0,
+                "StationCode": null,
+                "IAQI_PM2524": 0,
+                "IAQI_PM1024": 0,
+                "IAQI_SO2": 0,
+                "IAQI_NO2": 0,
+                "IAQI_CO": 0,
+                "IAQI_O3": 0,
+                "IAQI_O38": 0
+              }
+            ]
+
+
+# GetCityPollutant [GET /Ajax/GetCityPollutant{?cityName,pollutantName}]
+城市24小时AQI&浓度
+
++ Parameters
+
+    + cityName: 沈阳 (string, required) - 城市名称
+    + pollutantName: AQI (enum[string], required) - 污染物名称
         + Members
-            + 6
-            + 12
-            + 24
-            + 48
-
-+ Attributes (object)
-
-    + name: 20160704180000_6.PNG (string) - 图片
-    + time: 2016-07-04 18:00:00 (string) - 时间
-
-+ Request JSON格式
-
-    + Headers
-
-            Accept: application/javascript
-
-+ Response 200 (application/json)
-
-    + Attributes (array[LeastRain])
-
-    + Body
-
-            [
-              {
-                "name":"20160704180000_6.PNG",
-                "time":"2016-07-04 18:00:00"
-              }
-            ]
-
-+ Request XML格式
-
-    + Headers
-
-            Accept: application/xml
-
-+ Response 200 (text/html)
-
-    + Attributes (array[LeastRain])
-
-    + Body
-
-            <ArrayOfRainImgModel
-              xmlns="http://schemas.datacontract.org/2004/07/Typhoon"
-              xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-              <RainImgModel>
-              <name>20160704180000_6.PNG</name>
-              <time>2016-07-04 18:00:00</time>
-              </RainImgModel>
-            </ArrayOfRainImgModel>
-
-
-
-# TyhoonActivity [GET /TyhoonActivity]
-当前台风列表
-
-+ Attributes (object)
-
-    + enname: Nepartak (string) - 英文名称
-    + lat: 12.80 (number) - 经度
-    + lng: 141.30 (number) - 纬度
-    + movedirection: 北西 (string) - 移动方向
-    + movespeed: 30 (number) - 移动速度
-    + name: 尼伯特 (string) - 名称
-    + power: 8 (number) - 级别
-    + pressure: 995 (number) - ？
-    + radius10: 0 (number) - ？
-    + radius7: 300 (number) - ？
-    + speed: 20 (number) - 速度
-    + strong: 热带风暴 (string) - 强度
-    + tfid: 201601 (number) - 编号
-    + time: 2016-07-04 14:00:00 (string) - 时间
-    + timeformate: 7月4日14时 (string) - 中文时间
-
-+ Request JSON格式
-
-    + Headers
-
-            Accept: application/javascript
-
-+ Response 200 (application/json)
-
-    + Attributes (array[TyhoonActivity])
-
-    + Body
-
-            [
-              {
-                "enname":"Nepartak",
-                "lat":"12.80",
-                "lng":"141.30",
-                "movedirection":"北西",
-                "movespeed":"30",
-                "name":"尼伯特",
-                "power":"8",
-                "pressure":"995",
-                "radius10":"0",
-                "radius7":"300",
-                "speed":"20",
-                "strong":"热带风暴",
-                "tfid":"201601",
-                "time":"2016-07-04 14:00:00",
-                "timeformate":"7月4日14时"
-              }
-            ]
-
-+ Request XML格式
-
-    + Headers
-
-            Accept: application/xml
-
-+ Response 200 (text/html)
-
-    + Attributes (array[TyhoonActivity])
-
-    + Body
-
-            <ArrayOfTyphoonScrollModel
-              xmlns="http://schemas.datacontract.org/2004/07/Typhoon"
-              xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-              <TyphoonScrollModel>
-                <enname>Nepartak</enname>
-                <lat>13.50</lat>
-                <lng>139.50</lng>
-                <movedirection>北西</movedirection>
-                <movespeed>20</movespeed>
-                <name>尼伯特</name>
-                <power>9</power>
-                <pressure>990</pressure>
-                <radius10>0</radius10>
-                <radius7>300</radius7>
-                <speed>23</speed>
-                <strong>热带风暴</strong>
-                <tfid>201601</tfid>
-                <time>2016-07-04 20:00:00</time>
-                <timeformate>7月4日20时</timeformate>
-              </TyphoonScrollModel>
-            </ArrayOfTyphoonScrollModel>
-
-
-
-# TyphoonInfo [GET /TyphoonInfo/{yearmonth}]
-台风详情
-
-+ Parameters
-
-    + year: 201601 (number, required) - 年月份
-
-+ Attributes (object)
-
-    + centerlat: 15.800000 (number) - 中心经度
-    + centerlng: 143.150000 (number) - 中心纬度
-    + endtime: 2016/7/4 14:00:00 (string) - 结束时间
-    + enname: Nepartak (string) - 英文名称
-    + isactive: 1 (number) - 是否存活(1不存活)
-    + land (array) - ？
-    + name: 尼伯特 (string) - 名称
-    + points (object)
-          + forecast (array)
-              + (object)
-                + forecastpoints (array)
-                    + (object)
-                      + lat: 8.80 (number) - 经度
-                      + lng: 145.00 (number) - 纬度
-                      + power: 8 (number) - 强度
-                      + pressure: 1000 (number) - ？
-                      + speed: 18  (number) - 速度
-                      + strong: 热带风暴 (string) - 强度
-                      + time: 2016/7/3 8:00:00 (string) - 时间
-                + tm: 美国 (string) - 移动方向
-          + lat: 12.80 (number) - 经度
-          + lng: 141.30 (number) - 纬度
-          + movedirection: 北西 (string) - 移动方向
-          + movespeed: 30 (number) - 移动速度
-          + power: 8 (number) - 是否存活(1不存活)
-          + pressure: 995 (number) - ？
-          + radius10: 0 (number) - ？
-          + radius7: 300 (number) - ？
-          + speed: 20 (number) - 速度
-          + strong: 热带风暴 (string) - 强度
-          + time: 2016/7/4 14:00:00 (string) - 时间
-    + starttime: 2016/7/3 8:00:00 (string) - 开始时间
-    + tfid: 201601 (number) - 编号
-    + warnlevel: white (string) - ?级别
+            + AQI
+            + PM25
+            + PM10
+            + SO2
+            + NO2
+            + CO
+            + O3
+            + O38
 
 + Request JSON格式
 
@@ -292,133 +260,298 @@ HOST: http://typhoon.zjwater.gov.cn/Api/
     + Attributes (array[TyphoonInfo])
 
     + Body
-
-            [
-              {
-                "centerlat":"15.800000",
-                "centerlng":"143.150000",
-                "endtime":"2016/7/4 14:00:00",
-                "enname":"Nepartak",
-                "isactive":"1",
-                "land":[],
-                "name":"尼伯特",
-                "points":
-                [
+            {
+              "chart": {
+                "baseFont": "",
+                "caption": "",
+                "captionForHtml": "【沈阳: AQI 24小时变化】",
+                "subcaption": "",
+                "xaxisname": "",
+                "yaxisname": "AQI",
+                "numberprefix": "",
+                "showlabels": "1",
+                "showcolumnshadow": "1",
+                "animation": "1",
+                "showalternatehgridcolor": "1",
+                "alternatehgridcolor": "B9C6D7",
+                "divlinecolor": "005AB5",
+                "divlinealpha": "20",
+                "alternatehgridalpha": "10",
+                "canvasbordercolor": "cccccc",
+                "basefontcolor": "666666",
+                "linecolor": "005AB5",
+                "linealpha": "85",
+                "showvalues": "1",
+                "rotatevalues": "0",
+                "canvaspadding": "8",
+                "yAxisValuesStep": "",
+                "yAxisMinValue": "0",
+                "yAxisMaxValue": "150",
+                "baseFontSize": "12",
+                "bgColor": "ffffff",
+                "labelStep": "2",
+                "showBorder": "0",
+                "canvasBorderThickness": "0",
+                "defaultAnimation": "0",
+                "showZeroPlaneValue": "1",
+                "showZeroPlane": "1",
+                "valuePosition": "BELOW",
+                "labelPadding": "20",
+                "yAxisValuesPadding": "20",
+                "forceDecimals": "0",
+                "decimals": "0"
+              },
+              "data": [
                   {
-                    "forecast":
-                    [
-                      {
-                        "forecastpoints":
-                          [
-                            {
-                            "lat":"8.80",
-                            "lng":"145.00",
-                            "power":"8",
-                            "pressure":"1000",
-                            "speed":"18",
-                            "strong":"热带风暴",
-                            "time":"2016/7/3 8:00:00"
-                            }
-                          ],
-                        "tm":"美国"
-                      }
-                    ],
-                    "lat":"12.80",
-                    "lng":"141.30",
-                    "movedirection":"北西",
-                    "movespeed":"30",
-                    "power":"8",
-                    "pressure":"995",
-                    "radius10":"0",
-                    "radius7":"300",
-                    "speed":"20",
-                    "strong":"热带风暴",
-                    "time":"2016/7/4 14:00:00"
+                    "label": "21:00",
+                    "value": "65",
+                    "toolText": "07-05 21:00\r\n65"
+                  },
+                  {
+                    "label": "22:00",
+                    "value": "77",
+                    "toolText": "07-05 22:00\r\n77"
+                  },
+                  {
+                    "label": "23:00",
+                    "value": "69",
+                    "toolText": "07-05 23:00\r\n69"
+                  },
+                  {
+                    "label": "00:00",
+                    "value": "54",
+                    "toolText": "07-06 00:00\r\n54"
+                  },
+                  {
+                    "label": "01:00",
+                    "value": "46",
+                    "toolText": "07-06 01:00\r\n46"
+                  },
+                  {
+                    "label": "02:00",
+                    "value": "47",
+                    "toolText": "07-06 02:00\r\n47"
+                  },
+                  {
+                    "label": "03:00",
+                    "value": "50",
+                    "toolText": "07-06 03:00\r\n50"
+                  },
+                  {
+                    "label": "04:00",
+                    "value": "52",
+                    "toolText": "07-06 04:00\r\n52"
+                  },
+                  {
+                    "label": "05:00",
+                    "value": "52",
+                    "toolText": "07-06 05:00\r\n52"
+                  },
+                  {
+                    "label": "06:00",
+                    "value": "53",
+                    "toolText": "07-06 06:00\r\n53"
+                  },
+                  {
+                    "label": "07:00",
+                    "value": "52",
+                    "toolText": "07-06 07:00\r\n52"
+                  },
+                  {
+                    "label": "08:00",
+                    "value": "50",
+                    "toolText": "07-06 08:00\r\n50"
+                  },
+                  {
+                    "label": "09:00",
+                    "value": "48",
+                    "toolText": "07-06 09:00\r\n48"
+                  },
+                  {
+                    "label": "10:00",
+                    "value": "48",
+                    "toolText": "07-06 10:00\r\n48"
+                  },
+                  {
+                    "label": "11:00",
+                    "value": "52",
+                    "toolText": "07-06 11:00\r\n52"
+                  },
+                  {
+                    "label": "12:00",
+                    "value": "57",
+                    "toolText": "07-06 12:00\r\n57"
+                  },
+                  {
+                    "label": "13:00",
+                    "value": "63",
+                    "toolText": "07-06 13:00\r\n63"
+                  },
+                  {
+                    "label": "14:00",
+                    "value": "63",
+                    "toolText": "07-06 14:00\r\n63"
+                  },
+                  {
+                    "label": "15:00",
+                    "value": "59",
+                    "toolText": "07-06 15:00\r\n59"
+                  },
+                  {
+                    "label": "16:00",
+                    "value": "55",
+                    "toolText": "07-06 16:00\r\n55"
+                  },
+                  {
+                    "label": "17:00",
+                    "value": "48",
+                    "toolText": "07-06 17:00\r\n48"
+                  },
+                  {
+                    "label": "18:00",
+                    "value": "46",
+                    "toolText": "07-06 18:00\r\n46"
+                  },
+                  {
+                    "label": "19:00",
+                    "value": "50",
+                    "toolText": "07-06 19:00\r\n50"
+                  },
+                  {
+                    "label": "20:00",
+                    "value": "48",
+                    "toolText": "07-06 20:00\r\n48"
+                  }
+              ],
+              "styles": {
+                "definition": [
+                  {
+                    "name": "Animation_0",
+                    "type": "ANIMATION",
+                    "duration": "1",
+                    "start": "0",
+                    "param": "_xScale"
+                  },
+                  {
+                    "name": "Animation_1",
+                    "type": "ANIMATION",
+                    "duration": "1",
+                    "start": "70",
+                    "param": "_x"
+                  }
+                ],
+                "application": [
+                  {
+                    "toobject": "DATAPLOT",
+                    "styles": "Animation_0"
+                  },
+                  {
+                    "toobject": "DATAPLOT",
+                    "styles": "Animation_1"
                   }
                 ]
-                "starttime":"2016/7/3 8:00:00",
-                "tfid":"201601",
-                "warnlevel":"white"
               }
-            ]
-
-+ Request XML格式
-
-    + Headers
-
-            Accept: application/xml
-
-+ Response 200 (text/html)
-
-    + Attributes (array[TyphoonInfo])
-
-    + Body
-
-            <ArrayOfTyphoonModel
-              xmlns="http://schemas.datacontract.org/2004/07/Typhoon"
-              xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-              <TyphoonModel>
-                <centerlat>16.150000</centerlat>
-                <centerlng>142.250000</centerlng>
-                <endtime>2016/7/4 20:00:00</endtime>
-                <enname>Nepartak</enname>
-                <isactive>1</isactive>
-                <land/>
-                <name>尼伯特</name>
-                <points>
-                <TyphoonPointModel>
-                  <forecast>
-                    <ForecastModel>
-                      <forecastpoints>
-                      <PointModel>
-                        <lat>8.80</lat>
-                        <lng>145.00</lng>
-                        <power>8</power>
-                        <pressure>1000</pressure>
-                        <speed>18</speed>
-                        <strong>热带风暴</strong>
-                        <time>2016/7/3 8:00:00</time>
-                      </PointModel>
-                      </forecastpoints>
-                      <tm>中国</tm>
-                    </ForecastModel>
-                  </forecast>
-                  <lat>8.80</lat>
-                  <lng>145.00</lng>
-                  <movedirection>北西</movedirection>
-                  <movespeed>30</movespeed>
-                  <power>8</power>
-                  <pressure>995</pressure>
-                  <radius10>0</radius10>
-                  <radius7>300</radius7>
-                  <speed>20</speed>
-                  <strong>热带风暴</strong>
-                  <time>2016/7/4 14:00:00</time>
-                </TyphoonPointModel>
-                </points>
-                <starttime>2016/7/3 8:00:00</starttime>
-                <tfid>201601</tfid>
-                <warnlevel>white</warnlevel>
-              </TyphoonModel>
-            </ArrayOfTyphoonModel>
+            }
 
 
-# TyphoonList [GET /TyphoonList/{year}]
-台风历史列表
+# Get [GET /Ajax/Get{pollutantName}{?stationCode]
+站点24小时历史AQI&浓度
 
 + Parameters
 
-    + year: 2016 (number, required) - 年份
+    + pollutantName: AQI (enum[string], required) - 污染物名称
+        + Members
+            + AQI
+            + PM25
+            + PM10
+            + SO2
+            + NO2
+            + CO
+            + O3
+            + O38
+    + stationCode (enum[string], required) - 站点编号
+        + Members
+            + 1001A
+            + 1002A
+            + 1003A
+            + 1005A
+            + 1006A
+            + 1007A
+            + 1008A
+            + 1009A
+            + 1011A
+            + 1012A
+            + 1013A
+            + 1014A
+            + 1015A
+            + 1016A
+            + 1017A
+            + 1018A
+            + 1019A
+            + 1020A
+            + 1021A
+            + 1022A
+            + 1023A
+            + 1024A
+            + 1025A
+            + 1026A
+            + 1027A
+            + 1028A
+            + 1029A
+            + 1030A
+            + 1031A
+            + 1032A
+            + 1033A
+            + 1034A
+            + 1035A
+            + 1036A
+            + 1037A
+            + 1038A
+            + 1039A
+            + 1040A
+            + 1041A
+            + 1042A
+            + 1043A
+            + 1044A
+            + 1045A
+            + 1046A
+            + 1047A
+            + 1048A
+            + 1049A
+            + 1050A
+            + 1051A
+            + 1052A
+            + 1053A
+            + 1054A
+            + 1055A
+            + 1056A
+            + 1057A
+            + 1058A
+            + 1059A
+            + 1060A
+            + 1061A
+            + 1062A
+            + 1063A
+            + 1064A
+            + 1065A
+            + 1066A
+            + 1067A
+            + 1068A
+            + 1069A
+            + 1070A
+            + 1071A
+            + 1072A
+            + 1073A
+            + 1074A
+            + 1077A
+            + 1078A
+            + 1079A
 
 + Attributes (object)
 
-    + endtime: 2016/7/4 14:00:00 (string) - 结束时间
-    + enname: Nepartak (string) - 英文名称
-    + isactive: 1 (number) - 是否存活(1不存活)
-    + name: 尼伯特 (string) - 名称
-    + starttime: 2016/7/3 8:00:00 (string) - 开始时间
-    + tfid: 201601 (number) - 编号
-    + warnlevel: white (string) - ？级别
+    + chart (object) - ?
+    + data (array) - ?
+    + styles (object) - ?
 
 + Request JSON格式
 
@@ -428,44 +561,194 @@ HOST: http://typhoon.zjwater.gov.cn/Api/
 
 + Response 200 (application/json)
 
-    + Attributes (array[TyphoonList])
+    + Attributes (array[LeastCloud])
 
     + Body
 
-            [
+            {
+              "chart":
               {
-                "endtime":"2016/7/4 14:00:00",
-                "enname":"Nepartak",
-                "isactive":"1",
-                "name":"尼伯特",
-                "starttime":"2016/7/3 8:00:00",
-                "tfid":"201601",
-                "warnlevel":""
+                "baseFont":"",
+                "caption":"",
+                "captionForHtml":"【鞍山:铁西工业园区 O₃-8小时 24小时变化】",
+                "subcaption":"",
+                "xaxisname":"",
+                "yaxisname":"浓度μg/m³",
+                "numberprefix":"",
+                "showlabels":"1",
+                "showcolumnshadow":"1",
+                "animation":"1",
+                "showalternatehgridcolor":"1",
+                "alternatehgridcolor":"B9C6D7",
+                "divlinecolor":"005AB5",
+                "divlinealpha":"20",
+                "alternatehgridalpha":"10",
+                "canvasbordercolor":"cccccc",
+                "basefontcolor":"666666",
+                "linecolor":"005AB5",
+                "linealpha":"85",
+                "showvalues":"1",
+                "rotatevalues":"0",
+                "canvaspadding":"8",
+                "yAxisValuesStep":"",
+                "yAxisMinValue":"0",
+                "yAxisMaxValue":"150",
+                "baseFontSize":"12",
+                "bgColor":"ffffff",
+                "labelStep":"2",
+                "showBorder":"0",
+                "canvasBorderThickness":"0",
+                "defaultAnimation":"0",
+                "showZeroPlaneValue":"1",
+                "showZeroPlane":"1",
+                "valuePosition":"BELOW",
+                "labelPadding":"20",
+                "yAxisValuesPadding":"20",
+                "forceDecimals":"0",
+                "decimals":"0"
+              },
+              "data":
+              [
+                {
+                  "label":"21:00",
+                  "value":"171",
+                  "toolText":"07-05 21:00\r\n8小时滑动均值：171μg/m³\r\nIAQI：110"
+                },
+                {
+                  "label":"22:00",
+                  "value":"158",
+                  "toolText":"07-05 22:00\r\n8小时滑动均值：158μg/m³\r\nIAQI：99"
+                },
+                {
+                  "label":"23:00",
+                  "value":"144",
+                  "toolText":"07-05 23:00\r\n8小时滑动均值：144μg/m³\r\nIAQI：87"
+                },
+                {
+                  "label":"00:00",
+                  "value":"129",
+                  "toolText":"07-06 00:00\r\n8小时滑动均值：129μg/m³\r\nIAQI：75"
+                },
+                {
+                  "label":"01:00",
+                  "value":"111",
+                  "toolText":"07-06 01:00\r\n8小时滑动均值：111μg/m³\r\nIAQI：60"
+                },
+                {
+                  "label":"02:00",
+                  "value":"92",
+                  "toolText":"07-06 02:00\r\n8小时滑动均值：92μg/m³\r\nIAQI：46"
+                },
+                {
+                  "label":"03:00",
+                  "value":"73",
+                  "toolText":"07-06 03:00\r\n8小时滑动均值：73μg/m³\r\nIAQI：37"
+                },
+                {
+                  "label":"04:00",
+                  "value":"62",
+                  "toolText":"07-06 04:00\r\n8小时滑动均值：62μg/m³\r\nIAQI：31"
+                },
+                {
+                  "label":"05:00",
+                  "value":"55",
+                  "toolText":"07-06 05:00\r\n8小时滑动均值：55μg/m³\r\nIAQI：28"
+                },
+                {
+                  "label":"06:00",
+                  "value":"48",
+                  "toolText":"07-06 06:00\r\n8小时滑动均值：48μg/m³\r\nIAQI：24"
+                },
+                {
+                  "label":"07:00",
+                  "value":"45",
+                  "toolText":"07-06 07:00\r\n8小时滑动均值：45μg/m³\r\nIAQI：23"
+                },
+                {
+                  "label":"08:00",
+                  "value":"45",
+                  "toolText":"07-06 08:00\r\n8小时滑动均值：45μg/m³\r\nIAQI：23"
+                },
+                {
+                  "label":"09:00",
+                  "value":"48",
+                  "toolText":"07-06 09:00\r\n8小时滑动均值：48μg/m³\r\nIAQI：24"
+                },
+                {
+                  "label":"10:00",
+                  "value":"51",
+                  "toolText":"07-06 10:00\r\n8小时滑动均值：51μg/m³\r\nIAQI：26"},
+                {
+                  "label":"11:00",
+                  "value":"58",
+                  "toolText":"07-06 11:00\r\n8小时滑动均值：58μg/m³\r\nIAQI：29"},
+                {
+                  "label":"12:00",
+                  "value":"68",
+                  "toolText":"07-06 12:00\r\n8小时滑动均值：68μg/m³\r\nIAQI：34"},
+                {
+                  "label":"13:00",
+                  "value":"83",
+                  "toolText":"07-06 13:00\r\n8小时滑动均值：83μg/m³\r\nIAQI：42"},
+                {
+                  "label":"14:00",
+                  "value":"99",
+                  "toolText":"07-06 14:00\r\n8小时滑动均值：99μg/m³\r\nIAQI：50"},
+                {
+                  "label":"15:00",
+                  "value":"109",
+                  "toolText":"07-06 15:00\r\n8小时滑动均值：109μg/m³\r\nIAQI：58"},
+                {
+                  "label":"16:00",
+                  "value":"117",
+                  "toolText":"07-06 16:00\r\n8小时滑动均值：117μg/m³\r\nIAQI：65"},
+                {
+                  "label":"17:00",
+                  "value":"124",
+                  "toolText":"07-06 17:00\r\n8小时滑动均值：124μg/m³\r\nIAQI：70"},
+                {
+                  "label":"18:00",
+                  "value":"131",
+                  "toolText":"07-06 18:00\r\n8小时滑动均值：131μg/m³\r\nIAQI：76"},
+                {
+                  "label":"19:00",
+                  "value":"136",
+                  "toolText":"07-06 19:00\r\n8小时滑动均值：136μg/m³\r\nIAQI：80"},
+                {
+                  "label":"20:00",
+                  "value":"138",
+                  "toolText":"07-06 20:00\r\n8小时滑动均值：138μg/m³\r\nIAQI：82"
+                }
+              ],
+              "styles":
+              {
+                "definition":
+                [
+                  {
+                    "name":"Animation_0",
+                    "type":"ANIMATION",
+                    "duration":"1",
+                    "start":"0",
+                    "param":"_xScale"
+                  },
+                  {
+                    "name":"Animation_1",
+                    "type":"ANIMATION",
+                    "duration":"1",
+                    "start":"70",
+                    "param":"_x"
+                  }
+                ],
+                "application":
+                [
+                  {
+                    "toobject":"DATAPLOT",
+                    "styles":"Animation_0"
+                  },
+                  {
+                    "toobject":"DATAPLOT",
+                    "styles":"Animation_1"
+                  }
+                ]
               }
-            ]
-
-+ Request XML格式
-
-    + Headers
-
-            Accept: application/xml
-
-+ Response 200 (text/html)
-
-    + Attributes (array[TyphoonList])
-
-    + Body
-
-            <ArrayOfTyphoonListModel
-              xmlns="http://schemas.datacontract.org/2004/07/Typhoon"
-              xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-              <TyphoonListModel>
-                <endtime>2016/7/4 14:00:00</endtime>
-                <enname>Nepartak</enname>
-                <isactive>1</isactive>
-                <name>尼伯特</name>
-                <starttime>2016/7/3 8:00:00</starttime>
-                <tfid>201601</tfid>
-                <warnlevel/>
-              </TyphoonListModel>
-            </ArrayOfTyphoonListModel>
+            }
