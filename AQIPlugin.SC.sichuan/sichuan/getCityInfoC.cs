@@ -13,7 +13,7 @@ namespace sichuan.publish
 
         private static string tag = "getCityInfoC";
         private static string name = "四川城市&城市站点24小时&1小时AQI";
-        private static string url = "http://221.237.179.45:5100/publish/getCityInfoC";
+        private static string url = "http://www.scnewair.cn:3389/publish/getCityInfoC";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
         private static List<string> pn = new List<string>(){
             ".cityCode"

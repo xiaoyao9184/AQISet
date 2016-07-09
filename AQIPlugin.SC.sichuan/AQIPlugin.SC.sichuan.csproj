@@ -46,6 +46,8 @@
     <Compile Include="sichuan\getUpperLimit.cs" />
     <Compile Include="sichuan\getState.cs" />
     <Compile Include="sichuan\getInfo.cs" />
+    <Compile Include="smartadmin\forecast\getCityAuditResult.cs" />
+    <Compile Include="smartadmin\forecast\showAreaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">
@@ -54,6 +56,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="API.md" />
     <None Include="JSON\sichuan.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

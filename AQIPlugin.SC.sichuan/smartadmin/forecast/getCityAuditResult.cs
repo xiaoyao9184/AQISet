@@ -1,22 +1,22 @@
-﻿using AQI;
-using AQI.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using AQI;
+using AQI.Abstract;
 
-namespace sichuan.publish
+namespace sichuan.smartadmin.forecast
 {
-    public class getUpperLimitByCityCode : AParamSrcUrl
+    // TODO 参数应该自动生成
+    public class getCityAuditResult : AParamSrcUrl
     {
 
         #region 静态变量
 
-        private static string tag = "getUpperLimitByCityCode";
-        private static string name = "四川城市信息";
-        private static string url = "http://www.scnewair.cn:3389/publish/getUpperLimitByCityCode";
+        private static string tag = "getCityAuditResult";
+        private static string name = "四川城市预报";
+        private static string url = "http://www.scnewair.cn:3389/smartadmin/forecast/getCityAuditResult";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static List<string> pn = new List<string>(){
-            ".cityCode"
+            "timePoint"
         };
         private static AqiConstant.ParamSendType ps = AqiConstant.ParamSendType.GET;
 
@@ -52,6 +52,7 @@ namespace sichuan.publish
                 return sui;
             }
         }
+
         public override List<string> ParamName
         {
             get
@@ -59,18 +60,12 @@ namespace sichuan.publish
                 return pn;
             }
         }
+
         public override AqiConstant.ParamSendType ParamSendType
         {
             get
             {
                 return ps;
-            }
-        }
-        public override AqiConstant.ParamUrlType ParamUrlType
-        {
-            get
-            {
-                return put;
             }
         }
 

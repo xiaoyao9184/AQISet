@@ -13,7 +13,7 @@ namespace sichuan.publish
 
         private static string tag = "getAllStation24HRealTimeAQIC";
         private static string name = "四川城市站点24小时AQI历史";
-        private static string url = "http://221.237.179.45:5100/publish/getAllStation24HRealTimeAQIC";
+        private static string url = "http://www.scnewair.cn:3389/publish/getAllStation24HRealTimeAQIC";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.DAY;
         private static List<string> pn = new List<string>(){
             ".cityCode"

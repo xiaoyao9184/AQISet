@@ -353,6 +353,21 @@
                 "Enabled": true,
                 "Name": "西昌市"                                                                                             }
         ]
-    }
+    },
     
+    "showAreaData": {
+        "Enabled": false,
+        "Name": "区域2天预报"
+    },
+    "getCityAuditResult": {
+        "Enabled": false,
+        "Name": "四川城市预报",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "",
+                "timePoint": 1467907200000
+            }
+        ]
+    }
 }

@@ -11,7 +11,7 @@ namespace sichuan.publish
 
         private static string tag = "getAllCityRealTimeAQIC";
         private static string name = "四川城市1小时AQI";
-        private static string url = "http://221.237.179.45:5100/publish/getAllCityRealTimeAQIC";
+        private static string url = "http://www.scnewair.cn:3389/publish/getAllCityRealTimeAQIC";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.HOUR;
         private static AqiConstant.HttpType httpType = AqiConstant.HttpType.GET;
 

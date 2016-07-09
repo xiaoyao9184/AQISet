@@ -13,11 +13,11 @@ namespace sichuan
 
         private static string name = "四川省空气质量发布系统";
         private static string tag = "sichuan";
-        private static string url = "http://221.237.179.45:5100/";
+        private static string url = "http://www.scnewair.cn:3389/";
         private static AqiConstant.SourceLevel src = AqiConstant.SourceLevel.PROVINCIAL;
         private static AqiConstant.DataType dat = AqiConstant.DataType.JSON;
         private static string[] srcNameSpace = new string[]{
-            "sichuan.publish"
+            "sichuan.publish", "sichuan.smartadmin.forecast"
         };
 
         #endregion

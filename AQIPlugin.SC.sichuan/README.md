@@ -1,7 +1,7 @@
 #说明
 
 请求数据为GET方式
-数据接口地址为http://221.237.179.45:5100/
+数据接口地址为http://www.scnewair.cn:3389/
 由于接口单一，故按请求方法不同划分不同的虚拟接口
 
 
@@ -19,11 +19,14 @@ getUpperLimitByCityCode			城市信息						JSON			GET
 getCityInfoC					城市&城市站点24小时&1小时AQI	JSON			GET
 getAllStation24HRealTimeAQIC	城市站点24小时AQI历史			JSON			GET
 
+getCityAuditResult				区域2天预报						JSON			GET
+showAreaData					城市预报						JSON			GET
+
 
 
 
 一些无用的数据
-http://221.237.179.45:5100/publish/toCity?type=0&cityCode=5134
+http://www.scnewair.cn:3389/publish/toCity?type=0&cityCode=5134
 并未返回任何数据
 
 

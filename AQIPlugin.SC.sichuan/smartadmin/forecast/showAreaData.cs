@@ -2,17 +2,17 @@
 using AQI;
 using AQI.Abstract;
 
-namespace sichuan.publish
+namespace sichuan.smartadmin.forecast
 {
-    public class getAllCity24HRealTimeAQIC : ABaseSrcUrl
+    public class showAreaData : ABaseSrcUrl
     {
 
         #region 静态变量
 
-        private static string tag = "getAllCity24HRealTimeAQIC";
-        private static string name = "四川城市24小时AQI历史";
-        private static string url = "http://www.scnewair.cn:3389/publish/getAllCity24HRealTimeAQIC";
-        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.DAY;
+        private static string tag = "showAreaData";
+        private static string name = "四川区域2天预报";
+        private static string url = "http://www.scnewair.cn:3389/smartadmin/forecast/showAreaData";
+        private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static AqiConstant.HttpType httpType = AqiConstant.HttpType.GET;
 
         #endregion

@@ -11,7 +11,7 @@ namespace sichuan.publish
 
         private static string tag = "getUpperLimit";
         private static string name = "四川城市列表";
-        private static string url = "http://221.237.179.45:5100/publish/getUpperLimit";
+        private static string url = "http://www.scnewair.cn:3389/publish/getUpperLimit";
         private static AqiConstant.SourceUpdataInterval sui = AqiConstant.SourceUpdataInterval.NONE;
         private static AqiConstant.HttpType httpType = AqiConstant.HttpType.GET;
 
