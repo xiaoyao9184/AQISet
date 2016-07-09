@@ -63,6 +63,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="API.md" />
     <None Include="JSON\jsair.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
