@@ -11,7 +11,7 @@ HOST: http://air.tjemc.org.cn/
 
 
 # systemSetting [GET /handler/systemSetting.ashx]
-天津市界面设置
+界面设置
 
 + Request JSON格式
 

@@ -46,6 +46,7 @@
     <None Include="JSON\tjemc.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="handler\siteInformation.cs" />

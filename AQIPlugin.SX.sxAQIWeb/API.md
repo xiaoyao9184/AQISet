@@ -11,6 +11,7 @@ HOST: http://113.140.66.226:8024/
 
 
 # City [GET /sxAQIWeb/swfPage/{cityname}.xml]
+城市24小时AQI
 
 + Parameters
 
@@ -423,6 +424,7 @@ HOST: http://113.140.66.226:8024/
 
 
 # City7Day [GET /sxAQIWeb/swfPage/{cityname}7Day.xml]
+城市7天AQI
 
 + Parameters
 
@@ -565,6 +567,7 @@ HOST: http://113.140.66.226:8024/
 
 
 # CityAVGND [GET /sxAQIWeb/swfPage/{cityname}AVGND.xml]
+城市24小时浓度
 
 + Parameters
 

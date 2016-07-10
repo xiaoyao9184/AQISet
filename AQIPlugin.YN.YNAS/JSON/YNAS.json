@@ -100,20 +100,6 @@
         "Enabled": false,
         "Name": "24小时数据时间"
     },
-    "queryDailyDataOfCitys": {
-        "Enabled": true,
-        "Name": "24小时城市AQI",
-        "Params": [
-            {
-                "Enabled": true,
-                "Name": "全部城市",
-                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            }
-        ]
-    },
     "queryCityAQIInfo": {
         "Enabled": false,
         "Name": "24小时城市AQI",
@@ -192,6 +178,22 @@
                 "Enabled": true,
                 "Name": "怒江州",
                 "area": "533300"
+            },
+            {
+                "Enabled": true,
+                "Name": "迪庆州",
+                "area": "533400"
+            }
+        ]
+    },
+    "queryDailyDataOfCitys": {
+        "Enabled": true,
+        "Name": "24小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部城市",
+                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400"
             }
         ]
     },
@@ -201,128 +203,13 @@
         "Params": [
             {
                 "Enabled": true,
-                "Name": "全部站点",
-                "fact_code": "AQI"
+                "Name": "全部站点"
             },
+            //类似的不再列出
             {
                 "Enabled": false,
-                "Name": "昆明市-站点",
-                "area": "530100",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "曲靖市-站点",
-                "area": "530300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "玉溪市-站点",
-                "area": "530400",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "保山市-站点",
-                "area": "530500",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "昭通市-站点",
-                "area": "530600",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "丽江市-站点",
-                "area": "530700",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "普洱市-站点",
-                "area": "530800",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "临沧市-站点",
-                "area": "530900",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "大理州-站点",
-                "area": "532900",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "文山州-站点",
-                "area": "532600",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "红河州-站点",
-                "area": "532500",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "西双版纳-站点",
-                "area": "532800",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "楚雄州-站点",
-                "area": "532300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "德宏州-站点",
-                "area": "533100",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "怒江州-站点",
-                "area": "533300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
+                "Name": "昆明市",
+                "area": "530100"
             }
         ]
     },
@@ -532,17 +419,6 @@
         "Enabled": false,
         "Name": "1小时数据时间"
     },
-    "queryRealDataOfCitys": {
-        "Enabled": true,
-        "Name": "1小时城市AQI",
-        "Params": [
-            {
-                "Enabled": true,
-                "Name": "全部城市",
-                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400"
-            }
-        ]
-    },
     "queryCityAQIInfo_2": {
         "Enabled": false,
         "Name": "1小时城市AQI",
@@ -621,6 +497,22 @@
                 "Enabled": true,
                 "Name": "怒江州",
                 "area": "533300"
+            },
+            {
+                "Enabled": true,
+                "Name": "迪庆州",
+                "area": "533400"
+            }
+        ]
+    },
+    "queryRealDataOfCitys": {
+        "Enabled": true,
+        "Name": "1小时城市AQI",
+        "Params": [
+            {
+                "Enabled": true,
+                "Name": "全部城市",
+                "area": "530100,530300,530400,530500,530600,530700,530800,530900,532900,532500,532600,532800,532300,533100,533300,533400"
             }
         ]
     },
@@ -663,130 +555,17 @@
                 "Name": "全部站点\\O3",
                 "fact_code": "O3"
             },
+            //类似的不再列出
             {
                 "Enabled": false,
-                "Name": "昆明市-站点AQI",
+                "Name": "昆明市-站点\\AQI",
                 "area": "530100",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "曲靖市-站点AQI",
-                "area": "530300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "玉溪市-站点AQI",
-                "area": "530400",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "保山市-站点AQI",
-                "area": "530500",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "昭通市-站点AQI",
-                "area": "530600",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "丽江市-站点AQI",
-                "area": "530700",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "普洱市-站点AQI",
-                "area": "530800",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "临沧市-站点AQI",
-                "area": "530900",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "大理州-站点AQI",
-                "area": "532900",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "文山州-站点AQI",
-                "area": "532600",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "红河州-站点AQI",
-                "area": "532500",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "西双版纳-站点AQI",
-                "area": "532800",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "楚雄州-站点AQI",
-                "area": "532300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "德宏州-站点AQI",
-                "area": "533100",
-                "page": 1,
-                "start": 0,
-                "limit": 25
-            },
-            {
-                "Enabled": false,
-                "Name": "怒江州-站点AQI",
-                "area": "533300",
-                "page": 1,
-                "start": 0,
-                "limit": 25
+                "fact_code": "AQI"
             }
         ]
     },
     "queryCTDetail": {
-        "Enabled": true,
+        "Enabled": false,
         "Name": "1小时站点AQI",
         "Params": [
             {

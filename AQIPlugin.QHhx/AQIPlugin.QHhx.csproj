@@ -59,6 +59,7 @@
     <None Include="JSON\qhHaixi.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AQISet.Library\AQISet.Library.csproj">

@@ -415,7 +415,7 @@ HOST: http://121.28.49.85:8080/
 
 
 
-# hour [GET datas/hour/130000.xml]
+# hour [GET /datas/hour/130000.xml]
 城市和站点1小时AQI&浓度
 
 + Request XML格式

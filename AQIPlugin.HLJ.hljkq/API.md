@@ -34,7 +34,7 @@ HOST: http://111.40.0.99:8081/
 
             Accept: */*
 
-+ Response 200 (application/json)
++ Response 200 (text/html)
 
     + Body
 
@@ -62,9 +62,9 @@ HOST: http://111.40.0.99:8081/
 
     + Headers
 
-            Accept: application/javascript
+            Accept: */*
 
-+ Response 200 (application/json)
++ Response 200 (text/html)
 
     + Body
 

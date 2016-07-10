@@ -60,7 +60,7 @@
         }
     },
     "getOneAndTwoLevelDivision": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getOneAndTwoLevelDivision",
         "Params": {
             "Enabled": true,
@@ -123,7 +123,7 @@
     },
 
     "getAreaUsedToDayReport": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getAreaUsedToDayReport",
         "Params": {
             "Enabled": true,
@@ -183,7 +183,7 @@
         }
     },
     "getAreaUsedToRealTime": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getAreaUsedToRealTime",
         "Params": {
             "Enabled": true,
@@ -244,7 +244,7 @@
     },
 
     "getAreaDayReprotData": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getAreaDayReprotData",
         "Params": {
             "Enabled": true,
@@ -304,7 +304,7 @@
         }
     },
     "getAreaRealTimeReportData": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getAreaRealTimeReportData",
         "Params": {
             "Enabled": true,
@@ -425,7 +425,7 @@
     },
 
     "getHourlyDataForAllSites": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getHourlyDataForAllSites",
         "Params": {
             "Enabled": true,
@@ -515,7 +515,7 @@
         }
     },
     "getDailyDataForAllSites": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getDailyDataForAllSites",
         "Params": {
             "Enabled": true,
@@ -539,7 +539,7 @@
     },
 
     "getCityForecastAQI": {
-        "Enabled": false,
+        "Enabled": true,
         "Name": "getCityForecastAQI",
         "Params": {
             "Enabled": true,
