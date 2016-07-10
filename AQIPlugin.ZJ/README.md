@@ -37,16 +37,16 @@
 有接口都继承自 `ZJSrcUrl`
  - 重写 **ICacheParam** 相关方法
 
-			 会在 LoadParams 时会通过 `_5` 获取 _DSId_ 加入参数
-			 ，_Cookie_ 根据返回的Header是否有Set-Cookie判断，会加入参数Header；
+			 会在 LoadParams 时会通过 `_5` 获取 _DSId_ 加入参数，
+			 _Cookie_ 根据返回的Header是否有Set-Cookie判断，会加入参数Header；
 
  - 重写 **IParseSrcUrlParam** 相关方法
 
-       用于自定义从 `_5` 的结果中提取 _DSId_ 与 _Cookie_；
+			 用于自定义从 `_5` 的结果中提取 _DSId_ 与 _Cookie_；
 
  - 重写 **IMakeParam** 相关方法
 
-       用于替换DSId
+			 用于替换DSId
 
 
 # 参数替换
