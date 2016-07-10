@@ -66,6 +66,7 @@
     <Compile Include="Interface\ISrcUrl.cs" />
     <Compile Include="Interface\ISrcUrlParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\JsonSettingHelper.cs" />
     <Compile Include="Util\ByteArrayEx.cs" />
     <Compile Include="Util\FileReadSaveUtil.cs" />
     <Compile Include="Abstract\AParamSrcUrl.cs" />

@@ -89,11 +89,11 @@ namespace AQISet.Control
             }
         }
 
-        public static InstanceSettingHelper Setting
+        public static AqiSetting Setting
         {
             get
             {
-                return InstanceSettingHelper.Instance;
+                return AqiSetting.Instance;
             }
         }
 
