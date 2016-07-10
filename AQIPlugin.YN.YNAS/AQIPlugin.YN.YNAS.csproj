@@ -61,6 +61,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="API.md" />
     <None Include="JSON\YNAS.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
