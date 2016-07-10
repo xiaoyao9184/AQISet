@@ -40,6 +40,7 @@
     <Compile Include="Station\MapStation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="API.md" />
     <None Include="JSON\aqicn.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
