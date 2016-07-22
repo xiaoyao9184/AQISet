@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JL
+namespace LN
 {
-    public class JLAqi : ABaseAqiWeb
+    public class LNAqi : ABaseAqiWeb
     {
 
         #region 静态字段
